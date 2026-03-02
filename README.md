@@ -1,9 +1,9 @@
-# SystemForge
+# C++ Systems Learning
 
 Structured, AI-supported C++ training system focused on deep systems understanding.
 
 ## Purpose
-SystemForge is a repository for building and running a staged C++ learning system.
+`C++ Systems Learning` is a repository for building and running a staged C++ learning system.
 It separates:
 - foundation rules and policy
 - phase-level progression
