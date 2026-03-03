@@ -5,7 +5,7 @@ Structured, AI-supported C++ training system focused on deep systems understandi
 ## Purpose
 `C++ Systems Learning` is a repository for building and running a staged C++ learning system.
 It separates:
-- foundation rules and policy
+- system rules and policy
 - phase-level progression
 - gate-level tasks, readiness, and evaluation
 
@@ -18,15 +18,15 @@ The current design goal is a reproducible structure that can scale to new phases
 ## Repository Layout
 - [AGENTS.md](./AGENTS.md)
   Repo entrypoint rules, including mandatory mode selection at chat start.
-- [00_foundation/](./00_foundation/README.md)
-  Governing documents, glossary, resource policy, and structure rules.
+- [00_system/](./00_system/README.md)
+  Repo-wide system layer: modes, runtime foundation, authoring rules, resources, and background material.
 - [01_phase0-cpp-foundations/](./01_phase0-cpp-foundations/README.md)
   First active phase, including the current gate.
 
 ## How To Start
 For repo work:
 - start with [AGENTS.md](./AGENTS.md)
-- then read [00_foundation/README.md](./00_foundation/README.md)
+- then read [00_system/README.md](./00_system/README.md)
 
 For learner-facing work in the active phase:
 - start with [01_phase0-cpp-foundations/README.md](./01_phase0-cpp-foundations/README.md)
@@ -34,5 +34,5 @@ For learner-facing work in the active phase:
 
 ## Notes
 - The repository uses stable IDs plus slugs in phase and gate folder paths.
-- Learner-facing external references are constrained by [RESOURCES.md](./00_foundation/RESOURCES.md) and local resource cards.
+- Learner-facing external references are constrained by [RESOURCES.md](./00_system/resources/RESOURCES.md) and local resource cards.
 - Gate progression is binary: `pass` or `not pass`.

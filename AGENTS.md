@@ -26,7 +26,7 @@ Until the user chooses a mode:
 - If the user's reply is unclear, ask again for `1` or `2`.
 
 ## Source Of Truth
-- Mode definitions live in `00_foundation/MODES.md`.
+- Mode definitions live in `00_system/MODES.md`.
 - If the user chooses `1`, follow `Utvecklingsläge`.
 - If the user chooses `2`, follow `Utbildningsläge`.
 

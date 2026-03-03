@@ -25,9 +25,9 @@ Before you start the task, make sure you can explain these ideas in simple words
 ## Read This
 Read in this order:
 
-- Start with [{{Primary Resource Card}}](../../../00_foundation/resource_cards/{{R-###}}.md).
+- Start with [{{Primary Resource Card}}](../../../00_system/resources/resource_cards/{{R-###}}.md).
   Use the gate-specific packet in that card as your main reading path.
-- Use [{{Secondary Resource Card}}](../../../00_foundation/resource_cards/{{R-###}}.md) only if {{why it is needed}}.
+- Use [{{Secondary Resource Card}}](../../../00_system/resources/resource_cards/{{R-###}}.md) only if {{why it is needed}}.
 - If the agent later sends you to another curated resource, follow that exact reading assignment.
 
 ## Stop When

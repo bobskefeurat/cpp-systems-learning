@@ -1,5 +1,5 @@
 param(
-    [string]$RepoRoot = (Split-Path -Parent $PSScriptRoot)
+    [string]$RepoRoot = (Split-Path -Parent (Split-Path -Parent $PSScriptRoot))
 )
 
 $ErrorActionPreference = "Stop"
@@ -267,7 +267,7 @@ foreach ($phaseDir in $phaseDirs) {
     }
 }
 
-$resourceCards = Get-ChildItem (Join-Path $RepoRoot "00_foundation/resource_cards") -Filter "*.md" -File
+$resourceCards = Get-ChildItem (Join-Path $RepoRoot "00_system/resources/resource_cards") -Filter "*.md" -File
 foreach ($resourceCard in $resourceCards) {
     if ($resourceCard.Name -eq "README.md") {
         continue

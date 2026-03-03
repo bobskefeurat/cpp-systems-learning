@@ -21,7 +21,7 @@ A validation run should end in one of these states:
 Run these checks in order.
 
 1. Structural validation
-   - Run `.\00_foundation\validate-structure.ps1`.
+   - Run `.\00_system\authoring\validate-structure.ps1`.
    - The gate is not structurally complete until the script passes.
 
 2. Document coherence check

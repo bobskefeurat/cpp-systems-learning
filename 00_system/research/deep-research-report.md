@@ -3,16 +3,16 @@
 
 # Repo Constraints
 
-- The programme’s primary language is **C++**, chosen specifically to build deep systems understanding (memory, lifetimes, ownership, and later cache/concurrency), not convenience-first shortcuts. (Source: `00_foundation/FOUNDATION_SKETCH.md`, `00_foundation/GOALS.md`)
-- The AI is a **strictly controlled teacher/coach**, not a solution generator: it may explain, question, diagnose, and suggest tests, but must not provide complete solutions or “answer keys” by default. (Source: `00_foundation/AI_TEACHER_POLICY.md`, `00_foundation/RULEBOOK.md`, `00_foundation/FOUNDATION_SKETCH.md`)
-- **Hints are levelled** (direction → narrowing → more concrete substep → answer key only on explicit request), and refusals must cite the rule and redirect to a next step. (Source: `00_foundation/AI_TEACHER_POLICY.md`, `00_foundation/RULEBOOK.md`)
-- Progression is **competency-based** (not time-based), with **binary gate outcomes** (`pass` / `not pass`). (Source: `00_foundation/FOUNDATION_SKETCH.md`, `00_foundation/GOALS.md`, `00_foundation/RULEBOOK.md`, `00_foundation/GLOSSARY.md`)
-- The **rubric is diagnostic only**: it guides feedback and repetition, but does not unlock progression. (Source: `00_foundation/RUBRIC.md`, `00_foundation/FOUNDATION_SKETCH.md`)
-- **Warnings matter**: warnings are treated as signals to handle, not ignore; refactoring is part of training after getting working code when required by a task/gate. (Source: `00_foundation/RULEBOOK.md`)
-- External resources must be **curated before the AI may reference them**: candidates go to `SOURCES.md`, promoted items get stable IDs in `RESOURCES.md`, and concept-to-resource mappings live in `RESOURCE_MAP.md`. (Source: `00_foundation/FOUNDATION_SKETCH.md`, `00_foundation/SOURCES.md`, `00_foundation/RESOURCES.md`, `00_foundation/RESOURCE_MAP.md`)
-- The repo’s early Phase 0 gates are explicitly centred on: **Gate 0** (syntax/compilation/warnings/basic I/O), **Gate 1** (stack vs heap), **Gate 2** (value vs reference, functions, parameter passing), **Gate 3** (simple class with correct lifetime, basic RAII thinking). (Source: `00_foundation/FOUNDATION_SKETCH.md`)
-- The concept map is expected to stay **short and practical**, usually **1–2 resources per concept**. (Source: `00_foundation/RESOURCE_MAP.md`)
-- Foundation governance aims for low drift: **“one file = one responsibility area”**, with an explicit reading order and role separation across the foundation docs. (Source: `00_foundation/FOUNDATION_SKETCH.md`, `00_foundation/README.md`, `00_foundation/GLOSSARY.md`)
+- The programme’s primary language is **C++**, chosen specifically to build deep systems understanding (memory, lifetimes, ownership, and later cache/concurrency), not convenience-first shortcuts. (Source: `00_system/archive/FOUNDATION_SKETCH.md`, `00_system/foundation/GOALS.md`)
+- The AI is a **strictly controlled teacher/coach**, not a solution generator: it may explain, question, diagnose, and suggest tests, but must not provide complete solutions or “answer keys” by default. (Source: `00_system/foundation/AI_TEACHER_POLICY.md`, `00_system/foundation/RULEBOOK.md`, `00_system/archive/FOUNDATION_SKETCH.md`)
+- **Hints are levelled** (direction → narrowing → more concrete substep → answer key only on explicit request), and refusals must cite the rule and redirect to a next step. (Source: `00_system/foundation/AI_TEACHER_POLICY.md`, `00_system/foundation/RULEBOOK.md`)
+- Progression is **competency-based** (not time-based), with **binary gate outcomes** (`pass` / `not pass`). (Source: `00_system/archive/FOUNDATION_SKETCH.md`, `00_system/foundation/GOALS.md`, `00_system/foundation/RULEBOOK.md`, `00_system/foundation/GLOSSARY.md`)
+- The **rubric is diagnostic only**: it guides feedback and repetition, but does not unlock progression. (Source: `00_system/foundation/RUBRIC.md`, `00_system/archive/FOUNDATION_SKETCH.md`)
+- **Warnings matter**: warnings are treated as signals to handle, not ignore; refactoring is part of training after getting working code when required by a task/gate. (Source: `00_system/foundation/RULEBOOK.md`)
+- External resources must be **curated before the AI may reference them**: candidates go to `SOURCES.md`, promoted items get stable IDs in `RESOURCES.md`, and concept-to-resource mappings live in `RESOURCE_MAP.md`. (Source: `00_system/archive/FOUNDATION_SKETCH.md`, `00_system/resources/SOURCES.md`, `00_system/resources/RESOURCES.md`, `00_system/resources/RESOURCE_MAP.md`)
+- The repo’s early Phase 0 gates are explicitly centred on: **Gate 0** (syntax/compilation/warnings/basic I/O), **Gate 1** (stack vs heap), **Gate 2** (value vs reference, functions, parameter passing), **Gate 3** (simple class with correct lifetime, basic RAII thinking). (Source: `00_system/archive/FOUNDATION_SKETCH.md`)
+- The concept map is expected to stay **short and practical**, usually **1–2 resources per concept**. (Source: `00_system/resources/RESOURCE_MAP.md`)
+- Foundation governance aims for low drift: **“one file = one responsibility area”**, with an explicit reading order and role separation across the foundation docs. (Source: `00_system/archive/FOUNDATION_SKETCH.md`, `00_system/foundation/README.md`, `00_system/foundation/GLOSSARY.md`)
 
 # Research Goal
 

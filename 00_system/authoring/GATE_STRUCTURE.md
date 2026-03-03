@@ -2,8 +2,8 @@
 
 ## Purpose
 Defines the standard structure for future gate folders.
-This file exists so that new gates follow the same format, responsibilities, and workflow.
-It owns gate-local structure and document responsibilities, not the full global behavior policy.
+This file exists so that new gates follow the same format, responsibilities, and authoring rules.
+It owns gate-local structure and document responsibilities, not the learner/agent runtime flow.
 
 ## Scope
 Applies to all gate folders unless a gate has a clearly documented reason to differ.
@@ -17,8 +17,12 @@ When generating new content with AI:
 - replace every placeholder before considering the file complete
 - keep learner files learner-facing and agent files agent-facing
 - avoid creating a second source of truth for task requirements, evidence, or pass criteria
-- run `.\00_foundation\validate-structure.ps1` before considering the generated content structurally complete
+- run `.\00_system\authoring\validate-structure.ps1` before considering the generated content structurally complete
 - use `GATE_VALIDATION.md` for the broader quality-check process after the structure script passes
+
+## Runtime Companion
+For learner/agent runtime use inside a gate, see `../foundation/GATE_RUNTIME.md`.
+This file stays focused on authoring, structure, and naming.
 
 ## Standard Folder Structure
 Each gate should normally use:
@@ -278,26 +282,6 @@ Should not contain:
 - policy or guidance documents
 - starter code that contradicts the current task
 
-## Standard Learner Flow
-The default learner flow is:
-
-1. Read `README.md`
-2. Read `learner/PREP.md`
-3. Complete readiness dialogue with the agent
-4. Work on `learner/TASK.md`
-5. Code in `workspace/`
-6. Ask the agent for evaluation
-
-## Standard Agent Flow
-The default agent flow is:
-
-1. Ensure the learner has completed preparation
-2. Use `learner/PREP.md` to identify the gate's core concepts
-3. Run the readiness check from `agent/READINESS.md`
-4. Support work on `learner/TASK.md` inside `workspace/` under the global policy and gate-local escalation rules
-5. Evaluate using `agent/SPEC.md` and `agent/EVALUATION.md`, verifying pass requirements against the relevant evidence sources
-6. If the result is `not pass`, assign a concrete remediation loop and reattempt path
-
 ## Required Files
 A gate is normally not considered structurally complete without:
 - `README.md`
@@ -335,7 +319,7 @@ Before a newly generated phase or gate is considered ready:
 - `not pass` outcomes include concrete remediation and reattempt evidence
 - gate evaluation guidance makes clear when code, compile output, runtime output, or learner explanation must be checked
 - starter files in `workspace/` match the current task
-- `.\00_foundation\validate-structure.ps1` passes
+- `.\00_system\authoring\validate-structure.ps1` passes
 - the broader validation process in `GATE_VALIDATION.md` has been applied when the gate is new or materially changed
 
 ## Resource Use

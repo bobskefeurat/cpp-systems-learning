@@ -1,5 +1,5 @@
 > Archived note: this file is kept only as historical background.
-> It is not part of the active foundation contract. Use `00_foundation/README.md` for the current document map.
+> It is not part of the active foundation contract. Use `00_system/README.md` for the current document map.
 
 # FOUNDATION SKETCH (v1)
 This document is a fixed reference point for the project's purpose, structure, and rules. It is used by both you and the AI (Codex/ChatGPT) to avoid drift in the setup and to reduce context problems.
@@ -98,17 +98,18 @@ We will keep curated resources in separate files:
 ## 5. Rules and Governance Documents (Foundation)
 Planned base files:
 
-`00_foundation/`
-- `README.md` (index and reading order)
-- `GOALS.md`
-- `RULEBOOK.md`
-- `RUBRIC.md`
-- `AI_TEACHER_POLICY.md`
-- `SOURCES.md`
-- `RESOURCES.md`
-- `RESOURCE_MAP.md`
-- `GLOSSARY.md`
-- `FOUNDATION_SKETCH.md` (this document)
+`00_system/`
+- `README.md` (system index and read order)
+- `MODES.md`
+- `foundation/GOALS.md`
+- `foundation/RULEBOOK.md`
+- `foundation/RUBRIC.md`
+- `foundation/AI_TEACHER_POLICY.md`
+- `foundation/GLOSSARY.md`
+- `resources/SOURCES.md`
+- `resources/RESOURCES.md`
+- `resources/RESOURCE_MAP.md`
+- `archive/FOUNDATION_SKETCH.md` (this document)
 
 Principle: **one file = one responsibility area**. No information mixing.
 
@@ -169,7 +170,7 @@ Points are used only for analysis, never to "unlock the next level."
 ---
 
 ## 10. Next Steps (Not Yet Done)
-- Create the file structure in `00_foundation/`
+- Create the file structure in `00_system/`
 - Write a minimal `README.md` (index)
 - Define `PROGRESSION_MODEL.md` (if we want a separate file in addition to this)
 - Define hint levels and refusal protocol in `RULEBOOK` / `AI_TEACHER_POLICY`

@@ -25,9 +25,9 @@ Before you start the task, make sure you can explain these ideas in simple words
 ## Read This
 Read in this order:
 
-- Start with [R-001 Card](../../../00_foundation/resource_cards/R-001.md).
+- Start with [R-001 Card](../../../00_system/resources/resource_cards/R-001.md).
   Use the `Gate 2` packet in that card as your main reading path.
-- Use [R-004 Card](../../../00_foundation/resource_cards/R-004.md) only if the difference between value, reference, and pointer reasoning is still unclear.
+- Use [R-004 Card](../../../00_system/resources/resource_cards/R-004.md) only if the difference between value, reference, and pointer reasoning is still unclear.
 - If the agent later sends you to another curated resource, follow that exact reading assignment.
 
 ## Stop When
