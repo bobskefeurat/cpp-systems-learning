@@ -67,19 +67,28 @@ For agent materials:
 Purpose:
 - entry point for the phase
 - short orientation for what the phase is for
-- overview of the gates in the phase
+- overview of the gate arc in the phase
 - where the learner or maintainer should start
 
 Should contain:
 - the phase name and purpose
 - the capabilities the phase is meant to build
 - the current gate lineup
+- a concise picture of how the gates relate to each other, preferably through a small table, a Mermaid diagram, or both
+- a clear indication of which gate is the phase-ending integration gate when the phase has one
+- a short explanation of how to move through a gate in this phase
 - the current recommended starting gate
 
 Should not contain:
 - detailed gate evaluation logic
 - duplicated task instructions from a specific gate
+- overlong prose that repeats what the gate READMEs already explain
 - internal naming-policy discussion unless it is directly needed for orientation
+
+Recommended style:
+- keep the file phase-level rather than gate-level
+- prefer fast orientation over exhaustive detail
+- use Mermaid diagrams when they make the phase arc or the gate runtime loop easier to understand at a glance
 
 Standard section order:
 1. `# Phase N: <Display Name>`

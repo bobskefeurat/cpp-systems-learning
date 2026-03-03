@@ -3,13 +3,10 @@
 ## Purpose
 {{Explain what this phase is for and why it exists in the progression.}}
 
-This phase is about making these capabilities stable:
+This phase is about making these capabilities stable before the course moves deeper:
 - {{capability 1}}
 - {{capability 2}}
 - {{capability 3}}
-
-This file is phase-level orientation only.
-Concrete tasks, readiness checks, and pass/fail rules live inside the individual gate folders.
 
 ## What This Phase Builds
 By the end of this phase, the learner should be able to:
@@ -18,22 +15,49 @@ By the end of this phase, the learner should be able to:
 - {{capability outcome 3}}
 
 ## Gate Lineup
-Current and planned gates in this phase:
+This phase has {{micro-gate count}} micro-gates followed by {{integration gate note}}.
 
-- `{{gate-id-slug}}`
-  `Gate {{N}}: {{Display Name}}`
-- planned `{{gate-id-slug}}`
-  `Gate {{N}}: {{Display Name}}`
+Extend or shorten the diagram and table below to match the actual gate count in the phase.
+
+```mermaid
+flowchart LR
+    A["{{gate label 1}}"] --> B["{{gate label 2}}"]
+    B --> C["{{gate label 3}}"]
+    C --> D["{{gate label 4 or integration gate}}"]
+```
+
+| Gate | Focus |
+| --- | --- |
+| [{{gate label 1}}](./{{gate-folder-1}}/README.md) | {{focus 1}} |
+| [{{gate label 2}}](./{{gate-folder-2}}/README.md) | {{focus 2}} |
+| [{{gate label 3}}](./{{gate-folder-3}}/README.md) | {{focus 3}} |
+| [{{integration gate label}}](./{{integration-gate-folder}}/README.md) | {{integration gate focus}} |
 
 ## How To Use This Phase
-The normal path is:
+Every gate in this phase follows the same runtime loop.
 
-1. Open the active gate.
-2. Read that gate's `README.md`.
-3. Continue into the gate's `learner/` material.
-4. Work in the gate's `workspace/`.
+```mermaid
+flowchart TD
+    GateReadme["Gate README"] --> Prep["learner/PREP.md"]
+    Prep --> Ready{"Readiness sufficient?"}
+    Ready -->|No| Review["Targeted review and retry"]
+    Review --> Ready
+    Ready -->|Yes| Task["learner/TASK.md"]
+    Task --> Work["Code in workspace/"]
+    Work --> Eval["Agent evaluation"]
+    Eval -->|Pass| Next["Next gate or phase completion"]
+    Eval -->|Not pass| Remed["Concrete remediation loop"]
+    Remed --> Task
+```
+
+Working rule:
+1. Open the current gate's `README.md`.
+2. Move from `learner/PREP.md` into the readiness dialogue.
+3. Start `learner/TASK.md` only after readiness is sufficient.
+4. Work in `workspace/`.
+5. Ask for evaluation when you have the required evidence.
 
 ## Where To Start
 Start with [{{gate-folder}}/README.md](./{{gate-folder}}/README.md).
 
-That gate is the current entry point for `Phase {{N}}: {{Display Name}}`.
+If you are returning mid-phase, open the current gate's `README.md` and continue from there.

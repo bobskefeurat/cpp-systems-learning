@@ -1,49 +1,63 @@
 # Phase 0: C++ Foundations
 
 ## Purpose
-Phase 0 rebuilds the learner's basic C++ execution ability and first mental models before deeper systems work.
-
-This phase is about making the fundamentals stable:
-- compiling and running without IDE magic
-- handling warnings as part of normal work
-- understanding basic input/output and data flow
-- building correct first models for storage, references, and lifetime
-- integrating those basics in one bounded terminal program
-
-This file is phase-level orientation only.
-Concrete tasks, readiness checks, and pass/fail rules live inside the individual gate folders.
+Phase 0 rebuilds the operational basics that later systems work depends on.
+The goal is to make compilation, warnings, I/O, storage, references, and lifetime explicit and stable before the course moves deeper.
 
 ## What This Phase Builds
 By the end of this phase, the learner should be able to:
 - compile and run small C++ programs from the terminal
 - treat warnings as part of the work, not as optional cleanup
-- explain basic input/output flow in simple programs
-- reason at an early level about storage, references, and object lifetime
-- combine those concepts in one small integration task without relying on IDE magic or hidden scaffolding
+- explain simple input/output and value flow
+- reason at a first-pass level about storage, references, and object lifetime
+- combine those basics in one bounded console program without relying on hidden IDE scaffolding
 
 ## Gate Lineup
-Current and planned gates in this phase:
+Phase 0 has four micro-gates followed by one integration gate.
 
-- `gate0-compile-run-basic-io`
-  `Gate 0: Compile, Run, and Basic I/O`
-- `gate1-stack-heap-and-storage-basics`
-  `Gate 1: Stack, Heap, and Storage Basics`
-- `gate2-values-references-and-parameter-passing`
-  `Gate 2: Values, References, and Parameter Passing`
-- `gate3-first-class-lifetime-and-basic-raii`
-  `Gate 3: First Class, Lifetime, and Basic RAII`
-- `gate4-phase0-integration-project`
-  `Gate 4: Phase 0 Integration Project`
+```mermaid
+flowchart LR
+    G0["Gate 0"] --> G1["Gate 1"]
+    G1 --> G2["Gate 2"]
+    G2 --> G3["Gate 3"]
+    G3 --> G4["Gate 4<br/>Phase Integration"]
+```
+
+| Gate | Focus |
+| --- | --- |
+| [Gate 0](./gate0-compile-run-basic-io/README.md) | Compile/run flow, warnings, and basic `std::cin` / `std::cout` |
+| [Gate 1](./gate1-stack-heap-and-storage-basics/README.md) | Automatic, static, and dynamic storage basics |
+| [Gate 2](./gate2-values-references-and-parameter-passing/README.md) | Value copies, references, and parameter passing |
+| [Gate 3](./gate3-first-class-lifetime-and-basic-raii/README.md) | First class/lifetime reasoning and basic RAII-shaped behavior |
+| [Gate 4](./gate4-phase0-integration-project/README.md) | Phase-ending integration gate that combines the earlier phase concepts in one bounded project |
 
 ## How To Use This Phase
-The normal path is:
+Every gate follows the same runtime loop.
 
-1. Open the active gate.
-2. Read that gate's `README.md`.
-3. Continue into the gate's `learner/` material.
-4. Work in the gate's `workspace/`.
+```mermaid
+flowchart TD
+    GateReadme["Gate README"] --> Prep["learner/PREP.md"]
+    Prep --> Ready{"Readiness sufficient?"}
+    Ready -->|No| Review["Targeted review and retry"]
+    Review --> Ready
+    Ready -->|Yes| Task["learner/TASK.md"]
+    Task --> Work["Code in workspace/"]
+    Work --> Eval["Agent evaluation"]
+    Eval -->|Pass| Next["Next gate or phase completion"]
+    Eval -->|Not pass| Remed["Concrete remediation loop"]
+    Remed --> Task
+```
+
+Working rule:
+1. Open the current gate's `README.md`.
+2. Move from `learner/PREP.md` into the readiness dialogue.
+3. Start `learner/TASK.md` only after readiness is sufficient.
+4. Work in `workspace/`.
+5. Ask for evaluation when you have the required evidence.
+
+`Gate 4` is larger than the earlier gates, but it still uses the same readiness, evidence, and pass/not-pass model.
 
 ## Where To Start
 Start with [gate0-compile-run-basic-io/README.md](./gate0-compile-run-basic-io/README.md).
 
-That gate is the current entry point for `Phase 0: C++ Foundations`.
+If you are returning mid-phase, open the current gate's `README.md` and continue from there.

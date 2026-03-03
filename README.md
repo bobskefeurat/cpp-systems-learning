@@ -1,16 +1,16 @@
 # C++ Systems Learning
 
-Structured C++ training system designed around an integrated Codex workflow in the editor.
+Repository-backed C++ training system built for Codex-assisted learning in the editor.
 
-## Purpose
-This repository is a staged C++ learning system, not just a collection of exercises.
-It is built to support a human-plus-agent workflow where the learner works locally in the codebase and the agent operates inside a bounded teaching structure.
+## What This Is
+This repository is a staged C++ learning program built for a learner-plus-agent workflow in the same codebase.
 
-The aim is durable understanding:
-- real compile/run ability
-- correct mental models for storage, lifetime, and memory
-- disciplined debugging and design reasoning
-- AI used as a controlled teacher, not a default answer generator
+It combines:
+- phase-based progression
+- binary gates (`pass` / `not pass`)
+- readiness before task work
+- evaluation against code, build behavior, runtime behavior, and explanation
+- curated resources instead of open-ended tutorial drift
 
 ## Intended Workflow
 > *This system was designed around using OpenAI Codex as an integrated coding agent, primarily in VS Code.*
@@ -19,39 +19,50 @@ The aim is durable understanding:
 >
 > *The setup was developed in VS Code and assumes an editor-centered workflow rather than a standalone chat-only experience.*
 
-## Program Model
-- A `phase` builds one larger capability area.
+## Program Structure
+```mermaid
+flowchart LR
+    User["Learner + Codex in VS Code"] --> Phase["Current phase"]
+    Phase --> Gates["Micro-gates"]
+    Gates --> Integration["Integration gate"]
+    Integration --> Next["Next phase"]
+```
+
+- A `phase` builds one capability area.
 - A `gate` is a bounded checkpoint inside that phase.
-- Each gate separates learner-facing material from agent-facing readiness and evaluation rules.
-- Progression is binary: `pass` or `not pass`.
-- Each phase may end with an integration gate: a larger bounded task that combines earlier concepts without introducing a major new topic.
+- An `integration gate` is the larger phase-ending task that combines earlier gate concepts without adding a major new topic.
+- Gates keep learner-facing material separate from agent-facing readiness and evaluation rules.
 
-## Phase 0: C++ Foundations
-[Phase 0](./01_phase0-cpp-foundations/README.md) rebuilds basic C++ execution ability before deeper systems work. It focuses on compile/run discipline, warnings, basic I/O, storage, references, lifetime, and a final bounded integration task.
+## Current Course
+Only one phase is active today: [Phase 0: C++ Foundations](./01_phase0-cpp-foundations/README.md).
 
-Current gate lineup:
+Phase 0 focuses on:
+- compile/run discipline without IDE magic
+- warnings as part of normal work
+- simple console I/O
+- first correct models for storage, references, and lifetime
+- a bounded integration project that combines those basics
 
-1. [Gate 0: Compile, Run, and Basic I/O](./01_phase0-cpp-foundations/gate0-compile-run-basic-io/README.md)
-2. [Gate 1: Stack, Heap, and Storage Basics](./01_phase0-cpp-foundations/gate1-stack-heap-and-storage-basics/README.md)
-3. [Gate 2: Values, References, and Parameter Passing](./01_phase0-cpp-foundations/gate2-values-references-and-parameter-passing/README.md)
-4. [Gate 3: First Class, Lifetime, and Basic RAII](./01_phase0-cpp-foundations/gate3-first-class-lifetime-and-basic-raii/README.md)
-5. [Gate 4: Phase 0 Integration Project](./01_phase0-cpp-foundations/gate4-phase0-integration-project/README.md)
+For the full Phase 0 gate arc, use [01_phase0-cpp-foundations/README.md](./01_phase0-cpp-foundations/README.md).
 
 ## Resource Base
-The course uses a curated set of baseline resources instead of sending learners to arbitrary tutorials. The active list lives in [00_system/resources/RESOURCES.md](./00_system/resources/RESOURCES.md), and concept routing lives in [00_system/resources/RESOURCE_MAP.md](./00_system/resources/RESOURCE_MAP.md).
+The curated resource registry lives in [00_system/resources/RESOURCES.md](./00_system/resources/RESOURCES.md) and [00_system/resources/RESOURCE_MAP.md](./00_system/resources/RESOURCE_MAP.md).
 
-- `LearnCpp` as the main reading spine for early C++
-- `GCC` documentation for precise compiler and flag behavior
-- `cppreference` for exact language lookup
-- `Stroustrup FAQ` for correcting common misconceptions
-- `MIT OpenCourseWare` as supplemental repetition material
+| Resource | Role in the course | Why it is used |
+| --- | --- | --- |
+| [LearnCpp](https://www.learncpp.com/) | Primary Phase 0 spine | Incremental early coverage of compile/run, warnings, I/O, storage, references, classes, and early RAII |
+| [GCC manual](https://gcc.gnu.org/onlinedocs/gcc/) | Compiler reference | Precise meaning of the baseline build command and flags |
+| [cppreference](https://en.cppreference.com/w/) | Language reference | Exact lookup once the learner has a first mental model |
+| [Stroustrup FAQ](https://www.stroustrup.com/bs_faq2.html) | Concept correction | Useful when the learner forms bad rules of thumb around values, references, and pointers |
+| [MIT OpenCourseWare 6.096 notes](https://ocw.mit.edu/courses/6-096-introduction-to-c-january-iap-2011/pages/lecture-notes/) | Supplemental repetition | Alternate explanations when the main reading path is not enough |
 
-The practical baseline for the early course is:
+Current practical baseline:
 - Windows
 - `g++` via `MSYS2 UCRT64`
 - `-std=c++20`
 - `-Wall -Wextra -Wpedantic`
 
 ## Start Here
-- Repo and system work: [AGENTS.md](./AGENTS.md) then [00_system/README.md](./00_system/README.md)
-- Current course content: [01_phase0-cpp-foundations/README.md](./01_phase0-cpp-foundations/README.md)
+- System or repo work: [AGENTS.md](./AGENTS.md) then [00_system/README.md](./00_system/README.md)
+- Course content: [01_phase0-cpp-foundations/README.md](./01_phase0-cpp-foundations/README.md)
+- First gate directly: [Gate 0: Compile, Run, and Basic I/O](./01_phase0-cpp-foundations/gate0-compile-run-basic-io/README.md)
