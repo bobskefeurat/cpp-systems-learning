@@ -8,9 +8,9 @@ It separates the active runtime foundation from authoring rules, resource policy
 - `MODES.md`
   Chat-mode definitions and context-loading rules.
 - `foundation/`
-  Active learner-facing runtime contract: goals, rules, teacher policy, terminology, and gate runtime model.
+  Active learner-facing runtime contract: goals, rules, core teacher policy, interaction protocols, terminology, and gate runtime model.
 - `authoring/`
-  Gate construction, validation, templates, and structure tooling for repo maintenance.
+  Gate construction, validation, context audit, templates, and structure tooling for repo maintenance.
 - `resources/`
   Curated resources, concept routing, candidate sources, and learner-safe resource cards.
 - `research/`

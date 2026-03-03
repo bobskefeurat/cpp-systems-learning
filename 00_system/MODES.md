@@ -56,6 +56,7 @@ Load these files by default:
 7. relevant gate files
 
 Load only when needed:
+- `00_system/foundation/AI_INTERACTION_PROTOCOLS.md` when running readiness, evaluation, integration-task support, or detailed learner-facing reference behavior
 - `00_system/foundation/RUBRIC.md` during evaluation or diagnostic feedback
 - `00_system/foundation/GLOSSARY.md` when a term definition matters
 - `00_system/resources/RESOURCES.md` and `00_system/resources/RESOURCE_MAP.md` when naming external material
@@ -86,3 +87,6 @@ If a curated resource has a local reading packet in `00_system/resources/resourc
 ## Switching Rule
 - A mode remains active until the user explicitly changes it.
 - When switching, confirm the new mode and follow it from that point onward.
+
+## Change Rule
+If the default context or mode boundaries change materially, validate the result against `authoring/CONTEXT_AUDIT.md`.
