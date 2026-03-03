@@ -3,7 +3,7 @@
 ## What This Gate Is
 `Gate 2: Values, References, and Parameter Passing` is the third checkpoint in `Phase 0: C++ Foundations`.
 
-This gate checks whether you can:
+This gate builds your ability to:
 - write small functions that take parameters in different ways
 - compile and run the program from the terminal
 - show, with observable output, what changes after a call by value and a call by reference
@@ -12,17 +12,14 @@ This gate checks whether you can:
 This gate is about stable reasoning at the call site.
 It is not about advanced references, optimization, or generic API design.
 
-The current task title is `Copy Or Alias`.
-The task is how this gate is exercised; it is not the gate name.
-
 ## Learner Flow
-Follow this order:
+Start with [learner/PREP.md](./learner/PREP.md).
 
-1. Read [learner/PREP.md](./learner/PREP.md)
-2. Complete the readiness dialogue with the agent
-3. Work on [learner/TASK.md](./learner/TASK.md)
-4. Write and run your code in `workspace/`
-5. Ask the agent to evaluate your result
+Then:
+1. complete the readiness dialogue with the agent
+2. work on [learner/TASK.md](./learner/TASK.md)
+3. write and run your code in `workspace/`
+4. ask the agent to evaluate your result
 
 ## Current Task
 Current task: `Copy Or Alias`
@@ -46,16 +43,14 @@ g++ main.cpp -std=c++20 -Wall -Wextra -Wpedantic -o main
 ```
 
 ## Files
-For the learner:
-- [learner/PREP.md](./learner/PREP.md): what to read and understand first
-- [learner/TASK.md](./learner/TASK.md): exact task requirements and self-check
+If you are the learner, focus on:
+- [learner/PREP.md](./learner/PREP.md)
+- [learner/TASK.md](./learner/TASK.md)
+- `workspace/`
 
-For the agent:
-- [agent/READINESS.md](./agent/READINESS.md): pre-task dialogue and readiness questions
-- [agent/SPEC.md](./agent/SPEC.md): gate rules and pass criteria
-- [agent/EVALUATION.md](./agent/EVALUATION.md): evaluation sheet
+Agent control material lives in `agent/`:
+- [READINESS.md](./agent/READINESS.md)
+- [SPEC.md](./agent/SPEC.md)
+- [EVALUATION.md](./agent/EVALUATION.md)
 
-For the phase:
-- [../README.md](../README.md): phase purpose and gate lineup
-
-If you are the learner, focus on `learner/` plus `workspace/`.
+For the phase overview, see [../README.md](../README.md).

@@ -3,7 +3,7 @@
 ## What This Gate Is
 `Gate 4: Phase 0 Integration Project` is the fifth and final checkpoint in `Phase 0: C++ Foundations`.
 
-This gate checks whether you can:
+This gate builds your ability to:
 - combine the main Phase 0 concepts in one bounded C++ program
 - compile and run that program from the terminal with the baseline command
 - keep warnings, storage, parameter passing, and lifetime behavior under control at the same time
@@ -12,21 +12,18 @@ This gate checks whether you can:
 This gate is larger than the earlier micro-gates on purpose.
 It is still bounded: one source file, one small console program, and no major new topic.
 
-The current task title is `Session Report`.
-The task is how this gate is exercised; it is not the gate name.
-
 The current task uses a light workplace-style framing:
 you are building a tiny internal console tool for a team that wants a preview/apply flow plus simple lifetime tracing during a processing step.
 The framing is there to make the task feel more real, not to add hidden requirements.
 
 ## Learner Flow
-Follow this order:
+Start with [learner/PREP.md](./learner/PREP.md).
 
-1. Read [learner/PREP.md](./learner/PREP.md)
-2. Complete the readiness dialogue with the agent
-3. Work on [learner/TASK.md](./learner/TASK.md)
-4. Write and run your code in `workspace/`
-5. Ask the agent to evaluate your result
+Then:
+1. complete the readiness dialogue with the agent
+2. work on [learner/TASK.md](./learner/TASK.md)
+3. write and run your code in `workspace/`
+4. ask the agent to evaluate your result
 
 ## Current Task
 Current task: `Session Report`
@@ -50,16 +47,14 @@ g++ main.cpp -std=c++20 -Wall -Wextra -Wpedantic -o main
 ```
 
 ## Files
-For the learner:
-- [learner/PREP.md](./learner/PREP.md): refresh and integration checklist before coding
-- [learner/TASK.md](./learner/TASK.md): exact project requirements, self-check, and evaluation evidence
+If you are the learner, focus on:
+- [learner/PREP.md](./learner/PREP.md)
+- [learner/TASK.md](./learner/TASK.md)
+- `workspace/`
 
-For the agent:
-- [agent/READINESS.md](./agent/READINESS.md): pre-task readiness dialogue
-- [agent/SPEC.md](./agent/SPEC.md): gate rules and pass criteria
-- [agent/EVALUATION.md](./agent/EVALUATION.md): evaluation sheet
+Agent control material lives in `agent/`:
+- [READINESS.md](./agent/READINESS.md)
+- [SPEC.md](./agent/SPEC.md)
+- [EVALUATION.md](./agent/EVALUATION.md)
 
-For the phase:
-- [../README.md](../README.md): phase purpose and gate lineup
-
-If you are the learner, focus on `learner/` plus `workspace/`.
+For the phase overview, see [../README.md](../README.md).

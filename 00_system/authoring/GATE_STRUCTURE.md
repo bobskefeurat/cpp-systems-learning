@@ -94,17 +94,17 @@ Standard section order:
 ### `README.md`
 Purpose:
 - entry point for the gate
-- short orientation
+- short learner-first orientation
 - primary work order
 - where code is written and how it is run
 
 Should contain:
-- what the gate is
+- what the gate builds
 - where the learner starts
 - where code is written
 - how to compile/run at a practical level
 - the current task title when the gate currently has one
-- links to learner and agent materials
+- concise links to learner and agent materials when needed
 
 Should not contain:
 - detailed evaluation logic
@@ -112,6 +112,7 @@ Should not contain:
 - duplicated policy text
 - duplicated task requirements that belong in `learner/TASK.md`
 - submission or evaluation detail that belongs in learner or agent files
+- a long internal file inventory when a short learner-first orientation is enough
 
 Standard section order:
 1. `# Gate N: <Display Name>`
