@@ -1,6 +1,6 @@
 #include <iostream>
 
 int main() {
-    std::cout << "Hello, Gate 0: Compile, Run, and Basic I/O\n";
+    // Gate 0 starter: replace this placeholder with your solution.
     return 0;
 }

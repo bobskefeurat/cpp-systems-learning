@@ -1,48 +1,42 @@
-# Preparation for Gate 0: Compile, Run, and Basic I/O
+# Prepare for Gate 0: Compile, Run, and Basic I/O
 
-## Purpose
-This file tells the learner what to understand before starting work in `Gate 0: Compile, Run, and Basic I/O`.
+## Before You Start
+You do not need full mastery before you begin.
+You only need a workable starting understanding for this gate.
 
-Do not try to master everything first.
-The goal is only to reach a sufficient starting level.
-
-## Core Concepts
-`Gate 0: Compile, Run, and Basic I/O` depends on these core concepts:
+## You Need To Explain
+Before you start the task, make sure you can explain these ideas in simple words:
 
 1. Source file and compile flow
-   The learner should understand, at a basic level:
    - what `main.cpp` is
    - what `g++` does
    - what `-o main` does
 
 2. Basic standard I/O
-   The learner should understand, at a basic level:
    - what `std::cout` is used for
    - what `std::cin` is used for
-   - that the program reads input and prints output
+   - how input and output relate to this task
 
 3. Warnings and compile time vs run time
-   The learner should understand, at a basic level:
    - what a compiler warning is
-   - why warnings matter even if the program runs
-   - the difference between a compile problem and a run-time problem
+   - why warnings matter even if the program still runs
+   - the difference between a compile-time problem and a run-time problem
 
-## Read Before Starting
-Use the reading packets for `Gate 0: Compile, Run, and Basic I/O` first.
-
+## Read This
 Read in this order:
-- Start with [R-001 Card](../../../00_foundation/resource_cards/R-001.md).
-  This is the main reading path for `Gate 0: Compile, Run, and Basic I/O`.
-- Use [R-002 Card](../../../00_foundation/resource_cards/R-002.md) only if you do not understand what the GCC command or flags mean.
-- Use [RESOURCES.md](../../../00_foundation/RESOURCES.md) only if the agent sends you to another curated resource later.
 
-## Stop Condition
-Stop reading and move to the readiness check when you can explain, in simple words:
+- Start with [R-001 Card](../../../00_foundation/resource_cards/R-001.md).
+  Use the `Gate 0` packet in that card as your main reading path.
+- Use [R-002 Card](../../../00_foundation/resource_cards/R-002.md) only if part of the compile command is still unclear.
+- If the agent later sends you to another curated resource, follow that exact reading assignment.
+
+## Stop When
+Move to the readiness check when you can explain:
 - what gets compiled
-- what the compile command does
+- what the compile command does at a basic level
 - how input reaches the program
 - how output leaves the program
 - why warnings are part of the task
 
 ## Next Step
-After preparation, continue to the readiness dialogue with the agent.
+Complete the readiness dialogue with the agent.

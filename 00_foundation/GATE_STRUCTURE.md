@@ -8,6 +8,17 @@ It owns gate-local structure and document responsibilities, not the full global 
 ## Scope
 Applies to all gate folders unless a gate has a clearly documented reason to differ.
 
+## Reuse Rule
+When creating a new phase or gate, start from the templates in `templates/`.
+Keep the standard headings unless there is a documented reason to differ.
+
+When generating new content with AI:
+- copy the closest template first
+- replace every placeholder before considering the file complete
+- keep learner files learner-facing and agent files agent-facing
+- avoid creating a second source of truth for task requirements, evidence, or pass criteria
+- run `.\00_foundation\validate-structure.ps1` before considering the generated content structurally complete
+
 ## Standard Folder Structure
 Each gate should normally use:
 
@@ -37,6 +48,14 @@ Should not contain:
 - duplicated task instructions from a specific gate
 - internal naming-policy discussion unless it is directly needed for orientation
 
+Standard section order:
+1. `# Phase N: <Display Name>`
+2. `## Purpose`
+3. `## What This Phase Builds`
+4. `## Gate Lineup`
+5. `## How To Use This Phase`
+6. `## Where To Start`
+
 ## Responsibility Split
 
 ### `README.md`
@@ -61,6 +80,15 @@ Should not contain:
 - duplicated task requirements that belong in `learner/TASK.md`
 - submission or evaluation detail that belongs in learner or agent files
 
+Standard section order:
+1. `# Gate N: <Display Name>`
+2. `## What This Gate Is`
+3. `## Learner Flow`
+4. `## Current Task`
+5. `## Where To Work`
+6. `## Build And Run`
+7. `## Files`
+
 ### `learner/`
 Purpose:
 - learner-facing working material
@@ -80,6 +108,7 @@ Should contain only:
 - what good completion looks like
 - test cases
 - check questions
+- direct learner-facing language (`you`, `your`)
 
 Should not contain:
 - AI control rules
@@ -99,6 +128,14 @@ Should contain:
 - a practical stop condition
 - the next step into readiness
 
+Standard section order:
+1. `# Prepare for Gate N: <Display Name>`
+2. `## Before You Start`
+3. `## You Need To Explain`
+4. `## Read This`
+5. `## Stop When`
+6. `## Next Step`
+
 Should not contain:
 - the exact task requirements
 - detailed test cases
@@ -116,6 +153,17 @@ Should contain:
 - test cases
 - check questions
 - submission evidence when needed
+
+Standard section order:
+1. `# Task: <Task Title>`
+2. `## Goal`
+3. `## Before You Start`
+4. `## Task`
+5. `## Constraints`
+6. `## Build And Run` (when applicable)
+7. `## Self-Check`
+8. `## Be Ready To Explain`
+9. `## Bring To Evaluation` (when needed)
 
 Should not contain:
 - long preparation material
@@ -142,17 +190,57 @@ Should not contain:
 - learner-oriented task framing
 - unnecessary tutorial writing
 
+Standard file section order:
+- `agent/READINESS.md`
+  1. `# Readiness Check for Gate N: <Display Name>`
+  2. `## Purpose`
+  3. `## Core Concepts Covered`
+  4. `## Standard Question Set`
+  5. `## Readiness Standard`
+  6. `## If the Learner Is Not Ready`
+  7. `## Suggested AI Follow-Up Format`
+  8. `## Next Step`
+- `agent/SPEC.md`
+  1. `# Gate N Spec: <Display Name> (draft v0)`
+  2. `## Purpose`
+  3. `## Current Baseline`
+  4. `## What This Gate Covers`
+  5. `## Required Evidence`
+  6. `## Pass Requirements`
+  7. `## Not Pass Conditions`
+  8. `## Suggested Task Shape`
+  9. `## Diagnostic Focus for the Rubric`
+  10. `## Common Failure Modes`
+  11. `## AI Guidance Constraints`
+  12. `## AI Use During The Task`
+  13. `## Open Decisions Still Marked as Provisional` (optional)
+- `agent/EVALUATION.md`
+  1. `# Gate N Evaluation Sheet: <Display Name> (draft v0)`
+  2. `## Purpose`
+  3. `## Gate Result`
+  4. `## Binary Checklist`
+  5. `## Gate Decision Rule`
+  6. `## Rubric Snapshot`
+  7. `## Strengths`
+  8. `## Weakest Dimension(s)`
+  9. `## Recommended Repetition`
+  10. `## Next Check Question or Test Case`
+  11. `## Resource Reminder`
+  12. `## Notes for the Evaluator`
+
 ### `workspace/`
 Purpose:
 - the actual coding area for the learner
 
 Should contain:
 - source files
+- task-aligned starter files when appropriate
 - produced binaries if kept locally
 - other gate-local work artifacts when appropriate
 
 Should not contain:
 - policy or guidance documents
+- starter code that contradicts the current task
 
 ## Standard Learner Flow
 The default learner flow is:
@@ -195,6 +283,20 @@ Examples:
 - Keep agent content agent-facing.
 - Shared factual information may appear in both places when needed.
 - Avoid duplicating policy text unless it is needed locally for operational clarity.
+- If learner materials link directly to a shared support file, that file must also be safe for learner-facing use.
+
+## Generation Checklist
+Before a newly generated phase or gate is considered ready:
+- the content starts from the matching template in `templates/`
+- all template placeholders are replaced
+- learner files do not contain agent-only instructions
+- agent files do not repeat learner-facing task wording unless operationally necessary
+- exact task requirements live in `learner/TASK.md`
+- learner-facing evidence lives in `learner/TASK.md`
+- pass / not pass rules live in `agent/SPEC.md`
+- evaluator checklist lives in `agent/EVALUATION.md`
+- starter files in `workspace/` match the current task
+- `.\00_foundation\validate-structure.ps1` passes
 
 ## Resource Use
 - Learner prep should point to exact reading packets when possible.

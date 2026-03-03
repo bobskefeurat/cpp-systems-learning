@@ -29,6 +29,8 @@ It should tell an agent which documents are governing, which are supporting, and
 ## Supporting Documents
 - `SOURCES.md`
   Candidate pool for future curation. Not a direct learner-facing source list.
+- `templates/README.md`
+  Reusable templates for new phases and gates.
 - `resource_cards/README.md`
   Rules for local reading packets.
 - `resource_cards/R-###.md`
@@ -45,7 +47,8 @@ It should tell an agent which documents are governing, which are supporting, and
 2. Read `MODES.md` when mode-based behavior is active for the chat.
 3. Read `GOALS.md`, `RULEBOOK.md`, and `AI_TEACHER_POLICY.md` to understand intent and behavior.
 4. Read `GLOSSARY.md` and `GATE_STRUCTURE.md` to understand terms and local gate conventions.
-5. When working inside a specific phase, read the relevant phase `README.md` before the gate files.
-6. Read `RESOURCES.md` and `RESOURCE_MAP.md` before naming external material.
-7. Use `resource_cards/` when a curated resource has an exact reading packet.
-8. Use `SOURCES.md` only for curation work, not for normal learner-facing guidance.
+5. Use `templates/` when creating a new phase or gate.
+6. When working inside a specific phase, read the relevant phase `README.md` before the gate files.
+7. Read `RESOURCES.md` and `RESOURCE_MAP.md` before naming external material.
+8. Use `resource_cards/` when a curated resource has an exact reading packet.
+9. Use `SOURCES.md` only for curation work, not for normal learner-facing guidance.

@@ -24,6 +24,8 @@ But a learner also needs:
 ## Rule
 Use resource cards when a gate needs exact reading guidance.
 Do not send the learner to a whole site or manual if a smaller reading packet is enough.
+Because learner materials may link directly to these cards, each card should stay safe for learner-facing use.
+Do not place agent-only notes in a card that a learner is expected to open directly.
 
 ## Packet Structure
 - A resource card may contain one or more gate-specific packets.

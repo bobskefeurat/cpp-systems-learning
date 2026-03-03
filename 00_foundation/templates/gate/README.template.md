@@ -1,24 +1,18 @@
-# Gate 0: Compile, Run, and Basic I/O
+# Gate {{N}}: {{Display Name}}
 
 ## What This Gate Is
-`Gate 0: Compile, Run, and Basic I/O` is the first checkpoint in `Phase 0: C++ Foundations`.
+`Gate {{N}}: {{Display Name}}` is a checkpoint in `Phase {{N}}: {{Display Name}}`.
 
 This gate checks whether you can:
-- edit a small C++ program
-- compile it from the terminal
-- handle warnings
-- use basic input and output
+- {{ability 1}}
+- {{ability 2}}
+- {{ability 3}}
 
-This gate is not about advanced C++.
-It is about basic execution discipline.
+This gate is not about {{what it is not about}}.
+It is about {{what it is about}}.
 
-The current task title is `Two Numbers`.
+The current task title is `{{Task Title}}`.
 The task is how this gate is exercised; it is not the gate name.
-
-## Folder Layout
-- `learner/`: what the learner should read before and during the task
-- `agent/`: AI-facing rules for readiness, evaluation, and gate control
-- `workspace/`: where the code is written and compiled
 
 ## Learner Flow
 Follow this order:
@@ -30,7 +24,7 @@ Follow this order:
 5. Ask the agent to evaluate your result
 
 ## Current Task
-Current task: `Two Numbers`
+Current task: `{{Task Title}}`
 
 Use [learner/TASK.md](./learner/TASK.md) for the exact prompt, constraints, self-check, and evaluation evidence.
 
@@ -38,16 +32,15 @@ Use [learner/TASK.md](./learner/TASK.md) for the exact prompt, constraints, self
 Write your code in:
 
 ```text
-workspace/main.cpp
+{{workspace path}}
 ```
 
 ## Build And Run
 Run these commands from the gate root:
 
 ```powershell
-Set-Location workspace
-g++ main.cpp -std=c++20 -Wall -Wextra -Wpedantic -o main
-.\main
+{{build step}}
+{{run step}}
 ```
 
 ## Files

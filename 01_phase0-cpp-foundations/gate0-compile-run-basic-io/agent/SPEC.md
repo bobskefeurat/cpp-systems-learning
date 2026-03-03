@@ -14,14 +14,9 @@ This gate is about execution basics, not cleverness.
 - OS path: Windows
 - Compiler baseline: `g++` from `MSYS2 UCRT64`
 - Scope: single-file programs only in `workspace/`
-- Provisional language standard: `-std=c++20`
+- Language standard: `-std=c++20`
 - Required warning flags: `-Wall -Wextra -Wpedantic`
-
-Baseline compile command, run from inside `workspace/`:
-
-```powershell
-g++ main.cpp -std=c++20 -Wall -Wextra -Wpedantic -o main
-```
+- Baseline compile command: use the command defined in [../learner/TASK.md](../learner/TASK.md)
 
 ## What This Gate Covers
 - Basic syntax
@@ -32,14 +27,12 @@ g++ main.cpp -std=c++20 -Wall -Wextra -Wpedantic -o main
 - Running the produced executable
 
 ## Required Evidence
-To evaluate the gate, the learner should provide:
-- the final source file `workspace/main.cpp`
-- the exact compile command used
-- the compiler output from a successful build
-- the program output from at least one successful run
-- short written answers to the check questions in `../learner/TASK.md`
+The learner-facing evidence list lives in [../learner/TASK.md](../learner/TASK.md).
 
-During evaluation, the learner may also be asked to explain one compiler message or warning in their own words.
+For evaluation, verify that the learner has provided:
+- the required artifacts listed in `../learner/TASK.md`
+- answers to the check questions in `../learner/TASK.md`
+- a short explanation of one compiler message or warning when needed
 
 ## Pass Requirements
 The learner passes `Gate 0: Compile, Run, and Basic I/O` if they can show all of the following:
@@ -126,5 +119,4 @@ When the learner gets stuck during the task, the AI should:
 
 ## Open Decisions Still Marked as Provisional
 - Whether `-Werror` should be required in `Gate 0: Compile, Run, and Basic I/O`
-- Whether `-std=c++20` remains the official standard for `Phase 0: C++ Foundations`
 - The exact diagnostic questions used during pass/fail evaluation

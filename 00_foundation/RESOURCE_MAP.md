@@ -11,7 +11,7 @@ Used for targeted repetition and consistent references.
 
 ## Baseline Note (v0)
 - Current early-course baseline: `GCC via MSYS2 UCRT64 on Windows`.
-- The exact language standard for `Phase 0: C++ Foundations` is still an open repo decision; do not infer it from this map alone.
+- The active `Gate 0: Compile, Run, and Basic I/O` materials currently use `-std=c++20`.
 
 ## Map (v0-start)
 | Concept / problem | When it appears | Primary resource ID | Secondary resource ID | Note |
