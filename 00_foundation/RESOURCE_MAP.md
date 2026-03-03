@@ -22,3 +22,4 @@ Used for targeted repetition and consistent references.
 | Stack vs heap | Mixes up storage and lifetime | R-001 | R-003 | Teach this as lifetime/storage-duration reasoning first; use `R-003` only for precise follow-up definitions. |
 | Value vs reference | Mixes up copy, reference, and parameter passing | R-001 | R-004 | Avoid advanced topics here; the goal is stable reasoning about copying, aliasing, and what changes at call sites. |
 | Basic RAII | Does not understand lifetime/ownership in a simple class | R-001 | R-003 | Keep `Gate 3: First Class, Lifetime, and Basic RAII` focused on deterministic cleanup tied to object lifetime, not on broader smart-pointer coverage yet. |
+| Phase 0 integration | Can explain individual ideas but cannot combine them in one bounded program | R-001 | R-003 | Use the Gate 4 packet as a refresh map and remediate the weakest subsystem instead of restarting the whole integration task. |

@@ -119,3 +119,4 @@ When you ask for evaluation, bring:
 - the compiler output from a successful build
 - the output from at least one successful run
 - short written answers to the check questions
+- if you used a higher-help mode, your own explanation of what changed and the follow-up variant or check requested by the agent

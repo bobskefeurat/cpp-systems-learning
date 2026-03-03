@@ -18,6 +18,7 @@ When generating new content with AI:
 - keep learner files learner-facing and agent files agent-facing
 - avoid creating a second source of truth for task requirements, evidence, or pass criteria
 - run `.\00_foundation\validate-structure.ps1` before considering the generated content structurally complete
+- use `GATE_VALIDATION.md` for the broader quality-check process after the structure script passes
 
 ## Standard Folder Structure
 Each gate should normally use:
@@ -29,6 +30,34 @@ Each gate should normally use:
 
 Gate folders normally live inside a phase folder whose path begins with a stable phase ID, such as `01_phase0-cpp-foundations`.
 The containing phase folder should normally have its own `README.md` that names the phase and lists its gates.
+
+## Phase-Ending Integration Gates (v0)
+A phase may end with one integration gate.
+An integration gate still uses the normal gate folder structure unless a documented exception is needed.
+
+Purpose:
+- integrate several earlier gate concepts in one bounded task
+- test transfer, debugging, and explanation across those concepts
+- end the phase with a meaningful but still controlled project
+
+Default design rules:
+- keep the same binary `pass` / `not pass` model as other gates
+- keep the task larger than a micro-gate but still finishable in a few hours across several sessions
+- combine several earlier gate concepts from the phase without introducing a major new topic
+- allow some bounded design choice when it improves ownership, but keep required behaviors and invariants explicit
+- a light authentic context is allowed when it helps motivation or transfer, but it must stay a framing device and not become a source of hidden requirements
+- if full exact output is not practical, define required checkpoints, markers, or sample runs that still make pass requirements observable
+
+For learner materials:
+- `learner/PREP.md` should act as a refresh and integration checklist, not as a new theory chapter
+- `learner/TASK.md` should say which parts are fixed requirements and which parts allow bounded freedom
+- `learner/TASK.md` should require evidence from more than one run or check when that helps prevent hardcoded solutions
+- if a contextual story is used, `learner/TASK.md` should state clearly that the exact technical requirements remain the source of truth
+
+For agent materials:
+- `agent/SPEC.md` should make the integrated concept coverage explicit
+- `agent/EVALUATION.md` should check both functional completion and the structured explanation/defense required by the task
+- remediation should target the weakest missing subsystem or invariant instead of restarting the whole integration gate when a smaller correction is enough
 
 ### Phase `README.md`
 Purpose:
@@ -101,6 +130,10 @@ May later contain:
 - `EXAMPLES.md`
 - `FAQ.md`
 - other learner-facing support files when needed
+
+If `EXAMPLES.md` is used:
+- it should contain controlled examples only when the gate deliberately allows them
+- it must not become a default answer-key dump
 
 Should contain only:
 - what the learner should read
@@ -185,6 +218,9 @@ Should contain:
 - evaluator checklist
 - AI behavior constraints
 - allowed resource usage for that gate
+- help-escalation triggers when stronger support is allowed
+- remediation expectations for `not pass`
+- enough evaluation guidance to tell the agent which evidence sources matter for the gate
 
 Should not contain:
 - learner-oriented task framing
@@ -258,8 +294,9 @@ The default agent flow is:
 1. Ensure the learner has completed preparation
 2. Use `learner/PREP.md` to identify the gate's core concepts
 3. Run the readiness check from `agent/READINESS.md`
-4. Support work on `learner/TASK.md` inside `workspace/` under the global policy
-5. Evaluate using `agent/SPEC.md` and `agent/EVALUATION.md`
+4. Support work on `learner/TASK.md` inside `workspace/` under the global policy and gate-local escalation rules
+5. Evaluate using `agent/SPEC.md` and `agent/EVALUATION.md`, verifying pass requirements against the relevant evidence sources
+6. If the result is `not pass`, assign a concrete remediation loop and reattempt path
 
 ## Required Files
 A gate is normally not considered structurally complete without:
@@ -295,8 +332,11 @@ Before a newly generated phase or gate is considered ready:
 - learner-facing evidence lives in `learner/TASK.md`
 - pass / not pass rules live in `agent/SPEC.md`
 - evaluator checklist lives in `agent/EVALUATION.md`
+- `not pass` outcomes include concrete remediation and reattempt evidence
+- gate evaluation guidance makes clear when code, compile output, runtime output, or learner explanation must be checked
 - starter files in `workspace/` match the current task
 - `.\00_foundation\validate-structure.ps1` passes
+- the broader validation process in `GATE_VALIDATION.md` has been applied when the gate is new or materially changed
 
 ## Resource Use
 - Learner prep should point to exact reading packets when possible.

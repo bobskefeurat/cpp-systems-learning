@@ -1,4 +1,4 @@
-# Readiness Check for Gate {{N}}: {{Display Name}}
+# Readiness Check for Gate 3: First Class, Lifetime, and Basic RAII
 
 ## Purpose
 This file defines the short pre-task dialogue that happens before the learner gets solution guidance.
@@ -9,32 +9,33 @@ It only answers one question:
 `Is the learner ready to start solving the task?`
 
 ## Core Concepts Covered
-The readiness check must cover the core concepts for `Gate {{N}}: {{Display Name}}` defined in [../learner/PREP.md](../learner/PREP.md):
+The readiness check must cover the core concepts for `Gate 3: First Class, Lifetime, and Basic RAII` defined in [../learner/PREP.md](../learner/PREP.md):
 
-1. {{Core concept 1}}
-2. {{Core concept 2}}
-3. {{Core concept 3}}
+1. Class, object, and constructor
+2. Destructor and scope-bound lifetime
+3. Basic RAII thinking
 
 ## Standard Question Set
-`Gate {{N}}: {{Display Name}}` uses {{N}} readiness questions because the task depends on {{N}} core concepts.
+`Gate 3: First Class, Lifetime, and Basic RAII` uses 3 readiness questions because the task depends on 3 core concepts.
 
 ### Question 1
 Explain, in your own words:
-- {{prompt 1}}
-- {{prompt 2}}
-- {{prompt 3}}
+- what a class is in this gate
+- what an object of that class is
+- what the constructor does when an object is created
+- how a small public member function can let `observe` read the tag
 
 ### Question 2
 Explain, in your own words:
-- {{prompt 1}}
-- {{prompt 2}}
-- {{prompt 3}}
+- what the destructor does in this gate
+- when a block-local object is destroyed
+- why the inner object can be destroyed before `main` ends
 
 ### Question 3
 Explain, in your own words:
-- {{prompt 1}}
-- {{prompt 2}}
-- {{prompt 3}}
+- why cleanup tied to the destructor is deterministic in this gate
+- why passing an object to a helper function does not decide when the object is destroyed
+- what it would mean if this class cleaned up a file or some other resource
 
 ## Readiness Standard
 The learner is ready to start when:
@@ -63,19 +64,21 @@ If the learner is not ready, the AI should respond in this shape:
 Status: Not ready yet.
 
 Q1: Sufficient / Not sufficient.
-- Name exactly what is missing in {{concept area}}.
+- Name exactly what is missing about class, object, constructor, or the class interface used by `observe`.
 - If needed, point to:
-  - `{{R-###}}` {{specific step or page}}
+  - `R-001` step 1 or 2
 
 Q2: Sufficient / Not sufficient.
-- Name exactly what is missing in {{concept area}}.
+- Name exactly what is missing about destructor timing or scope-bound lifetime.
 - If needed, point to:
-  - `{{R-###}}` {{specific step or page}}
+  - `R-001` step 3
+  - `R-003` lifetime or destructor entry only if the learner still needs exact wording
 
 Q3: Sufficient / Not sufficient.
-- Name exactly what is missing in {{concept area}}.
+- Name exactly what is missing about deterministic cleanup or the RAII idea.
 - If needed, point to:
-  - `{{R-###}}` {{specific step or page}}
+  - `R-001` step 3
+  - `R-003` only if the learner still uses vague terminology about lifetime
 
 Then:
 - ask the learner to answer again in their own words

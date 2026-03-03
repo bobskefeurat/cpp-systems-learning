@@ -28,6 +28,11 @@ For evaluation, verify that the learner has provided:
 - the required artifacts listed in `../learner/TASK.md`
 - answers to the check questions in `../learner/TASK.md`
 - a short explanation of {{follow-up requirement}} when needed
+- higher-help follow-up evidence when the learner used a controlled worked example or a reference solution
+
+For pass/fail evaluation:
+- verify each pass requirement against the relevant evidence source
+- do not treat matching runtime output alone as proof when the gate also requires a specific code shape, mechanism, or explanation
 
 ## Pass Requirements
 The learner passes `Gate {{N}}: {{Display Name}}` if they can show all of the following:
@@ -77,6 +82,8 @@ For `Gate {{N}}: {{Display Name}}`, the AI should:
 - {{constraint 1}}
 - {{constraint 2}}
 - {{constraint 3}}
+- keep stronger help gated by the escalation policy instead of jumping straight to a solution
+- evaluate against code, compile/build evidence, runtime output, and learner explanation as needed for the gate
 
 The AI may refer to:
 - `{{R-###}}` for {{reason}}
@@ -86,6 +93,17 @@ When the learner gets stuck during the task, the AI should:
 - {{task support action 1}}
 - {{task support action 2}}
 - {{task support action 3}}
+
+Use this escalation order unless the gate explicitly narrows it further:
+1. Ask for the learner's current attempt plus their own diagnosis.
+2. Prefer Level 1-2 hints first.
+3. Use Level 3 after a real attempt or clearly stated blocker.
+4. Use a controlled worked example or completion skeleton only after the learner has shown concrete effort and lower levels were not enough.
+5. Use a full reference solution only on explicit request.
+
+After a controlled worked example or reference solution, require:
+- the learner's own explanation of what changed and why
+- one small near-transfer variant or focused follow-up check
 
 ## Open Decisions Still Marked as Provisional
 - {{open decision 1}}

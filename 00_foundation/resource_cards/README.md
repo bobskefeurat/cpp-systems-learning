@@ -16,6 +16,8 @@ But a learner also needs:
 ## Current Cards
 - [R-001.md](./R-001.md)
 - [R-002.md](./R-002.md)
+- [R-003.md](./R-003.md)
+- [R-004.md](./R-004.md)
 
 ## Naming Rule
 - If a card exists for a curated resource, it should use the same ID as the resource.

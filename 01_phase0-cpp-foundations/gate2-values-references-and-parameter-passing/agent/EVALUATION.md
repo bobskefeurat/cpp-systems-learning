@@ -1,7 +1,7 @@
-# Gate 0 Evaluation Sheet: Compile, Run, and Basic I/O (draft v0)
+# Gate 2 Evaluation Sheet: Values, References, and Parameter Passing (draft v0)
 
 ## Purpose
-Use this sheet to evaluate `Gate 0: Compile, Run, and Basic I/O` with:
+Use this sheet to evaluate `Gate 2: Values, References, and Parameter Passing` with:
 - a binary gate result: `pass` or `not pass`
 - a short diagnostic note aligned with the project rubric
 
@@ -19,12 +19,13 @@ Mark each item as `yes` or `no`.
 | Learner compiled from the terminal using the baseline command |  |
 | Program built successfully |  |
 | Program built with zero warnings |  |
-| Program read two integers correctly |  |
-| Program printed the correct sum |  |
-| Output format matched the task requirements |  |
-| Learner explained `g++`, `main.cpp`, and `-o main` in their own words |  |
-| Learner could distinguish compile time from run time |  |
-| Learner could use at least one compiler message to correct a mistake |  |
+| Program output matched the task requirements exactly |  |
+| Program included one by-value function and one by-reference function |  |
+| `main` used the same caller variable in both function calls |  |
+| Learner explained argument vs parameter in their own words |  |
+| Learner explained why the by-value call left the caller unchanged |  |
+| Learner explained why the by-reference call changed the caller |  |
+| Learner could explain one specific follow-up about changing the parameter-passing setup |  |
 | If higher-help mode was used, learner explained the fix and completed the follow-up variant/check |  |
 
 ## Gate Decision Rule
@@ -63,21 +64,19 @@ Use the project rubric scale:
 - 
 
 ## Resource Reminder
-For repetition in `Gate 0: Compile, Run, and Basic I/O`, prefer:
+For repetition in `Gate 2: Values, References, and Parameter Passing`, prefer:
 - `R-001` for the main learning path
-- `R-002` for exact GCC flag meaning
+- `R-004` for conceptual correction when the learner forms bad rules of thumb
 
 ## Notes for the Evaluator
 - Do not let rubric scores override the binary gate result.
 - Do not ignore warnings because the program "works".
 - Prefer concrete notes over general praise.
 - Verify each pass requirement against the relevant evidence source instead of inferring `pass` from runtime output alone.
-- Use compile command, compiler output, runtime output, and learner explanation together for this gate.
-- If the submission artifacts do not already show a compiler diagnostic, ask the learner to explain a simple compiler message or warning as a short follow-up.
-- If the learner passes mechanically but cannot explain the compile-and-run flow, the result should remain `not pass`.
+- Inspect code directly for function signatures and whether `main` uses the same caller variable in both calls.
 - If the weakest dimension is `Compilation and warnings`, require a rebuild with the baseline command plus a short explanation of each flag used.
-- If the weakest dimension is `Correctness against requirements`, require rerunning at least two task test cases and correcting the output shape.
-- If the weakest dimension is `Conceptual understanding and explanation`, require rewritten answers to the relevant check questions in the learner's own words.
-- If the weakest dimension is `Debugging/process`, require the learner to point to the failing command or line and explain what the feedback means.
+- If the weakest dimension is `Correctness against requirements`, require rerunning the exact output check and fixing the function behavior rather than the print text only.
+- If the weakest dimension is `Conceptual understanding and explanation`, require rewritten answers that identify the argument, the parameter, and what changes after each call.
+- If the weakest dimension is `Debugging/process`, require the learner to point to the failing line or wrong call and explain what it currently proves.
 - If the weakest dimension is `Code hygiene and readability`, require a focused cleanup pass and a short justification of the changes.
 - If higher-help mode was used, check the learner's explanation and follow-up variant before treating understanding as stable.

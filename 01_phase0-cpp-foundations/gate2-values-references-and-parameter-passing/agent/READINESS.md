@@ -1,4 +1,4 @@
-# Readiness Check for Gate {{N}}: {{Display Name}}
+# Readiness Check for Gate 2: Values, References, and Parameter Passing
 
 ## Purpose
 This file defines the short pre-task dialogue that happens before the learner gets solution guidance.
@@ -9,32 +9,32 @@ It only answers one question:
 `Is the learner ready to start solving the task?`
 
 ## Core Concepts Covered
-The readiness check must cover the core concepts for `Gate {{N}}: {{Display Name}}` defined in [../learner/PREP.md](../learner/PREP.md):
+The readiness check must cover the core concepts for `Gate 2: Values, References, and Parameter Passing` defined in [../learner/PREP.md](../learner/PREP.md):
 
-1. {{Core concept 1}}
-2. {{Core concept 2}}
-3. {{Core concept 3}}
+1. Arguments and parameters
+2. Pass by value
+3. Pass by reference
 
 ## Standard Question Set
-`Gate {{N}}: {{Display Name}}` uses {{N}} readiness questions because the task depends on {{N}} core concepts.
+`Gate 2: Values, References, and Parameter Passing` uses 3 readiness questions because the task depends on 3 core concepts.
 
 ### Question 1
 Explain, in your own words:
-- {{prompt 1}}
-- {{prompt 2}}
-- {{prompt 3}}
+- what an argument is in this gate
+- what a parameter is in this gate
+- why the two words are related but not interchangeable
 
 ### Question 2
 Explain, in your own words:
-- {{prompt 1}}
-- {{prompt 2}}
-- {{prompt 3}}
+- what the function receives when an `int` is passed by value
+- why changing that parameter does not change the caller's variable
+- what the caller still sees after the function returns
 
 ### Question 3
 Explain, in your own words:
-- {{prompt 1}}
-- {{prompt 2}}
-- {{prompt 3}}
+- what `int&` means in a parameter list for this gate
+- why changing that parameter changes the caller's variable
+- why a reference parameter is not the same thing as a pointer parameter
 
 ## Readiness Standard
 The learner is ready to start when:
@@ -63,19 +63,20 @@ If the learner is not ready, the AI should respond in this shape:
 Status: Not ready yet.
 
 Q1: Sufficient / Not sufficient.
-- Name exactly what is missing in {{concept area}}.
+- Name exactly what is missing about arguments and parameters.
 - If needed, point to:
-  - `{{R-###}}` {{specific step or page}}
+  - `R-001` step 1
 
 Q2: Sufficient / Not sufficient.
-- Name exactly what is missing in {{concept area}}.
+- Name exactly what is missing about pass by value and copying.
 - If needed, point to:
-  - `{{R-###}}` {{specific step or page}}
+  - `R-001` step 1 or 3
 
 Q3: Sufficient / Not sufficient.
-- Name exactly what is missing in {{concept area}}.
+- Name exactly what is missing about reference aliasing or pointer/reference confusion.
 - If needed, point to:
-  - `{{R-###}}` {{specific step or page}}
+  - `R-001` step 2 or 3
+  - `R-004` only if the learner still uses bad rules of thumb
 
 Then:
 - ask the learner to answer again in their own words

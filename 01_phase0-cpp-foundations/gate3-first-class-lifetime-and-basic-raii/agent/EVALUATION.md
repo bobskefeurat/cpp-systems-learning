@@ -1,7 +1,7 @@
-# Gate 0 Evaluation Sheet: Compile, Run, and Basic I/O (draft v0)
+# Gate 3 Evaluation Sheet: First Class, Lifetime, and Basic RAII (draft v0)
 
 ## Purpose
-Use this sheet to evaluate `Gate 0: Compile, Run, and Basic I/O` with:
+Use this sheet to evaluate `Gate 3: First Class, Lifetime, and Basic RAII` with:
 - a binary gate result: `pass` or `not pass`
 - a short diagnostic note aligned with the project rubric
 
@@ -19,12 +19,16 @@ Mark each item as `yes` or `no`.
 | Learner compiled from the terminal using the baseline command |  |
 | Program built successfully |  |
 | Program built with zero warnings |  |
-| Program read two integers correctly |  |
-| Program printed the correct sum |  |
-| Output format matched the task requirements |  |
-| Learner explained `g++`, `main.cpp`, and `-o main` in their own words |  |
-| Learner could distinguish compile time from run time |  |
-| Learner could use at least one compiler message to correct a mistake |  |
+| Program output matched the task requirements exactly |  |
+| Program defined `ScopeMarker` as a real class with one `char` member |  |
+| Program exposed the tag through a public `tag()` member function that `observe` used |  |
+| Program used a constructor for the `construct:` lines and a destructor for the `destroy:` lines |  |
+| Program used an `observe` helper function with a `ScopeMarker&` parameter |  |
+| Program created one outer object in `main` and one inner object inside a nested block |  |
+| Learner explained why the inner object is destroyed before `after inner block` |  |
+| Learner explained how `observe` gets access to the tag |  |
+| Learner explained why tying cleanup to destruction is the basic RAII idea in this gate |  |
+| Learner could answer one specific follow-up about changed scope or resource-cleanup timing |  |
 | If higher-help mode was used, learner explained the fix and completed the follow-up variant/check |  |
 
 ## Gate Decision Rule
@@ -44,7 +48,7 @@ Use the project rubric scale:
 | Compilation and warnings |  |  |
 | Correctness against requirements |  |  |
 | Conceptual understanding and explanation |  |  |
-| Debugging/process |  |  |
+| Lifetime/ownership/safety |  |  |
 | Code hygiene and readability |  |  |
 
 ## Strengths
@@ -63,21 +67,19 @@ Use the project rubric scale:
 - 
 
 ## Resource Reminder
-For repetition in `Gate 0: Compile, Run, and Basic I/O`, prefer:
+For repetition in `Gate 3: First Class, Lifetime, and Basic RAII`, prefer:
 - `R-001` for the main learning path
-- `R-002` for exact GCC flag meaning
+- `R-003` for exact lifetime or destructor wording
 
 ## Notes for the Evaluator
 - Do not let rubric scores override the binary gate result.
 - Do not ignore warnings because the program "works".
 - Prefer concrete notes over general praise.
 - Verify each pass requirement against the relevant evidence source instead of inferring `pass` from runtime output alone.
-- Use compile command, compiler output, runtime output, and learner explanation together for this gate.
-- If the submission artifacts do not already show a compiler diagnostic, ask the learner to explain a simple compiler message or warning as a short follow-up.
-- If the learner passes mechanically but cannot explain the compile-and-run flow, the result should remain `not pass`.
+- Inspect code directly for the real class definition, `tag()` member function, constructor, destructor, reference parameter, and nested block.
 - If the weakest dimension is `Compilation and warnings`, require a rebuild with the baseline command plus a short explanation of each flag used.
-- If the weakest dimension is `Correctness against requirements`, require rerunning at least two task test cases and correcting the output shape.
-- If the weakest dimension is `Conceptual understanding and explanation`, require rewritten answers to the relevant check questions in the learner's own words.
-- If the weakest dimension is `Debugging/process`, require the learner to point to the failing command or line and explain what the feedback means.
+- If the weakest dimension is `Correctness against requirements`, require rerunning the exact output check and replacing hardcoded lifetime messages with the intended class behavior.
+- If the weakest dimension is `Conceptual understanding and explanation`, require rewritten answers that name when each object is created, when it is destroyed, how `observe` gets the tag, and why the helper call does not change that.
+- If the weakest dimension is `Lifetime/ownership/safety`, require the learner to mark the lifetime boundary for each object and explain what cleanup would mean for a simple file-like resource.
 - If the weakest dimension is `Code hygiene and readability`, require a focused cleanup pass and a short justification of the changes.
 - If higher-help mode was used, check the learner's explanation and follow-up variant before treating understanding as stable.

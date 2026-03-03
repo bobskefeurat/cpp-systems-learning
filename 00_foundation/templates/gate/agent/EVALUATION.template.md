@@ -20,9 +20,12 @@ Mark each item as `yes` or `no`.
 | {{binary check 2}} |  |
 | {{binary check 3}} |  |
 
+Add a gate-specific checklist item for higher-help follow-up when the gate allows controlled worked examples or reference-solution escalation.
+
 ## Gate Decision Rule
 - `pass` requires all checklist items to be `yes`
 - any `no` means `not pass`
+- if the result is `not pass`, complete `Recommended Repetition` with a concrete remediation loop before ending the evaluation
 
 ## Rubric Snapshot
 Use the project rubric scale:
@@ -44,7 +47,10 @@ Use the project rubric scale:
 - 
 
 ## Recommended Repetition
-- 
+- Weak dimension to target:
+- Required micro-task:
+- Assigned resource:
+- Reattempt evidence:
 
 ## Next Check Question or Test Case
 - 
@@ -57,4 +63,8 @@ For repetition in `Gate {{N}}: {{Display Name}}`, prefer:
 - Do not let rubric scores override the binary gate result.
 - Do not ignore warnings because the program "works".
 - Prefer concrete notes over general praise.
+- Tie `not pass` outcomes to the weakest dimension and the smallest corrective task.
+- If higher-help mode was used, check the learner's explanation and near-transfer follow-up before treating understanding as stable.
+- Verify each pass requirement against the relevant evidence source instead of inferring `pass` from runtime output alone.
+- Inspect code directly when the gate requires a specific structure, invariant, or mechanism.
 - Add gate-specific evaluator notes here when needed.

@@ -1,4 +1,4 @@
-# Readiness Check for Gate {{N}}: {{Display Name}}
+# Readiness Check for Gate 1: Stack, Heap, and Storage Basics
 
 ## Purpose
 This file defines the short pre-task dialogue that happens before the learner gets solution guidance.
@@ -9,32 +9,32 @@ It only answers one question:
 `Is the learner ready to start solving the task?`
 
 ## Core Concepts Covered
-The readiness check must cover the core concepts for `Gate {{N}}: {{Display Name}}` defined in [../learner/PREP.md](../learner/PREP.md):
+The readiness check must cover the core concepts for `Gate 1: Stack, Heap, and Storage Basics` defined in [../learner/PREP.md](../learner/PREP.md):
 
-1. {{Core concept 1}}
-2. {{Core concept 2}}
-3. {{Core concept 3}}
+1. Scope and automatic lifetime
+2. Static and dynamic storage at a simple level
+3. Stack/heap language without myths
 
 ## Standard Question Set
-`Gate {{N}}: {{Display Name}}` uses {{N}} readiness questions because the task depends on {{N}} core concepts.
+`Gate 1: Stack, Heap, and Storage Basics` uses 3 readiness questions because the task depends on 3 core concepts.
 
 ### Question 1
 Explain, in your own words:
-- {{prompt 1}}
-- {{prompt 2}}
-- {{prompt 3}}
+- what a local variable is in this gate
+- what happens when a block ends
+- why a variable from an inner block can stop existing before `main` ends
 
 ### Question 2
 Explain, in your own words:
-- {{prompt 1}}
-- {{prompt 2}}
-- {{prompt 3}}
+- what the global integer represents in this gate
+- what `new int{30}` creates at a high level
+- what `delete` is doing in this gate
 
 ### Question 3
 Explain, in your own words:
-- {{prompt 1}}
-- {{prompt 2}}
-- {{prompt 3}}
+- which objects in this gate are automatic, static, and dynamic
+- why the local pointer variable is not the same object as the dynamic integer
+- why "stack vs heap" is only shorthand and not the whole explanation
 
 ## Readiness Standard
 The learner is ready to start when:
@@ -63,19 +63,22 @@ If the learner is not ready, the AI should respond in this shape:
 Status: Not ready yet.
 
 Q1: Sufficient / Not sufficient.
-- Name exactly what is missing in {{concept area}}.
+- Name exactly what is missing in scope and automatic lifetime.
 - If needed, point to:
-  - `{{R-###}}` {{specific step or page}}
+  - `R-001` step 1 or 2
 
 Q2: Sufficient / Not sufficient.
-- Name exactly what is missing in {{concept area}}.
+- Name exactly what is missing about the global integer, `new`, or `delete`.
 - If needed, point to:
-  - `{{R-###}}` {{specific step or page}}
+  - `R-001` step 2
+  - `R-001` step 4 only if the category names are still unclear
 
 Q3: Sufficient / Not sufficient.
-- Name exactly what is missing in {{concept area}}.
+- Name exactly what is missing about storage categories or the pointer/object distinction.
 - If needed, point to:
-  - `{{R-###}}` {{specific step or page}}
+  - `R-001` step 3
+  - `R-001` step 4 only if the category names are still unclear
+  - `R-003` step 1 only if a precise definition is needed
 
 Then:
 - ask the learner to answer again in their own words

@@ -7,6 +7,7 @@ The rubric is separate from the gate decision (pass / not pass).
 ## Principles
 - Gate results are binary.
 - The rubric guides repetition choices and feedback.
+- Rubric outcomes should lead to a concrete remediation step, not generic advice.
 - Points must not by themselves unlock the next gate.
 
 ## Dimensions (v0)
@@ -28,4 +29,6 @@ The rubric is separate from the gate decision (pass / not pass).
 - Strengths:
 - Weakest dimension(s):
 - Recommended repetition:
+- Assigned remediation micro-task:
+- Reattempt evidence:
 - Next check question/test case:

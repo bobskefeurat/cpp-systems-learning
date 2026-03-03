@@ -33,6 +33,11 @@ For evaluation, verify that the learner has provided:
 - the required artifacts listed in `../learner/TASK.md`
 - answers to the check questions in `../learner/TASK.md`
 - a short explanation of one compiler message or warning when needed
+- higher-help follow-up evidence when the learner used a controlled worked example or a reference solution
+
+For pass/fail evaluation:
+- verify the compile/run flow against the compile command, compiler output, runtime output, and learner explanation
+- do not treat matching output alone as proof that the learner understands the compile command or warning requirements
 
 ## Pass Requirements
 The learner passes `Gate 0: Compile, Run, and Basic I/O` if they can show all of the following:
@@ -46,6 +51,7 @@ The learner passes `Gate 0: Compile, Run, and Basic I/O` if they can show all of
    - what `-o main` does
    - why warnings must be handled
 5. The learner can read at least a basic compiler message and use it to correct a mistake.
+6. If higher-help mode was used, the learner can explain what changed and complete the follow-up variant or check.
 
 ## Not Pass Conditions
 `Gate 0: Compile, Run, and Basic I/O` is `not pass` if any of the following is true:
@@ -55,6 +61,7 @@ The learner passes `Gate 0: Compile, Run, and Basic I/O` if they can show all of
 - input/output behavior is incorrect or only partially understood
 - the learner cannot explain the basic compile command in their own words
 - the learner needs answer-key-level help to complete the task
+- after higher-help support, the learner still cannot explain the fix or complete the follow-up variant/check
 
 ## Suggested Task Shape
 The task should stay small.
@@ -104,6 +111,7 @@ For `Gate 0: Compile, Run, and Basic I/O`, the AI should:
 - prefer Level 1-2 hints first
 - require the learner to explain the error message in their own words
 - treat warnings as part of the task, not as optional cleanup
+- keep controlled worked examples gated behind concrete effort instead of using them as the default response
 
 The AI may refer to:
 - `R-001` for the main learning path
@@ -116,6 +124,18 @@ When the learner gets stuck during the task, the AI should:
 - ask what the learner thinks the error means
 - verify that readiness was already sufficient before giving solution guidance
 - stay within the hint policy and avoid writing a full solution by default
+
+Use this escalation order for `Gate 0: Compile, Run, and Basic I/O`:
+1. Ask for the exact command, compiler output, and the learner's own diagnosis.
+2. Prefer Level 1-2 hints first.
+3. Use Level 3 only after the learner has made an honest attempt on the same blocker.
+4. Use a controlled worked example or completion skeleton only after either two honest attempts on the same blocker or clear diagnostic effort with no progress.
+5. Keep the controlled worked example narrow: only the blocked part, such as the compile command, `main` skeleton, variable setup, or output shape.
+6. Use a full reference solution only on explicit request.
+
+After Level 4 or Level 5 help, require:
+- the learner's own explanation of what changed and why it works
+- one small follow-up variant or focused check before the gate is treated as stable
 
 ## Open Decisions Still Marked as Provisional
 - Whether `-Werror` should be required in `Gate 0: Compile, Run, and Basic I/O`

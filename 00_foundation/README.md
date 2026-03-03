@@ -21,6 +21,8 @@ It should tell an agent which documents are governing, which are supporting, and
   Canonical term definitions.
 - `GATE_STRUCTURE.md`
   Standard folder structure and local responsibility split for gates.
+- `GATE_VALIDATION.md`
+  Repeatable validation process for newly created or heavily revised gates.
 - `RESOURCES.md`
   Curated resources the agent is allowed to reference.
 - `RESOURCE_MAP.md`
@@ -46,7 +48,7 @@ It should tell an agent which documents are governing, which are supporting, and
 1. Start with `README.md`.
 2. Read `MODES.md` when mode-based behavior is active for the chat.
 3. Read `GOALS.md`, `RULEBOOK.md`, and `AI_TEACHER_POLICY.md` to understand intent and behavior.
-4. Read `GLOSSARY.md` and `GATE_STRUCTURE.md` to understand terms and local gate conventions.
+4. Read `GLOSSARY.md`, `GATE_STRUCTURE.md`, and `GATE_VALIDATION.md` to understand terms, local gate conventions, and how new gates are quality-checked.
 5. Use `templates/` when creating a new phase or gate.
 6. When working inside a specific phase, read the relevant phase `README.md` before the gate files.
 7. Read `RESOURCES.md` and `RESOURCE_MAP.md` before naming external material.

@@ -1,7 +1,7 @@
-# Gate 0 Evaluation Sheet: Compile, Run, and Basic I/O (draft v0)
+# Gate 1 Evaluation Sheet: Stack, Heap, and Storage Basics (draft v0)
 
 ## Purpose
-Use this sheet to evaluate `Gate 0: Compile, Run, and Basic I/O` with:
+Use this sheet to evaluate `Gate 1: Stack, Heap, and Storage Basics` with:
 - a binary gate result: `pass` or `not pass`
 - a short diagnostic note aligned with the project rubric
 
@@ -19,12 +19,12 @@ Mark each item as `yes` or `no`.
 | Learner compiled from the terminal using the baseline command |  |
 | Program built successfully |  |
 | Program built with zero warnings |  |
-| Program read two integers correctly |  |
-| Program printed the correct sum |  |
-| Output format matched the task requirements |  |
-| Learner explained `g++`, `main.cpp`, and `-o main` in their own words |  |
-| Learner could distinguish compile time from run time |  |
-| Learner could use at least one compiler message to correct a mistake |  |
+| Program output matched the task requirements exactly |  |
+| Program included one global integer, one local integer, one dynamic integer, and one block-local integer |  |
+| Dynamically allocated integer was cleaned up with a matching `delete`, and the local pointer variable was reset to `nullptr` |  |
+| Learner explained static, automatic, and dynamic storage in their own words |  |
+| Learner distinguished the local pointer variable from the dynamic integer it points to |  |
+| Learner could explain either missing `delete` or using the dynamic integer after `delete` as a specific mistake |  |
 | If higher-help mode was used, learner explained the fix and completed the follow-up variant/check |  |
 
 ## Gate Decision Rule
@@ -44,7 +44,7 @@ Use the project rubric scale:
 | Compilation and warnings |  |  |
 | Correctness against requirements |  |  |
 | Conceptual understanding and explanation |  |  |
-| Debugging/process |  |  |
+| Lifetime/ownership/safety |  |  |
 | Code hygiene and readability |  |  |
 
 ## Strengths
@@ -63,21 +63,19 @@ Use the project rubric scale:
 - 
 
 ## Resource Reminder
-For repetition in `Gate 0: Compile, Run, and Basic I/O`, prefer:
+For repetition in `Gate 1: Stack, Heap, and Storage Basics`, prefer:
 - `R-001` for the main learning path
-- `R-002` for exact GCC flag meaning
+- `R-003` for exact storage-duration or lifetime wording
 
 ## Notes for the Evaluator
 - Do not let rubric scores override the binary gate result.
 - Do not ignore warnings because the program "works".
 - Prefer concrete notes over general praise.
 - Verify each pass requirement against the relevant evidence source instead of inferring `pass` from runtime output alone.
-- Use compile command, compiler output, runtime output, and learner explanation together for this gate.
-- If the submission artifacts do not already show a compiler diagnostic, ask the learner to explain a simple compiler message or warning as a short follow-up.
-- If the learner passes mechanically but cannot explain the compile-and-run flow, the result should remain `not pass`.
+- Inspect code directly for cleanup, pointer reset, and the required object categories in this gate.
 - If the weakest dimension is `Compilation and warnings`, require a rebuild with the baseline command plus a short explanation of each flag used.
-- If the weakest dimension is `Correctness against requirements`, require rerunning at least two task test cases and correcting the output shape.
-- If the weakest dimension is `Conceptual understanding and explanation`, require rewritten answers to the relevant check questions in the learner's own words.
-- If the weakest dimension is `Debugging/process`, require the learner to point to the failing command or line and explain what the feedback means.
+- If the weakest dimension is `Correctness against requirements`, require rerunning the exact output check and fixing the printed labels or values.
+- If the weakest dimension is `Conceptual understanding and explanation`, require rewritten answers to the storage and lifetime questions in the learner's own words.
+- If the weakest dimension is `Lifetime/ownership/safety`, require the learner to label each object as static, automatic, or dynamic, explain what changes at `delete`, and fix any missing cleanup or pointer reset.
 - If the weakest dimension is `Code hygiene and readability`, require a focused cleanup pass and a short justification of the changes.
 - If higher-help mode was used, check the learner's explanation and follow-up variant before treating understanding as stable.
