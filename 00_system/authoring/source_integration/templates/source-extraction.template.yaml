@@ -1,0 +1,71 @@
+schema_version: v0
+record_kind: source_extraction
+
+source:
+  source_id: S-000
+  title: Example Curriculum Source
+  provider: Example Provider
+  source_kind: tutorial_site
+  delivery_formats:
+    - html
+  entry_url: https://example.com/course
+  license_status: unclear-link-only
+  review_status: approved-for-extraction
+  last_reviewed: YYYY-MM-DD
+  notes: Short source-level note.
+
+extraction:
+  method: hybrid
+  run_date: YYYY-MM-DD
+  confidence_summary: medium
+  change_notes: Initial extraction.
+
+units:
+  - unit_id: u01
+    parent_unit_id: null
+    kind: chapter
+    sequence: 1
+    title: Intro Topic
+    source_url: https://example.com/course/unit-1
+    summary: Short paraphrase only.
+    learner_fit: beginner
+    reading_role: secondary
+    task_authoring_role: supporting
+    prerequisites: []
+    candidate_phase_tags:
+      - foundations
+    candidate_gate_tags:
+      - compile-basics
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-001
+    risk_flags:
+      - assumes-prior-knowledge
+    concepts:
+      - concept_id: c01
+        label: compile-run loop
+        tags:
+          - toolchain
+          - diagnostics
+        difficulty: beginner
+        prerequisite_concept_ids: []
+        task_patterns:
+          - explain-and-demonstrate
+          - debug-small-build
+        misconceptions:
+          - Running from an IDE automatically means the build process is understood.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: false
+        companion_resource_ids: []
+        risk_flags: []
+        confidence: high
+        notes: Suitable for early operational tasks.
+    provenance:
+      extracted_from:
+        - title: Unit overview
+          url: https://example.com/course/unit-1
+      extractor_notes: Manual first pass.
+    confidence: high
+    notes: ""

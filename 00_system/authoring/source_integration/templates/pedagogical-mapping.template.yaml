@@ -1,0 +1,53 @@
+schema_version: v0
+record_kind: pedagogical_mapping
+
+mapping_id: M-000
+target_program: cpp-systems-learning
+source_ids:
+  - S-000
+assumptions:
+  - The source is useful as a planning backbone but not a complete learner spine.
+
+phase_mappings:
+  - phase_id: 01_phase0
+    title: Foundations
+    goal: Establish operational basics before deeper systems work.
+    included_units:
+      - u01
+    excluded_units: []
+    entry_requirements: []
+    reading_policy: Use only as secondary reading until a curated learner resource exists.
+    companion_resource_ids:
+      - R-001
+    gate_clusters:
+      - cluster_id: gc01
+        title: Compile and run basics
+        gate_kind: micro
+        source_units:
+          - u01
+        concept_ids:
+          - c01
+        task_patterns:
+          - explain-and-demonstrate
+          - debug-small-build
+        required_prerequisites: []
+        disallowed_topics:
+          - templates
+          - optimization
+        requires_companion_sources:
+          - R-001
+        readiness_focus:
+          - what the compiler, linker, and executable each do at a first-pass level
+          - how warning-enabled compilation changes the workflow
+        notes: Keep the gate bounded and operational.
+    gaps:
+      - Needs a more beginner-friendly reading path for first exposure.
+    notes: ""
+
+global_gaps:
+  - Official reference for required compiler flags still needed.
+
+generator_rules:
+  - Use only gate-cluster concept IDs as primary task-generation input.
+  - Do not use excluded or disallowed topics.
+  - Do not cite the source learner-facing unless it has been curated into RESOURCES.md.

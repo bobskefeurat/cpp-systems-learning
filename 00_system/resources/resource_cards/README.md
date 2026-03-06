@@ -18,6 +18,7 @@ But a learner also needs:
 - [R-002.md](./R-002.md)
 - [R-003.md](./R-003.md)
 - [R-004.md](./R-004.md)
+- [R-006.md](./R-006.md)
 
 ## Naming Rule
 - If a card exists for a curated resource, it should use the same ID as the resource.
@@ -30,6 +31,10 @@ Because learner materials may link directly to these cards, each card should sta
 Do not place agent-only notes in a card that a learner is expected to open directly.
 
 ## Packet Structure
-- A resource card may contain one or more gate-specific packets.
-- Name packet sections in a consistent form, such as `## Gate 0 Packet: Compile, Run, and Basic I/O`.
+- A resource card may contain one or more gate-specific or phase-specific packets.
+- Name packet sections in a consistent form, such as `## Gate 0 Packet: Compile, Run, and Basic I/O` or `## Phase 1 Packet: Numeric Safety Fundamentals`.
+- During phase planning, phase-level packets are acceptable before exact gate folders exist.
 - If the same resource is used by multiple gates, add a separate packet for each gate instead of mixing them into one generic reading list.
+
+## LearnCpp Rule
+For `R-001 LearnCpp`, prefer an exact packet over sending the learner to a whole chapter, summary page, or site index.

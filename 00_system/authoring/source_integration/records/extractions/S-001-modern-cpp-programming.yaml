@@ -1,0 +1,5762 @@
+schema_version: v0
+record_kind: source_extraction
+
+source:
+  source_id: S-001
+  title: Modern C++ Programming Course
+  provider: Federico Busato
+  source_kind: course_repo
+  delivery_formats:
+    - repo_files
+    - html
+    - pdf
+    - slides
+  entry_url: https://github.com/federico-busato/Modern-CPP-Programming
+  license_status: unclear-link-only
+  review_status: approved-for-extraction
+  last_reviewed: 2026-03-03
+  notes: >
+    Broad modern C++ course used as a source-integration pilot. Not yet
+    approved as a learner-facing primary spine. The currently published
+    numbered course index used for this extraction exposes chapters 1-29,
+    with chapter 1 primarily serving as orientation and course framing.
+
+extraction:
+  method: manual
+  run_date: 2026-03-03
+  confidence_summary: medium
+  change_notes: Full numbered-chapter extraction covering chapters 1-29 at chapter and section level.
+
+units:
+  - unit_id: u01
+    parent_unit_id: null
+    kind: chapter
+    sequence: 1
+    title: Introduction
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/01.Introduction.html
+    summary: Orientation material covering language history, application areas, philosophy, weaknesses, and course framing.
+    learner_fit: mixed
+    reading_role: reference
+    task_authoring_role: reference-only
+    prerequisites: []
+    candidate_phase_tags:
+      - orientation
+      - course-positioning
+      - language-context
+    candidate_gate_tags:
+      - source-gap-analysis
+      - curriculum-framing
+    integration_candidate: false
+    needs_companion_source: false
+    companion_resource_ids: []
+    risk_flags:
+      - not-directly-actionable
+      - license-unclear
+      - thin-examples
+    concepts: []
+    provenance:
+      extracted_from:
+        - title: Course index
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+        - title: Chapter 1 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/01.Introduction.html
+      extractor_notes: Derived from the chapter table of contents and visible framing slides.
+    confidence: high
+    notes: Retain as source context, course-framing input, and optional reading-packet material, not as task-generation input.
+  - unit_id: u01s01
+    parent_unit_id: u01
+    kind: section
+    sequence: 1
+    title: Language History
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/01.Introduction.html
+    summary: Short historical framing for C and C++ and how the language evolved into a systems-oriented general-purpose tool.
+    learner_fit: mixed
+    reading_role: reference
+    task_authoring_role: reference-only
+    prerequisites: []
+    candidate_phase_tags:
+      - orientation
+      - language-context
+    candidate_gate_tags:
+      - curriculum-framing
+    integration_candidate: false
+    needs_companion_source: false
+    companion_resource_ids: []
+    risk_flags:
+      - not-directly-actionable
+    concepts:
+      - concept_id: c0101
+        label: Historical context for C and C++
+        tags:
+          - history
+          - language-evolution
+          - systems-context
+        difficulty: beginner
+        prerequisite_concept_ids: []
+        task_patterns:
+          - explain-and-contextualize
+        misconceptions:
+          - Language history is the same thing as current best practice.
+        reading_role: reference
+        task_authoring_role: reference-only
+        needs_companion_source: false
+        companion_resource_ids: []
+        risk_flags:
+          - not-directly-actionable
+        confidence: medium
+        notes: Useful for framing why the course emphasizes systems-level tradeoffs.
+    provenance:
+      extracted_from:
+        - title: Chapter 1 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/01.Introduction.html
+      extractor_notes: Derived from the history-focused portion of the introduction chapter.
+    confidence: medium
+    notes: Keep as context rather than gate input.
+  - unit_id: u01s02
+    parent_unit_id: u01
+    kind: section
+    sequence: 2
+    title: Areas of Application and Popularity
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/01.Introduction.html
+    summary: Survey of where C++ is used and why it remains relevant in performance- and systems-heavy domains.
+    learner_fit: mixed
+    reading_role: secondary
+    task_authoring_role: reference-only
+    prerequisites: []
+    candidate_phase_tags:
+      - orientation
+      - language-context
+    candidate_gate_tags:
+      - curriculum-framing
+      - source-gap-analysis
+    integration_candidate: false
+    needs_companion_source: false
+    companion_resource_ids: []
+    risk_flags:
+      - broad-generalization
+    concepts:
+      - concept_id: c0102
+        label: C++ application domains and relevance
+        tags:
+          - application-domains
+          - popularity
+          - systems
+          - performance
+        difficulty: beginner
+        prerequisite_concept_ids: []
+        task_patterns:
+          - explain-and-contextualize
+          - compare-tradeoffs
+        misconceptions:
+          - A language is only relevant if it dominates beginner education or web development.
+        reading_role: secondary
+        task_authoring_role: reference-only
+        needs_companion_source: false
+        companion_resource_ids: []
+        risk_flags:
+          - broad-generalization
+        confidence: medium
+        notes: Helpful for course framing and motivation, but not a direct skill gate.
+    provenance:
+      extracted_from:
+        - title: Chapter 1 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/01.Introduction.html
+      extractor_notes: Derived from the areas-of-application and popularity slides.
+    confidence: medium
+    notes: Suitable for optional framing packets, not for generated gate tasks.
+  - unit_id: u01s03
+    parent_unit_id: u01
+    kind: section
+    sequence: 3
+    title: C++ Philosophy
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/01.Introduction.html
+    summary: High-level language philosophy around zero-overhead abstractions, control, and performance-oriented tradeoffs.
+    learner_fit: mixed
+    reading_role: secondary
+    task_authoring_role: reference-only
+    prerequisites: []
+    candidate_phase_tags:
+      - orientation
+      - language-philosophy
+    candidate_gate_tags:
+      - curriculum-framing
+      - design-principles
+    integration_candidate: false
+    needs_companion_source: false
+    companion_resource_ids: []
+    risk_flags:
+      - abstract
+    concepts:
+      - concept_id: c0103
+        label: Zero-overhead and control-oriented language philosophy
+        tags:
+          - philosophy
+          - zero-overhead
+          - abstraction
+          - control
+        difficulty: intermediate
+        prerequisite_concept_ids: []
+        task_patterns:
+          - explain-and-contextualize
+          - compare-tradeoffs
+        misconceptions:
+          - Low-level control and abstraction are always opposing goals.
+        reading_role: secondary
+        task_authoring_role: reference-only
+        needs_companion_source: false
+        companion_resource_ids: []
+        risk_flags:
+          - abstract
+        confidence: medium
+        notes: Good framing for later design and optimization phases.
+    provenance:
+      extracted_from:
+        - title: Chapter 1 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/01.Introduction.html
+      extractor_notes: Derived from the philosophy section of the introduction chapter.
+    confidence: medium
+    notes: Useful for later framing and discussion packets, not for generated gate tasks.
+  - unit_id: u01s04
+    parent_unit_id: u01
+    kind: section
+    sequence: 4
+    title: Weaknesses and Alternatives
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/01.Introduction.html
+    summary: Acknowledges C++ weaknesses and positions the language relative to alternatives and tradeoffs.
+    learner_fit: mixed
+    reading_role: reference
+    task_authoring_role: reference-only
+    prerequisites: []
+    candidate_phase_tags:
+      - orientation
+      - language-context
+      - tradeoffs
+    candidate_gate_tags:
+      - source-gap-analysis
+      - design-principles
+    integration_candidate: false
+    needs_companion_source: false
+    companion_resource_ids: []
+    risk_flags:
+      - broad-generalization
+      - abstract
+    concepts:
+      - concept_id: c0104
+        label: Language weaknesses and tradeoff awareness
+        tags:
+          - tradeoffs
+          - weaknesses
+          - alternatives
+          - language-choice
+        difficulty: intermediate
+        prerequisite_concept_ids: []
+        task_patterns:
+          - compare-tradeoffs
+          - explain-and-contextualize
+        misconceptions:
+          - A language being powerful means it has no meaningful weaknesses.
+        reading_role: reference
+        task_authoring_role: reference-only
+        needs_companion_source: false
+        companion_resource_ids: []
+        risk_flags:
+          - abstract
+        confidence: medium
+        notes: Stronger as authoring context for tradeoff-heavy tasks than as learner assessment material.
+    provenance:
+      extracted_from:
+        - title: Chapter 1 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/01.Introduction.html
+      extractor_notes: Derived from the weaknesses and alternatives section.
+    confidence: medium
+    notes: Keep as reference framing or optional packet material rather than generated task input.
+  - unit_id: u01s05
+    parent_unit_id: u01
+    kind: section
+    sequence: 5
+    title: Course Framing
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/01.Introduction.html
+    summary: Explains course scope, progression, and intended use of the material as a broad modern C++ curriculum.
+    learner_fit: mixed
+    reading_role: reference
+    task_authoring_role: exclude
+    prerequisites: []
+    candidate_phase_tags:
+      - orientation
+      - course-positioning
+    candidate_gate_tags:
+      - curriculum-framing
+    integration_candidate: false
+    needs_companion_source: false
+    companion_resource_ids: []
+    risk_flags:
+      - not-directly-actionable
+    concepts:
+      - concept_id: c0105
+        label: Course scope and intended learner positioning
+        tags:
+          - course-scope
+          - learner-positioning
+          - curriculum
+        difficulty: beginner
+        prerequisite_concept_ids: []
+        task_patterns:
+          - resource-gap-analysis
+        misconceptions:
+          - A course outline automatically provides a complete beginner learning path.
+        reading_role: reference
+        task_authoring_role: exclude
+        needs_companion_source: false
+        companion_resource_ids: []
+        risk_flags:
+          - not-directly-actionable
+        confidence: high
+        notes: Useful for integration policy and source qualification, not for learner tasks.
+    provenance:
+      extracted_from:
+        - title: Chapter 1 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/01.Introduction.html
+      extractor_notes: Derived from the course section of the introduction chapter.
+    confidence: high
+    notes: Treat as curriculum metadata rather than content for gates.
+  - unit_id: u02
+    parent_unit_id: null
+    kind: chapter
+    sequence: 2
+    title: Preparation
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/02.Preparation.html
+    summary: Early setup material covering references, exercise sources, compiler selection, language standard, first program, and basic I/O.
+    learner_fit: beginner
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites: []
+    candidate_phase_tags:
+      - foundations
+      - toolchain
+    candidate_gate_tags:
+      - compile-basics
+      - basic-io
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-001
+      - R-002
+    risk_flags:
+      - assumes-prior-knowledge
+      - license-unclear
+      - thin-examples
+    concepts: []
+    provenance:
+      extracted_from:
+        - title: Course index
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+        - title: Chapter 2 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/02.Preparation.html
+      extractor_notes: Pilot extraction uses the chapter table of contents and visible chapter guidance.
+    confidence: high
+    notes: Useful for authoring compile-run gates, but not sufficient as a standalone beginner reading path.
+  - unit_id: u02s01
+    parent_unit_id: u02
+    kind: section
+    sequence: 1
+    title: Learning Path and References
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/02.Preparation.html
+    summary: Resource and exercise pointers that show where the course expects learners to get supporting material.
+    learner_fit: mixed
+    reading_role: reference
+    task_authoring_role: exclude
+    prerequisites: []
+    candidate_phase_tags:
+      - resource-selection
+    candidate_gate_tags:
+      - source-gap-analysis
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags:
+      - not-directly-actionable
+      - assumes-prior-knowledge
+    concepts:
+      - concept_id: c0201
+        label: Curated learning path and exercise sourcing
+        tags:
+          - resources
+          - exercises
+          - learning-path
+        difficulty: beginner
+        prerequisite_concept_ids: []
+        task_patterns:
+          - resource-gap-analysis
+        misconceptions:
+          - A broad resource list is the same as a guided beginner path.
+        reading_role: reference
+        task_authoring_role: exclude
+        needs_companion_source: true
+        companion_resource_ids: []
+        risk_flags:
+          - not-directly-actionable
+        confidence: medium
+        notes: Useful for curation decisions, not direct gate generation.
+    provenance:
+      extracted_from:
+        - title: Chapter 2 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/02.Preparation.html
+      extractor_notes: Derived from the books, references, and coding-exercise sections.
+    confidence: medium
+    notes: Treat as meta-material about supporting resources.
+  - unit_id: u02s02
+    parent_unit_id: u02
+    kind: section
+    sequence: 2
+    title: Compilers and Language Standard
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/02.Preparation.html
+    summary: Orientation to compiler choice, compiler support, and language-standard selection.
+    learner_fit: beginner
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites: []
+    candidate_phase_tags:
+      - foundations
+      - toolchain
+    candidate_gate_tags:
+      - compile-basics
+      - diagnostics
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-001
+      - R-002
+    risk_flags:
+      - assumes-prior-knowledge
+    concepts:
+      - concept_id: c0202
+        label: Compiler and standard selection
+        tags:
+          - compiler
+          - standard
+          - toolchain
+        difficulty: beginner
+        prerequisite_concept_ids: []
+        task_patterns:
+          - explain-and-demonstrate
+          - debug-small-build
+        misconceptions:
+          - The language standard and the compiler are the same choice.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-001
+          - R-002
+        risk_flags: []
+        confidence: high
+        notes: Strong source for authoring readiness questions about toolchain choices.
+    provenance:
+      extracted_from:
+        - title: Chapter 2 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/02.Preparation.html
+      extractor_notes: Derived from compiler, compiler features, and language-standard topics.
+    confidence: high
+    notes: Good input for compile-command and standard-selection task constraints.
+  - unit_id: u02s03
+    parent_unit_id: u02
+    kind: section
+    sequence: 3
+    title: Hello World and Build-Run Loop
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/02.Preparation.html
+    summary: First-program flow with build, run, and stream-based I/O framing.
+    learner_fit: beginner
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c0202
+    candidate_phase_tags:
+      - foundations
+      - toolchain
+    candidate_gate_tags:
+      - compile-basics
+      - basic-io
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-001
+    risk_flags:
+      - thin-examples
+    concepts:
+      - concept_id: c0203
+        label: Compile-run loop and basic stream I/O
+        tags:
+          - compile-run
+          - io
+          - streams
+        difficulty: beginner
+        prerequisite_concept_ids:
+          - c0202
+        task_patterns:
+          - explain-and-demonstrate
+          - debug-small-build
+        misconceptions:
+          - If a program runs in an IDE, the build process is already understood.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-001
+        risk_flags: []
+        confidence: high
+        notes: Useful for first gate authoring and runtime-evidence design.
+    provenance:
+      extracted_from:
+        - title: Chapter 2 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/02.Preparation.html
+      extractor_notes: Derived from Hello World and Input/Output topics.
+    confidence: high
+    notes: Strongest chapter-2 input for the current Phase 0 gate arc.
+  - unit_id: u03
+    parent_unit_id: null
+    kind: chapter
+    sequence: 3
+    title: Basic Concepts I
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/03.Basic_Concepts_I.html
+    summary: Introductory language surface covering identifiers, type declarations, and operators.
+    learner_fit: beginner
+    reading_role: secondary
+    task_authoring_role: supporting
+    prerequisites:
+      - c0202
+      - c0203
+    candidate_phase_tags:
+      - foundations
+      - core-language
+    candidate_gate_tags:
+      - type-system-basics
+      - expressions
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-001
+    risk_flags:
+      - assumes-prior-knowledge
+      - thin-examples
+    concepts: []
+    provenance:
+      extracted_from:
+        - title: Course index
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+        - title: Chapter 3 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/03.Basic_Concepts_I.html
+      extractor_notes: Pilot extraction uses the published chapter topic list.
+    confidence: medium
+    notes: Good for concept coverage, but still needs more beginner-friendly reading support.
+  - unit_id: u03s01
+    parent_unit_id: u03
+    kind: section
+    sequence: 1
+    title: Keywords and Identifiers
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/03.Basic_Concepts_I.html
+    summary: Language surface for tokens, reserved words, identifiers, and names.
+    learner_fit: beginner
+    reading_role: secondary
+    task_authoring_role: supporting
+    prerequisites: []
+    candidate_phase_tags:
+      - foundations
+    candidate_gate_tags:
+      - syntax-basics
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-001
+    risk_flags: []
+    concepts:
+      - concept_id: c0301
+        label: Tokens, identifiers, and keywords
+        tags:
+          - syntax
+          - identifiers
+          - keywords
+        difficulty: beginner
+        prerequisite_concept_ids: []
+        task_patterns:
+          - trace-and-explain
+        misconceptions:
+          - Keywords and identifiers are only style concerns.
+        reading_role: secondary
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-001
+        risk_flags: []
+        confidence: medium
+        notes: Mainly useful as supporting background for early syntax tasks.
+    provenance:
+      extracted_from:
+        - title: Chapter 3 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/03.Basic_Concepts_I.html
+      extractor_notes: Derived from keyword and identifier topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u03s02
+    parent_unit_id: u03
+    kind: section
+    sequence: 2
+    title: Data Types, Variables, and auto
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/03.Basic_Concepts_I.html
+    summary: First-pass type system, declarations, variables, and type-deduction surface.
+    learner_fit: beginner
+    reading_role: secondary
+    task_authoring_role: supporting
+    prerequisites:
+      - c0301
+    candidate_phase_tags:
+      - foundations
+      - core-language
+    candidate_gate_tags:
+      - type-system-basics
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-001
+    risk_flags:
+      - thin-examples
+    concepts:
+      - concept_id: c0302
+        label: Type system and declarations
+        tags:
+          - types
+          - variables
+          - declarations
+          - auto
+        difficulty: beginner
+        prerequisite_concept_ids:
+          - c0301
+        task_patterns:
+          - trace-and-explain
+          - implement-bounded-console-flow
+        misconceptions:
+          - auto removes the need to reason about types.
+        reading_role: secondary
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-001
+        risk_flags: []
+        confidence: medium
+        notes: Useful background for value-flow reasoning and variable initialization.
+    provenance:
+      extracted_from:
+        - title: Chapter 3 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/03.Basic_Concepts_I.html
+      extractor_notes: Derived from data type, variable, declaration, and auto topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u03s03
+    parent_unit_id: u03
+    kind: section
+    sequence: 3
+    title: Operators and Expressions
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/03.Basic_Concepts_I.html
+    summary: Introductory operator categories and expression behavior.
+    learner_fit: beginner
+    reading_role: secondary
+    task_authoring_role: supporting
+    prerequisites:
+      - c0302
+    candidate_phase_tags:
+      - foundations
+      - core-language
+    candidate_gate_tags:
+      - expressions
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-001
+    risk_flags: []
+    concepts:
+      - concept_id: c0303
+        label: Operators, expressions, and precedence
+        tags:
+          - operators
+          - expressions
+          - precedence
+        difficulty: beginner
+        prerequisite_concept_ids:
+          - c0302
+        task_patterns:
+          - trace-and-explain
+          - debug-small-build
+        misconceptions:
+          - Operator precedence can be ignored if the code compiles.
+        reading_role: secondary
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-001
+        risk_flags: []
+        confidence: medium
+        notes: Good input for expression-tracing and diagnostics tasks.
+    provenance:
+      extracted_from:
+        - title: Chapter 3 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/03.Basic_Concepts_I.html
+      extractor_notes: Derived from operators, precedence, and expression topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u04
+    parent_unit_id: null
+    kind: chapter
+    sequence: 4
+    title: Basic Concepts II
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/04.Basic_Concepts_II.html
+    summary: Integral-type semantics, conversions, bitwise reasoning, and overflow behavior.
+    learner_fit: intermediate
+    reading_role: reference
+    task_authoring_role: supporting
+    prerequisites:
+      - c0302
+      - c0303
+    candidate_phase_tags:
+      - core-language
+      - numeric-semantics
+    candidate_gate_tags:
+      - integral-arithmetic
+      - numeric-safety
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags:
+      - assumes-prior-knowledge
+      - too-dense-for-early-phase
+    concepts: []
+    provenance:
+      extracted_from:
+        - title: Course index
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+        - title: Chapter 4 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/04.Basic_Concepts_II.html
+      extractor_notes: Pilot extraction uses the published chapter topic list only.
+    confidence: medium
+    notes: Better suited to later foundational refinement than to current Phase 0 reading.
+  - unit_id: u04s01
+    parent_unit_id: u04
+    kind: section
+    sequence: 1
+    title: Integral Types and Numeration
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/04.Basic_Concepts_II.html
+    summary: Integer families, signs, widths, and basic representation models.
+    learner_fit: intermediate
+    reading_role: reference
+    task_authoring_role: supporting
+    prerequisites:
+      - c0302
+    candidate_phase_tags:
+      - core-language
+      - numeric-semantics
+    candidate_gate_tags:
+      - integral-arithmetic
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags:
+      - too-dense-for-early-phase
+    concepts:
+      - concept_id: c0401
+        label: Integral types and representation
+        tags:
+          - integers
+          - representation
+          - numeration
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c0302
+        task_patterns:
+          - numeric-edge-case-analysis
+        misconceptions:
+          - All integers behave the same across sizes and signedness.
+        reading_role: reference
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids: []
+        risk_flags:
+          - too-dense-for-early-phase
+        confidence: medium
+        notes: Good for later numeric reasoning and warning analysis.
+    provenance:
+      extracted_from:
+        - title: Chapter 4 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/04.Basic_Concepts_II.html
+      extractor_notes: Derived from the integral-type and numeration topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u04s02
+    parent_unit_id: u04
+    kind: section
+    sequence: 2
+    title: Integer Arithmetic and Promotions
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/04.Basic_Concepts_II.html
+    summary: Promotion and conversion rules that change arithmetic behavior.
+    learner_fit: intermediate
+    reading_role: reference
+    task_authoring_role: supporting
+    prerequisites:
+      - c0401
+      - c0303
+    candidate_phase_tags:
+      - core-language
+      - numeric-semantics
+    candidate_gate_tags:
+      - integral-arithmetic
+      - numeric-safety
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags:
+      - too-dense-for-early-phase
+    concepts:
+      - concept_id: c0402
+        label: Promotions and conversions
+        tags:
+          - promotions
+          - conversions
+          - arithmetic
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c0401
+          - c0303
+        task_patterns:
+          - numeric-edge-case-analysis
+          - debug-small-build
+        misconceptions:
+          - Small integer arithmetic stays in the small type.
+        reading_role: reference
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids: []
+        risk_flags:
+          - too-dense-for-early-phase
+        confidence: medium
+        notes: Useful for later warning-driven exercises.
+    provenance:
+      extracted_from:
+        - title: Chapter 4 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/04.Basic_Concepts_II.html
+      extractor_notes: Derived from arithmetic, conversion, and promotion topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u04s03
+    parent_unit_id: u04
+    kind: section
+    sequence: 3
+    title: Bits, Bytes, and Bitwise Operations
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/04.Basic_Concepts_II.html
+    summary: Binary representation topics and bit-level operators.
+    learner_fit: intermediate
+    reading_role: reference
+    task_authoring_role: supporting
+    prerequisites:
+      - c0401
+    candidate_phase_tags:
+      - core-language
+      - bit-level
+    candidate_gate_tags:
+      - bitwise-reasoning
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags:
+      - too-dense-for-early-phase
+    concepts:
+      - concept_id: c0403
+        label: Bitwise operations and base representation
+        tags:
+          - bitwise
+          - binary
+          - bytes
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c0401
+        task_patterns:
+          - trace-and-explain
+          - numeric-edge-case-analysis
+        misconceptions:
+          - Bitwise operators are just math with different symbols.
+        reading_role: reference
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids: []
+        risk_flags:
+          - too-dense-for-early-phase
+        confidence: medium
+        notes: More appropriate for a later systems-focused numeric phase.
+    provenance:
+      extracted_from:
+        - title: Chapter 4 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/04.Basic_Concepts_II.html
+      extractor_notes: Derived from bits, numeration, and bitwise topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u04s04
+    parent_unit_id: u04
+    kind: section
+    sequence: 4
+    title: Overflow and Safe Integral Reasoning
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/04.Basic_Concepts_II.html
+    summary: Edge cases around overflow, sign behavior, and safe comparisons.
+    learner_fit: intermediate
+    reading_role: reference
+    task_authoring_role: supporting
+    prerequisites:
+      - c0402
+    candidate_phase_tags:
+      - core-language
+      - numeric-semantics
+    candidate_gate_tags:
+      - numeric-safety
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags:
+      - too-dense-for-early-phase
+    concepts:
+      - concept_id: c0404
+        label: Overflow and safe integral reasoning
+        tags:
+          - overflow
+          - safety
+          - integers
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c0402
+        task_patterns:
+          - numeric-edge-case-analysis
+          - compare-tradeoffs
+        misconceptions:
+          - Overflow always wraps predictably in standard C++.
+        reading_role: reference
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids: []
+        risk_flags:
+          - too-dense-for-early-phase
+        confidence: medium
+        notes: Good later input for warning and UB-oriented tasks.
+    provenance:
+      extracted_from:
+        - title: Chapter 4 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/04.Basic_Concepts_II.html
+      extractor_notes: Derived from overflow and arithmetic-safety topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u05
+    parent_unit_id: null
+    kind: chapter
+    sequence: 5
+    title: Basic Concepts III
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/05.Basic_Concepts_III.html
+    summary: Floating-point model, precision behavior, and numeric comparison pitfalls.
+    learner_fit: intermediate
+    reading_role: reference
+    task_authoring_role: supporting
+    prerequisites:
+      - c0302
+      - c0303
+    candidate_phase_tags:
+      - core-language
+      - numeric-semantics
+    candidate_gate_tags:
+      - floating-point-reasoning
+      - numeric-safety
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags:
+      - assumes-prior-knowledge
+      - too-dense-for-early-phase
+    concepts: []
+    provenance:
+      extracted_from:
+        - title: Course index
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+        - title: Chapter 5 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/05.Basic_Concepts_III.html
+      extractor_notes: Pilot extraction uses the published chapter topic list only.
+    confidence: medium
+    notes: Strong later reference material, but not a beginner-first reading path.
+  - unit_id: u05s01
+    parent_unit_id: u05
+    kind: section
+    sequence: 1
+    title: Floating-Point Types and Representation
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/05.Basic_Concepts_III.html
+    summary: First-pass floating-point storage model and representation assumptions.
+    learner_fit: intermediate
+    reading_role: reference
+    task_authoring_role: supporting
+    prerequisites:
+      - c0302
+    candidate_phase_tags:
+      - core-language
+      - numeric-semantics
+    candidate_gate_tags:
+      - floating-point-reasoning
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags:
+      - too-dense-for-early-phase
+    concepts:
+      - concept_id: c0501
+        label: Floating-point types and representation
+        tags:
+          - floating-point
+          - representation
+          - numerics
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c0302
+        task_patterns:
+          - numeric-edge-case-analysis
+        misconceptions:
+          - Decimal-looking values are stored exactly.
+        reading_role: reference
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids: []
+        risk_flags:
+          - too-dense-for-early-phase
+        confidence: medium
+        notes: Better as later explanatory or remediation input.
+    provenance:
+      extracted_from:
+        - title: Chapter 5 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/05.Basic_Concepts_III.html
+      extractor_notes: Derived from floating-point type topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u05s02
+    parent_unit_id: u05
+    kind: section
+    sequence: 2
+    title: Precision, Rounding, and Literals
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/05.Basic_Concepts_III.html
+    summary: Precision and rounding behavior around literals and numeric operations.
+    learner_fit: intermediate
+    reading_role: reference
+    task_authoring_role: supporting
+    prerequisites:
+      - c0501
+    candidate_phase_tags:
+      - core-language
+      - numeric-semantics
+    candidate_gate_tags:
+      - floating-point-reasoning
+      - numeric-safety
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags:
+      - too-dense-for-early-phase
+    concepts:
+      - concept_id: c0502
+        label: Precision, rounding, and literals
+        tags:
+          - precision
+          - rounding
+          - literals
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c0501
+        task_patterns:
+          - numeric-edge-case-analysis
+        misconceptions:
+          - More digits printed means more true precision.
+        reading_role: reference
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids: []
+        risk_flags:
+          - too-dense-for-early-phase
+        confidence: medium
+        notes: Strong source for later cautionary tasks and explanations.
+    provenance:
+      extracted_from:
+        - title: Chapter 5 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/05.Basic_Concepts_III.html
+      extractor_notes: Derived from floating-point literal and precision topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u05s03
+    parent_unit_id: u05
+    kind: section
+    sequence: 3
+    title: Comparisons and Numeric Stability
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/05.Basic_Concepts_III.html
+    summary: Floating-point comparison patterns and stability pitfalls.
+    learner_fit: intermediate
+    reading_role: reference
+    task_authoring_role: supporting
+    prerequisites:
+      - c0502
+      - c0303
+    candidate_phase_tags:
+      - core-language
+      - numeric-semantics
+    candidate_gate_tags:
+      - floating-point-reasoning
+      - numeric-safety
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags:
+      - too-dense-for-early-phase
+    concepts:
+      - concept_id: c0503
+        label: Comparisons and numeric stability
+        tags:
+          - comparison
+          - floating-point
+          - stability
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c0502
+          - c0303
+        task_patterns:
+          - numeric-edge-case-analysis
+          - compare-tradeoffs
+        misconceptions:
+          - Equality comparison is always the right default for floating-point.
+        reading_role: reference
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids: []
+        risk_flags:
+          - too-dense-for-early-phase
+        confidence: medium
+        notes: Useful later for test-design and debugging tasks.
+    provenance:
+      extracted_from:
+        - title: Chapter 5 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/05.Basic_Concepts_III.html
+      extractor_notes: Derived from floating-point comparison and related topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u06
+    parent_unit_id: null
+    kind: chapter
+    sequence: 6
+    title: Basic Concepts IV
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/06.Basic_Concepts_IV.html
+    summary: Declarations and definitions, simple aggregates, control flow, namespaces, and attributes.
+    learner_fit: beginner
+    reading_role: secondary
+    task_authoring_role: supporting
+    prerequisites:
+      - c0302
+      - c0303
+    candidate_phase_tags:
+      - foundations
+      - core-language
+    candidate_gate_tags:
+      - declarations-and-control-flow
+      - struct-basics
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-001
+    risk_flags:
+      - broad-mixed-topic
+      - assumes-prior-knowledge
+    concepts: []
+    provenance:
+      extracted_from:
+        - title: Course index
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+        - title: Chapter 6 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/06.Basic_Concepts_IV.html
+      extractor_notes: Pilot extraction uses the published chapter topic list only.
+    confidence: medium
+    notes: Contains both Phase 0-relevant control-flow material and later supporting topics.
+  - unit_id: u06s01
+    parent_unit_id: u06
+    kind: section
+    sequence: 1
+    title: Entities, Declarations, and Definitions
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/06.Basic_Concepts_IV.html
+    summary: Basic distinction between named entities, declarations, and definitions.
+    learner_fit: beginner
+    reading_role: secondary
+    task_authoring_role: supporting
+    prerequisites:
+      - c0302
+    candidate_phase_tags:
+      - foundations
+      - core-language
+    candidate_gate_tags:
+      - declarations-and-control-flow
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-001
+    risk_flags: []
+    concepts:
+      - concept_id: c0601
+        label: Entities, declarations, and definitions
+        tags:
+          - entities
+          - declarations
+          - definitions
+        difficulty: beginner
+        prerequisite_concept_ids:
+          - c0302
+        task_patterns:
+          - trace-and-explain
+          - debug-small-build
+        misconceptions:
+          - Declaring something and defining something are interchangeable.
+        reading_role: secondary
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-001
+        risk_flags: []
+        confidence: medium
+        notes: Useful for building later translation-unit readiness.
+    provenance:
+      extracted_from:
+        - title: Chapter 6 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/06.Basic_Concepts_IV.html
+      extractor_notes: Derived from entity and declaration topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u06s02
+    parent_unit_id: u06
+    kind: section
+    sequence: 2
+    title: Enum, Struct, and Union Basics
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/06.Basic_Concepts_IV.html
+    summary: Introductory aggregate and user-defined-type surface before full class design.
+    learner_fit: beginner
+    reading_role: secondary
+    task_authoring_role: supporting
+    prerequisites:
+      - c0601
+    candidate_phase_tags:
+      - foundations
+      - object-model
+    candidate_gate_tags:
+      - struct-basics
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-001
+    risk_flags: []
+    concepts:
+      - concept_id: c0602
+        label: Enums, structs, and basic aggregates
+        tags:
+          - enum
+          - struct
+          - union
+          - aggregates
+        difficulty: beginner
+        prerequisite_concept_ids:
+          - c0601
+        task_patterns:
+          - trace-and-explain
+          - implement-bounded-console-flow
+        misconceptions:
+          - struct is only a cosmetic version of class with no design implications.
+        reading_role: secondary
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-001
+        risk_flags: []
+        confidence: medium
+        notes: Good stepping stone before first class gates.
+    provenance:
+      extracted_from:
+        - title: Chapter 6 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/06.Basic_Concepts_IV.html
+      extractor_notes: Derived from enum, struct, and union topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u06s03
+    parent_unit_id: u06
+    kind: section
+    sequence: 3
+    title: Control Flow
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/06.Basic_Concepts_IV.html
+    summary: Branching and iteration constructs for bounded program flow.
+    learner_fit: beginner
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c0303
+    candidate_phase_tags:
+      - foundations
+      - control-flow
+    candidate_gate_tags:
+      - declarations-and-control-flow
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-001
+    risk_flags: []
+    concepts:
+      - concept_id: c0603
+        label: Selection and iteration control flow
+        tags:
+          - if
+          - switch
+          - loops
+          - control-flow
+        difficulty: beginner
+        prerequisite_concept_ids:
+          - c0303
+        task_patterns:
+          - implement-bounded-console-flow
+          - trace-and-explain
+        misconceptions:
+          - If branches pass one sample input, the control flow is correct.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-001
+        risk_flags: []
+        confidence: medium
+        notes: Directly useful for early task variation and integration gates.
+    provenance:
+      extracted_from:
+        - title: Chapter 6 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/06.Basic_Concepts_IV.html
+      extractor_notes: Derived from the control-flow topics.
+    confidence: medium
+    notes: Strong Phase 0 and early Phase 1 authoring input.
+  - unit_id: u06s04
+    parent_unit_id: u06
+    kind: section
+    sequence: 4
+    title: Namespaces and Attributes
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/06.Basic_Concepts_IV.html
+    summary: Namespace surface and attributes as later code-organization support topics.
+    learner_fit: intermediate
+    reading_role: reference
+    task_authoring_role: supporting
+    prerequisites:
+      - c0601
+    candidate_phase_tags:
+      - core-language
+      - organization
+    candidate_gate_tags:
+      - namespace-basics
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags:
+      - broad-mixed-topic
+    concepts:
+      - concept_id: c0604
+        label: Namespaces and attributes
+        tags:
+          - namespaces
+          - attributes
+          - organization
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c0601
+        task_patterns:
+          - trace-and-explain
+        misconceptions:
+          - Namespaces and attributes are optional decoration with no design impact.
+        reading_role: reference
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids: []
+        risk_flags:
+          - broad-mixed-topic
+        confidence: medium
+        notes: Better reserved for later phase organization work.
+    provenance:
+      extracted_from:
+        - title: Chapter 6 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/06.Basic_Concepts_IV.html
+      extractor_notes: Derived from namespace and attribute topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u07
+    parent_unit_id: null
+    kind: chapter
+    sequence: 7
+    title: Basic Concepts V
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/07.Basic_Concepts_V.html
+    summary: Pointers, references, storage, initialization, const/constexpr, and low-level type-conversion surface.
+    learner_fit: mixed
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c0302
+      - c0601
+    candidate_phase_tags:
+      - foundations
+      - lifetime
+    candidate_gate_tags:
+      - stack-heap-and-references
+      - initialization-and-const
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-001
+      - R-003
+    risk_flags:
+      - broad-mixed-topic
+      - assumes-prior-knowledge
+    concepts: []
+    provenance:
+      extracted_from:
+        - title: Course index
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+        - title: Chapter 7 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/07.Basic_Concepts_V.html
+      extractor_notes: Pilot extraction uses the published chapter topic list only.
+    confidence: medium
+    notes: High-value source chapter for the repo's early lifetime and storage goals.
+  - unit_id: u07s01
+    parent_unit_id: u07
+    kind: section
+    sequence: 1
+    title: Pointers, References, and Null
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/07.Basic_Concepts_V.html
+    summary: Distinguishes pointer and reference surface semantics, including null state.
+    learner_fit: beginner
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c0302
+      - c0601
+    candidate_phase_tags:
+      - foundations
+      - lifetime
+    candidate_gate_tags:
+      - stack-heap-and-references
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-001
+      - R-003
+      - R-004
+    risk_flags: []
+    concepts:
+      - concept_id: c0701
+        label: Pointers, references, and null state
+        tags:
+          - pointers
+          - references
+          - nullptr
+        difficulty: beginner
+        prerequisite_concept_ids:
+          - c0302
+          - c0601
+        task_patterns:
+          - explain-and-demonstrate
+          - compare-tradeoffs
+        misconceptions:
+          - Pointers and references are basically the same thing.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-001
+          - R-003
+          - R-004
+        risk_flags: []
+        confidence: medium
+        notes: Core concept for current Gate 1 and Gate 2 style tasks.
+    provenance:
+      extracted_from:
+        - title: Chapter 7 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/07.Basic_Concepts_V.html
+      extractor_notes: Derived from pointer, reference, and nullptr topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u07s02
+    parent_unit_id: u07
+    kind: section
+    sequence: 2
+    title: Heap, Stack, and Allocation
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/07.Basic_Concepts_V.html
+    summary: Storage and allocation surface, including stack and heap terminology.
+    learner_fit: beginner
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c0701
+    candidate_phase_tags:
+      - foundations
+      - lifetime
+    candidate_gate_tags:
+      - stack-heap-and-references
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-001
+      - R-003
+    risk_flags:
+      - broad-mixed-topic
+    concepts:
+      - concept_id: c0702
+        label: Stack, heap, and allocation model
+        tags:
+          - stack
+          - heap
+          - allocation
+          - storage
+        difficulty: beginner
+        prerequisite_concept_ids:
+          - c0701
+        task_patterns:
+          - explain-and-demonstrate
+          - compare-tradeoffs
+        misconceptions:
+          - Heap means bigger and stack means smaller.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-001
+          - R-003
+        risk_flags: []
+        confidence: medium
+        notes: High-value input for bounded storage-reasoning tasks.
+    provenance:
+      extracted_from:
+        - title: Chapter 7 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/07.Basic_Concepts_V.html
+      extractor_notes: Derived from heap and stack topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u07s03
+    parent_unit_id: u07
+    kind: section
+    sequence: 3
+    title: Initialization, const, and constexpr
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/07.Basic_Concepts_V.html
+    summary: Initialization surface and immutability-related language features.
+    learner_fit: beginner
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c0302
+    candidate_phase_tags:
+      - foundations
+      - lifetime
+    candidate_gate_tags:
+      - initialization-and-const
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-001
+      - R-003
+    risk_flags: []
+    concepts:
+      - concept_id: c0703
+        label: Initialization, const, and constexpr
+        tags:
+          - initialization
+          - const
+          - constexpr
+        difficulty: beginner
+        prerequisite_concept_ids:
+          - c0302
+        task_patterns:
+          - trace-and-explain
+          - debug-small-build
+        misconceptions:
+          - const and constexpr are interchangeable.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-001
+          - R-003
+        risk_flags: []
+        confidence: medium
+        notes: Useful for bug-hunting tasks tied to initialization mistakes.
+    provenance:
+      extracted_from:
+        - title: Chapter 7 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/07.Basic_Concepts_V.html
+      extractor_notes: Derived from initialization, const, and constexpr topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u07s04
+    parent_unit_id: u07
+    kind: section
+    sequence: 4
+    title: Casts, Size, and Alignment
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/07.Basic_Concepts_V.html
+    summary: Lower-level facts about conversions and layout queries.
+    learner_fit: intermediate
+    reading_role: reference
+    task_authoring_role: supporting
+    prerequisites:
+      - c0701
+      - c0303
+    candidate_phase_tags:
+      - lifetime
+      - low-level
+    candidate_gate_tags:
+      - low-level-conversions
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - too-advanced-early
+    concepts:
+      - concept_id: c0704
+        label: Casts, size, and alignment facts
+        tags:
+          - casts
+          - sizeof
+          - alignof
+          - layout
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c0701
+          - c0303
+        task_patterns:
+          - trace-and-explain
+          - compare-tradeoffs
+        misconceptions:
+          - A cast fixes a type mismatch rather than hiding one.
+        reading_role: reference
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags:
+          - too-advanced-early
+        confidence: medium
+        notes: Keep out of Phase 0 unless a task explicitly targets it.
+    provenance:
+      extracted_from:
+        - title: Chapter 7 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/07.Basic_Concepts_V.html
+      extractor_notes: Derived from cast, sizeof, and alignof topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u08
+    parent_unit_id: null
+    kind: chapter
+    sequence: 8
+    title: Basic Concepts VI
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/08.Basic_Concepts_VI.html
+    summary: Functions, parameter passing, overloading, lambdas, and preprocessing.
+    learner_fit: mixed
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c0601
+      - c0701
+    candidate_phase_tags:
+      - foundations
+      - interfaces
+    candidate_gate_tags:
+      - functions-and-parameter-passing
+      - preprocessing-basics
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-001
+      - R-004
+    risk_flags:
+      - broad-mixed-topic
+      - assumes-prior-knowledge
+    concepts: []
+    provenance:
+      extracted_from:
+        - title: Course index
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+        - title: Chapter 8 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/08.Basic_Concepts_VI.html
+      extractor_notes: Pilot extraction uses the published chapter topic list only.
+    confidence: medium
+    notes: Core source chapter for function and parameter-passing task generation.
+  - unit_id: u08s01
+    parent_unit_id: u08
+    kind: section
+    sequence: 1
+    title: Functions and Parameter Passing
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/08.Basic_Concepts_VI.html
+    summary: Function interface surface, including parameter passing and return behavior.
+    learner_fit: beginner
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c0601
+      - c0701
+    candidate_phase_tags:
+      - foundations
+      - interfaces
+    candidate_gate_tags:
+      - functions-and-parameter-passing
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-001
+      - R-004
+    risk_flags: []
+    concepts:
+      - concept_id: c0801
+        label: Function interfaces and parameter passing
+        tags:
+          - functions
+          - parameters
+          - returns
+          - interfaces
+        difficulty: beginner
+        prerequisite_concept_ids:
+          - c0601
+          - c0701
+        task_patterns:
+          - implement-bounded-functions
+          - compare-tradeoffs
+        misconceptions:
+          - Parameter passing only matters for performance.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-001
+          - R-004
+        risk_flags: []
+        confidence: medium
+        notes: Directly relevant to current Gate 2 style authoring.
+    provenance:
+      extracted_from:
+        - title: Chapter 8 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/08.Basic_Concepts_VI.html
+      extractor_notes: Derived from function and parameter topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u08s02
+    parent_unit_id: u08
+    kind: section
+    sequence: 2
+    title: Overloading, Default Arguments, Inline, and Recursion
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/08.Basic_Concepts_VI.html
+    summary: Function-surface features that expand interface design options.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: supporting
+    prerequisites:
+      - c0801
+    candidate_phase_tags:
+      - interfaces
+      - core-language
+    candidate_gate_tags:
+      - function-surface-design
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-001
+    risk_flags:
+      - broad-mixed-topic
+    concepts:
+      - concept_id: c0802
+        label: Overloading, default arguments, inline, and recursion
+        tags:
+          - overloading
+          - default-arguments
+          - inline
+          - recursion
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c0801
+        task_patterns:
+          - implement-bounded-functions
+          - compare-tradeoffs
+        misconceptions:
+          - Overloading always makes code clearer.
+        reading_role: secondary
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-001
+        risk_flags:
+          - broad-mixed-topic
+        confidence: medium
+        notes: Better suited to a post-Phase-0 refinement gate.
+    provenance:
+      extracted_from:
+        - title: Chapter 8 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/08.Basic_Concepts_VI.html
+      extractor_notes: Derived from overloading and related function-surface topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u08s03
+    parent_unit_id: u08
+    kind: section
+    sequence: 3
+    title: Lambdas and Local Callables
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/08.Basic_Concepts_VI.html
+    summary: Local callable objects and closure syntax.
+    learner_fit: intermediate
+    reading_role: reference
+    task_authoring_role: supporting
+    prerequisites:
+      - c0801
+    candidate_phase_tags:
+      - callables
+      - core-language
+    candidate_gate_tags:
+      - lambda-basics
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags:
+      - too-advanced-early
+    concepts:
+      - concept_id: c0803
+        label: Lambdas and local callables
+        tags:
+          - lambdas
+          - closures
+          - callables
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c0801
+        task_patterns:
+          - compare-tradeoffs
+        misconceptions:
+          - Lambdas are only shorthand syntax for functions.
+        reading_role: reference
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids: []
+        risk_flags:
+          - too-advanced-early
+        confidence: medium
+        notes: Keep outside early gate generation until function basics are stable.
+    provenance:
+      extracted_from:
+        - title: Chapter 8 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/08.Basic_Concepts_VI.html
+      extractor_notes: Derived from lambda topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u08s04
+    parent_unit_id: u08
+    kind: section
+    sequence: 4
+    title: Preprocessing and Macros
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/08.Basic_Concepts_VI.html
+    summary: Preprocessor surface and macro-related topics.
+    learner_fit: intermediate
+    reading_role: reference
+    task_authoring_role: reference-only
+    prerequisites:
+      - c0601
+    candidate_phase_tags:
+      - tooling
+      - preprocessing
+    candidate_gate_tags:
+      - preprocessing-basics
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags:
+      - too-advanced-early
+      - broad-mixed-topic
+    concepts:
+      - concept_id: c0804
+        label: Preprocessing and macros
+        tags:
+          - preprocessor
+          - macros
+          - build-surface
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c0601
+        task_patterns:
+          - trace-and-explain
+        misconceptions:
+          - Macros are a normal substitute for typed language features.
+        reading_role: reference
+        task_authoring_role: reference-only
+        needs_companion_source: true
+        companion_resource_ids: []
+        risk_flags:
+          - too-advanced-early
+        confidence: medium
+        notes: Exclude from early task generation unless a gate is explicitly about preprocessing.
+    provenance:
+      extracted_from:
+        - title: Chapter 8 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/08.Basic_Concepts_VI.html
+      extractor_notes: Derived from preprocessing and macro topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u09
+    parent_unit_id: null
+    kind: chapter
+    sequence: 9
+    title: OOP I
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/09.Object_Oriented_I.html
+    summary: First class-design material with constructors, destructors, access control, and early special-member reasoning.
+    learner_fit: mixed
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c0602
+      - c0801
+      - c0702
+    candidate_phase_tags:
+      - object-model
+      - lifetime
+    candidate_gate_tags:
+      - class-lifetime-raii
+      - special-members
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-001
+      - R-003
+    risk_flags:
+      - assumes-prior-knowledge
+      - thin-examples
+    concepts: []
+    provenance:
+      extracted_from:
+        - title: Course index
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+        - title: Chapter 9 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/09.Object_Oriented_I.html
+      extractor_notes: Pilot extraction uses the published chapter topic list only.
+    confidence: medium
+    notes: High-value source chapter for first class/lifetime gate design.
+  - unit_id: u09s01
+    parent_unit_id: u09
+    kind: section
+    sequence: 1
+    title: Class Structure and Encapsulation
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/09.Object_Oriented_I.html
+    summary: First-pass class surface, access control, and encapsulation reasoning.
+    learner_fit: beginner
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c0602
+      - c0801
+    candidate_phase_tags:
+      - object-model
+      - lifetime
+    candidate_gate_tags:
+      - class-lifetime-raii
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-001
+      - R-003
+    risk_flags: []
+    concepts:
+      - concept_id: c0901
+        label: Class structure and encapsulation
+        tags:
+          - classes
+          - encapsulation
+          - access-control
+        difficulty: beginner
+        prerequisite_concept_ids:
+          - c0602
+          - c0801
+        task_patterns:
+          - implement-bounded-class
+          - explain-lifetime
+        misconceptions:
+          - A class is only a struct with private by default.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-001
+          - R-003
+        risk_flags: []
+        confidence: medium
+        notes: Strong input for the first object-encapsulation exercises.
+    provenance:
+      extracted_from:
+        - title: Chapter 9 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/09.Object_Oriented_I.html
+      extractor_notes: Derived from class, visibility, and related topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u09s02
+    parent_unit_id: u09
+    kind: section
+    sequence: 2
+    title: Constructors, Destructors, and RAII
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/09.Object_Oriented_I.html
+    summary: Construction and destruction flow tied to first-pass RAII reasoning.
+    learner_fit: beginner
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c0901
+      - c0702
+    candidate_phase_tags:
+      - object-model
+      - lifetime
+    candidate_gate_tags:
+      - class-lifetime-raii
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-001
+      - R-003
+    risk_flags: []
+    concepts:
+      - concept_id: c0902
+        label: Construction, destruction, and RAII
+        tags:
+          - constructors
+          - destructors
+          - lifetime
+          - raii
+        difficulty: beginner
+        prerequisite_concept_ids:
+          - c0901
+          - c0702
+        task_patterns:
+          - implement-bounded-class
+          - explain-lifetime
+        misconceptions:
+          - RAII means using heap allocation and destructors everywhere.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-001
+          - R-003
+        risk_flags: []
+        confidence: medium
+        notes: Directly aligned with the repo's early RAII focus.
+    provenance:
+      extracted_from:
+        - title: Chapter 9 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/09.Object_Oriented_I.html
+      extractor_notes: Derived from constructor, destructor, and RAII topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u09s03
+    parent_unit_id: u09
+    kind: section
+    sequence: 3
+    title: Copy Control and Special Members
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/09.Object_Oriented_I.html
+    summary: First-pass special-member behavior and copying surface.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: supporting
+    prerequisites:
+      - c0902
+    candidate_phase_tags:
+      - object-model
+      - lifetime
+    candidate_gate_tags:
+      - special-members
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-001
+      - R-003
+    risk_flags:
+      - assumes-prior-knowledge
+    concepts:
+      - concept_id: c0903
+        label: Copy control and special members
+        tags:
+          - copy
+          - constructors
+          - special-members
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c0902
+        task_patterns:
+          - compare-tradeoffs
+          - debug-small-build
+        misconceptions:
+          - Copying an object is always field-by-field harmless.
+        reading_role: secondary
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-001
+          - R-003
+        risk_flags:
+          - assumes-prior-knowledge
+        confidence: medium
+        notes: Better introduced after the learner already trusts lifetime boundaries.
+    provenance:
+      extracted_from:
+        - title: Chapter 9 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/09.Object_Oriented_I.html
+      extractor_notes: Derived from copy constructor and special-member topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u09s04
+    parent_unit_id: u09
+    kind: section
+    sequence: 4
+    title: this, Class Keywords, and Surface Design
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/09.Object_Oriented_I.html
+    summary: Surface language around classes and member access.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: supporting
+    prerequisites:
+      - c0901
+    candidate_phase_tags:
+      - object-model
+      - interfaces
+    candidate_gate_tags:
+      - class-design-surface
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-001
+      - R-003
+    risk_flags: []
+    concepts:
+      - concept_id: c0904
+        label: this and class design surface
+        tags:
+          - this
+          - class-keywords
+          - members
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c0901
+        task_patterns:
+          - trace-and-explain
+          - compare-tradeoffs
+        misconceptions:
+          - this is just syntax noise and never affects design reasoning.
+        reading_role: secondary
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-001
+          - R-003
+        risk_flags: []
+        confidence: medium
+        notes: Supporting material for later object-model refinement.
+    provenance:
+      extracted_from:
+        - title: Chapter 9 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/09.Object_Oriented_I.html
+      extractor_notes: Derived from this, class, and related surface topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u10
+    parent_unit_id: null
+    kind: chapter
+    sequence: 10
+    title: OOP II
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/10.Object_Oriented_II.html
+    summary: Inheritance, virtual dispatch, operator overloading, RTTI, and object-layout surface.
+    learner_fit: advanced
+    reading_role: reference
+    task_authoring_role: supporting
+    prerequisites:
+      - c0901
+      - c0902
+      - c0801
+    candidate_phase_tags:
+      - object-model
+      - abstraction
+    candidate_gate_tags:
+      - polymorphism-basics
+      - operator-overloading
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - too-advanced-early
+      - assumes-prior-knowledge
+    concepts: []
+    provenance:
+      extracted_from:
+        - title: Course index
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+        - title: Chapter 10 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/10.Object_Oriented_II.html
+      extractor_notes: Pilot extraction uses the published chapter topic list only.
+    confidence: medium
+    notes: Useful later for object-model planning, but not suitable for early-phase learner reading.
+  - unit_id: u10s01
+    parent_unit_id: u10
+    kind: section
+    sequence: 1
+    title: Inheritance and Dynamic Dispatch
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/10.Object_Oriented_II.html
+    summary: Hierarchies and runtime polymorphism at a first pass.
+    learner_fit: intermediate
+    reading_role: reference
+    task_authoring_role: supporting
+    prerequisites:
+      - c0901
+      - c0902
+    candidate_phase_tags:
+      - object-model
+      - abstraction
+    candidate_gate_tags:
+      - polymorphism-basics
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - too-advanced-early
+    concepts:
+      - concept_id: c1001
+        label: Inheritance and dynamic dispatch
+        tags:
+          - inheritance
+          - virtual
+          - polymorphism
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c0901
+          - c0902
+        task_patterns:
+          - hierarchy-design-critique
+          - compare-tradeoffs
+        misconceptions:
+          - Inheritance automatically gives the right runtime behavior.
+        reading_role: reference
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags:
+          - too-advanced-early
+        confidence: medium
+        notes: Hold for post-foundations object-model work.
+    provenance:
+      extracted_from:
+        - title: Chapter 10 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/10.Object_Oriented_II.html
+      extractor_notes: Derived from hierarchy and polymorphism topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u10s02
+    parent_unit_id: u10
+    kind: section
+    sequence: 2
+    title: Operator Overloading and Functors
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/10.Object_Oriented_II.html
+    summary: Custom operator surface and callable-object style design.
+    learner_fit: intermediate
+    reading_role: reference
+    task_authoring_role: supporting
+    prerequisites:
+      - c0901
+      - c0801
+    candidate_phase_tags:
+      - object-model
+      - interfaces
+    candidate_gate_tags:
+      - operator-overloading
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - too-advanced-early
+    concepts:
+      - concept_id: c1002
+        label: Operator overloading and functors
+        tags:
+          - operators
+          - overloading
+          - functors
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c0901
+          - c0801
+        task_patterns:
+          - compare-tradeoffs
+        misconceptions:
+          - Operator overloading is mostly syntax sugar with no semantic cost.
+        reading_role: reference
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags:
+          - too-advanced-early
+        confidence: medium
+        notes: Better as a later style-and-abstraction topic.
+    provenance:
+      extracted_from:
+        - title: Chapter 10 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/10.Object_Oriented_II.html
+      extractor_notes: Derived from operator overloading and function-object topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u10s03
+    parent_unit_id: u10
+    kind: section
+    sequence: 3
+    title: RTTI and Hierarchy Casts
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/10.Object_Oriented_II.html
+    summary: Runtime type information and casts across inheritance hierarchies.
+    learner_fit: advanced
+    reading_role: reference
+    task_authoring_role: reference-only
+    prerequisites:
+      - c1001
+      - c0704
+    candidate_phase_tags:
+      - object-model
+      - low-level
+    candidate_gate_tags:
+      - hierarchy-casts
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - too-advanced-early
+    concepts:
+      - concept_id: c1003
+        label: RTTI and hierarchy conversions
+        tags:
+          - rtti
+          - casts
+          - hierarchies
+        difficulty: advanced
+        prerequisite_concept_ids:
+          - c1001
+          - c0704
+        task_patterns:
+          - hierarchy-design-critique
+          - trace-and-explain
+        misconceptions:
+          - A downcast is safe if the code compiles.
+        reading_role: reference
+        task_authoring_role: reference-only
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags:
+          - too-advanced-early
+        confidence: medium
+        notes: Exclude from automatic task generation until there is an explicit advanced gate.
+    provenance:
+      extracted_from:
+        - title: Chapter 10 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/10.Object_Oriented_II.html
+      extractor_notes: Derived from RTTI and cast topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u10s04
+    parent_unit_id: u10
+    kind: section
+    sequence: 4
+    title: Object Layout and Multiple Inheritance
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/10.Object_Oriented_II.html
+    summary: Layout-level notes and hierarchy complexity beyond early-course needs.
+    learner_fit: advanced
+    reading_role: reference
+    task_authoring_role: reference-only
+    prerequisites:
+      - c1001
+    candidate_phase_tags:
+      - object-model
+      - low-level
+    candidate_gate_tags:
+      - object-layout
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - too-advanced-early
+    concepts:
+      - concept_id: c1004
+        label: Object layout and multiple inheritance
+        tags:
+          - object-layout
+          - multiple-inheritance
+          - abi-surface
+        difficulty: advanced
+        prerequisite_concept_ids:
+          - c1001
+        task_patterns:
+          - hierarchy-design-critique
+          - trace-and-explain
+        misconceptions:
+          - Object layout can be assumed directly from surface syntax.
+        reading_role: reference
+        task_authoring_role: reference-only
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags:
+          - too-advanced-early
+        confidence: medium
+        notes: Reserve for later systems and ABI-oriented work.
+    provenance:
+      extracted_from:
+        - title: Chapter 10 HTML
+          url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/10.Object_Oriented_II.html
+      extractor_notes: Derived from object layout and multiple-inheritance topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u11
+    parent_unit_id: null
+    kind: chapter
+    sequence: 11
+    title: Templates and Meta-programming I
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/11.Templates_I.html
+    summary: Function templates, template variables, type traits, and compile-time utility surface.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c0801
+      - c0302
+      - c0901
+    candidate_phase_tags:
+      - templates
+      - compile-time
+    candidate_gate_tags:
+      - function-templates
+      - compile-time-utilities
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - assumes-prior-knowledge
+      - thin-examples
+    concepts: []
+    provenance:
+      extracted_from:
+        - title: Course index
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+        - title: Chapter 11 topics
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Extracted from the published chapter topic list for chapter 11.
+    confidence: medium
+    notes: Good authoring source once functions and type basics are stable.
+  - unit_id: u11s01
+    parent_unit_id: u11
+    kind: section
+    sequence: 1
+    title: Function Templates and Template Variables
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/
+    summary: Generic function surface, instantiation, specialization, and template variable basics.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c0801
+      - c0302
+    candidate_phase_tags:
+      - templates
+      - compile-time
+    candidate_gate_tags:
+      - function-templates
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - assumes-prior-knowledge
+    concepts:
+      - concept_id: c1101
+        label: Function templates and instantiation
+        tags:
+          - templates
+          - functions
+          - instantiation
+          - specialization
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c0801
+          - c0302
+        task_patterns:
+          - implement-generic-function
+          - compare-tradeoffs
+        misconceptions:
+          - A template is just a macro with angle brackets.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags: []
+        confidence: medium
+        notes: Strong first generic-programming concept for later phases.
+      - concept_id: c1102
+        label: Template variables and template parameter forms
+        tags:
+          - templates
+          - variables
+          - parameters
+          - auto
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c1101
+        task_patterns:
+          - trace-and-explain
+          - compare-tradeoffs
+        misconceptions:
+          - Template parameters are only types.
+        reading_role: secondary
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags: []
+        confidence: medium
+        notes: Useful for broadening generic-interface reasoning.
+    provenance:
+      extracted_from:
+        - title: Chapter 11 topics
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from function template, template variable, and template parameter type topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u11s02
+    parent_unit_id: u11
+    kind: section
+    sequence: 2
+    title: Compile-Time Utilities and Type Traits
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/
+    summary: Static checks, type deduction helpers, and type-trait based compile-time reasoning.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c1101
+    candidate_phase_tags:
+      - templates
+      - compile-time
+    candidate_gate_tags:
+      - compile-time-utilities
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags: []
+    concepts:
+      - concept_id: c1103
+        label: static_assert, decltype, and compile-time utility surface
+        tags:
+          - static_assert
+          - decltype
+          - compile-time
+          - aliases
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c1101
+        task_patterns:
+          - constrain-generic-code
+          - debug-template-errors
+        misconceptions:
+          - Compile-time checks are only for optimization, not correctness.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags: []
+        confidence: medium
+        notes: Good for readiness and bounded template-debug tasks.
+      - concept_id: c1104
+        label: Type traits and type manipulation
+        tags:
+          - type-traits
+          - metaprogramming
+          - type-manipulation
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c1103
+        task_patterns:
+          - constrain-generic-code
+          - compare-tradeoffs
+        misconceptions:
+          - Type traits replace the need to understand the type system.
+        reading_role: secondary
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags: []
+        confidence: medium
+        notes: Good later input for constrained template exercises.
+    provenance:
+      extracted_from:
+        - title: Chapter 11 topics
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from compile-time utilities and type-trait topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u12
+    parent_unit_id: null
+    kind: chapter
+    sequence: 12
+    title: Templates and Meta-programming II
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/12.Templates_II.html
+    summary: Class templates, CTAD, advanced dependent-name rules, variadics, concepts, and SFINAE.
+    learner_fit: advanced
+    reading_role: reference
+    task_authoring_role: supporting
+    prerequisites:
+      - c1101
+      - c1103
+      - c0901
+    candidate_phase_tags:
+      - templates
+      - compile-time
+    candidate_gate_tags:
+      - class-templates
+      - constrained-generics
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - too-advanced-early
+      - assumes-prior-knowledge
+    concepts: []
+    provenance:
+      extracted_from:
+        - title: Course index
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+        - title: Chapter 12 topics
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Extracted from the published chapter topic list for chapter 12.
+    confidence: medium
+    notes: Better used after the learner is already stable in first-pass templates.
+  - unit_id: u12s01
+    parent_unit_id: u12
+    kind: section
+    sequence: 1
+    title: Class Templates and CTAD
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/
+    summary: Generic class forms, specialization surface, and constructor template deduction.
+    learner_fit: advanced
+    reading_role: secondary
+    task_authoring_role: supporting
+    prerequisites:
+      - c1101
+      - c0901
+    candidate_phase_tags:
+      - templates
+      - object-model
+    candidate_gate_tags:
+      - class-templates
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - too-advanced-early
+    concepts:
+      - concept_id: c1201
+        label: Class templates and CTAD
+        tags:
+          - class-templates
+          - ctad
+          - specialization
+        difficulty: advanced
+        prerequisite_concept_ids:
+          - c1101
+          - c0901
+        task_patterns:
+          - implement-generic-class
+          - compare-tradeoffs
+        misconceptions:
+          - CTAD removes the need to reason about template arguments.
+        reading_role: secondary
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags:
+          - too-advanced-early
+        confidence: medium
+        notes: Good later follow-on from function templates.
+    provenance:
+      extracted_from:
+        - title: Chapter 12 topics
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from class template and CTAD topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u12s02
+    parent_unit_id: u12
+    kind: section
+    sequence: 2
+    title: Dependent Names, SFINAE, and Template Meta-Programming
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/
+    summary: Advanced template mechanics used to control overloads and type-dependent behavior.
+    learner_fit: advanced
+    reading_role: reference
+    task_authoring_role: supporting
+    prerequisites:
+      - c1103
+      - c1201
+    candidate_phase_tags:
+      - templates
+      - metaprogramming
+    candidate_gate_tags:
+      - constrained-generics
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - too-advanced-early
+      - thin-examples
+    concepts:
+      - concept_id: c1202
+        label: Dependent names, SFINAE, and meta-programming surface
+        tags:
+          - dependent-names
+          - sfinae
+          - metaprogramming
+        difficulty: advanced
+        prerequisite_concept_ids:
+          - c1103
+          - c1201
+        task_patterns:
+          - debug-template-errors
+          - compare-tradeoffs
+        misconceptions:
+          - SFINAE is the normal first tool for generic constraints.
+        reading_role: reference
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags:
+          - too-advanced-early
+        confidence: medium
+        notes: Keep out of automatic generation unless an advanced template gate explicitly targets it.
+    provenance:
+      extracted_from:
+        - title: Chapter 12 topics
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from advanced template concepts, template metaprogramming, and SFINAE topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u12s03
+    parent_unit_id: u12
+    kind: section
+    sequence: 3
+    title: Variadics, Concepts, and Template Debugging
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/
+    summary: Modern constrained-generic tools plus debugging surfaces for template-heavy code.
+    learner_fit: advanced
+    reading_role: secondary
+    task_authoring_role: supporting
+    prerequisites:
+      - c1104
+      - c1201
+    candidate_phase_tags:
+      - templates
+      - compile-time
+    candidate_gate_tags:
+      - constrained-generics
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - too-advanced-early
+    concepts:
+      - concept_id: c1203
+        label: Variadic templates and fold expressions
+        tags:
+          - variadics
+          - fold-expressions
+          - templates
+        difficulty: advanced
+        prerequisite_concept_ids:
+          - c1201
+        task_patterns:
+          - implement-generic-function
+          - debug-template-errors
+        misconceptions:
+          - Variadics are the right default whenever an API takes several things.
+        reading_role: reference
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags:
+          - too-advanced-early
+        confidence: medium
+        notes: Good later expansion topic for generic libraries.
+      - concept_id: c1204
+        label: C++20 concepts and requires-based constraints
+        tags:
+          - concepts
+          - requires
+          - constraints
+        difficulty: advanced
+        prerequisite_concept_ids:
+          - c1104
+          - c1201
+        task_patterns:
+          - constrain-generic-code
+          - debug-template-errors
+        misconceptions:
+          - concepts are only documentation, not part of program design.
+        reading_role: secondary
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags:
+          - too-advanced-early
+        confidence: medium
+        notes: Likely a better later-phase constraint tool than raw SFINAE.
+    provenance:
+      extracted_from:
+        - title: Chapter 12 topics
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from variadic templates, concepts, and template-debugging topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u13
+    parent_unit_id: null
+    kind: chapter
+    sequence: 13
+    title: Translation Units I
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/13.Translation_Units_I.html
+    summary: Core language facts behind translation units, linkage, storage duration, and the one-definition rule.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c0601
+      - c0703
+      - c0901
+    candidate_phase_tags:
+      - translation-units
+      - build-model
+    candidate_gate_tags:
+      - linkage-and-odr
+      - storage-duration
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - assumes-prior-knowledge
+      - thin-examples
+    concepts: []
+    provenance:
+      extracted_from:
+        - title: Course index
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+        - title: Chapter 13 topics
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Extracted from the published chapter topic list for chapter 13.
+    confidence: medium
+    notes: Strong source support for later systems-facing compilation and lifetime phases.
+  - unit_id: u13s01
+    parent_unit_id: u13
+    kind: section
+    sequence: 1
+    title: Storage Duration and Initialization Across Units
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/
+    summary: Static and thread storage duration, initialization behavior, and related pitfalls.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c0703
+      - c0601
+    candidate_phase_tags:
+      - translation-units
+      - lifetime
+    candidate_gate_tags:
+      - storage-duration
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - assumes-prior-knowledge
+    concepts:
+      - concept_id: c1301
+        label: Storage duration, static initialization, and constinit surface
+        tags:
+          - storage-duration
+          - static-initialization
+          - constinit
+          - globals
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c0703
+          - c0601
+        task_patterns:
+          - debug-initialization-bug
+          - explain-lifetime
+        misconceptions:
+          - static storage means simple lifetime with no hidden ordering issues.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags: []
+        confidence: medium
+        notes: Useful for later global-state and initialization-order tasks.
+    provenance:
+      extracted_from:
+        - title: Chapter 13 topics
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from const, constexpr, constinit, storage-duration, and initialization-order topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u13s02
+    parent_unit_id: u13
+    kind: section
+    sequence: 2
+    title: Linkage and Translation Units
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/
+    summary: Names, linkage, scope across files, and the translation-unit model.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c0601
+    candidate_phase_tags:
+      - translation-units
+      - build-model
+    candidate_gate_tags:
+      - linkage-and-odr
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags: []
+    concepts:
+      - concept_id: c1302
+        label: Linkage and translation-unit boundaries
+        tags:
+          - linkage
+          - translation-units
+          - scope
+          - visibility
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c0601
+        task_patterns:
+          - multi-file-debugging
+          - trace-and-explain
+        misconceptions:
+          - If two files compile separately, they already agree on program-wide identity.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags: []
+        confidence: medium
+        notes: Core later-phase build-model concept.
+    provenance:
+      extracted_from:
+        - title: Chapter 13 topics
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from linkage and translation-unit topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u13s03
+    parent_unit_id: u13
+    kind: section
+    sequence: 3
+    title: One Definition Rule and Template Boundaries
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/
+    summary: ODR reasoning for normal declarations and template code across files.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c1302
+      - c1101
+    candidate_phase_tags:
+      - translation-units
+      - build-model
+    candidate_gate_tags:
+      - linkage-and-odr
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags: []
+    concepts:
+      - concept_id: c1303
+        label: One Definition Rule and file-level consistency
+        tags:
+          - odr
+          - declarations
+          - definitions
+          - templates
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c1302
+          - c1101
+        task_patterns:
+          - multi-file-debugging
+          - compare-tradeoffs
+        misconceptions:
+          - Duplicate definitions are only a linker formatting problem.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags: []
+        confidence: medium
+        notes: Strong authoring input for later multi-file error diagnosis.
+    provenance:
+      extracted_from:
+        - title: Chapter 13 topics
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from ODR and template-ODR topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u14
+    parent_unit_id: null
+    kind: chapter
+    sequence: 14
+    title: Translation Units II
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/htmls/14.Translation_Units_II.html
+    summary: Headers, modules, libraries, linkage artifacts, and ABI-level boundaries.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c1302
+      - c1303
+    candidate_phase_tags:
+      - translation-units
+      - build-model
+    candidate_gate_tags:
+      - headers-and-modules
+      - libraries-and-abi
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - assumes-prior-knowledge
+      - thin-examples
+    concepts: []
+    provenance:
+      extracted_from:
+        - title: Course index
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+        - title: Chapter 14 topics
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Extracted from the published chapter topic list for chapter 14.
+    confidence: medium
+    notes: Strong backbone for later build-structure and binary-boundary phases.
+  - unit_id: u14s01
+    parent_unit_id: u14
+    kind: section
+    sequence: 1
+    title: Headers, Includes, and Header Guards
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/
+    summary: File-organization surface using includes, guards, and pragma once.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c1302
+    candidate_phase_tags:
+      - translation-units
+      - build-model
+    candidate_gate_tags:
+      - headers-and-modules
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags: []
+    concepts:
+      - concept_id: c1401
+        label: Headers, include guards, and file inclusion model
+        tags:
+          - headers
+          - includes
+          - header-guards
+          - pragma-once
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c1302
+        task_patterns:
+          - multi-file-debugging
+          - organize-project-files
+        misconceptions:
+          - A header is just a convenient place to put any code.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags: []
+        confidence: medium
+        notes: High-value later gate topic for project organization.
+    provenance:
+      extracted_from:
+        - title: Chapter 14 topics
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from header, include, and guard topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u14s02
+    parent_unit_id: u14
+    kind: section
+    sequence: 2
+    title: C++20 Modules and Alternative Interface Boundaries
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/
+    summary: Module-based organization as an alternative to the include model.
+    learner_fit: advanced
+    reading_role: reference
+    task_authoring_role: supporting
+    prerequisites:
+      - c1401
+    candidate_phase_tags:
+      - translation-units
+      - modules
+    candidate_gate_tags:
+      - headers-and-modules
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - too-advanced-early
+    concepts:
+      - concept_id: c1402
+        label: Modules and interface partitioning
+        tags:
+          - modules
+          - interfaces
+          - build-model
+        difficulty: advanced
+        prerequisite_concept_ids:
+          - c1401
+        task_patterns:
+          - organize-project-files
+          - compare-tradeoffs
+        misconceptions:
+          - Modules remove the need to understand translation units.
+        reading_role: reference
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags:
+          - too-advanced-early
+        confidence: medium
+        notes: Good advanced extension after header discipline is stable.
+    provenance:
+      extracted_from:
+        - title: Chapter 14 topics
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from C++20 modules topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u14s03
+    parent_unit_id: u14
+    kind: section
+    sequence: 3
+    title: Libraries, Linking, and Binary Boundaries
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/
+    summary: Static and dynamic libraries, linking, and binary-interface boundaries.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c1302
+      - c1303
+    candidate_phase_tags:
+      - translation-units
+      - libraries
+      - build-model
+    candidate_gate_tags:
+      - libraries-and-abi
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags: []
+    concepts:
+      - concept_id: c1403
+        label: Static and dynamic libraries plus linking model
+        tags:
+          - libraries
+          - linking
+          - static
+          - dynamic
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c1302
+          - c1303
+        task_patterns:
+          - multi-file-debugging
+          - organize-project-files
+        misconceptions:
+          - Linking is just the compiler's final file-copy step.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags: []
+        confidence: medium
+        notes: Useful later for project-structure and binary-boundary tasks.
+      - concept_id: c1404
+        label: Name mangling and ABI surface
+        tags:
+          - abi
+          - name-mangling
+          - binary-boundaries
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c1403
+        task_patterns:
+          - compare-tradeoffs
+          - trace-and-explain
+        misconceptions:
+          - If source-level signatures match, the binary interface is automatically safe.
+        reading_role: secondary
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags: []
+        confidence: medium
+        notes: Strong systems-facing concept for later library and toolchain work.
+    provenance:
+      extracted_from:
+        - title: Chapter 14 topics
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from libraries, linking, name-mangling, and ABI topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u15
+    parent_unit_id: null
+    kind: chapter
+    sequence: 15
+    title: Code Conventions I
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/15.Code_Convention_I.pdf
+    summary: Project organization and first-pass coding conventions for files, includes, data, functions, and classes.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c1401
+      - c0801
+      - c0901
+    candidate_phase_tags:
+      - code-quality
+      - maintainability
+    candidate_gate_tags:
+      - project-organization
+      - style-discipline
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags:
+      - broad-mixed-topic
+    concepts: []
+    provenance:
+      extracted_from:
+        - title: Chapter 15 PDF link and topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Extracted from the published chapter topic list for chapter 15.
+    confidence: medium
+    notes: Good later-phase source for maintainability and structure constraints.
+  - unit_id: u15s01
+    parent_unit_id: u15
+    kind: section
+    sequence: 1
+    title: Project Organization and Include Discipline
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/15.Code_Convention_I.pdf
+    summary: Directory layout, file organization, and include-order conventions for maintainable projects.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c1401
+    candidate_phase_tags:
+      - code-quality
+      - build-model
+    candidate_gate_tags:
+      - project-organization
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags: []
+    concepts:
+      - concept_id: c1501
+        label: Project organization and include discipline
+        tags:
+          - project-structure
+          - includes
+          - maintainability
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c1401
+        task_patterns:
+          - organize-project-files
+          - compare-tradeoffs
+        misconceptions:
+          - Directory layout is cosmetic and unrelated to reasoning quality.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids: []
+        risk_flags: []
+        confidence: medium
+        notes: Strong basis for structure-focused refactoring tasks.
+    provenance:
+      extracted_from:
+        - title: Chapter 15 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from project organization and include topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u15s02
+    parent_unit_id: u15
+    kind: section
+    sequence: 2
+    title: Conventions for Data, Functions, and Low-Level Surface
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/15.Code_Convention_I.pdf
+    summary: Style and convention rules affecting macros, variables, arithmetic types, and functions.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: supporting
+    prerequisites:
+      - c0302
+      - c0801
+    candidate_phase_tags:
+      - code-quality
+      - maintainability
+    candidate_gate_tags:
+      - style-discipline
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags:
+      - broad-mixed-topic
+    concepts:
+      - concept_id: c1502
+        label: Style conventions for macros, variables, arithmetic, and functions
+        tags:
+          - style
+          - macros
+          - variables
+          - functions
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c0302
+          - c0801
+        task_patterns:
+          - style-review
+          - compare-tradeoffs
+        misconceptions:
+          - Style rules are separate from correctness and maintenance cost.
+        reading_role: secondary
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids: []
+        risk_flags:
+          - broad-mixed-topic
+        confidence: medium
+        notes: Useful for review-oriented tasks rather than greenfield generation.
+    provenance:
+      extracted_from:
+        - title: Chapter 15 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from preprocessing, variables, arithmetic, and functions topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u15s03
+    parent_unit_id: u15
+    kind: section
+    sequence: 3
+    title: Struct, Class, and Initialization Conventions
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/15.Code_Convention_I.pdf
+    summary: Conventions affecting aggregates, classes, initialization style, and special members.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: supporting
+    prerequisites:
+      - c0901
+      - c0902
+    candidate_phase_tags:
+      - code-quality
+      - object-model
+    candidate_gate_tags:
+      - style-discipline
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags: []
+    concepts:
+      - concept_id: c1503
+        label: Struct, class, and initialization conventions
+        tags:
+          - classes
+          - initialization
+          - style
+          - special-members
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c0901
+          - c0902
+        task_patterns:
+          - style-review
+          - implement-bounded-class
+        misconceptions:
+          - Initialization style choices are mostly aesthetic.
+        reading_role: secondary
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids: []
+        risk_flags: []
+        confidence: medium
+        notes: Good support material for consistency-focused class refactors.
+    provenance:
+      extracted_from:
+        - title: Chapter 15 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from struct/class and initialization topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u16
+    parent_unit_id: null
+    kind: chapter
+    sequence: 16
+    title: Code Conventions II
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/16.Code_Convention_II.pdf
+    summary: Conventions for auto, deduction, control flow, namespaces, readability, maintainability, naming, and documentation.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c1501
+      - c1502
+      - c1503
+    candidate_phase_tags:
+      - code-quality
+      - maintainability
+    candidate_gate_tags:
+      - style-discipline
+      - readability-and-documentation
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags:
+      - broad-mixed-topic
+    concepts: []
+    provenance:
+      extracted_from:
+        - title: Chapter 16 PDF link and topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Extracted from the published chapter topic list for chapter 16.
+    confidence: medium
+    notes: Useful as a style and maintainability policy source, not just as reading.
+  - unit_id: u16s01
+    parent_unit_id: u16
+    kind: section
+    sequence: 1
+    title: Deduction, Control Flow, and Namespace Discipline
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/16.Code_Convention_II.pdf
+    summary: Conventions around auto, deduction, control flow, and namespace usage.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c0302
+      - c0603
+    candidate_phase_tags:
+      - code-quality
+      - maintainability
+    candidate_gate_tags:
+      - style-discipline
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags: []
+    concepts:
+      - concept_id: c1601
+        label: Deduction, control flow, and namespace discipline
+        tags:
+          - auto
+          - deduction
+          - control-flow
+          - namespaces
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c0302
+          - c0603
+        task_patterns:
+          - style-review
+          - compare-tradeoffs
+        misconceptions:
+          - More concise syntax always makes code easier to maintain.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids: []
+        risk_flags: []
+        confidence: medium
+        notes: Strong later-phase code-review topic.
+    provenance:
+      extracted_from:
+        - title: Chapter 16 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from auto, templates, control flow, and namespace topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u16s02
+    parent_unit_id: u16
+    kind: section
+    sequence: 2
+    title: Maintainability, Naming, and Formatting
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/16.Code_Convention_II.pdf
+    summary: Readability and maintenance practices covering names, spacing, formatting, and portability.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c1501
+    candidate_phase_tags:
+      - code-quality
+      - maintainability
+    candidate_gate_tags:
+      - readability-and-documentation
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags: []
+    concepts:
+      - concept_id: c1602
+        label: Maintainability, naming, formatting, and portability
+        tags:
+          - naming
+          - formatting
+          - readability
+          - portability
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c1501
+        task_patterns:
+          - style-review
+          - refactor-for-maintainability
+        misconceptions:
+          - Naming and formatting choices are too subjective to review usefully.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids: []
+        risk_flags: []
+        confidence: medium
+        notes: Useful for explicit maintainability and review gates.
+    provenance:
+      extracted_from:
+        - title: Chapter 16 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from maintainability, portability, naming, and formatting topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u16s03
+    parent_unit_id: u16
+    kind: section
+    sequence: 3
+    title: Documentation and Code Comprehension
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/16.Code_Convention_II.pdf
+    summary: Commenting and documentation practices tied to code comprehension.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: supporting
+    prerequisites:
+      - c1602
+    candidate_phase_tags:
+      - code-quality
+      - communication
+    candidate_gate_tags:
+      - readability-and-documentation
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags: []
+    concepts:
+      - concept_id: c1603
+        label: Documentation and comprehension support
+        tags:
+          - documentation
+          - comments
+          - comprehension
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c1602
+        task_patterns:
+          - document-existing-code
+          - refactor-for-maintainability
+        misconceptions:
+          - More comments automatically means more understandable code.
+        reading_role: secondary
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids: []
+        risk_flags: []
+        confidence: medium
+        notes: Better as support to review and maintenance tasks than as a standalone gate.
+    provenance:
+      extracted_from:
+        - title: Chapter 16 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from code documentation and readability topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u17
+    parent_unit_id: null
+    kind: chapter
+    sequence: 17
+    title: Debugging and Testing
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/17.Debugging.pdf
+    summary: Debugging, assertions, sanitizers, warnings, static analysis, testing, and code-quality tooling.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c0203
+      - c1302
+      - c0902
+    candidate_phase_tags:
+      - debugging
+      - testing
+      - quality
+    candidate_gate_tags:
+      - debugging-workflow
+      - testing-and-analysis
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags:
+      - broad-mixed-topic
+    concepts: []
+    provenance:
+      extracted_from:
+        - title: Chapter 17 PDF link and topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Extracted from the published chapter topic list for chapter 17.
+    confidence: medium
+    notes: One of the strongest later-phase authoring sources in the course.
+  - unit_id: u17s01
+    parent_unit_id: u17
+    kind: section
+    sequence: 1
+    title: Debugging Model, Assertions, and Interactive Debugging
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/17.Debugging.pdf
+    summary: Defect framing, assertions, breakpoints, stack inspection, and execution debugging workflow.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c0203
+    candidate_phase_tags:
+      - debugging
+      - quality
+    candidate_gate_tags:
+      - debugging-workflow
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags: []
+    concepts:
+      - concept_id: c1701
+        label: Defect framing, assertions, and interactive debugging
+        tags:
+          - debugging
+          - assertions
+          - breakpoints
+          - stacktrace
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c0203
+        task_patterns:
+          - diagnose-runtime-bug
+          - explain-debugging-strategy
+        misconceptions:
+          - Debugging starts only after all thinking about program state has failed.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids: []
+        risk_flags: []
+        confidence: medium
+        notes: Excellent fit for workflow and process-oriented gates.
+    provenance:
+      extracted_from:
+        - title: Chapter 17 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from debugging overview, assertions, and execution debugging topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u17s02
+    parent_unit_id: u17
+    kind: section
+    sequence: 2
+    title: Sanitizers, Hardening, and Memory Debugging
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/17.Debugging.pdf
+    summary: Memory-checking tools and hardening techniques for finding undefined and unsafe behavior.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c0902
+      - c1302
+    candidate_phase_tags:
+      - debugging
+      - robustness
+    candidate_gate_tags:
+      - testing-and-analysis
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags: []
+    concepts:
+      - concept_id: c1702
+        label: Sanitizers, hardening, and memory-debug workflow
+        tags:
+          - sanitizers
+          - valgrind
+          - hardening
+          - memory
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c0902
+          - c1302
+        task_patterns:
+          - diagnose-runtime-bug
+          - compare-tradeoffs
+        misconceptions:
+          - If code compiles cleanly, sanitizers add little value.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids: []
+        risk_flags: []
+        confidence: medium
+        notes: Strong basis for later robustness gates.
+    provenance:
+      extracted_from:
+        - title: Chapter 17 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from memory debugging, hardening, and sanitizer topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u17s03
+    parent_unit_id: u17
+    kind: section
+    sequence: 3
+    title: Warnings, Static Analysis, Testing, and Code Quality
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/17.Debugging.pdf
+    summary: Analysis and testing toolchain including warnings, static analyzers, unit tests, fuzzing, and quality metrics.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c1701
+    candidate_phase_tags:
+      - testing
+      - quality
+    candidate_gate_tags:
+      - testing-and-analysis
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags:
+      - broad-mixed-topic
+    concepts:
+      - concept_id: c1703
+        label: Warnings, static analysis, testing, and code quality metrics
+        tags:
+          - warnings
+          - static-analysis
+          - testing
+          - quality
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c1701
+        task_patterns:
+          - write-tests-for-buggy-code
+          - compare-tradeoffs
+          - quality-review
+        misconceptions:
+          - Testing, warnings, and static analysis are interchangeable quality checks.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids: []
+        risk_flags:
+          - broad-mixed-topic
+        confidence: medium
+        notes: High-value source for diagnostics-heavy authoring.
+    provenance:
+      extracted_from:
+        - title: Chapter 17 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from warnings, static analysis, testing, and quality topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u18
+    parent_unit_id: null
+    kind: chapter
+    sequence: 18
+    title: Ecosystem
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/18.Ecosystem.pdf
+    summary: CMake, ctest, documentation tools, and broader online and offline tooling ecosystem.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c1302
+      - c1401
+    candidate_phase_tags:
+      - tooling
+      - ecosystem
+    candidate_gate_tags:
+      - build-tooling
+      - tooling-workflow
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags:
+      - broad-mixed-topic
+    concepts: []
+    provenance:
+      extracted_from:
+        - title: Chapter 18 PDF link and topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Extracted from the published chapter topic list for chapter 18.
+    confidence: medium
+    notes: Useful for phase planning around build tooling and local workflow discipline.
+  - unit_id: u18s01
+    parent_unit_id: u18
+    kind: section
+    sequence: 1
+    title: CMake and Test Execution Tooling
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/18.Ecosystem.pdf
+    summary: Build-system and test-runner surface around CMake and ctest.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c1302
+      - c1401
+    candidate_phase_tags:
+      - tooling
+      - build-model
+    candidate_gate_tags:
+      - build-tooling
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags: []
+    concepts:
+      - concept_id: c1801
+        label: CMake and ctest workflow
+        tags:
+          - cmake
+          - ctest
+          - build-tooling
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c1302
+          - c1401
+        task_patterns:
+          - configure-build-workflow
+          - multi-file-debugging
+        misconceptions:
+          - A build system removes the need to understand the underlying compile and link steps.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids: []
+        risk_flags: []
+        confidence: medium
+        notes: Good fit for later tooling gates.
+    provenance:
+      extracted_from:
+        - title: Chapter 18 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from CMake and ctest topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u18s02
+    parent_unit_id: u18
+    kind: section
+    sequence: 2
+    title: Documentation and Online Tooling
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/18.Ecosystem.pdf
+    summary: Documentation generation plus online support tools such as code search and benchmarking services.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: supporting
+    prerequisites:
+      - c1603
+    candidate_phase_tags:
+      - tooling
+      - communication
+    candidate_gate_tags:
+      - tooling-workflow
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags:
+      - broad-mixed-topic
+    concepts:
+      - concept_id: c1802
+        label: Documentation tooling and online workflow support
+        tags:
+          - doxygen
+          - documentation
+          - online-tools
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c1603
+        task_patterns:
+          - document-existing-code
+          - compare-tradeoffs
+        misconceptions:
+          - Tool-generated documentation replaces the need for interface design clarity.
+        reading_role: secondary
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids: []
+        risk_flags:
+          - broad-mixed-topic
+        confidence: medium
+        notes: Best used as support to tooling and maintenance work.
+    provenance:
+      extracted_from:
+        - title: Chapter 18 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from documentation and online tools topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u18s03
+    parent_unit_id: u18
+    kind: section
+    sequence: 3
+    title: Offline Tooling and Local Workflow Support
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/18.Ecosystem.pdf
+    summary: Local formatting, stats, visualization, and search tools that support offline development workflow.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: supporting
+    prerequisites:
+      - c1801
+    candidate_phase_tags:
+      - tooling
+      - workflow
+    candidate_gate_tags:
+      - tooling-workflow
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags: []
+    concepts:
+      - concept_id: c1803
+        label: Offline tooling and workflow support
+        tags:
+          - formatting
+          - visualization
+          - search
+          - workflow
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c1801
+        task_patterns:
+          - configure-build-workflow
+          - quality-review
+        misconceptions:
+          - Tooling setup is separate from engineering workflow quality.
+        reading_role: secondary
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids: []
+        risk_flags: []
+        confidence: medium
+        notes: Good supporting material for a tooling ecosystem phase.
+    provenance:
+      extracted_from:
+        - title: Chapter 18 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from offline tools topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u19
+    parent_unit_id: null
+    kind: chapter
+    sequence: 19
+    title: Utilities
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/19.Utilities.pdf
+    summary: Standard-library utility layer covering strings, filesystem, regex, tuples, variants, optionals, timing, randomness, and other support utilities.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c0801
+      - c0302
+      - c0901
+    candidate_phase_tags:
+      - standard-library
+      - utilities
+    candidate_gate_tags:
+      - utility-library-basics
+      - practical-data-and-time
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - broad-mixed-topic
+    concepts: []
+    provenance:
+      extracted_from:
+        - title: Chapter 19 PDF link and topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Extracted from the published chapter topic list for chapter 19.
+    confidence: medium
+    notes: Broad utility chapter that needs filtering before task generation.
+  - unit_id: u19s01
+    parent_unit_id: u19
+    kind: section
+    sequence: 1
+    title: Strings, Filesystem, and Text Utilities
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/19.Utilities.pdf
+    summary: Text and path-handling utilities including strings, filesystem, and regex surface.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c0801
+    candidate_phase_tags:
+      - standard-library
+      - utilities
+    candidate_gate_tags:
+      - utility-library-basics
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags: []
+    concepts:
+      - concept_id: c1901
+        label: Strings, filesystem, and text utility surface
+        tags:
+          - strings
+          - filesystem
+          - regex
+          - text
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c0801
+        task_patterns:
+          - implement-bounded-cli-tool
+          - compare-tradeoffs
+        misconceptions:
+          - String and path manipulation are too high-level to matter in systems-oriented code.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags: []
+        confidence: medium
+        notes: Strong practical gate material when tasks need file and text handling.
+    provenance:
+      extracted_from:
+        - title: Chapter 19 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from string, regex, filesystem, and related utility topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u19s02
+    parent_unit_id: u19
+    kind: section
+    sequence: 2
+    title: Tuples, Optionals, Variants, and Callable Utilities
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/19.Utilities.pdf
+    summary: Sum-type and product-type utility abstractions plus callable wrappers.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c0801
+      - c0901
+    candidate_phase_tags:
+      - standard-library
+      - utilities
+    candidate_gate_tags:
+      - utility-library-basics
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - broad-mixed-topic
+    concepts:
+      - concept_id: c1902
+        label: Tuples, optionals, variants, and callable utility types
+        tags:
+          - tuple
+          - optional
+          - variant
+          - callables
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c0801
+          - c0901
+        task_patterns:
+          - refactor-data-representation
+          - compare-tradeoffs
+        misconceptions:
+          - variant and optional are just convenience wrappers with no design consequences.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags:
+          - broad-mixed-topic
+        confidence: medium
+        notes: Good for modeling and interface-design tasks in a later standard-library phase.
+    provenance:
+      extracted_from:
+        - title: Chapter 19 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from function, bind, tuple, pair, optional, variant, and any topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u19s03
+    parent_unit_id: u19
+    kind: section
+    sequence: 3
+    title: Time, Randomness, and Numeric Support Utilities
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/19.Utilities.pdf
+    summary: Utility support for time measurement, random generation, and numeric helpers.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: supporting
+    prerequisites:
+      - c0401
+      - c0501
+    candidate_phase_tags:
+      - standard-library
+      - utilities
+      - measurement
+    candidate_gate_tags:
+      - practical-data-and-time
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags: []
+    concepts:
+      - concept_id: c1903
+        label: Chrono, random, and numeric support utilities
+        tags:
+          - chrono
+          - random
+          - numeric
+          - measurement
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c0401
+          - c0501
+        task_patterns:
+          - measure-code-behavior
+          - implement-bounded-cli-tool
+        misconceptions:
+          - Timing and random facilities are only peripheral conveniences.
+        reading_role: secondary
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags: []
+        confidence: medium
+        notes: Useful support material for later performance and tooling work.
+    provenance:
+      extracted_from:
+        - title: Chapter 19 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from chrono, random, and numeric utility topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u20
+    parent_unit_id: null
+    kind: chapter
+    sequence: 20
+    title: Containers, Iterators, and Algorithms
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/20.STL.pdf
+    summary: Core STL data structures and generic traversal and algorithm model.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c1101
+      - c1902
+    candidate_phase_tags:
+      - standard-library
+      - data-structures
+    candidate_gate_tags:
+      - containers
+      - iterators-and-algorithms
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - broad-mixed-topic
+    concepts: []
+    provenance:
+      extracted_from:
+        - title: Chapter 20 PDF link and topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Extracted from the published chapter topic list for chapter 20.
+    confidence: medium
+    notes: Strong later-phase backbone for data-structure and algorithm work.
+  - unit_id: u20s01
+    parent_unit_id: u20
+    kind: section
+    sequence: 1
+    title: Sequence Containers and Adaptors
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/20.STL.pdf
+    summary: Vector, deque, list, array, strings, and container adaptors as operational data-structure choices.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c1902
+    candidate_phase_tags:
+      - standard-library
+      - data-structures
+    candidate_gate_tags:
+      - containers
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags: []
+    concepts:
+      - concept_id: c2001
+        label: Sequence containers and adaptors
+        tags:
+          - vector
+          - deque
+          - list
+          - adaptors
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c1902
+        task_patterns:
+          - choose-data-structure
+          - refactor-data-representation
+        misconceptions:
+          - All standard containers are interchangeable with minor syntax changes.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags: []
+        confidence: medium
+        notes: Strong basis for design-tradeoff tasks.
+    provenance:
+      extracted_from:
+        - title: Chapter 20 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from array, vector, list, deque, string, and adaptor topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u20s02
+    parent_unit_id: u20
+    kind: section
+    sequence: 2
+    title: Associative Containers and Hashing
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/20.STL.pdf
+    summary: Ordered and unordered keyed collections and their operational tradeoffs.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c2001
+    candidate_phase_tags:
+      - standard-library
+      - data-structures
+    candidate_gate_tags:
+      - containers
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags: []
+    concepts:
+      - concept_id: c2002
+        label: Associative containers and hashing tradeoffs
+        tags:
+          - map
+          - set
+          - unordered
+          - hashing
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c2001
+        task_patterns:
+          - choose-data-structure
+          - compare-tradeoffs
+        misconceptions:
+          - unordered containers are always strictly better because they are faster.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags: []
+        confidence: medium
+        notes: Useful for systems-aware tradeoff tasks.
+    provenance:
+      extracted_from:
+        - title: Chapter 20 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from associative container and hashing topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u20s03
+    parent_unit_id: u20
+    kind: section
+    sequence: 3
+    title: Iterators, Ranges, and Algorithms
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/20.STL.pdf
+    summary: Generic traversal and algorithm application model including iterators, views, and complexity assumptions.
+    learner_fit: intermediate
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c1101
+      - c2001
+    candidate_phase_tags:
+      - standard-library
+      - algorithms
+    candidate_gate_tags:
+      - iterators-and-algorithms
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - broad-mixed-topic
+    concepts:
+      - concept_id: c2003
+        label: Iterators, ranges, and standard algorithms
+        tags:
+          - iterators
+          - ranges
+          - algorithms
+          - complexity
+        difficulty: intermediate
+        prerequisite_concept_ids:
+          - c1101
+          - c2001
+        task_patterns:
+          - use-standard-algorithm
+          - compare-tradeoffs
+          - refactor-loop-to-algorithm
+        misconceptions:
+          - Standard algorithms are mostly style sugar over loops.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags:
+          - broad-mixed-topic
+        confidence: medium
+        notes: High-value later authoring source for generic data-processing tasks.
+    provenance:
+      extracted_from:
+        - title: Chapter 20 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from iterator, range, and algorithm topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u21
+    parent_unit_id: null
+    kind: chapter
+    sequence: 21
+    title: Advanced Topics I
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/21.Advanced_Topics_I.pdf
+    summary: Deeper object-model, lifetime, allocation, move, exception, and undefined-behavior topics.
+    learner_fit: advanced
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c0902
+      - c0903
+      - c1301
+    candidate_phase_tags:
+      - advanced-semantics
+      - lifetime
+    candidate_gate_tags:
+      - advanced-lifetime
+      - robustness-and-ub
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - too-advanced-early
+      - broad-mixed-topic
+    concepts: []
+    provenance:
+      extracted_from:
+        - title: Chapter 21 PDF link and topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Extracted from the published chapter topic list for chapter 21.
+    confidence: medium
+    notes: Valuable later backbone for semantics-heavy systems work.
+  - unit_id: u21s01
+    parent_unit_id: u21
+    kind: section
+    sequence: 1
+    title: Object Model, Lifetime, and Reference Semantics
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/21.Advanced_Topics_I.pdf
+    summary: Deepened reasoning about object layout, lifetime, references, and aliasing-adjacent behavior.
+    learner_fit: advanced
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c0902
+      - c1301
+    candidate_phase_tags:
+      - advanced-semantics
+      - lifetime
+    candidate_gate_tags:
+      - advanced-lifetime
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - too-advanced-early
+    concepts:
+      - concept_id: c2101
+        label: Advanced object model, lifetime, and reference semantics
+        tags:
+          - object-model
+          - lifetime
+          - references
+          - aliasing
+        difficulty: advanced
+        prerequisite_concept_ids:
+          - c0902
+          - c1301
+        task_patterns:
+          - explain-lifetime
+          - diagnose-runtime-bug
+        misconceptions:
+          - Once basic RAII is understood, object-lifetime reasoning is mostly finished.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags:
+          - too-advanced-early
+        confidence: medium
+        notes: Good later phase source for subtle lifetime tasks.
+    provenance:
+      extracted_from:
+        - title: Chapter 21 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from object model, lifecycle, memory layout, pointers, and references topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u21s02
+    parent_unit_id: u21
+    kind: section
+    sequence: 2
+    title: Allocation, Move Semantics, and Object Optimization
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/21.Advanced_Topics_I.pdf
+    summary: Allocation surfaces, value-category transfer, and optimization behaviors around object movement.
+    learner_fit: advanced
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c0903
+      - c2101
+    candidate_phase_tags:
+      - advanced-semantics
+      - ownership
+    candidate_gate_tags:
+      - move-and-allocation
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - too-advanced-early
+    concepts:
+      - concept_id: c2102
+        label: Allocation mechanics, move semantics, and object optimization
+        tags:
+          - allocation
+          - move
+          - value-categories
+          - optimization
+        difficulty: advanced
+        prerequisite_concept_ids:
+          - c0903
+          - c2101
+        task_patterns:
+          - compare-tradeoffs
+          - diagnose-runtime-bug
+          - implement-bounded-class
+        misconceptions:
+          - Move semantics is mainly a faster version of copying with little design impact.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags:
+          - too-advanced-early
+        confidence: medium
+        notes: Core later-phase source for ownership and efficiency reasoning.
+    provenance:
+      extracted_from:
+        - title: Chapter 21 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from allocations, move semantics, and object optimization topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u21s03
+    parent_unit_id: u21
+    kind: section
+    sequence: 3
+    title: Exceptions, Overloading Edge Cases, and Undefined Behavior
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/21.Advanced_Topics_I.pdf
+    summary: Robustness and semantic edge cases involving exceptions, overload rules, and undefined behavior.
+    learner_fit: advanced
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c2101
+      - c2102
+    candidate_phase_tags:
+      - advanced-semantics
+      - robustness
+    candidate_gate_tags:
+      - robustness-and-ub
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - too-advanced-early
+      - broad-mixed-topic
+    concepts:
+      - concept_id: c2103
+        label: Exceptions, overload edge cases, and undefined behavior
+        tags:
+          - exceptions
+          - overloading
+          - undefined-behavior
+          - robustness
+        difficulty: advanced
+        prerequisite_concept_ids:
+          - c2101
+          - c2102
+        task_patterns:
+          - diagnose-runtime-bug
+          - compare-tradeoffs
+          - write-tests-for-buggy-code
+        misconceptions:
+          - Undefined behavior is mostly theoretical if the code seems to work.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags:
+          - too-advanced-early
+          - broad-mixed-topic
+        confidence: medium
+        notes: Good later source for robustness and semantic-correctness gates.
+    provenance:
+      extracted_from:
+        - title: Chapter 21 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from exceptions, undefined behavior, and related advanced semantics topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u22
+    parent_unit_id: null
+    kind: chapter
+    sequence: 22
+    title: Advanced Topics II
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/22.Advanced_Topics_II.pdf
+    summary: Smart pointers, allocators, atomics, multithreading, and parallel programming surface.
+    learner_fit: advanced
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c2102
+      - c1702
+    candidate_phase_tags:
+      - ownership
+      - concurrency
+    candidate_gate_tags:
+      - smart-pointers-and-allocators
+      - atomics-and-threading
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - too-advanced-early
+      - broad-mixed-topic
+    concepts: []
+    provenance:
+      extracted_from:
+        - title: Chapter 22 PDF link and topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Extracted from the published chapter topic list for chapter 22.
+    confidence: medium
+    notes: Strong later-phase source for ownership and concurrency planning.
+  - unit_id: u22s01
+    parent_unit_id: u22
+    kind: section
+    sequence: 1
+    title: Smart Pointers and Allocation Control
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/22.Advanced_Topics_II.pdf
+    summary: Ownership helpers and allocator-related control over memory management.
+    learner_fit: advanced
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c2102
+    candidate_phase_tags:
+      - ownership
+      - memory-management
+    candidate_gate_tags:
+      - smart-pointers-and-allocators
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - too-advanced-early
+    concepts:
+      - concept_id: c2201
+        label: Smart pointers and allocator-aware ownership control
+        tags:
+          - smart-pointers
+          - allocators
+          - ownership
+          - memory
+        difficulty: advanced
+        prerequisite_concept_ids:
+          - c2102
+        task_patterns:
+          - refactor-raw-ownership
+          - compare-tradeoffs
+        misconceptions:
+          - Smart pointers remove the need to reason about ownership.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags:
+          - too-advanced-early
+        confidence: medium
+        notes: Good source for ownership-refactor tasks in later phases.
+    provenance:
+      extracted_from:
+        - title: Chapter 22 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from smart pointer and allocator topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u22s02
+    parent_unit_id: u22
+    kind: section
+    sequence: 2
+    title: Atomics, Multithreading, and Parallel Surface
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/22.Advanced_Topics_II.pdf
+    summary: Concurrency surface from atomics and memory order through threading and parallel algorithms.
+    learner_fit: advanced
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c1702
+      - c2103
+    candidate_phase_tags:
+      - concurrency
+      - performance
+    candidate_gate_tags:
+      - atomics-and-threading
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - too-advanced-early
+      - broad-mixed-topic
+    concepts:
+      - concept_id: c2202
+        label: Atomics, memory ordering, and multithreading surface
+        tags:
+          - atomics
+          - threads
+          - memory-order
+          - parallelism
+        difficulty: advanced
+        prerequisite_concept_ids:
+          - c1702
+          - c2103
+        task_patterns:
+          - explain-concurrency-bug
+          - compare-tradeoffs
+          - diagnose-runtime-bug
+        misconceptions:
+          - Multithreading is mainly about starting more threads, not about memory interaction.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags:
+          - too-advanced-early
+          - broad-mixed-topic
+        confidence: medium
+        notes: High-value systems topic that will likely need its own careful phase design.
+    provenance:
+      extracted_from:
+        - title: Chapter 22 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from atomics, multithreading, and parallel topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u23
+    parent_unit_id: null
+    kind: chapter
+    sequence: 23
+    title: Performance Optimizations I
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/23.Optimization_I.pdf
+    summary: Performance foundations including cost models, hardware basics, caching, branching, and measurement.
+    learner_fit: advanced
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c2003
+      - c1903
+      - c2202
+    candidate_phase_tags:
+      - performance
+      - hardware-awareness
+    candidate_gate_tags:
+      - performance-model
+      - measurement-and-cost
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - broad-mixed-topic
+      - too-advanced-early
+    concepts: []
+    provenance:
+      extracted_from:
+        - title: Chapter 23 PDF link and topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Extracted from the published chapter topic list for chapter 23.
+    confidence: medium
+    notes: Strong later-phase backbone for performance mental models.
+  - unit_id: u23s01
+    parent_unit_id: u23
+    kind: section
+    sequence: 1
+    title: Cost Model, Complexity, and Measurement
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/23.Optimization_I.pdf
+    summary: How to reason about cost, asymptotics, and measured behavior before optimizing.
+    learner_fit: advanced
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c1903
+      - c2003
+    candidate_phase_tags:
+      - performance
+      - measurement
+    candidate_gate_tags:
+      - performance-model
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags: []
+    concepts:
+      - concept_id: c2301
+        label: Cost model, complexity, and performance measurement
+        tags:
+          - performance
+          - complexity
+          - benchmarking
+          - measurement
+        difficulty: advanced
+        prerequisite_concept_ids:
+          - c1903
+          - c2003
+        task_patterns:
+          - measure-code-behavior
+          - compare-tradeoffs
+        misconceptions:
+          - Faster-looking code is usually better without measurement.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags: []
+        confidence: medium
+        notes: Critical prerequisite for any optimization-oriented gate.
+    provenance:
+      extracted_from:
+        - title: Chapter 23 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from complexity, benchmarking, and cost-model topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u23s02
+    parent_unit_id: u23
+    kind: section
+    sequence: 2
+    title: Hardware-Aware Performance Surface
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/23.Optimization_I.pdf
+    summary: CPU and memory hierarchy effects including caching, branching, and related execution behavior.
+    learner_fit: advanced
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c2301
+    candidate_phase_tags:
+      - performance
+      - hardware-awareness
+    candidate_gate_tags:
+      - performance-model
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags: []
+    concepts:
+      - concept_id: c2302
+        label: Hardware-aware performance effects
+        tags:
+          - cache
+          - branch-prediction
+          - memory-hierarchy
+          - cpu
+        difficulty: advanced
+        prerequisite_concept_ids:
+          - c2301
+        task_patterns:
+          - measure-code-behavior
+          - compare-tradeoffs
+        misconceptions:
+          - CPU speed dominates performance more than layout and access patterns.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags: []
+        confidence: medium
+        notes: Useful for cache- and branch-oriented reasoning gates.
+    provenance:
+      extracted_from:
+        - title: Chapter 23 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from hardware, cache, branch, and paging topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u24
+    parent_unit_id: null
+    kind: chapter
+    sequence: 24
+    title: Performance Optimizations II
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/24.Optimization_II.pdf
+    summary: More applied optimization topics including cache locality, layout choices, vectorization, and algorithmic tuning.
+    learner_fit: advanced
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c2301
+      - c2302
+      - c2001
+    candidate_phase_tags:
+      - performance
+      - data-oriented
+    candidate_gate_tags:
+      - cache-locality
+      - vectorization-and-layout
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - broad-mixed-topic
+      - too-advanced-early
+    concepts: []
+    provenance:
+      extracted_from:
+        - title: Chapter 24 PDF link and topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Extracted from the published chapter topic list for chapter 24.
+    confidence: medium
+    notes: Good later-phase source for data-oriented and layout-sensitive performance work.
+  - unit_id: u24s01
+    parent_unit_id: u24
+    kind: section
+    sequence: 1
+    title: Cache Locality and Data Layout
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/24.Optimization_II.pdf
+    summary: Data layout and access pattern choices that improve memory locality.
+    learner_fit: advanced
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c2302
+      - c2001
+    candidate_phase_tags:
+      - performance
+      - data-oriented
+    candidate_gate_tags:
+      - cache-locality
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags: []
+    concepts:
+      - concept_id: c2401
+        label: Cache locality and data-layout choices
+        tags:
+          - cache-locality
+          - data-layout
+          - access-patterns
+          - performance
+        difficulty: advanced
+        prerequisite_concept_ids:
+          - c2302
+          - c2001
+        task_patterns:
+          - measure-code-behavior
+          - refactor-data-representation
+        misconceptions:
+          - Data layout matters only for huge programs or exotic hardware.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags: []
+        confidence: medium
+        notes: Core later systems topic for cache-aware design.
+    provenance:
+      extracted_from:
+        - title: Chapter 24 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from layout, locality, and memory-access performance topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u24s02
+    parent_unit_id: u24
+    kind: section
+    sequence: 2
+    title: Vectorization and Low-Level Optimization Surface
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/24.Optimization_II.pdf
+    summary: SIMD-style optimization, branch reduction, and low-level performance tuning patterns.
+    learner_fit: advanced
+    reading_role: secondary
+    task_authoring_role: supporting
+    prerequisites:
+      - c2401
+    candidate_phase_tags:
+      - performance
+      - data-oriented
+    candidate_gate_tags:
+      - vectorization-and-layout
+    integration_candidate: false
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - too-advanced-early
+    concepts:
+      - concept_id: c2402
+        label: Vectorization and low-level optimization surface
+        tags:
+          - simd
+          - vectorization
+          - branchless
+          - low-level-optimization
+        difficulty: advanced
+        prerequisite_concept_ids:
+          - c2401
+        task_patterns:
+          - measure-code-behavior
+          - compare-tradeoffs
+        misconceptions:
+          - Low-level optimization is mostly syntax tricks rather than data and hardware reasoning.
+        reading_role: secondary
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags:
+          - too-advanced-early
+        confidence: medium
+        notes: Better after stable cache and cost-model reasoning.
+    provenance:
+      extracted_from:
+        - title: Chapter 24 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from vectorization and related low-level optimization topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u25
+    parent_unit_id: null
+    kind: chapter
+    sequence: 25
+    title: Performance Optimizations III
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/25.Optimization_III.pdf
+    summary: Higher-level optimization practice including profiling, data-oriented tuning, and parallel performance perspectives.
+    learner_fit: advanced
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c2301
+      - c2401
+      - c2202
+    candidate_phase_tags:
+      - performance
+      - concurrency
+    candidate_gate_tags:
+      - profiling-and-tuning
+      - parallel-performance
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - broad-mixed-topic
+      - too-advanced-early
+    concepts: []
+    provenance:
+      extracted_from:
+        - title: Chapter 25 PDF link and topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Extracted from the published chapter topic list for chapter 25.
+    confidence: medium
+    notes: Useful for advanced optimization and throughput-oriented integration tasks.
+  - unit_id: u25s01
+    parent_unit_id: u25
+    kind: section
+    sequence: 1
+    title: Profiling and Optimization Workflow
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/25.Optimization_III.pdf
+    summary: Practical workflow for finding bottlenecks and validating improvements.
+    learner_fit: advanced
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c2301
+    candidate_phase_tags:
+      - performance
+      - workflow
+    candidate_gate_tags:
+      - profiling-and-tuning
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags: []
+    concepts:
+      - concept_id: c2501
+        label: Profiling and optimization workflow
+        tags:
+          - profiling
+          - bottlenecks
+          - tuning
+          - workflow
+        difficulty: advanced
+        prerequisite_concept_ids:
+          - c2301
+        task_patterns:
+          - measure-code-behavior
+          - explain-optimization-plan
+        misconceptions:
+          - Profiling only confirms what an experienced programmer already knows.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags: []
+        confidence: medium
+        notes: Strong integration task input for optimization methodology.
+    provenance:
+      extracted_from:
+        - title: Chapter 25 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from profiling and optimization-process topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u25s02
+    parent_unit_id: u25
+    kind: section
+    sequence: 2
+    title: Parallel and Throughput-Oriented Optimization
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/25.Optimization_III.pdf
+    summary: Performance work where throughput, concurrency, and hardware utilization interact.
+    learner_fit: advanced
+    reading_role: secondary
+    task_authoring_role: supporting
+    prerequisites:
+      - c2202
+      - c2402
+    candidate_phase_tags:
+      - performance
+      - concurrency
+    candidate_gate_tags:
+      - parallel-performance
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags:
+      - too-advanced-early
+    concepts:
+      - concept_id: c2502
+        label: Parallel and throughput-oriented optimization
+        tags:
+          - throughput
+          - parallelism
+          - optimization
+          - hardware-utilization
+        difficulty: advanced
+        prerequisite_concept_ids:
+          - c2202
+          - c2402
+        task_patterns:
+          - explain-optimization-plan
+          - compare-tradeoffs
+        misconceptions:
+          - Parallel performance is just a faster version of single-thread optimization.
+        reading_role: secondary
+        task_authoring_role: supporting
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags:
+          - too-advanced-early
+        confidence: medium
+        notes: Useful later when performance and concurrency are already stable areas.
+    provenance:
+      extracted_from:
+        - title: Chapter 25 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from advanced optimization and parallel-performance topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u26
+    parent_unit_id: null
+    kind: chapter
+    sequence: 26
+    title: Software Design I
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/26.Design_I.pdf
+    summary: Software-design foundations around architecture, interfaces, responsibilities, and maintainable decomposition.
+    learner_fit: advanced
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c1501
+      - c1602
+      - c0901
+    candidate_phase_tags:
+      - software-design
+      - architecture
+    candidate_gate_tags:
+      - decomposition-and-interfaces
+      - architecture-basics
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags:
+      - broad-mixed-topic
+    concepts: []
+    provenance:
+      extracted_from:
+        - title: Chapter 26 PDF link and topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Extracted from the published chapter topic list for chapter 26.
+    confidence: medium
+    notes: Strong later-phase source for architecture and interface gates.
+  - unit_id: u26s01
+    parent_unit_id: u26
+    kind: section
+    sequence: 1
+    title: Responsibilities, Decomposition, and Interfaces
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/26.Design_I.pdf
+    summary: Splitting systems into coherent units with explicit responsibilities and interfaces.
+    learner_fit: advanced
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c0901
+      - c1501
+    candidate_phase_tags:
+      - software-design
+      - architecture
+    candidate_gate_tags:
+      - decomposition-and-interfaces
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags: []
+    concepts:
+      - concept_id: c2601
+        label: Responsibility-driven decomposition and interfaces
+        tags:
+          - decomposition
+          - interfaces
+          - responsibilities
+          - architecture
+        difficulty: advanced
+        prerequisite_concept_ids:
+          - c0901
+          - c1501
+        task_patterns:
+          - architecture-critique
+          - refactor-for-maintainability
+        misconceptions:
+          - Good design mainly means adding more abstraction layers.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids: []
+        risk_flags: []
+        confidence: medium
+        notes: Useful for design-review and refactoring gates.
+    provenance:
+      extracted_from:
+        - title: Chapter 26 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from architecture, responsibilities, and interface topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u26s02
+    parent_unit_id: u26
+    kind: section
+    sequence: 2
+    title: Coupling, Cohesion, and Architectural Tradeoffs
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/26.Design_I.pdf
+    summary: Tradeoff language for evaluating design quality across modules and subsystems.
+    learner_fit: advanced
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c2601
+    candidate_phase_tags:
+      - software-design
+      - architecture
+    candidate_gate_tags:
+      - architecture-basics
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags: []
+    concepts:
+      - concept_id: c2602
+        label: Coupling, cohesion, and architectural tradeoffs
+        tags:
+          - coupling
+          - cohesion
+          - tradeoffs
+          - architecture
+        difficulty: advanced
+        prerequisite_concept_ids:
+          - c2601
+        task_patterns:
+          - architecture-critique
+          - compare-tradeoffs
+        misconceptions:
+          - Low coupling and high cohesion are simple box-check rules with no local tradeoff.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids: []
+        risk_flags: []
+        confidence: medium
+        notes: Strong fit for later design reasoning and review work.
+    provenance:
+      extracted_from:
+        - title: Chapter 26 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from coupling, cohesion, and tradeoff-oriented design topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u27
+    parent_unit_id: null
+    kind: chapter
+    sequence: 27
+    title: Software Design II
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/27.Design_II.pdf
+    summary: More advanced design concerns including patterns, anti-patterns, and longer-term architectural evolution.
+    learner_fit: advanced
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c2601
+      - c2602
+    candidate_phase_tags:
+      - software-design
+      - architecture
+    candidate_gate_tags:
+      - design-patterns
+      - architecture-evolution
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags:
+      - broad-mixed-topic
+    concepts: []
+    provenance:
+      extracted_from:
+        - title: Chapter 27 PDF link and topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Extracted from the published chapter topic list for chapter 27.
+    confidence: medium
+    notes: Best used when the learner can already critique and restructure medium-sized systems.
+  - unit_id: u27s01
+    parent_unit_id: u27
+    kind: section
+    sequence: 1
+    title: Design Patterns and Reusable Design Moves
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/27.Design_II.pdf
+    summary: Common recurring design structures and when they help rather than just add ceremony.
+    learner_fit: advanced
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c2602
+    candidate_phase_tags:
+      - software-design
+      - patterns
+    candidate_gate_tags:
+      - design-patterns
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags: []
+    concepts:
+      - concept_id: c2701
+        label: Design patterns and reusable design moves
+        tags:
+          - patterns
+          - abstractions
+          - reuse
+          - design
+        difficulty: advanced
+        prerequisite_concept_ids:
+          - c2602
+        task_patterns:
+          - architecture-critique
+          - compare-tradeoffs
+        misconceptions:
+          - Using a named pattern usually makes a design more mature.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids: []
+        risk_flags: []
+        confidence: medium
+        notes: Good for critique-heavy rather than rote-implementation tasks.
+    provenance:
+      extracted_from:
+        - title: Chapter 27 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from pattern-oriented design topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u27s02
+    parent_unit_id: u27
+    kind: section
+    sequence: 2
+    title: Anti-Patterns and Architectural Evolution
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/27.Design_II.pdf
+    summary: Failure patterns and the redesign decisions needed as systems evolve.
+    learner_fit: advanced
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c2701
+    candidate_phase_tags:
+      - software-design
+      - architecture
+    candidate_gate_tags:
+      - architecture-evolution
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids: []
+    risk_flags: []
+    concepts:
+      - concept_id: c2702
+        label: Anti-patterns and architectural evolution
+        tags:
+          - anti-patterns
+          - evolution
+          - refactoring
+          - architecture
+        difficulty: advanced
+        prerequisite_concept_ids:
+          - c2701
+        task_patterns:
+          - architecture-critique
+          - refactor-for-maintainability
+        misconceptions:
+          - A working design only needs polish, not structural reconsideration.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids: []
+        risk_flags: []
+        confidence: medium
+        notes: Strong source for advanced redesign and review tasks.
+    provenance:
+      extracted_from:
+        - title: Chapter 27 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from anti-pattern and architectural-evolution topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u28
+    parent_unit_id: null
+    kind: chapter
+    sequence: 28
+    title: Binary Size
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/28.Binary_Size.pdf
+    summary: Binary footprint causes, inspection, and reduction strategies.
+    learner_fit: advanced
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c1403
+      - c1201
+      - c2501
+    candidate_phase_tags:
+      - build-engineering
+      - binary
+    candidate_gate_tags:
+      - binary-size-analysis
+      - binary-size-reduction
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags: []
+    concepts: []
+    provenance:
+      extracted_from:
+        - title: Chapter 28 PDF link and topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Extracted from the published chapter topic list for chapter 28.
+    confidence: medium
+    notes: Good late-phase source for practical build and deployment engineering.
+  - unit_id: u28s01
+    parent_unit_id: u28
+    kind: section
+    sequence: 1
+    title: Binary Size Causes and Inspection
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/28.Binary_Size.pdf
+    summary: Sources of binary growth and the tooling needed to inspect and attribute them.
+    learner_fit: advanced
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c1403
+      - c2501
+    candidate_phase_tags:
+      - build-engineering
+      - binary
+    candidate_gate_tags:
+      - binary-size-analysis
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags: []
+    concepts:
+      - concept_id: c2801
+        label: Binary size causes and inspection workflow
+        tags:
+          - binary-size
+          - symbols
+          - inspection
+          - tooling
+        difficulty: advanced
+        prerequisite_concept_ids:
+          - c1403
+          - c2501
+        task_patterns:
+          - inspect-build-artifact
+          - explain-optimization-plan
+        misconceptions:
+          - Binary size is mostly a deployment detail, not a design and build concern.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags: []
+        confidence: medium
+        notes: Useful for artifact-level engineering tasks.
+    provenance:
+      extracted_from:
+        - title: Chapter 28 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from binary-size analysis and inspection topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u28s02
+    parent_unit_id: u28
+    kind: section
+    sequence: 2
+    title: Binary Size Reduction Techniques
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/28.Binary_Size.pdf
+    summary: Practical ways to reduce artifact footprint through build and code choices.
+    learner_fit: advanced
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c2801
+    candidate_phase_tags:
+      - build-engineering
+      - binary
+    candidate_gate_tags:
+      - binary-size-reduction
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags: []
+    concepts:
+      - concept_id: c2802
+        label: Binary size reduction tradeoffs
+        tags:
+          - binary-size
+          - stripping
+          - linking
+          - tradeoffs
+        difficulty: advanced
+        prerequisite_concept_ids:
+          - c2801
+        task_patterns:
+          - explain-optimization-plan
+          - compare-tradeoffs
+        misconceptions:
+          - Smaller binaries are always better regardless of observability or debugging cost.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags: []
+        confidence: medium
+        notes: Good for explicit size-versus-debuggability tradeoff work.
+    provenance:
+      extracted_from:
+        - title: Chapter 28 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from binary-size reduction topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u29
+    parent_unit_id: null
+    kind: chapter
+    sequence: 29
+    title: Build Time
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/29.Build_Time.pdf
+    summary: Build-time cost drivers and strategies for reducing compile and link latency.
+    learner_fit: advanced
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c1302
+      - c1401
+      - c1101
+    candidate_phase_tags:
+      - build-engineering
+      - tooling
+    candidate_gate_tags:
+      - build-time-analysis
+      - build-time-reduction
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags: []
+    concepts: []
+    provenance:
+      extracted_from:
+        - title: Chapter 29 PDF link and topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Extracted from the published chapter topic list for chapter 29.
+    confidence: medium
+    notes: Strong endgame source for scaling project and build engineering discipline.
+  - unit_id: u29s01
+    parent_unit_id: u29
+    kind: section
+    sequence: 1
+    title: Build-Time Causes and Inspection
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/29.Build_Time.pdf
+    summary: Understanding where build time comes from across translation units, headers, templates, and toolchain workflow.
+    learner_fit: advanced
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c1302
+      - c1101
+    candidate_phase_tags:
+      - build-engineering
+      - tooling
+    candidate_gate_tags:
+      - build-time-analysis
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags: []
+    concepts:
+      - concept_id: c2901
+        label: Build-time causes and inspection
+        tags:
+          - build-time
+          - headers
+          - templates
+          - inspection
+        difficulty: advanced
+        prerequisite_concept_ids:
+          - c1302
+          - c1101
+        task_patterns:
+          - inspect-build-artifact
+          - configure-build-workflow
+        misconceptions:
+          - Build time is mostly fixed by hardware upgrades rather than code and structure choices.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags: []
+        confidence: medium
+        notes: Good diagnostic entry point for build engineering tasks.
+    provenance:
+      extracted_from:
+        - title: Chapter 29 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from build-time analysis topics.
+    confidence: medium
+    notes: ""
+  - unit_id: u29s02
+    parent_unit_id: u29
+    kind: section
+    sequence: 2
+    title: Build-Time Reduction Strategies
+    source_url: https://federico-busato.github.io/Modern-CPP-Programming/29.Build_Time.pdf
+    summary: Tactics for reducing compile and link latency through code, structure, and tooling choices.
+    learner_fit: advanced
+    reading_role: secondary
+    task_authoring_role: primary
+    prerequisites:
+      - c2901
+    candidate_phase_tags:
+      - build-engineering
+      - tooling
+    candidate_gate_tags:
+      - build-time-reduction
+    integration_candidate: true
+    needs_companion_source: true
+    companion_resource_ids:
+      - R-003
+    risk_flags: []
+    concepts:
+      - concept_id: c2902
+        label: Build-time reduction strategies and tradeoffs
+        tags:
+          - build-time
+          - caching
+          - modules
+          - tradeoffs
+        difficulty: advanced
+        prerequisite_concept_ids:
+          - c2901
+        task_patterns:
+          - explain-optimization-plan
+          - configure-build-workflow
+          - compare-tradeoffs
+        misconceptions:
+          - Faster builds are only a convenience issue and do not affect engineering feedback loops.
+        reading_role: secondary
+        task_authoring_role: primary
+        needs_companion_source: true
+        companion_resource_ids:
+          - R-003
+        risk_flags: []
+        confidence: medium
+        notes: Good for mature later-phase workflow and architecture tasks.
+    provenance:
+      extracted_from:
+        - title: Chapter 29 topic list
+          url: https://federico-busato.github.io/Modern-CPP-Programming/
+      extractor_notes: Derived from build-time reduction and tooling topics.
+    confidence: medium
+    notes: ""

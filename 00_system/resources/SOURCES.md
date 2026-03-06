@@ -129,3 +129,14 @@ Mark candidates as risky if they have:
 - Risks/limitations: Not a structured beginner course; may include older conventions; no explicit open license on-page, so link-only is safest
 - Candidate for `RESOURCES.md` (yes/no): yes
 - Reviewed date: 2026-03-02
+
+- Source ID: S-010
+- Title: Back to Basics - Lambda Expressions (CppCon 2020)
+- Type (book, article, video, documentation, course, etc): Conference slide deck / focused supplement
+- Author/organization: CppCon; Barbara Geller and Ansel Sermersheim
+- URL: https://github.com/CppCon/CppCon2020/blob/main/Presentations/back_to_basics_lambda_expressions/back_to_basics_lambda_expressions__barbara_geller__ansel_sermersheim__cppcon_2020.pdf
+- Area: `Phase 1: Core Language and Object Model` lambda basics without STL-algorithm prerequisite drift
+- Strengths: Teaches lambda syntax, capture modes, and closure intuition with a narrower surface than the default LearnCpp lambda lessons; useful as a dedicated Phase 1 supplement
+- Risks/limitations: Slide deck, not a full tutorial narrative; should be used only through a tightly bounded packet; link-only is safest
+- Candidate for `RESOURCES.md` (yes/no): yes
+- Reviewed date: 2026-03-03

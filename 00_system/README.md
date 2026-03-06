@@ -10,7 +10,7 @@ It separates the active runtime foundation from authoring rules, resource policy
 - `foundation/`
   Active learner-facing runtime contract: goals, rules, core teacher policy, interaction protocols, terminology, and gate runtime model.
 - `authoring/`
-  Gate construction, validation, context audit, templates, and structure tooling for repo maintenance.
+  Gate construction, course planning, source integration, validation, context audit, templates, and structure tooling for repo maintenance.
 - `resources/`
   Curated resources, concept routing, candidate sources, and learner-safe resource cards.
 - `research/`

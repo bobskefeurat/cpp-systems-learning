@@ -1,0 +1,1423 @@
+schema_version: v0
+record_kind: pedagogical_mapping
+
+mapping_id: M-001
+target_program: cpp-systems-learning
+source_ids:
+  - S-001
+assumptions:
+  - The source is being integrated first as an authoring backbone, not as a default learner runtime resource.
+  - Early phases may still require more beginner-friendly companion resources.
+  - The extraction currently covers chapters 1-29 of the published course index.
+  - Chapter 1 is retained as orientation and source-context material, may inform course-framing and optional reading packets, and is intentionally excluded from phase and gate generation.
+
+phase_mappings:
+  - phase_id: 01_phase0-cpp-foundations
+    title: C++ Foundations
+    goal: Build compile-run discipline, basic value flow, control flow, storage reasoning, parameter passing, and first class lifetime.
+    included_units:
+      - u02s02
+      - u02s03
+      - u03s02
+      - u03s03
+      - u06s01
+      - u06s03
+      - u07s01
+      - u07s02
+      - u07s03
+      - u08s01
+      - u09s01
+      - u09s02
+    excluded_units:
+      - u02s01
+      - u04s01
+      - u04s02
+      - u04s03
+      - u04s04
+      - u05s01
+      - u05s02
+      - u05s03
+      - u06s02
+      - u06s04
+      - u07s04
+      - u08s02
+      - u08s03
+      - u08s04
+      - u09s03
+      - u09s04
+      - u10s01
+      - u10s02
+      - u10s03
+      - u10s04
+    entry_requirements: []
+    reading_policy: Use this source only as selective secondary reading and authoring input; keep learner-first reading on curated beginner resources.
+    companion_resource_ids:
+      - R-001
+      - R-002
+      - R-003
+      - R-004
+    gate_clusters:
+      - cluster_id: gc001
+        title: Compile, Run, and Basic I/O
+        gate_kind: micro
+        source_units:
+          - u02s02
+          - u02s03
+        concept_ids:
+          - c0202
+          - c0203
+        task_patterns:
+          - explain-and-demonstrate
+          - debug-small-build
+        required_prerequisites: []
+        disallowed_topics:
+          - macros
+          - lambdas
+          - polymorphism
+        requires_companion_sources:
+          - R-001
+          - R-002
+        readiness_focus:
+          - the difference between compiler choice and language-standard choice
+          - what compile, link, run, and stream I/O mean at a first-pass level
+        notes: Strong source support for the current Gate 0 type of work.
+      - cluster_id: gc002
+        title: Values, Expressions, and Control Flow
+        gate_kind: micro
+        source_units:
+          - u03s02
+          - u03s03
+          - u06s01
+          - u06s03
+        concept_ids:
+          - c0302
+          - c0303
+          - c0601
+          - c0603
+        task_patterns:
+          - trace-and-explain
+          - implement-bounded-console-flow
+        required_prerequisites:
+          - c0203
+        disallowed_topics:
+          - floating-point-edge-cases
+          - macros
+          - lambdas
+          - operator-overloading
+        requires_companion_sources:
+          - R-001
+        readiness_focus:
+          - what a variable declaration creates
+          - how expressions transform values
+          - how branching and looping change program flow
+        notes: Useful to extend Phase 0 variation without pulling in advanced material.
+      - cluster_id: gc003
+        title: Stack, Heap, and Reference Basics
+        gate_kind: micro
+        source_units:
+          - u07s01
+          - u07s02
+          - u07s03
+        concept_ids:
+          - c0701
+          - c0702
+          - c0703
+        task_patterns:
+          - explain-and-demonstrate
+          - compare-tradeoffs
+          - debug-small-build
+        required_prerequisites:
+          - c0302
+          - c0601
+        disallowed_topics:
+          - casts
+          - rtti
+          - multiple-inheritance
+        requires_companion_sources:
+          - R-001
+          - R-003
+        readiness_focus:
+          - pointer versus reference reasoning
+          - storage-duration language and stack-versus-heap language
+          - initialization and const-related correctness
+        notes: Closest source match to the current Gate 1 focus.
+      - cluster_id: gc004
+        title: Functions and Parameter Passing
+        gate_kind: micro
+        source_units:
+          - u08s01
+        concept_ids:
+          - c0801
+        task_patterns:
+          - implement-bounded-functions
+          - compare-tradeoffs
+        required_prerequisites:
+          - c0701
+          - c0603
+        disallowed_topics:
+          - default-arguments
+          - lambdas
+          - macros
+          - polymorphism
+        requires_companion_sources:
+          - R-001
+          - R-004
+        readiness_focus:
+          - what changes at the call site for value and reference parameters
+          - when a function boundary helps reasoning and testing
+        notes: Closest source match to the current Gate 2 focus.
+      - cluster_id: gc005
+        title: First Class Lifetime and Basic RAII
+        gate_kind: micro
+        source_units:
+          - u09s01
+          - u09s02
+        concept_ids:
+          - c0901
+          - c0902
+        task_patterns:
+          - implement-bounded-class
+          - explain-lifetime
+        required_prerequisites:
+          - c0702
+          - c0801
+        disallowed_topics:
+          - copy-control-edge-cases
+          - inheritance
+          - operator-overloading
+        requires_companion_sources:
+          - R-001
+          - R-003
+        readiness_focus:
+          - class responsibility and encapsulation
+          - constructor and destructor roles
+          - why object lifetime can enforce cleanup
+        notes: Strongest early source support for the current Gate 3 theme.
+      - cluster_id: gc006
+        title: Phase 0 Integration
+        gate_kind: integration
+        source_units:
+          - u02s03
+          - u06s03
+          - u07s01
+          - u07s02
+          - u07s03
+          - u08s01
+          - u09s01
+          - u09s02
+        concept_ids:
+          - c0203
+          - c0603
+          - c0701
+          - c0702
+          - c0703
+          - c0801
+          - c0901
+          - c0902
+        task_patterns:
+          - implement-bounded-console-project
+          - explain-and-defend-design
+        required_prerequisites:
+          - stable compile-run discipline
+          - stable control-flow reasoning
+          - stable storage and parameter-passing reasoning
+          - stable first-pass class lifetime reasoning
+        disallowed_topics:
+          - inheritance
+          - operator-overloading
+          - macros
+          - floating-point-precision-optimization
+        requires_companion_sources:
+          - R-001
+          - R-003
+        readiness_focus:
+          - whether the learner can combine compile-run, control flow, storage reasoning, function decomposition, and class lifetime in one bounded program
+        notes: Good source support for integration-task shaping, but still needs repo-authored constraints and evidence rules.
+    gaps:
+      - The source is still too dense to act as the sole learner reading path for this phase.
+      - Chapter 3 and Chapter 6 contain more material than the current Phase 0 needs, so concept filtering must stay strict.
+      - Current curated resources do not fully cover every phrasing used by this source for early topics.
+    notes: This pilot keeps Phase 0 narrower than the source's early chapter span.
+  - phase_id: 02_phase1-core-language-and-object-model
+    title: Core Language and Object Model
+    goal: Deepen type semantics, numeric behavior, and the first dynamic object model after Phase 0 is stable.
+    included_units:
+      - u03s01
+      - u04s01
+      - u04s02
+      - u04s03
+      - u04s04
+      - u05s01
+      - u05s02
+      - u05s03
+      - u06s02
+      - u06s04
+      - u08s02
+      - u08s03
+      - u08s04
+      - u09s03
+      - u09s04
+      - u10s01
+      - u10s02
+    excluded_units:
+      - u10s03
+      - u10s04
+    entry_requirements:
+      - pass on Phase 0 integration or equivalent stability in compile-run, control flow, storage, parameter passing, and first class lifetime
+    reading_policy: Use as secondary and reference reading with curated packets; do not treat the source as the only learner spine for this phase.
+    companion_resource_ids:
+      - R-001
+      - R-003
+      - R-005
+      - R-006
+    gate_clusters:
+      - cluster_id: gc101
+        title: Numeric Types and Safety
+        gate_kind: micro
+        source_units:
+          - u04s01
+          - u04s02
+          - u04s03
+          - u04s04
+          - u05s01
+          - u05s02
+          - u05s03
+        concept_ids:
+          - c0401
+          - c0402
+          - c0403
+          - c0404
+          - c0501
+          - c0502
+          - c0503
+        task_patterns:
+          - numeric-edge-case-analysis
+          - debug-small-build
+          - compare-tradeoffs
+        required_prerequisites:
+          - stable value and expression reasoning
+        disallowed_topics:
+          - polymorphism
+          - macros
+        requires_companion_sources:
+          - R-001
+          - R-003
+        readiness_focus:
+          - integer versus floating semantics
+          - promotions and conversion rules
+          - overflow versus rounding behavior
+          - comparison strategy for approximate values
+        notes: LearnCpp plus the existing numeric reference packet is sufficient for learner-facing rollout if tasks stay away from corner-case conversion rules.
+      - cluster_id: gc102
+        title: Aggregates and Language Organization
+        gate_kind: micro
+        source_units:
+          - u03s01
+          - u06s02
+          - u06s04
+        concept_ids:
+          - c0301
+          - c0602
+          - c0604
+        task_patterns:
+          - trace-and-explain
+          - implement-bounded-data-model
+        required_prerequisites:
+          - c0601
+        disallowed_topics:
+          - multiple-inheritance
+          - rtti
+        requires_companion_sources:
+          - R-001
+        readiness_focus:
+          - when enums and structs help model bounded data
+          - how naming and namespaces affect program organization
+        notes: Useful for a clean transition from foundations into more structured code.
+      - cluster_id: gc103
+        title: Function Surface and Callables
+        gate_kind: micro
+        source_units:
+          - u08s02
+          - u08s03
+          - u08s04
+        concept_ids:
+          - c0802
+          - c0803
+          - c0804
+        task_patterns:
+          - implement-bounded-functions
+          - compare-tradeoffs
+        required_prerequisites:
+          - c0801
+        disallowed_topics:
+          - rtti
+          - object-layout
+          - macro-programming
+          - advanced-lambda-captures
+          - algorithm-predicate-lambdas
+        requires_companion_sources:
+          - R-001
+          - R-006
+        readiness_focus:
+          - when extra function-surface features help or harm clarity
+          - lambda syntax and capture basics without pulling in unrelated STL prerequisites
+          - why lambdas and macros should not be treated as free complexity upgrades
+        notes: Overloading, default arguments, inline, recursion, and preprocessor minimum are supported by LearnCpp; lambda basics should use the dedicated Phase 1 supplement.
+      - cluster_id: gc104
+        title: Special Members and Dynamic Object Model
+        gate_kind: micro
+        source_units:
+          - u09s03
+          - u09s04
+          - u10s01
+          - u10s02
+        concept_ids:
+          - c0903
+          - c0904
+          - c1001
+          - c1002
+        task_patterns:
+          - implement-bounded-class
+          - hierarchy-design-critique
+          - compare-tradeoffs
+        required_prerequisites:
+          - c0901
+          - c0902
+        disallowed_topics:
+          - rtti
+          - object-layout
+          - multiple-inheritance
+        requires_companion_sources:
+          - R-001
+          - R-003
+        readiness_focus:
+          - copy versus lifetime responsibility
+          - what inheritance buys and what it costs
+          - how first-pass virtual dispatch changes behavior at a base boundary
+          - when operator overloading is justified
+        notes: Learner-facing rollout is safe if tasks stay in Rule-of-Zero and value-semantics territory and keep inheritance, virtual dispatch, and operator overloading at first-pass scope.
+      - cluster_id: gc105
+        title: Phase 1 Integration
+        gate_kind: integration
+        source_units:
+          - u04s01
+          - u04s02
+          - u04s03
+          - u04s04
+          - u05s01
+          - u05s02
+          - u05s03
+          - u03s01
+          - u06s02
+          - u06s04
+          - u08s02
+          - u08s03
+          - u09s03
+          - u09s04
+          - u10s01
+          - u10s02
+        concept_ids:
+          - c0401
+          - c0402
+          - c0403
+          - c0404
+          - c0501
+          - c0502
+          - c0503
+          - c0301
+          - c0602
+          - c0604
+          - c0802
+          - c0803
+          - c0903
+          - c0904
+          - c1001
+          - c1002
+        task_patterns:
+          - implement-bounded-console-project
+          - explain-and-defend-design
+          - compare-tradeoffs
+        required_prerequisites:
+          - stable numeric-safety reasoning
+          - stable bounded data-model reasoning
+          - stable function-surface reasoning
+          - stable first-pass object-model reasoning
+        disallowed_topics:
+          - macro-programming
+          - raw-owning-deep-copy
+          - rtti
+          - object-layout
+          - multiple-inheritance
+          - algorithm-predicate-lambdas
+        requires_companion_sources:
+          - R-001
+          - R-003
+          - R-006
+        readiness_focus:
+          - whether the learner can combine numeric safety, bounded data modeling, function surface, and first-pass object-model reasoning in one bounded artifact
+          - whether they can explain their scope-control decisions around lambdas, macros, copying, and dispatch
+          - whether they can keep the task inside Rule-of-Zero and first-pass polymorphism boundaries
+        notes: This integration gate should reuse the earlier Phase 1 packets as refresh material and should not introduce new theory or later build-boundary requirements.
+    gaps:
+      - Lambda work should use the dedicated Phase 1 supplement rather than the default LearnCpp lambda path.
+      - Macro programming remains outside the safe learner-facing scope for this phase.
+      - The phase-ending integration gate still needs a repo-authored bounded project brief that stays inside single-program or tightly controlled file-structure expectations.
+      - RTTI and object-layout topics remain outside the safe auto-generation scope.
+    notes: This phase is ready for implementation if learner-facing generation continues to respect the curated reading layer and the stated scope controls.
+  - phase_id: 03_phase2-generic-programming
+    title: Generic Programming and Compile-Time Reasoning
+    goal: Build a stable first model of templates, generic interfaces, and bounded compile-time constraints.
+    included_units:
+      - u11s01
+      - u11s02
+      - u12s01
+      - u12s02
+      - u12s03
+    excluded_units: []
+    entry_requirements:
+      - stable function-interface reasoning
+      - stable object-model basics
+      - stable later Phase 1 type-system reasoning
+    reading_policy: Use as secondary reading and reference support; learner-facing packets should narrow the source aggressively.
+    companion_resource_ids:
+      - R-003
+    gate_clusters:
+      - cluster_id: gc201
+        title: Function Templates and Instantiation
+        gate_kind: micro
+        source_units:
+          - u11s01
+        concept_ids:
+          - c1101
+          - c1102
+        task_patterns:
+          - implement-generic-function
+          - compare-tradeoffs
+        required_prerequisites:
+          - c0801
+          - c0302
+        disallowed_topics:
+          - sfinae
+          - modules
+          - rtti
+        requires_companion_sources:
+          - R-003
+          - needs-curated-template-intro-resource
+        readiness_focus:
+          - what gets generalized by a function template
+          - how template parameters differ from ordinary function parameters
+          - when a generic function actually improves the interface
+        notes: Best starting point for a templates phase.
+      - cluster_id: gc202
+        title: Compile-Time Utilities and Constraints
+        gate_kind: micro
+        source_units:
+          - u11s02
+          - u12s03
+        concept_ids:
+          - c1103
+          - c1104
+          - c1204
+        task_patterns:
+          - constrain-generic-code
+          - debug-template-errors
+        required_prerequisites:
+          - c1101
+        disallowed_topics:
+          - sfinae
+          - object-layout
+        requires_companion_sources:
+          - R-003
+          - needs-curated-template-constraints-resource
+        readiness_focus:
+          - why compile-time checks improve generic code
+          - when to prefer clearer constraints over implicit template failure
+        notes: Use concepts here before falling back to more obscure template techniques.
+      - cluster_id: gc203
+        title: Generic Classes and Advanced Template Surface
+        gate_kind: micro
+        source_units:
+          - u12s01
+          - u12s02
+          - u12s03
+        concept_ids:
+          - c1201
+          - c1202
+          - c1203
+        task_patterns:
+          - implement-generic-class
+          - debug-template-errors
+          - compare-tradeoffs
+        required_prerequisites:
+          - c1101
+          - c0901
+        disallowed_topics:
+          - modules
+          - abi
+        requires_companion_sources:
+          - R-003
+          - needs-curated-advanced-templates-resource
+        readiness_focus:
+          - what changes when templates move from functions to classes
+          - why dependent-name and SFINAE rules create different failure modes
+          - when advanced template surface is worth the cost
+        notes: Keep this later in the phase; it is not safe as an early generic-programming entry point.
+      - cluster_id: gc204
+        title: Generic Programming Integration
+        gate_kind: integration
+        source_units:
+          - u11s01
+          - u11s02
+          - u12s01
+          - u12s03
+        concept_ids:
+          - c1101
+          - c1103
+          - c1104
+          - c1201
+          - c1204
+        task_patterns:
+          - implement-generic-library-slice
+          - explain-and-defend-design
+        required_prerequisites:
+          - stable generic-function reasoning
+          - stable compile-time checking reasoning
+        disallowed_topics:
+          - raw-sfinae-heavy-design
+          - modules
+          - rtti
+        requires_companion_sources:
+          - R-003
+          - needs-curated-template-integration-resource
+        readiness_focus:
+          - whether the learner can keep a generic solution bounded and readable
+          - whether they can explain compile-time constraints in plain language
+        notes: Good stress test for authoring variation, but still needs repo-authored scope control.
+    gaps:
+      - There is no curated learner-first template resource yet in the repo.
+      - Chapter 12 is rich but risky for automatic task generation unless concepts are tightly filtered.
+      - Advanced template debugging likely needs dedicated task patterns and remediation guidance.
+    notes: This phase is where the source starts becoming a stronger structural backbone than a reading spine.
+  - phase_id: 04_phase3-translation-units-and-binary-boundaries
+    title: Translation Units, Build Structure, and Binary Boundaries
+    goal: Build a correct systems model for how C++ programs span files, link together, and expose binary boundaries.
+    included_units:
+      - u13s01
+      - u13s02
+      - u13s03
+      - u14s01
+      - u14s02
+      - u14s03
+    excluded_units: []
+    entry_requirements:
+      - stable Phase 0 compile-run discipline
+      - stable declaration-versus-definition reasoning
+      - stable generic-programming and class-surface reasoning where relevant
+    reading_policy: Use as secondary reading plus targeted reference; repo-authored packets should translate the source into smaller operational slices.
+    companion_resource_ids:
+      - R-003
+    gate_clusters:
+      - cluster_id: gc301
+        title: Storage Duration and Initialization Order
+        gate_kind: micro
+        source_units:
+          - u13s01
+        concept_ids:
+          - c1301
+        task_patterns:
+          - debug-initialization-bug
+          - explain-lifetime
+        required_prerequisites:
+          - c0703
+          - c0601
+        disallowed_topics:
+          - modules
+          - abi
+        requires_companion_sources:
+          - R-003
+          - needs-curated-storage-duration-resource
+        readiness_focus:
+          - what storage duration changes about initialization and lifetime
+          - why global and static initialization can fail across file boundaries
+        notes: Strong systems-thinking gate candidate with direct debugging value.
+      - cluster_id: gc302
+        title: Linkage and the One Definition Rule
+        gate_kind: micro
+        source_units:
+          - u13s02
+          - u13s03
+        concept_ids:
+          - c1302
+          - c1303
+        task_patterns:
+          - multi-file-debugging
+          - trace-and-explain
+        required_prerequisites:
+          - c0601
+          - c1101
+        disallowed_topics:
+          - modules
+          - abi
+        requires_companion_sources:
+          - R-003
+          - needs-curated-build-model-resource
+        readiness_focus:
+          - how names cross file boundaries
+          - why duplicate or mismatched definitions break whole-program reasoning
+        notes: Core later-phase gate for multi-file mental models.
+      - cluster_id: gc303
+        title: Headers, Modules, and File Interfaces
+        gate_kind: micro
+        source_units:
+          - u14s01
+          - u14s02
+        concept_ids:
+          - c1401
+          - c1402
+        task_patterns:
+          - organize-project-files
+          - compare-tradeoffs
+        required_prerequisites:
+          - c1302
+        disallowed_topics:
+          - abi
+          - name-mangling
+        requires_companion_sources:
+          - R-003
+          - needs-curated-header-module-resource
+        readiness_focus:
+          - what a header should and should not own
+          - when modules change the design constraints and when they do not
+        notes: Modules should stay secondary until the header-based model is already solid.
+      - cluster_id: gc304
+        title: Libraries, Linking, and ABI Surface
+        gate_kind: integration
+        source_units:
+          - u14s03
+        concept_ids:
+          - c1403
+          - c1404
+        task_patterns:
+          - multi-file-debugging
+          - explain-and-defend-design
+          - organize-project-files
+        required_prerequisites:
+          - c1302
+          - c1303
+          - c1401
+        disallowed_topics:
+          - rtti
+          - multiple-inheritance
+        requires_companion_sources:
+          - R-003
+          - needs-curated-abi-resource
+        readiness_focus:
+          - what changes when code becomes a library boundary instead of a single program
+          - why source compatibility and binary compatibility are not identical
+        notes: Strong integration gate candidate for later systems-facing authoring.
+    gaps:
+      - The repo has no curated learner resource yet for headers/modules or ABI-level reasoning.
+      - Library and binary-boundary topics likely need stronger local examples than the source currently provides.
+      - Later automation must be careful not to generate tasks that depend on platform-specific toolchain behavior without an explicit baseline.
+    notes: This is the first phase where build-model and binary-boundary reasoning become explicit learning goals.
+  - phase_id: 05_phase4-code-quality-debugging-and-tooling
+    title: Code Quality, Debugging, and Tooling
+    goal: Build disciplined maintenance habits around structure, style, debugging, testing, and local tooling workflows.
+    included_units:
+      - u15s01
+      - u15s02
+      - u15s03
+      - u16s01
+      - u16s02
+      - u16s03
+      - u17s01
+      - u17s02
+      - u17s03
+      - u18s01
+      - u18s02
+      - u18s03
+    excluded_units: []
+    entry_requirements:
+      - stable multi-file reasoning from the translation-unit phase
+      - stable class and function design basics
+    reading_policy: Use this source mainly as authoring backbone and review/reference material; learner-facing packets should narrow tool choices and workflow expectations sharply.
+    companion_resource_ids:
+      - R-003
+    gate_clusters:
+      - cluster_id: gc401
+        title: Project Organization and Style Discipline
+        gate_kind: micro
+        source_units:
+          - u15s01
+          - u15s02
+          - u15s03
+          - u16s01
+          - u16s02
+        concept_ids:
+          - c1501
+          - c1502
+          - c1503
+          - c1601
+          - c1602
+        task_patterns:
+          - style-review
+          - refactor-for-maintainability
+          - organize-project-files
+        required_prerequisites:
+          - c1401
+          - c1501
+        disallowed_topics:
+          - concurrency
+          - abi
+        requires_companion_sources:
+          - needs-curated-style-guide-resource
+        readiness_focus:
+          - which structure and naming choices improve maintainability
+          - when style guidance encodes real engineering constraints rather than taste alone
+        notes: Good fit for review-heavy, nontrivial refactor tasks.
+      - cluster_id: gc402
+        title: Documentation and Maintainability Review
+        gate_kind: micro
+        source_units:
+          - u16s02
+          - u16s03
+        concept_ids:
+          - c1602
+          - c1603
+        task_patterns:
+          - document-existing-code
+          - quality-review
+        required_prerequisites:
+          - c1602
+        disallowed_topics:
+          - performance-optimization
+          - concurrency
+        requires_companion_sources:
+          - needs-curated-documentation-resource
+        readiness_focus:
+          - what documentation can and cannot repair in a poor design
+          - how readability and naming influence future debugging cost
+        notes: Useful when the learner can already critique code quality beyond syntax.
+      - cluster_id: gc403
+        title: Debugging Workflow and Assertions
+        gate_kind: micro
+        source_units:
+          - u17s01
+        concept_ids:
+          - c1701
+        task_patterns:
+          - diagnose-runtime-bug
+          - explain-debugging-strategy
+        required_prerequisites:
+          - stable compile-run-debug loop
+        disallowed_topics:
+          - sanitizers
+          - concurrency
+        requires_companion_sources:
+          - needs-curated-debugger-resource
+        readiness_focus:
+          - how to frame a defect before changing code
+          - when assertions clarify assumptions and when they do not
+        notes: Good later workflow checkpoint before more advanced quality tooling.
+      - cluster_id: gc404
+        title: Testing, Analysis, and Tooling Integration
+        gate_kind: integration
+        source_units:
+          - u17s02
+          - u17s03
+          - u18s01
+          - u18s02
+          - u18s03
+        concept_ids:
+          - c1702
+          - c1703
+          - c1801
+          - c1802
+          - c1803
+        task_patterns:
+          - write-tests-for-buggy-code
+          - configure-build-workflow
+          - quality-review
+        required_prerequisites:
+          - c1701
+          - stable multi-file project structure
+        disallowed_topics:
+          - performance-optimization
+          - abi
+        requires_companion_sources:
+          - needs-curated-testing-resource
+          - needs-curated-cmake-resource
+        readiness_focus:
+          - whether the learner can combine tests, analysis tools, and repeatable local workflow in one disciplined process
+        notes: Strong integration gate candidate for “engineering process” competence.
+    gaps:
+      - The repo currently lacks curated learner-facing tooling packets for CMake, sanitizers, static analysis, and debugger workflow.
+      - This source covers many tools, but task authoring must explicitly choose a baseline toolchain and tool set.
+      - Documentation and maintainability topics likely need local examples to avoid becoming vague style talk.
+    notes: This phase uses the source more as engineering-policy input than as a standalone reading path.
+  - phase_id: 06_phase5-standard-library-data-and-algorithms
+    title: Standard Library, Data, and Algorithms
+    goal: Build practical fluency with standard utilities, data representation choices, and algorithmic interfaces.
+    included_units:
+      - u19s01
+      - u19s02
+      - u19s03
+      - u20s01
+      - u20s02
+      - u20s03
+    excluded_units: []
+    entry_requirements:
+      - stable function and class design
+      - stable generic-programming basics
+    reading_policy: Use as secondary reading and reference anchor; learner-facing packets should constrain the standard-library surface area per gate.
+    companion_resource_ids:
+      - R-003
+    gate_clusters:
+      - cluster_id: gc501
+        title: Practical Text, File, and Utility Work
+        gate_kind: micro
+        source_units:
+          - u19s01
+          - u19s03
+        concept_ids:
+          - c1901
+          - c1903
+        task_patterns:
+          - implement-bounded-cli-tool
+          - measure-code-behavior
+        required_prerequisites:
+          - c0801
+        disallowed_topics:
+          - concurrency
+          - abi
+        requires_companion_sources:
+          - R-003
+          - needs-curated-utilities-resource
+        readiness_focus:
+          - how the standard library changes implementation effort without removing design choices
+          - when time, randomness, and filesystem support belong in a bounded task
+        notes: Good entry point because the task surface is practical and observable.
+      - cluster_id: gc502
+        title: Modeling with Utility Types
+        gate_kind: micro
+        source_units:
+          - u19s02
+        concept_ids:
+          - c1902
+        task_patterns:
+          - refactor-data-representation
+          - compare-tradeoffs
+        required_prerequisites:
+          - c0901
+          - c0801
+        disallowed_topics:
+          - concurrency
+          - binary-size
+        requires_companion_sources:
+          - R-003
+          - needs-curated-modeling-resource
+        readiness_focus:
+          - when optional, variant, tuple, or callable wrappers clarify the model
+          - what design tradeoffs these abstractions introduce
+        notes: Strong design-oriented gate candidate without requiring full container fluency.
+      - cluster_id: gc503
+        title: Container Choice and Data-Structure Tradeoffs
+        gate_kind: micro
+        source_units:
+          - u20s01
+          - u20s02
+        concept_ids:
+          - c2001
+          - c2002
+        task_patterns:
+          - choose-data-structure
+          - compare-tradeoffs
+          - refactor-data-representation
+        required_prerequisites:
+          - c1902
+        disallowed_topics:
+          - vectorization
+          - concurrency
+        requires_companion_sources:
+          - R-003
+          - needs-curated-containers-resource
+        readiness_focus:
+          - why container choice affects complexity, locality, and design clarity
+          - when ordered versus unordered structures change behavior expectations
+        notes: Good bridge between library fluency and systems tradeoff reasoning.
+      - cluster_id: gc504
+        title: Iterators, Algorithms, and STL Integration
+        gate_kind: integration
+        source_units:
+          - u20s01
+          - u20s02
+          - u20s03
+        concept_ids:
+          - c2001
+          - c2002
+          - c2003
+        task_patterns:
+          - use-standard-algorithm
+          - refactor-loop-to-algorithm
+          - explain-and-defend-design
+        required_prerequisites:
+          - c2001
+          - c2002
+        disallowed_topics:
+          - concurrency
+          - low-level-abi
+        requires_companion_sources:
+          - R-003
+          - needs-curated-algorithms-resource
+        readiness_focus:
+          - whether the learner can choose containers and algorithms together instead of as separate decisions
+          - whether they can explain the cost and clarity tradeoffs of STL usage
+        notes: Strong integration gate candidate for “practical STL engineering”.
+    gaps:
+      - The repo currently has no curated learner-facing utility or STL packets.
+      - The standard-library surface is too broad for naive generation; gate scopes must stay narrow.
+      - More local examples are likely needed for iterator invalidation, complexity, and representation tradeoffs.
+    notes: This phase benefits strongly from the source as a structural map, but still needs curated narrowing.
+  - phase_id: 07_phase6-advanced-semantics-ownership-and-concurrency
+    title: Advanced Semantics, Ownership, and Concurrency
+    goal: Deepen language semantics around lifetime, moves, UB, ownership control, and concurrent execution.
+    included_units:
+      - u21s01
+      - u21s02
+      - u21s03
+      - u22s01
+      - u22s02
+    excluded_units: []
+    entry_requirements:
+      - stable Phase 1 object-model reasoning
+      - stable diagnostics and debugging workflow
+      - stable generic and multi-file reasoning where relevant
+    reading_policy: Use as secondary reading and high-signal reference; learner-facing rollout should be heavily gated and packetized.
+    companion_resource_ids:
+      - R-003
+    gate_clusters:
+      - cluster_id: gc601
+        title: Advanced Lifetime and Move Semantics
+        gate_kind: micro
+        source_units:
+          - u21s01
+          - u21s02
+        concept_ids:
+          - c2101
+          - c2102
+        task_patterns:
+          - explain-lifetime
+          - diagnose-runtime-bug
+          - implement-bounded-class
+        required_prerequisites:
+          - c0902
+          - c0903
+        disallowed_topics:
+          - concurrency
+          - abi
+        requires_companion_sources:
+          - R-003
+          - needs-curated-move-semantics-resource
+        readiness_focus:
+          - how move and allocation behavior change ownership and lifetime reasoning
+          - which mental models from early RAII are still valid and which now need refinement
+        notes: Strong first gate for a semantics-heavy later phase.
+      - cluster_id: gc602
+        title: Robustness, Exceptions, and Undefined Behavior
+        gate_kind: micro
+        source_units:
+          - u21s03
+        concept_ids:
+          - c2103
+        task_patterns:
+          - diagnose-runtime-bug
+          - write-tests-for-buggy-code
+          - compare-tradeoffs
+        required_prerequisites:
+          - c2101
+          - c1703
+        disallowed_topics:
+          - concurrency
+          - abi
+        requires_companion_sources:
+          - R-003
+          - needs-curated-ub-resource
+        readiness_focus:
+          - why UB and exception behavior are design concerns rather than just error cases
+          - how to bound risk before optimizing or parallelizing
+        notes: Good correctness gate before advanced ownership or concurrency work.
+      - cluster_id: gc603
+        title: Smart Pointers and Ownership Control
+        gate_kind: micro
+        source_units:
+          - u22s01
+        concept_ids:
+          - c2201
+        task_patterns:
+          - refactor-raw-ownership
+          - compare-tradeoffs
+        required_prerequisites:
+          - c2102
+        disallowed_topics:
+          - atomics
+          - parallelism
+        requires_companion_sources:
+          - R-003
+          - needs-curated-smart-pointer-resource
+        readiness_focus:
+          - why ownership policy still matters after introducing smart pointers
+          - when allocator concerns leak into interface and performance decisions
+        notes: Strong bridge from value/lifetime semantics to practical ownership design.
+      - cluster_id: gc604
+        title: Concurrency and Ownership Integration
+        gate_kind: integration
+        source_units:
+          - u21s02
+          - u21s03
+          - u22s01
+          - u22s02
+        concept_ids:
+          - c2102
+          - c2103
+          - c2201
+          - c2202
+        task_patterns:
+          - explain-concurrency-bug
+          - diagnose-runtime-bug
+          - explain-and-defend-design
+        required_prerequisites:
+          - c2201
+          - c2103
+        disallowed_topics:
+          - binary-size
+          - build-time
+        requires_companion_sources:
+          - R-003
+          - needs-curated-concurrency-resource
+        readiness_focus:
+          - whether the learner can connect ownership, correctness, and concurrent memory interaction in one coherent model
+        notes: This integration gate should stay tightly bounded; concurrency can easily explode beyond the phase.
+    gaps:
+      - The repo currently has no curated learner-facing packets for smart pointers, UB, or concurrency.
+      - Concurrency topics are broad enough that a later dedicated subphase may still be warranted.
+      - Automatic task generation here should remain conservative until remediation patterns are better understood.
+    notes: This phase is likely one of the highest-risk areas for over-generation and should stay tightly controlled.
+  - phase_id: 08_phase7-performance-and-optimization
+    title: Performance and Optimization
+    goal: Build measurement-first performance reasoning across cost models, locality, profiling, and throughput tradeoffs.
+    included_units:
+      - u23s01
+      - u23s02
+      - u24s01
+      - u24s02
+      - u25s01
+      - u25s02
+    excluded_units: []
+    entry_requirements:
+      - stable container and algorithm tradeoff reasoning
+      - stable debugging and measurement workflow
+      - stable concurrency basics where relevant
+    reading_policy: Use as secondary reading and reference-heavy planning input; learner-facing rollout must start from measurement discipline, not tricks.
+    companion_resource_ids:
+      - R-003
+    gate_clusters:
+      - cluster_id: gc701
+        title: Performance Model and Measurement
+        gate_kind: micro
+        source_units:
+          - u23s01
+          - u23s02
+        concept_ids:
+          - c2301
+          - c2302
+        task_patterns:
+          - measure-code-behavior
+          - compare-tradeoffs
+        required_prerequisites:
+          - c2501
+          - c2003
+        disallowed_topics:
+          - vectorization
+          - binary-size
+        requires_companion_sources:
+          - R-003
+          - needs-curated-performance-basics-resource
+        readiness_focus:
+          - why measurement and hardware mental models must come before optimization decisions
+          - how branch and cache behavior affect real runtime cost
+        notes: This should be the mandatory entry gate for any optimization phase.
+      - cluster_id: gc702
+        title: Cache Locality and Data Layout
+        gate_kind: micro
+        source_units:
+          - u24s01
+        concept_ids:
+          - c2401
+        task_patterns:
+          - measure-code-behavior
+          - refactor-data-representation
+        required_prerequisites:
+          - c2302
+          - c2001
+        disallowed_topics:
+          - binary-size
+          - modules
+        requires_companion_sources:
+          - R-003
+          - needs-curated-cache-locality-resource
+        readiness_focus:
+          - how data layout shapes memory traffic
+          - why locality and algorithm choice interact
+        notes: Strong systems-focused gate candidate with clear measurement evidence.
+      - cluster_id: gc703
+        title: Profiling, Tuning, and Throughput
+        gate_kind: integration
+        source_units:
+          - u24s02
+          - u25s01
+          - u25s02
+        concept_ids:
+          - c2402
+          - c2501
+          - c2502
+        task_patterns:
+          - explain-optimization-plan
+          - measure-code-behavior
+          - explain-and-defend-design
+        required_prerequisites:
+          - c2301
+          - c2401
+        disallowed_topics:
+          - binary-size
+          - build-time
+        requires_companion_sources:
+          - R-003
+          - needs-curated-profiling-resource
+        readiness_focus:
+          - whether the learner can profile first, then justify an optimization path without cargo-culting techniques
+        notes: Keep vectorization and parallel tuning subordinate to measurement, not as standalone tricks.
+    gaps:
+      - The repo currently has no learner-facing companion resource for performance measurement, locality, or profiling.
+      - Many optimization topics are platform-sensitive; tasks need an explicit baseline to stay comparable.
+      - Automatic generation must aggressively avoid “micro-optimization slop” without measurement evidence requirements.
+    notes: This phase is central to the repo's systems goal, but it needs tight task-shaping to stay rigorous.
+  - phase_id: 09_phase8-software-design-and-architecture
+    title: Software Design and Architecture
+    goal: Train larger-scale design judgment around interfaces, decomposition, architectural tradeoffs, and system evolution.
+    included_units:
+      - u26s01
+      - u26s02
+      - u27s01
+      - u27s02
+    excluded_units: []
+    entry_requirements:
+      - stable code-quality and maintainability reasoning
+      - stable generic, build, and ownership models where relevant
+    reading_policy: Use as authoring backbone and critique/reference material; learner-facing reading should be tied to concrete architecture exercises.
+    companion_resource_ids: []
+    gate_clusters:
+      - cluster_id: gc801
+        title: Decomposition and Interface Boundaries
+        gate_kind: micro
+        source_units:
+          - u26s01
+        concept_ids:
+          - c2601
+        task_patterns:
+          - architecture-critique
+          - refactor-for-maintainability
+        required_prerequisites:
+          - c1501
+          - c0901
+        disallowed_topics:
+          - binary-size
+          - build-time
+        requires_companion_sources:
+          - needs-curated-design-resource
+        readiness_focus:
+          - how to split responsibilities across components without hiding the real constraints
+        notes: Good entry point because it stays concrete and reviewable.
+      - cluster_id: gc802
+        title: Architectural Tradeoffs and Pattern Use
+        gate_kind: micro
+        source_units:
+          - u26s02
+          - u27s01
+        concept_ids:
+          - c2602
+          - c2701
+        task_patterns:
+          - architecture-critique
+          - compare-tradeoffs
+        required_prerequisites:
+          - c2601
+        disallowed_topics:
+          - binary-size
+          - build-time
+        requires_companion_sources:
+          - needs-curated-design-patterns-resource
+        readiness_focus:
+          - what patterns buy and what they cost in a specific architecture
+          - how coupling and cohesion language should influence real refactoring decisions
+        notes: Best used for critique and redesign rather than pattern recitation.
+      - cluster_id: gc803
+        title: Architectural Evolution and Design Integration
+        gate_kind: integration
+        source_units:
+          - u26s01
+          - u26s02
+          - u27s01
+          - u27s02
+        concept_ids:
+          - c2601
+          - c2602
+          - c2701
+          - c2702
+        task_patterns:
+          - architecture-critique
+          - explain-and-defend-design
+          - refactor-for-maintainability
+        required_prerequisites:
+          - c2602
+          - stable medium-sized code review ability
+        disallowed_topics:
+          - concurrency-optimization
+          - binary-size
+        requires_companion_sources:
+          - needs-curated-design-integration-resource
+        readiness_focus:
+          - whether the learner can reason about architectural evolution, not just local code cleanup
+        notes: Strong capstone-style design gate candidate for later course stages.
+    gaps:
+      - The repo currently has no curated learner-facing design packet or architecture critique format.
+      - Design topics need strong local artifacts or case studies; the source alone is not enough for grounded tasks.
+      - Automatic generation must avoid vague “talk about architecture” tasks without concrete code or system context.
+    notes: This phase likely depends on local project artifacts more than earlier phases do.
+  - phase_id: 10_phase9-binary-and-build-engineering
+    title: Binary and Build Engineering
+    goal: Build explicit engineering skill around artifact size, build latency, and the tradeoffs they impose on larger C++ systems.
+    included_units:
+      - u28s01
+      - u28s02
+      - u29s01
+      - u29s02
+    excluded_units: []
+    entry_requirements:
+      - stable translation-unit and library reasoning
+      - stable tooling and profiling workflow
+      - stable design judgment for code-structure tradeoffs
+    reading_policy: Use as secondary reading plus artifact-level reference; learner-facing tasks need explicit local build artifacts and reproducible measurement rules.
+    companion_resource_ids:
+      - R-003
+    gate_clusters:
+      - cluster_id: gc901
+        title: Binary Size Analysis and Reduction
+        gate_kind: micro
+        source_units:
+          - u28s01
+          - u28s02
+        concept_ids:
+          - c2801
+          - c2802
+        task_patterns:
+          - inspect-build-artifact
+          - explain-optimization-plan
+          - compare-tradeoffs
+        required_prerequisites:
+          - c1403
+          - c2501
+        disallowed_topics:
+          - concurrency
+        requires_companion_sources:
+          - R-003
+          - needs-curated-binary-size-resource
+        readiness_focus:
+          - how to attribute binary growth before attempting reduction
+          - which size reductions are worth their debugging or maintenance cost
+        notes: Good artifact-focused gate with measurable evidence.
+      - cluster_id: gc902
+        title: Build Time Analysis and Reduction
+        gate_kind: micro
+        source_units:
+          - u29s01
+          - u29s02
+        concept_ids:
+          - c2901
+          - c2902
+        task_patterns:
+          - inspect-build-artifact
+          - configure-build-workflow
+          - compare-tradeoffs
+        required_prerequisites:
+          - c1302
+          - c1101
+        disallowed_topics:
+          - concurrency
+        requires_companion_sources:
+          - R-003
+          - needs-curated-build-time-resource
+        readiness_focus:
+          - what structurally drives compile and link latency
+          - when build-time reduction is worth code-organization cost
+        notes: Strong workflow and scaling gate candidate.
+      - cluster_id: gc903
+        title: Artifact Engineering Integration
+        gate_kind: integration
+        source_units:
+          - u28s01
+          - u28s02
+          - u29s01
+          - u29s02
+        concept_ids:
+          - c2801
+          - c2802
+          - c2901
+          - c2902
+        task_patterns:
+          - inspect-build-artifact
+          - explain-and-defend-design
+          - configure-build-workflow
+        required_prerequisites:
+          - c2801
+          - c2901
+        disallowed_topics:
+          - concurrency
+        requires_companion_sources:
+          - R-003
+          - needs-curated-artifact-engineering-resource
+        readiness_focus:
+          - whether the learner can reason about artifact size and build latency as first-class engineering constraints
+        notes: Good final late-course integration gate when the repo has realistic multi-file artifacts to inspect.
+    gaps:
+      - The repo has no learner-facing artifact-engineering resource or measurement workflow yet.
+      - These topics require realistic project artifacts; artificial toy tasks will undertrain the intended skills.
+      - Platform-specific variation is likely high, so the baseline environment must be explicit.
+    notes: This is a mature endgame phase where external source structure is helpful but local artifacts matter most.
+
+global_gaps:
+  - The source remains link-only until licensing and reuse status are clarified.
+  - The course assumes prior C and OOP familiarity, so learner-facing use still requires curated companion reading.
+  - If Chapter 1 is exposed learner-facing, it should be wrapped in a short optional orientation packet rather than used raw.
+  - Numeric semantics, callables, and dynamic object-model topics need better learner-facing companion sources before automatic gate generation should rely on them.
+  - Later object-model topics such as RTTI and object layout remain out of scope for automatic generation in this pilot.
+  - Templates, translation units, libraries, and ABI topics currently need new curated companion resources before learner-facing rollout.
+  - Style/tooling, STL, concurrency, performance, design, binary-size, and build-time topics all still need curated learner-facing packets before runtime use.
+  - Later phases will need explicit environment baselines and local artifacts so generated tasks stay observable and comparable.
+
+generator_rules:
+  - Use section-level unit IDs and concept IDs, not whole chapters, as the primary task-generation input.
+  - Respect `task_authoring_role` exactly; `exclude` and `reference-only` content must not be used for automatic task generation.
+  - Treat Chapter 1 as course-framing and optional reading-packet material only; do not use it as automatic phase, gate, or task-generation input.
+  - Treat Chapter 4, Chapter 5, and Chapter 10 material as Phase 1 or later unless manually reviewed for a narrower task.
+  - Treat Chapter 11 and Chapter 12 material as Phase 2 or later unless manually reviewed for a narrower task.
+  - Treat Chapter 13 and Chapter 14 material as Phase 3 or later unless manually reviewed for a narrower task.
+  - Treat Chapter 15 through Chapter 18 material as Phase 4 or later unless manually reviewed for a narrower task.
+  - Treat Chapter 19 and Chapter 20 material as Phase 5 or later unless manually reviewed for a narrower task.
+  - Treat Chapter 21 and Chapter 22 material as Phase 6 or later unless manually reviewed for a narrower task.
+  - Treat Chapter 23 through Chapter 25 material as Phase 7 or later unless manually reviewed for a narrower task.
+  - Treat Chapter 26 and Chapter 27 material as Phase 8 or later unless manually reviewed for a narrower task.
+  - Treat Chapter 28 and Chapter 29 material as Phase 9 or later unless manually reviewed for a narrower task.
+  - Do not use preprocessing, RTTI, object-layout, or multiple-inheritance concepts for automatic early-phase generation.
+  - Do not use SFINAE-heavy, module-heavy, or ABI-heavy concepts for automatic generation without an explicit later-phase mapping.
+  - Do not use concurrency-heavy, optimization-heavy, or artifact-engineering-heavy concepts for automatic generation without explicit environment assumptions.
+  - Do not cite this source learner-facing unless the relevant material has been curated into RESOURCES.md.
