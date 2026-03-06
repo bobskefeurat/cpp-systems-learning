@@ -45,6 +45,8 @@ flowchart LR
 ## Current Course
 Only one phase is active today: [Phase 0: C++ Foundations](./01_phase0-cpp-foundations/README.md).
 
+For the current active vs planned program surface, see [00_system/STATUS.md](./00_system/STATUS.md).
+
 Phase 0 focuses on:
 - compile/run discipline without IDE magic
 - warnings as part of normal work

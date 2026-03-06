@@ -5,6 +5,7 @@ Phase 1 deepens the language and object-model reasoning that Phase 0 prepares fo
 It makes numeric behavior, bounded data models, function-surface choices, and the first dynamic object-model tradeoffs explicit.
 
 This README locks the planned gate arc for the phase before full gate folders are generated.
+Phase 1 is currently planned rather than active in the default learner path.
 
 ## What This Phase Builds
 By the end of this phase, the learner should be able to:

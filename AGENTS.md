@@ -34,3 +34,9 @@ Until the user chooses a mode:
 - For repo-specific questions, reviews, or implementation work, inspect the relevant local files before answering.
 - Treat the repository files as the primary working context when the task is about this repo.
 - This governs agent behavior only; it does not override sandbox or tool permissions.
+
+## Retrieval Discipline
+- After mode selection and after reading `00_system/MODES.md`, consult `00_system/TASK_ROUTING.md` when the right next file set is not obvious.
+- Use `00_system/TASK_ROUTING.md` to choose the smallest relevant file set for the user's request.
+- Read `00_system/STATUS.md` when the request depends on what is active, planned, draft, or archived.
+- Prefer the most specific local entrypoint first: named file, then phase/gate `README.md`, then deeper governing files only if the task needs them.

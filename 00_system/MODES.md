@@ -4,6 +4,13 @@
 Defines the two chat modes used for this repository.
 This file defines what each mode means after the startup choice has been made.
 
+## Routing Companion
+`TASK_ROUTING.md` is the companion to this file.
+
+Use `TASK_ROUTING.md` after mode choice to keep startup context small and to select the next files based on the user's actual request.
+This file defines mode meaning and default boundaries.
+`TASK_ROUTING.md` defines intent-based retrieval.
+
 ## Mode 1: Utvecklingsläge
 
 ### Purpose
@@ -23,6 +30,8 @@ Load this by default:
 3. `00_system/README.md`
 4. this file
 5. the files directly relevant to the active task
+
+If the right next file set is not obvious, or if the task crosses system boundaries, consult `TASK_ROUTING.md`.
 
 Load additional system files only when needed:
 - `00_system/foundation/` when changing learner-facing rules, progression, or evaluation behavior
@@ -54,6 +63,8 @@ Load these files by default:
 5. `00_system/foundation/GATE_RUNTIME.md`
 6. relevant phase files
 7. relevant gate files
+
+If the right next file set is not obvious, or if the task crosses system boundaries, consult `TASK_ROUTING.md`.
 
 Load only when needed:
 - `00_system/foundation/AI_INTERACTION_PROTOCOLS.md` when running readiness, evaluation, integration-task support, or detailed learner-facing reference behavior
