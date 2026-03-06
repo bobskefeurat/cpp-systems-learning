@@ -23,14 +23,23 @@ It combines:
 ```mermaid
 flowchart LR
     User["Learner + Codex in VS Code"] --> Phase["Current phase"]
-    Phase --> Gates["Micro-gates"]
-    Gates --> Integration["Integration gate"]
-    Integration --> Next["Next phase"]
+    Phase --> GateReadme["Gate README"]
+    GateReadme --> Prep["learner/PREP.md"]
+    Prep --> Ready{"Readiness sufficient?"}
+    Ready -->|No| Review["Targeted review and retry"]
+    Review --> Ready
+    Ready -->|Yes| Task["learner/TASK.md"]
+    Task --> Work["Code in workspace/"]
+    Work --> Eval["Agent evaluation"]
+    Eval -->|Pass| Next["Next gate / integration / phase"]
+    Eval -->|Not pass| Remed["Concrete remediation loop"]
+    Remed --> Task
 ```
 
 - A `phase` builds one capability area.
 - A `gate` is a bounded checkpoint inside that phase.
 - An `integration gate` is the larger phase-ending task that combines earlier gate concepts without adding a major new topic.
+- Every gate uses the same readiness, task, and evaluation loop shown above.
 - Gates keep learner-facing material separate from agent-facing readiness and evaluation rules.
 
 ## Current Course

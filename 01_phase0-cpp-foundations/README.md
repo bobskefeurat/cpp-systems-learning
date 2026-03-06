@@ -15,14 +15,6 @@ By the end of this phase, the learner should be able to:
 ## Gate Lineup
 Phase 0 has four micro-gates followed by one integration gate.
 
-```mermaid
-flowchart LR
-    G0["Gate 0"] --> G1["Gate 1"]
-    G1 --> G2["Gate 2"]
-    G2 --> G3["Gate 3"]
-    G3 --> G4["Gate 4<br/>Phase Integration"]
-```
-
 | Gate | Focus |
 | --- | --- |
 | [Gate 0](./gate0-compile-run-basic-io/README.md) | Compile/run flow, warnings, and basic `std::cin` / `std::cout` |
@@ -32,21 +24,7 @@ flowchart LR
 | [Gate 4](./gate4-phase0-integration-project/README.md) | Phase-ending integration gate that combines the earlier phase concepts in one bounded project |
 
 ## How To Use This Phase
-Every gate follows the same runtime loop.
-
-```mermaid
-flowchart TD
-    GateReadme["Gate README"] --> Prep["learner/PREP.md"]
-    Prep --> Ready{"Readiness sufficient?"}
-    Ready -->|No| Review["Targeted review and retry"]
-    Review --> Ready
-    Ready -->|Yes| Task["learner/TASK.md"]
-    Task --> Work["Code in workspace/"]
-    Work --> Eval["Agent evaluation"]
-    Eval -->|Pass| Next["Next gate or phase completion"]
-    Eval -->|Not pass| Remed["Concrete remediation loop"]
-    Remed --> Task
-```
+Every gate follows the shared learner/agent loop described in [../README.md](../README.md).
 
 Working rule:
 1. Open the current gate's `README.md`.
