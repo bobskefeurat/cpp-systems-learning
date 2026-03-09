@@ -10,6 +10,9 @@
 *.so
 *.dylib
 
+# Gate workspaces are local scratch areas.
+**/workspace/main.cpp
+
 .DS_Store
 Thumbs.db
 

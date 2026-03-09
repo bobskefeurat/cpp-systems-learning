@@ -219,6 +219,7 @@ foreach ($phaseDir in $phaseDirs) {
         $specFile = Join-Path $gateDir.FullName "agent/SPEC.md"
         $evaluationFile = Join-Path $gateDir.FullName "agent/EVALUATION.md"
         $workspaceDir = Join-Path $gateDir.FullName "workspace"
+        $solutionDir = Join-Path $gateDir.FullName "solution"
 
         $requiredFiles = @(
             $gateReadme,
@@ -237,6 +238,10 @@ foreach ($phaseDir in $phaseDirs) {
 
         if (-not (Test-Path $workspaceDir)) {
             Add-Finding -Severity "error" -Path (Get-RelativePath $workspaceDir) -Message "Missing required directory: workspace"
+        }
+
+        if (-not (Test-Path $solutionDir)) {
+            Add-Finding -Severity "error" -Path (Get-RelativePath $solutionDir) -Message "Missing required directory: solution"
         }
 
         if (Test-Path $gateReadme) {

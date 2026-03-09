@@ -19,6 +19,7 @@ Do not invent a new local structure when the existing template already fits.
 
 No generic `workspace/` source template is included.
 Starter code must stay aligned with the actual task for that gate.
+Tracked gate snapshots should live in each gate's `solution/` directory rather than in generic starter templates.
 
 ## How To Use
 1. Copy the relevant template files into the new phase or gate folder.

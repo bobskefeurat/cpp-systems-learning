@@ -31,6 +31,7 @@ Each gate should normally use:
 - `learner/`
 - `agent/`
 - `workspace/`
+- `solution/`
 
 Gate folders normally live inside a phase folder whose path begins with a stable phase ID, such as `01_phase0-cpp-foundations`.
 The containing phase folder should normally have its own `README.md` that names the phase and lists its gates.
@@ -111,6 +112,7 @@ Should contain:
 - what the gate builds
 - where the learner starts
 - where code is written
+- where tracked pass snapshots are stored
 - how to compile/run at a practical level
 - the current task title when the gate currently has one
 - concise links to learner and agent materials when needed
@@ -281,6 +283,7 @@ Standard file section order:
 ### `workspace/`
 Purpose:
 - the actual coding area for the learner
+- the local scratch space that may stay uncommitted between attempts
 
 Should contain:
 - source files
@@ -292,6 +295,19 @@ Should not contain:
 - policy or guidance documents
 - starter code that contradicts the current task
 
+### `solution/`
+Purpose:
+- tracked snapshot area for the most recent full-`pass` version of the gate solution
+- repo-facing record or portfolio artifact, not the learner's live work area
+
+Should contain:
+- tracked source files copied from the evaluated workspace artifact
+- optional small support files that explain or contextualize the saved snapshot
+
+Should not contain:
+- scratch edits that have not passed evaluation
+- learner-facing policy or guidance documents
+
 ## Required Files
 A gate is normally not considered structurally complete without:
 - `README.md`
@@ -301,6 +317,7 @@ A gate is normally not considered structurally complete without:
 - `agent/SPEC.md`
 - `agent/EVALUATION.md`
 - `workspace/`
+- `solution/`
 
 ## Optional Files
 Optional files may be added only when they solve a real problem.
@@ -329,6 +346,7 @@ Before a newly generated phase or gate is considered ready:
 - `not pass` outcomes include concrete remediation and reattempt evidence
 - gate evaluation guidance makes clear when code, compile output, runtime output, or learner explanation must be checked
 - starter files in `workspace/` match the current task
+- `solution/` exists for tracked pass snapshots
 - `.\00_system\authoring\validate-structure.ps1` passes
 - the broader validation process in `GATE_VALIDATION.md` has been applied when the gate is new or materially changed
 

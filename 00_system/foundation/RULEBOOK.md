@@ -11,6 +11,9 @@ Rules for how the training program is run and how progression is evaluated.
 5. Refactoring is part of the training after working code when the task/gate requires it.
 6. Progression is governed by gate results (pass / not pass), not points.
 
+Stored gate snapshots in `solution/` do not change rule 2.
+They exist as maintainer or portfolio artifacts and are not part of the normal learner-facing flow.
+
 ## Gate Rules (v0)
 - Each gate must have clear requirements and a binary outcome.
 - If not passed: targeted repetition and a new attempt.

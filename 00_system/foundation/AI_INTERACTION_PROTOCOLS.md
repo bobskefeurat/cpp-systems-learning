@@ -76,11 +76,22 @@ AI should:
 - inspect code shape when the gate requires a specific program structure, invariant, or mechanism
 - use learner explanation when the gate includes conceptual understanding as part of the pass decision
 - ask one short follow-up when the evidence is still insufficient to verify a required invariant
+- after a full `pass`, save the evaluated standard workspace file into the gate's tracked `solution/` snapshot
 
 AI should not:
 - treat matching runtime output as automatic proof that the whole gate is passed
 - ignore a code-shape or explanation requirement just because the program appears to work
 - invent new gate requirements that are not present in the gate documents
+- use `solution/` as normal hint material during learner support
+
+For the standard single-file gates in this repo, the expected snapshot command is:
+
+```powershell
+powershell.exe -ExecutionPolicy Bypass -File .\00_system\save-solution.ps1 -GateDir <gate-path>
+```
+
+This copies `workspace/main.cpp` to `solution/main.cpp`.
+Only do this after a full `pass`, not after a provisional check or a `not pass`.
 
 ## Integration Gate Support (v0)
 When supporting a phase-ending integration gate, AI may help more explicitly with planning and decomposition than in a micro-gate, but it must still preserve learner ownership.

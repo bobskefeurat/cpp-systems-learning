@@ -31,6 +31,7 @@ Mark each item as `yes` or `no`.
 ## Gate Decision Rule
 - `pass` requires all checklist items to be `yes`
 - any `no` means `not pass`
+- if the result is a full `pass` and the evaluated artifact is `workspace/main.cpp`, copy it to `solution/main.cpp` before ending the evaluation
 - if the result is `not pass`, complete `Recommended Repetition` with a concrete remediation loop before ending the evaluation
 
 ## Rubric Snapshot
@@ -80,3 +81,4 @@ For repetition in `Gate 2: Values, References, and Parameter Passing`, prefer:
 - If the weakest dimension is `Debugging/process`, require the learner to point to the failing line or wrong call and explain what it currently proves.
 - If the weakest dimension is `Code hygiene and readability`, require a focused cleanup pass and a short justification of the changes.
 - If higher-help mode was used, check the learner's explanation and follow-up variant before treating understanding as stable.
+- Use `powershell.exe -ExecutionPolicy Bypass -File .\00_system\save-solution.ps1 -GateDir 01_phase0-cpp-foundations/gate2-values-references-and-parameter-passing` for the standard snapshot step.

@@ -11,6 +11,8 @@ It separates the active runtime foundation from authoring rules, resource policy
   Intent-to-file routing guide used after mode selection.
 - `STATUS.md`
   Current active, planned, draft, and archived program surface.
+- `save-solution.ps1`
+  Helper that copies an evaluated workspace file into the tracked `solution/` snapshot for a gate.
 - `foundation/`
   Active learner-facing runtime contract: goals, rules, core teacher policy, interaction protocols, terminology, and gate runtime model.
 - `authoring/`

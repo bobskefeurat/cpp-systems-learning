@@ -38,6 +38,10 @@ It defines the binary checklist, the decision rule, the remediation loop, and th
 Use as the actual coding area for the learner.
 Starter code may exist, but it must match the current task.
 
+### `solution/`
+Use as the tracked snapshot area for a gate's last full `pass`.
+It is a repo artifact for recordkeeping and portfolio use, not part of the default learner workflow.
+
 ## Standard Learner Flow
 The default learner flow is:
 
@@ -48,6 +52,8 @@ The default learner flow is:
 5. Code in `workspace/`.
 6. Ask the agent for evaluation.
 
+`solution/` is not the normal place to start or work.
+
 ## Standard Agent Flow
 The default agent flow is:
 
@@ -57,6 +63,7 @@ The default agent flow is:
 4. Support work on `learner/TASK.md` inside `workspace/` under the global policy and gate-local escalation rules.
 5. Evaluate using `agent/SPEC.md` and `agent/EVALUATION.md`, verifying pass requirements against the relevant evidence sources.
 6. If the result is `not pass`, assign a concrete remediation loop and reattempt path.
+7. If the result is a full `pass` and the evaluated source is the standard workspace file, copy it to `solution/` using the repo helper `00_system/save-solution.ps1` before closing the evaluation.
 
 ## Runtime Rule
 Do not infer `pass` from correct runtime output alone when the gate also requires code form, compile behavior, or explanation.

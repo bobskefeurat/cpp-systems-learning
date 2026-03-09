@@ -33,6 +33,8 @@ Working rule:
 4. Work in `workspace/`.
 5. Ask for evaluation when you have the required evidence.
 
+After a full `pass`, the evaluated `workspace/main.cpp` may be archived in that gate's `solution/` directory.
+
 `Gate 4` is larger than the earlier gates, but it still uses the same readiness, evidence, and pass/not-pass model.
 
 ## Where To Start

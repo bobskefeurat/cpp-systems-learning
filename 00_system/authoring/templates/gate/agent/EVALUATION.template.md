@@ -25,6 +25,7 @@ Add a gate-specific checklist item for higher-help follow-up when the gate allow
 ## Gate Decision Rule
 - `pass` requires all checklist items to be `yes`
 - any `no` means `not pass`
+- if the result is a full `pass` and the evaluated artifact is the standard workspace file, copy it to `solution/` before ending the evaluation
 - if the result is `not pass`, complete `Recommended Repetition` with a concrete remediation loop before ending the evaluation
 
 ## Rubric Snapshot
@@ -67,4 +68,5 @@ For repetition in `Gate {{N}}: {{Display Name}}`, prefer:
 - If higher-help mode was used, check the learner's explanation and near-transfer follow-up before treating understanding as stable.
 - Verify each pass requirement against the relevant evidence source instead of inferring `pass` from runtime output alone.
 - Inspect code directly when the gate requires a specific structure, invariant, or mechanism.
+- Use `powershell.exe -ExecutionPolicy Bypass -File .\00_system\save-solution.ps1 -GateDir <gate-path>` for the standard single-file snapshot flow.
 - Add gate-specific evaluator notes here when needed.

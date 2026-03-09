@@ -42,6 +42,12 @@ flowchart LR
 - Every gate uses the same readiness, task, and evaluation loop shown above.
 - Gates keep learner-facing material separate from agent-facing readiness and evaluation rules.
 
+## Workspace And Solution Snapshots
+- `workspace/` is the local working area for the current attempt.
+- `workspace/main.cpp` is intentionally ignored by Git so the learner can iterate freely.
+- `solution/` stores the tracked snapshot that most recently achieved a full `pass` for that gate.
+- `solution/` is a portfolio/record artifact, not the normal learner starting point.
+
 ## Current Course
 Only one phase is active today: [Phase 0: C++ Foundations](./01_phase0-cpp-foundations/README.md).
 
