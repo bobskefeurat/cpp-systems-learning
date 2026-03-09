@@ -83,3 +83,4 @@ Current practical baseline:
 - System or repo work: [AGENTS.md](./AGENTS.md) then [00_system/README.md](./00_system/README.md)
 - Course content: [01_phase0-cpp-foundations/README.md](./01_phase0-cpp-foundations/README.md)
 - First gate directly: [Gate 0: Compile, Run, and Basic I/O](./01_phase0-cpp-foundations/gate0-compile-run-basic-io/README.md)
+- Tracked solution index: [PORTFOLIO.md](./PORTFOLIO.md)
