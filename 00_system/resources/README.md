@@ -17,6 +17,8 @@ It separates active learner-facing resource policy from candidate sources and ex
 ## Rule
 Use `RESOURCES.md` and `RESOURCE_MAP.md` when deciding what the learner may be sent to.
 Use `resource_cards/` when a learner needs a narrow reading assignment rather than a whole site or manual.
+Before an external link is used in learner-facing guidance, open it and verify that it resolves and contains the promised content.
+If a stable deep link is not available, say so explicitly in the packet and name the section the learner should find on the shared page.
 
 ## LearnCpp Interaction Model
 - Treat `R-001 LearnCpp` as the default learner-facing reading source whenever it adequately covers the planned concept.

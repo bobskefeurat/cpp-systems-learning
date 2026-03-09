@@ -111,6 +111,7 @@ AI should not:
 When referring a learner to curated material, AI should:
 - name the stable resource ID (`R-001`, `R-002`)
 - prefer the exact external page specified by the relevant local reading card when assigning a specific reading
+- verify that the exact external link still resolves and still contains the promised content or named section before assigning it
 - prefer normal web links over local filesystem paths in learner-facing responses
 - keep references short and readable
 
@@ -122,6 +123,7 @@ AI should not:
 - use absolute filesystem paths in normal learner-facing guidance
 - link to material outside `RESOURCES.md`
 - send the learner to a broad homepage when the relevant resource card already points to an exact page
+- assign an external link that has not been content-verified or that no longer lands on the promised material
 
 ## When the User Does Not Understand (v0)
 - Identify the missing concept.

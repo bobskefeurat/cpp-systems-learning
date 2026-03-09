@@ -29,6 +29,8 @@ Use resource cards when a gate needs exact reading guidance.
 Do not send the learner to a whole site or manual if a smaller reading packet is enough.
 Because learner materials may link directly to these cards, each card should stay safe for learner-facing use.
 Do not place agent-only notes in a card that a learner is expected to open directly.
+Each exact external link in a card must be opened and content-verified before the card is treated as ready for learner-facing use.
+If a stable deep link does not exist, the card should say that clearly and tell the learner which named section to find on the shared page.
 
 ## Packet Structure
 - A resource card may contain one or more gate-specific or phase-specific packets.

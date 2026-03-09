@@ -25,6 +25,7 @@ Only resources listed here may be named in recommendations and hints.
 - MSVC- and WSL-specific candidates remain in `SOURCES.md` but are not curated here yet.
 - Exact reading packets for specific curated resources can live in `resource_cards/`.
 - If a resource has a local reading card, prefer that card for learner-facing reading guidance instead of a broad homepage or whole manual.
+- Exact external links used in learner-facing packets must be content-verified before use and updated if the target page changes.
 
 ## Resources
 | ID    | Title                                                                     | Type                            | Level                 | Concept/area                                                                              | When to use it                                                                                           | Source                                                                                            | Packet                              | Status         |
