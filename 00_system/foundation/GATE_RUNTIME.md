@@ -24,7 +24,7 @@ It should contain the concrete task, constraints, test cases, self-checks, expla
 
 ### `agent/READINESS.md`
 Use for the readiness dialogue.
-It defines what the learner should already be able to explain before starting the task.
+It defines what the learner should already be able to explain before starting the task, using core concepts rather than solution-specific details.
 
 ### `agent/SPEC.md`
 Use as the gate's operational source of truth during evaluation.

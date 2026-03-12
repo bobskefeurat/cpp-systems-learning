@@ -40,7 +40,7 @@ The learner passes `Gate 2: Values, References, and Parameter Passing` if they c
 
 1. They can compile a small C++ program from the terminal with the baseline command.
 2. The program builds with zero warnings under the required flags.
-3. The program output matches the task requirements exactly.
+3. The program output clearly shows the required before/inside/after observations in the expected order.
 4. The program contains:
    - one function with an `int` value parameter
    - one function with an `int&` reference parameter
@@ -60,6 +60,7 @@ The learner passes `Gate 2: Values, References, and Parameter Passing` if they c
 - the learner cannot compile from the terminal
 - warnings are present and ignored
 - the output is correct only because it was hardcoded rather than produced by the intended function behavior
+- the output does not clearly distinguish the caller state before and after each call
 - the learner cannot distinguish argument from parameter
 - the learner cannot explain why one call changes the caller and the other does not
 - the learner treats a reference parameter as if it were the same thing as a pointer parameter

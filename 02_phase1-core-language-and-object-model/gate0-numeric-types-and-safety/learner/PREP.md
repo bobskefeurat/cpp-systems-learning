@@ -25,9 +25,9 @@ Before you start the task, make sure you can explain these ideas in simple words
 ## Read This
 Read in this order:
 
-- Start with [R-001 Card](../../../00_system/resources/resource_cards/R-001.md).
+- Start with [R-001 Card](../../../00_system/resources/resource_cards/02_phase1-core-language-and-object-model/R-001.md).
   Use `Phase 1 Packet A: Numeric Safety Fundamentals` in that card as your main reading path.
-- Use [R-003 Card](../../../00_system/resources/resource_cards/R-003.md) only if the exact wording around arithmetic conversions or implicit conversions is still unclear.
+- Use [R-003 Card](../../../00_system/resources/resource_cards/02_phase1-core-language-and-object-model/R-003.md) only if the exact wording around arithmetic conversions or implicit conversions is still unclear.
 - If the agent later sends you to another curated resource, follow that exact reading assignment.
 
 ## Stop When

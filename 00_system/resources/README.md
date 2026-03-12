@@ -12,17 +12,18 @@ It separates active learner-facing resource policy from candidate sources and ex
 - `SOURCES.md`
   Candidate pool for future curation.
 - `resource_cards/`
-  Learner-safe reading packets for exact assignments.
+  Learner-safe reading packets for exact assignments, organized by phase and indexed by resource ID.
 
 ## Rule
 Use `RESOURCES.md` and `RESOURCE_MAP.md` when deciding what the learner may be sent to.
 Use `resource_cards/` when a learner needs a narrow reading assignment rather than a whole site or manual.
+Prefer a phase-local card when the active phase is already known.
 Before an external link is used in learner-facing guidance, open it and verify that it resolves and contains the promised content.
 If a stable deep link is not available, say so explicitly in the packet and name the section the learner should find on the shared page.
 
 ## LearnCpp Interaction Model
 - Treat `R-001 LearnCpp` as the default learner-facing reading source whenever it adequately covers the planned concept.
-- Send the learner to `R-001` through curated packets in `resource_cards/`, not to the whole site by default.
-- Use exact lesson links, a narrow reading order, and a clear stop condition.
+- Send the learner to `R-001` through curated phase-local packets in `resource_cards/`, not to the whole site by default.
+- Use exact lesson links and a narrow reading order.
 - If a planned concept is not adequately covered by the current `R-001` packets, add a companion source before the phase or gate becomes learner-facing.
 - Do not require a learner-facing task concept unless it is covered by the curated reading layer in this folder.

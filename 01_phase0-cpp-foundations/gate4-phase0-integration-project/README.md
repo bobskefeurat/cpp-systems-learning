@@ -25,8 +25,6 @@ Then:
 3. write and run your code in `workspace/`
 4. ask the agent to evaluate your result
 
-After a full `pass`, the evaluated workspace snapshot may be copied to `solution/`.
-
 ## Current Task
 Current task: `Session Report`
 
@@ -49,16 +47,9 @@ g++ main.cpp -std=c++20 -Wall -Wextra -Wpedantic -o main
 ```
 
 ## Files
-If you are the learner, focus on:
+Focus on:
 - [learner/PREP.md](./learner/PREP.md)
 - [learner/TASK.md](./learner/TASK.md)
 - `workspace/`
-
-Tracked pass snapshots live in `solution/`.
-
-Agent control material lives in `agent/`:
-- [READINESS.md](./agent/READINESS.md)
-- [SPEC.md](./agent/SPEC.md)
-- [EVALUATION.md](./agent/EVALUATION.md)
 
 For the phase overview, see [../README.md](../README.md).

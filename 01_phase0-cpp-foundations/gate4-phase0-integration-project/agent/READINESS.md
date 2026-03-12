@@ -23,39 +23,39 @@ The readiness check must cover the core concepts for `Gate 4: Phase 0 Integratio
 ### Question 1
 Explain, in your own words:
 - what the baseline compile command is doing at a high level
-- why zero warnings still matter in a larger task
-- how the input values reach the program and how the report is printed
+- why zero warnings still matter in a larger program
+- how input reaches a program and how output is produced
 
 ### Question 2
 Explain, in your own words:
-- what the global integer is doing in this phase
-- what the dynamic integer is doing in this task
-- why the helper calls should use the value stored in that dynamic integer before cleanup
+- what a global integer represents at this phase level
+- what a dynamically allocated integer represents at a simple level
+- why a dynamically allocated value must be used while it is still alive
 - why the dynamic integer still needs `delete` and pointer reset
 
 ### Question 3
 Explain, in your own words:
-- what the by-value helper is supposed to prove
-- what the by-reference helper is supposed to prove
+- what pass by value proves about copies and caller state
+- what pass by reference proves about aliasing and caller state
 - why the two helpers must not have the same effect on the caller's variable
 
 ### Question 4
 Explain, in your own words:
 - why the inner scope object leaves before the outer one
-- what the destructor is proving in this task
+- what a destructor demonstrates about scope-bound cleanup
 - why that is the same basic RAII idea from the earlier gate
 
 ### Question 5
 Explain, in your own words:
-- where Gate 0, Gate 1, Gate 2, and Gate 3 concepts will appear in your plan
-- how you will keep the project bounded instead of adding new topics
+- which earlier Phase 0 concept groups an integration task needs to combine
+- how to keep an integration task bounded to already learned Phase 0 concepts
 
 ## Readiness Standard
 The learner is ready to start when:
 - all core concepts are covered
 - the answers are understandable in the learner's own words
 - the learner shows a workable starting understanding
-- the learner can sketch a bounded project plan instead of listing unrelated concepts
+- the learner can describe how the concept groups fit together without drifting into new topics
 
 The learner does not need full mastery.
 
@@ -100,7 +100,7 @@ Q4: Sufficient / Not sufficient.
   - `R-003` Gate 4 packet only if exact wording is still needed
 
 Q5: Sufficient / Not sufficient.
-- Name exactly what is missing about the integration plan or scope control.
+- Name exactly what is missing about the integration concept map or scope control.
 - If needed, point to:
   - `R-001` Gate 4 packet rows that match the weak subsystem
 

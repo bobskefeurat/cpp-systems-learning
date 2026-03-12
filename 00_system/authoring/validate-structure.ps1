@@ -272,7 +272,7 @@ foreach ($phaseDir in $phaseDirs) {
     }
 }
 
-$resourceCards = Get-ChildItem (Join-Path $RepoRoot "00_system/resources/resource_cards") -Filter "*.md" -File
+$resourceCards = Get-ChildItem (Join-Path $RepoRoot "00_system/resources/resource_cards") -Filter "*.md" -File -Recurse
 foreach ($resourceCard in $resourceCards) {
     if ($resourceCard.Name -eq "README.md") {
         continue

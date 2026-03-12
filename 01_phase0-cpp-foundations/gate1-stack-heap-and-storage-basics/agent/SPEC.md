@@ -40,7 +40,7 @@ The learner passes `Gate 1: Stack, Heap, and Storage Basics` if they can show al
 
 1. They can compile a small C++ program from the terminal with the baseline command.
 2. The program builds with zero warnings under the required flags.
-3. The program output matches the task requirements exactly.
+3. The program output clearly shows the task's required values and observations in the expected order.
 4. The program contains:
    - one global integer
    - one local integer in `main`
@@ -65,7 +65,7 @@ The learner passes `Gate 1: Stack, Heap, and Storage Basics` if they can show al
 - warnings are present and ignored
 - the dynamic integer is not cleaned up correctly
 - the local pointer variable is not reset as required by the task
-- the output is incorrect or only partially understood
+- the output is incorrect, semantically unclear, or only partially understood
 - the learner confuses the local pointer variable with the dynamic integer it points to
 - the learner explains stack vs heap only through slogans and cannot map the objects to storage categories
 - after higher-help support, the learner still cannot explain the fix or complete the follow-up variant/check

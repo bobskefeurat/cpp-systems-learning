@@ -19,7 +19,7 @@ Mark each item as `yes` or `no`.
 | Learner compiled from the terminal using the baseline command |  |
 | Program built successfully |  |
 | Program built with zero warnings |  |
-| Program output matched the task requirements exactly |  |
+| Program output clearly showed the value/reference behavior in the expected order |  |
 | Program included one by-value function and one by-reference function |  |
 | `main` used the same caller variable in both function calls |  |
 | Learner explained argument vs parameter in their own words |  |
@@ -75,8 +75,9 @@ For repetition in `Gate 2: Values, References, and Parameter Passing`, prefer:
 - Prefer concrete notes over general praise.
 - Verify each pass requirement against the relevant evidence source instead of inferring `pass` from runtime output alone.
 - Inspect code directly for function signatures and whether `main` uses the same caller variable in both calls.
+- Accept minor wording, capitalization, or spacing differences when the caller-state observations stay clear.
 - If the weakest dimension is `Compilation and warnings`, require a rebuild with the baseline command plus a short explanation of each flag used.
-- If the weakest dimension is `Correctness against requirements`, require rerunning the exact output check and fixing the function behavior rather than the print text only.
+- If the weakest dimension is `Correctness against requirements`, require rerunning the required observation check and fixing the function behavior rather than superficial print text alone.
 - If the weakest dimension is `Conceptual understanding and explanation`, require rewritten answers that identify the argument, the parameter, and what changes after each call.
 - If the weakest dimension is `Debugging/process`, require the learner to point to the failing line or wrong call and explain what it currently proves.
 - If the weakest dimension is `Code hygiene and readability`, require a focused cleanup pass and a short justification of the changes.

@@ -6,7 +6,7 @@
 This gate builds your ability to:
 - define a tiny class with a constructor and destructor
 - compile and run the program from the terminal
-- show, with exact output, when objects are created and destroyed
+- show, through observable output and order, when objects are created and destroyed
 - explain why scope-bound destruction is the basic RAII idea in this gate
 
 This gate is still small on purpose.
@@ -20,8 +20,6 @@ Then:
 2. work on [learner/TASK.md](./learner/TASK.md)
 3. write and run your code in `workspace/`
 4. ask the agent to evaluate your result
-
-After a full `pass`, the evaluated workspace snapshot may be copied to `solution/`.
 
 ## Current Task
 Current task: `Lifetime Log`
@@ -45,16 +43,9 @@ g++ main.cpp -std=c++20 -Wall -Wextra -Wpedantic -o main
 ```
 
 ## Files
-If you are the learner, focus on:
+Focus on:
 - [learner/PREP.md](./learner/PREP.md)
 - [learner/TASK.md](./learner/TASK.md)
 - `workspace/`
-
-Tracked pass snapshots live in `solution/`.
-
-Agent control material lives in `agent/`:
-- [READINESS.md](./agent/READINESS.md)
-- [SPEC.md](./agent/SPEC.md)
-- [EVALUATION.md](./agent/EVALUATION.md)
 
 For the phase overview, see [../README.md](../README.md).

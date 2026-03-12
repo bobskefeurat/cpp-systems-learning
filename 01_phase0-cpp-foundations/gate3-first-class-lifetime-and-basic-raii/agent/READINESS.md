@@ -20,20 +20,20 @@ The readiness check must cover the core concepts for `Gate 3: First Class, Lifet
 
 ### Question 1
 Explain, in your own words:
-- what a class is in this gate
+- what a class is at a simple level
 - what an object of that class is
 - what the constructor does when an object is created
-- how a small public member function can let `observe` read the tag
+- why a small public member function can expose stored state safely
 
 ### Question 2
 Explain, in your own words:
-- what the destructor does in this gate
+- what a destructor does at a simple level
 - when a block-local object is destroyed
-- why the inner object can be destroyed before `main` ends
+- why an inner-scope object can be destroyed before `main` ends
 
 ### Question 3
 Explain, in your own words:
-- why cleanup tied to the destructor is deterministic in this gate
+- why cleanup tied to a destructor is deterministic
 - why passing an object to a helper function does not decide when the object is destroyed
 - what it would mean if this class cleaned up a file or some other resource
 

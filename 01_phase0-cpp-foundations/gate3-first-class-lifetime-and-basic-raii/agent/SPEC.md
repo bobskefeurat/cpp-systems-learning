@@ -41,13 +41,13 @@ The learner passes `Gate 3: First Class, Lifetime, and Basic RAII` if they can s
 
 1. They can compile a small C++ program from the terminal with the baseline command.
 2. The program builds with zero warnings under the required flags.
-3. The program output matches the task requirements exactly.
+3. The program output clearly shows the required construction, observation, and destruction sequence in the expected order.
 4. The program contains:
    - one class named `ScopeMarker`
    - one `char` member used to identify each object
    - one public `tag()` member function used by `observe`
-   - one constructor that produces the `construct:` lines
-   - one destructor that produces the `destroy:` lines
+   - one constructor that produces the construction lines
+   - one destructor that produces the destruction lines
    - one helper function that takes a `ScopeMarker&`
    - one object in `main` and one object inside a nested block
 5. The learner can explain, in simple terms:

@@ -4,7 +4,7 @@
 Write a small C++ program that:
 - uses one function with pass by value
 - uses one function with pass by reference
-- shows, through exact output, how the caller's variable changes differently in each case
+- shows, through observable output, how the caller's variable changes differently in each case
 
 This is the current exercise for `Gate 2: Values, References, and Parameter Passing` in `Phase 0: C++ Foundations`.
 
@@ -22,7 +22,7 @@ Write a program in `workspace/main.cpp` that does all of the following:
 - in `main`, start with one integer variable that has the value `5`
 - call the by-value function with that variable
 - call the by-reference function with that same variable
-- print exactly:
+- print five lines that clearly show these observations in this order. The sample wording below is recommended and acceptable:
 
 ```text
 start: 5
@@ -60,8 +60,10 @@ g++ main.cpp -std=c++20 -Wall -Wextra -Wpedantic -o main
 ## Self-Check
 Use these as minimum checks before you ask for evaluation:
 
-### Check 1: Exact Output
-Expected output:
+### Check 1: Required Observations
+Your wording may vary slightly, but the same before/inside/after states must be clear in the same order.
+
+One acceptable output:
 
 ```text
 start: 5
@@ -81,7 +83,7 @@ Confirm all of the following in your code:
 ### Check 3: Warnings
 Compile with the baseline command and confirm that no warnings are produced.
 
-You are not done yet if the output is right only because of hardcoded text, the function signatures do not show the value/reference difference, or you still cannot explain why the final two lines differ.
+You are not done yet if the output is right only because of hardcoded text, if the output no longer makes the value/reference difference clear, if the function signatures do not show the value/reference difference, or if you still cannot explain why the final two lines differ.
 
 ## Be Ready To Explain
 Be ready to answer these in your own words:

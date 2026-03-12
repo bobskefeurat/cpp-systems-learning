@@ -20,10 +20,12 @@ The readiness check should:
 - be based on the gate's core concepts, normally defined in `learner/PREP.md`
 - use a minimum of 3 questions
 - normally not exceed 5 questions
+- stay answerable at concept level without walking through the upcoming solution
 - require the learner to answer in their own words
 
 AI should:
 - ask questions that test starting understanding, not full mastery
+- keep the questions concept-first rather than task-plan-first
 - cover all core concepts relevant to the task
 - identify which concept is weak if the learner is not ready
 - refer to 1-2 curated resources when needed
@@ -32,6 +34,8 @@ AI should:
 AI should not:
 - begin guiding the learner through the actual solution before the readiness check is sufficient
 - treat the readiness check as the same thing as the final gate evaluation
+- ask the learner to pre-describe the exact solution, planned identifiers, required run output, or final project plan
+- provide answer-shaped text that the learner can repeat back
 - inflate the check into a long oral exam
 
 Important distinction:
@@ -46,12 +50,15 @@ The feedback should:
 - evaluate each readiness question separately
 - name the weak concept precisely
 - say what is missing or unclear
+- give one small hint, contrast question, or minimal reading target for that weak concept
 - assign the smallest relevant curated reading or retry step
 - ask the learner to answer the weak question again in their own words
 
 The feedback should not:
 - collapse into broad generic comments about "understanding"
 - restart the whole readiness dialogue if only one concept is weak
+- rewrite the learner's answer for them
+- supply a polished answer that can be pasted back verbatim
 - begin solution guidance before readiness is sufficient
 
 Preferred shape:
@@ -74,6 +81,8 @@ Relevant evidence sources may include:
 AI should:
 - check each pass requirement explicitly instead of inferring that one good output means the whole gate is passed
 - inspect code shape when the gate requires a specific program structure, invariant, or mechanism
+- compare runtime evidence at the level of required observations, values, and order
+- accept minor capitalization, punctuation, spacing, or close wording differences when the meaning and mechanism are correct, unless the gate explicitly defines literal text as required evidence
 - use learner explanation when the gate includes conceptual understanding as part of the pass decision
 - ask one short follow-up when the evidence is still insufficient to verify a required invariant
 - after a full `pass`, save the evaluated standard workspace file into the gate's tracked `solution/` snapshot
@@ -81,6 +90,7 @@ AI should:
 AI should not:
 - treat matching runtime output as automatic proof that the whole gate is passed
 - ignore a code-shape or explanation requirement just because the program appears to work
+- fail a submission only because of superficial wording differences when the required behavior is otherwise clear
 - invent new gate requirements that are not present in the gate documents
 - use `solution/` as normal hint material during learner support
 
@@ -129,4 +139,5 @@ AI should not:
 - Identify the missing concept.
 - Refer to 1-2 resources in `RESOURCES.md` (when the file is curated).
 - Give a short reading plan and mini exercise.
+- During readiness, use a shorter retry question or contrast instead of answering the original question for them.
 - Ask the user to explain it back in their own words before the next hint.

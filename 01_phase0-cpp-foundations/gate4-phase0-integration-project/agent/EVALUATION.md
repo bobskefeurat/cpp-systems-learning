@@ -19,13 +19,13 @@ Mark each item as `yes` or `no`.
 | Learner compiled from the terminal using the baseline command |  |
 | Project built successfully |  |
 | Project built with zero warnings |  |
-| Required Run 1 matched exactly |  |
-| Required Run 2 matched exactly |  |
+| Required Run 1 showed the required values and event order |  |
+| Required Run 2 showed the required values and event order |  |
 | Code includes one global integer with the value `1` |  |
 | Code includes one dynamic integer with matching `delete` and pointer reset to `nullptr` |  |
 | Code uses the value stored in the dynamic integer in the helper calls before cleanup |  |
 | Code includes one by-value preview helper and one by-reference apply helper |  |
-| Code includes one real class whose constructor prints `enter:` and destructor prints `leave:` |  |
+| Code includes one real class whose constructor and destructor print clear entry and exit lines |  |
 | Code includes one outer object labeled `'S'` and one inner object labeled `'C'` in a nested block |  |
 | Learner explained the compile command and warning requirement in their own words |  |
 | Learner explained static vs dynamic storage and cleanup in their own words |  |
@@ -84,8 +84,9 @@ For repetition in `Gate 4: Phase 0 Integration Project`, prefer:
 - Prefer concrete notes over general praise.
 - Verify each pass requirement against the relevant evidence source instead of inferring `pass` from runtime output alone.
 - Inspect code directly for the by-value helper, by-reference helper, dynamic bonus usage, dynamic cleanup, constructor/destructor behavior, and nested block.
+- Accept minor wording, capitalization, or spacing differences when the required values, meaning, and event order stay clear.
 - If the weakest dimension is `Compilation and warnings`, require a rebuild with the baseline command plus a short explanation of each flag used.
-- If the weakest dimension is `Correctness against requirements`, require rerunning the failing required run and fixing the underlying mechanism rather than the print text only.
+- If the weakest dimension is `Correctness against requirements`, require rerunning the failing required run and fixing the missing behavior, unclear output meaning, or underlying mechanism rather than superficial print text alone.
 - If the weakest dimension is `Conceptual understanding and explanation`, require rewritten answers that explain compile command, storage categories, why the helpers use the dynamic value before cleanup, helper behavior, and destructor timing in the learner's own words.
 - If the weakest dimension is `Debugging/process`, require the learner to name the blocked subsystem and show one smaller test they used to isolate it.
 - If the weakest dimension is `Code hygiene and readability`, require a focused cleanup pass and a short justification of the changes.

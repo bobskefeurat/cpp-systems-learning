@@ -15,7 +15,7 @@ Complete these first:
 - the readiness dialogue with the agent
 
 ## Task
-Write a program in `workspace/main.cpp` that reads two integers and prints:
+Write a program in `workspace/main.cpp` that reads two integers and prints one clear result line with the sum, for example:
 
 ```text
 Sum: <result>
@@ -67,7 +67,7 @@ Input:
 2 3
 ```
 
-Expected output:
+One acceptable output:
 
 ```text
 Sum: 5
@@ -80,7 +80,7 @@ Input:
 10 -4
 ```
 
-Expected output:
+One acceptable output:
 
 ```text
 Sum: 6
@@ -93,13 +93,13 @@ Input:
 0 0
 ```
 
-Expected output:
+One acceptable output:
 
 ```text
 Sum: 0
 ```
 
-You are not done yet if the program builds but the output format is wrong or warnings are still present.
+You are not done yet if the program builds but the output does not clearly report the sum, or if warnings are still present.
 
 ## Be Ready To Explain
 Be ready to answer these in your own words:

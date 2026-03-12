@@ -21,6 +21,9 @@ They want to preview the change before applying it, and they also want a simple 
 This context is only the framing.
 The exact technical requirements below are the source of truth for evaluation.
 
+For the required runs below, the output must show the same values and event order as the sample runs.
+Minor capitalization, spacing, or close wording differences are acceptable if each line's meaning remains clear and the required mechanisms produce the output.
+
 ## Task
 Write a program in `workspace/main.cpp` that does all of the following:
 
@@ -32,24 +35,24 @@ Write a program in `workspace/main.cpp` that does all of the following:
 - dynamically allocate one integer that stores the bonus value
 - define one small class of your choice that:
   - stores one `char` label
-  - prints `enter: <label>` from its constructor
-  - prints `leave: <label>` from its destructor
-- define one helper function that takes the starting value by value plus the bonus amount, computes the preview result, and prints `preview: <value>`
+  - prints a clear entry line such as `enter: <label>` from its constructor
+  - prints a clear exit line such as `leave: <label>` from its destructor
+- define one helper function that takes the starting value by value plus the bonus amount, computes the preview result, and prints a clear preview line such as `preview: <value>`
 - define one helper function that takes the starting value by reference plus the bonus amount, and updates the caller's variable
 - in `main`, create one outer object of the class with the label `'S'`
-- print `global: <value of the global integer>`
-- print `start: <current starting value>`
-- print `heap bonus: <value stored in the dynamic integer>`
+- print a clear line showing the global value, such as `global: <value of the global integer>`
+- print a clear line showing the starting value, such as `start: <current starting value>`
+- print a clear line showing the heap bonus, such as `heap bonus: <value stored in the dynamic integer>`
 - create a nested block and, inside it:
   - create one inner object of the class with the label `'C'`
   - call the by-value helper using the current starting value and the value stored in the dynamic integer
-  - print `after preview: <current starting value>`
+  - print a clear line showing the caller state after preview, such as `after preview: <current starting value>`
   - call the by-reference helper using the current starting value and the value stored in the dynamic integer
-  - print `after apply: <current starting value>`
+  - print a clear line showing the caller state after apply, such as `after apply: <current starting value>`
 - after the nested block ends:
   - clean up the dynamic integer with `delete`
   - set the pointer to `nullptr`
-  - print `cleanup: ok`
+  - print a clear cleanup confirmation, such as `cleanup: ok`
 
 You may choose your own names for the class, helper functions, and local variables.
 The required behaviors and output lines below are not optional.
@@ -61,7 +64,7 @@ Input:
 10 3
 ```
 
-Output:
+Sample output:
 
 ```text
 enter: S
@@ -84,7 +87,7 @@ Input:
 7 -2
 ```
 
-Output:
+Sample output:
 
 ```text
 enter: S
@@ -100,9 +103,9 @@ cleanup: ok
 leave: S
 ```
 
-The `enter:` and `leave:` lines must come from the constructor and destructor.
-The `preview:` line must come from the by-value helper.
-The change from `after preview:` to `after apply:` must come from the by-reference helper, not from hardcoded output only.
+The entry and exit lines must come from the constructor and destructor.
+The preview line must come from the by-value helper.
+The change from the preview-after line to the apply-after line must come from the by-reference helper, not from hardcoded output only.
 
 ## Constraints
 - Use one source file only: `workspace/main.cpp`
@@ -132,10 +135,10 @@ g++ main.cpp -std=c++20 -Wall -Wextra -Wpedantic -o main
 Use these as minimum checks before you ask for evaluation:
 
 ### Check 1: Required Run 1
-Use the exact input/output pair listed in `Required Run 1`.
+Use the same input as `Required Run 1` and verify that the same values and event order appear as in the sample output.
 
 ### Check 2: Required Run 2
-Use the exact input/output pair listed in `Required Run 2`.
+Use the same input as `Required Run 2` and verify that the same values and event order appear as in the sample output.
 
 ### Check 3: Integration Audit
 Confirm all of the following in your code:

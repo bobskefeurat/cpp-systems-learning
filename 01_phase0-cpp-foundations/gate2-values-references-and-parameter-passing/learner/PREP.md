@@ -18,16 +18,16 @@ Before you start the task, make sure you can explain these ideas in simple words
    - what the caller still sees after the function returns
 
 3. Pass by reference
-   - what `int&` means in a parameter list for this gate
+   - what `int&` means in a parameter list
    - why changing a reference parameter changes the caller's variable
    - why a reference parameter is not just a pointer with different spelling
 
 ## Read This
 Read in this order:
 
-- Start with [R-001 Card](../../../00_system/resources/resource_cards/R-001.md).
+- Start with [R-001 Card](../../../00_system/resources/resource_cards/01_phase0-cpp-foundations/R-001.md).
   Use the `Gate 2` packet in that card as your main reading path.
-- Use [R-004 Card](../../../00_system/resources/resource_cards/R-004.md) only if the difference between value, reference, and pointer reasoning is still unclear.
+- Use [R-004 Card](../../../00_system/resources/resource_cards/01_phase0-cpp-foundations/R-004.md) only if the difference between value, reference, and pointer reasoning is still unclear.
 - If the agent later sends you to another curated resource, follow that exact reading assignment.
 
 ## Stop When

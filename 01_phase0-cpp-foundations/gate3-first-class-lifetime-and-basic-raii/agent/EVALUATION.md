@@ -19,10 +19,10 @@ Mark each item as `yes` or `no`.
 | Learner compiled from the terminal using the baseline command |  |
 | Program built successfully |  |
 | Program built with zero warnings |  |
-| Program output matched the task requirements exactly |  |
+| Program output clearly showed the required lifetime event sequence |  |
 | Program defined `ScopeMarker` as a real class with one `char` member |  |
 | Program exposed the tag through a public `tag()` member function that `observe` used |  |
-| Program used a constructor for the `construct:` lines and a destructor for the `destroy:` lines |  |
+| Program used a constructor for the construction lines and a destructor for the destruction lines |  |
 | Program used an `observe` helper function with a `ScopeMarker&` parameter |  |
 | Program created one outer object in `main` and one inner object inside a nested block |  |
 | Learner explained why the inner object is destroyed before `after inner block` |  |
@@ -78,8 +78,9 @@ For repetition in `Gate 3: First Class, Lifetime, and Basic RAII`, prefer:
 - Prefer concrete notes over general praise.
 - Verify each pass requirement against the relevant evidence source instead of inferring `pass` from runtime output alone.
 - Inspect code directly for the real class definition, `tag()` member function, constructor, destructor, reference parameter, and nested block.
+- Accept minor wording, capitalization, or spacing differences when the construction, observation, and destruction events stay clear and in the required order.
 - If the weakest dimension is `Compilation and warnings`, require a rebuild with the baseline command plus a short explanation of each flag used.
-- If the weakest dimension is `Correctness against requirements`, require rerunning the exact output check and replacing hardcoded lifetime messages with the intended class behavior.
+- If the weakest dimension is `Correctness against requirements`, require rerunning the required event-sequence check and replacing hardcoded lifetime messages with the intended class behavior.
 - If the weakest dimension is `Conceptual understanding and explanation`, require rewritten answers that name when each object is created, when it is destroyed, how `observe` gets the tag, and why the helper call does not change that.
 - If the weakest dimension is `Lifetime/ownership/safety`, require the learner to mark the lifetime boundary for each object and explain what cleanup would mean for a simple file-like resource.
 - If the weakest dimension is `Code hygiene and readability`, require a focused cleanup pass and a short justification of the changes.

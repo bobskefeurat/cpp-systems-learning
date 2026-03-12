@@ -43,7 +43,7 @@ The learner passes `Gate 4: Phase 0 Integration Project` if they can show all of
 
 1. They can compile the project from the terminal with the baseline command.
 2. The project builds with zero warnings under the required flags.
-3. The project handles both required runs exactly as defined in [../learner/TASK.md](../learner/TASK.md).
+3. The project handles both required runs with the values and event order defined in [../learner/TASK.md](../learner/TASK.md).
 4. The project contains:
    - one global integer with the value `1`
    - one local integer in `main` that starts from input
@@ -52,7 +52,7 @@ The learner passes `Gate 4: Phase 0 Integration Project` if they can show all of
    - helper calls that use the value stored in the dynamic integer before cleanup
    - one helper that takes the current value by value and prints the preview result
    - one helper that takes the current value by reference and updates the caller's variable
-   - one small class that prints `enter:` from its constructor and `leave:` from its destructor
+   - one small class that prints clear entry and exit lines from its constructor and destructor
    - one outer object labeled `'S'` and one inner object labeled `'C'`
 5. The learner can explain, in simple terms:
    - what the compile command is doing at a high level
@@ -71,7 +71,7 @@ The learner passes `Gate 4: Phase 0 Integration Project` if they can show all of
 `Gate 4: Phase 0 Integration Project` is `not pass` if any of the following is true:
 - the learner cannot compile from the terminal
 - warnings are present and ignored
-- either required run is incorrect
+- either required run is incorrect or semantically unclear
 - the project hardcodes the required output instead of using the intended mechanisms
 - the dynamic integer is not cleaned up correctly
 - the dynamic integer is present but not actually used as the bonus source in the helper calls

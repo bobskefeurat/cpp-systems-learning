@@ -20,8 +20,8 @@ The readiness check must cover the core concepts for `Gate 2: Values, References
 
 ### Question 1
 Explain, in your own words:
-- what an argument is in this gate
-- what a parameter is in this gate
+- what an argument is at the call site
+- what a parameter is inside a function
 - why the two words are related but not interchangeable
 
 ### Question 2
@@ -32,7 +32,7 @@ Explain, in your own words:
 
 ### Question 3
 Explain, in your own words:
-- what `int&` means in a parameter list for this gate
+- what `int&` means in a parameter list
 - why changing that parameter changes the caller's variable
 - why a reference parameter is not the same thing as a pointer parameter
 

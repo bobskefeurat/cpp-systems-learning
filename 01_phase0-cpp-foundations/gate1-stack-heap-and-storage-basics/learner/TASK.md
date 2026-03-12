@@ -21,7 +21,7 @@ Write a program in `workspace/main.cpp` that does all of the following:
 - inside `main`, define one local integer with the value `20`
 - inside `main`, dynamically allocate one integer with the value `30`
 - inside a nested block, define one block-local integer with the value `40`
-- print exactly:
+- print five lines that clearly show these observations in this order. The sample wording below is recommended and acceptable:
 
 ```text
 global: 100
@@ -60,8 +60,10 @@ g++ main.cpp -std=c++20 -Wall -Wextra -Wpedantic -o main
 ## Self-Check
 Use these as minimum checks before you ask for evaluation:
 
-### Check 1: Exact Output
-Expected output:
+### Check 1: Required Observations
+Your wording may vary slightly, but the same values and observations must be clear in the same order.
+
+One acceptable output:
 
 ```text
 global: 100
@@ -82,7 +84,7 @@ Confirm all of the following in your code:
 ### Check 3: Warnings
 Compile with the baseline command and confirm that no warnings are produced.
 
-You are not done yet if the output text is wrong, the cleanup is missing, the pointer variable is not reset after cleanup, or you still cannot explain which object belongs to which storage category.
+You are not done yet if the output does not clearly identify the required values and observations, if the cleanup is missing, if the pointer variable is not reset after cleanup, or if you still cannot explain which object belongs to which storage category.
 
 ## Be Ready To Explain
 Be ready to answer these in your own words:

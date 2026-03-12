@@ -19,7 +19,7 @@ Mark each item as `yes` or `no`.
 | Learner compiled from the terminal using the baseline command |  |
 | Program built successfully |  |
 | Program built with zero warnings |  |
-| Program output matched the task requirements exactly |  |
+| Program output clearly showed the required values and storage observations in the expected order |  |
 | Program included one global integer, one local integer, one dynamic integer, and one block-local integer |  |
 | Dynamically allocated integer was cleaned up with a matching `delete`, and the local pointer variable was reset to `nullptr` |  |
 | Learner explained static, automatic, and dynamic storage in their own words |  |
@@ -74,8 +74,9 @@ For repetition in `Gate 1: Stack, Heap, and Storage Basics`, prefer:
 - Prefer concrete notes over general praise.
 - Verify each pass requirement against the relevant evidence source instead of inferring `pass` from runtime output alone.
 - Inspect code directly for cleanup, pointer reset, and the required object categories in this gate.
+- Accept minor wording, capitalization, or spacing differences when the required observations stay clear.
 - If the weakest dimension is `Compilation and warnings`, require a rebuild with the baseline command plus a short explanation of each flag used.
-- If the weakest dimension is `Correctness against requirements`, require rerunning the exact output check and fixing the printed labels or values.
+- If the weakest dimension is `Correctness against requirements`, require rerunning the required observation check and fixing the missing behavior or unclear labeling, not superficial wording alone.
 - If the weakest dimension is `Conceptual understanding and explanation`, require rewritten answers to the storage and lifetime questions in the learner's own words.
 - If the weakest dimension is `Lifetime/ownership/safety`, require the learner to label each object as static, automatic, or dynamic, explain what changes at `delete`, and fix any missing cleanup or pointer reset.
 - If the weakest dimension is `Code hygiene and readability`, require a focused cleanup pass and a short justification of the changes.

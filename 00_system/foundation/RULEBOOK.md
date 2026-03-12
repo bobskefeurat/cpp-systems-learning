@@ -39,6 +39,8 @@ They exist as maintainer or portfolio artifacts and are not part of the normal l
 ## Evaluation Rules (v0)
 - A gate result must be based on explicit verification of the gate's pass requirements.
 - Matching runtime output alone is not enough unless the gate explicitly defines output as the only required evidence.
+- Output checks should compare required observations, values, and ordering, not surface wording alone.
+- Minor capitalization, spacing, or close synonyms should not by themselves cause `not pass` unless the gate explicitly makes literal text or exact ordering part of the required evidence.
 - When a pass requirement depends on program structure, mechanism, or invariant, evaluation must inspect the code or other relevant artifacts directly.
 - When a pass requirement depends on understanding, evaluation must use the learner's own explanation or a short targeted follow-up.
 - If the submitted artifacts do not make a required invariant observable enough, AI should ask for the smallest missing piece of evidence before deciding `pass`.
@@ -51,6 +53,7 @@ Before working on a new task, the learner should first complete a short preparat
 - Each gate should define its core concepts.
 - The preparation material, normally `learner/PREP.md`, should name those core concepts before the learner starts the task.
 - The readiness check should be based on those core concepts.
+- Readiness questions must stay at concept level and must not require the learner to pre-describe the exact task solution, planned variable/function names, required run output, or project plan.
 - The number of readiness questions is concept-driven, with a minimum of 3 and a recommended maximum of 5.
 - All core concepts must be covered at a sufficient starting level before the learner begins the task.
 
@@ -58,6 +61,8 @@ If the learner is not ready:
 - AI should identify the missing concept or weak concept.
 - AI should name what the learner needs to understand better.
 - AI should refer the learner to relevant curated resources in `RESOURCES.md`.
+- AI should give the smallest hint, contrast question, or reading assignment that lets the learner try again.
+- AI should not provide a model answer or rewritten response for the learner to repeat.
 - AI should ask the learner to return with a better explanation before task guidance continues.
 
 ## Hint Rules (v0)

@@ -3,7 +3,7 @@
 ## Goal
 Write a small C++ program that:
 - defines one tiny class with a constructor and destructor
-- shows, through exact output, when two objects begin and end their lifetime
+- shows, through observable output and order, when two objects begin and end their lifetime
 - demonstrates the basic RAII idea that cleanup happens automatically at scope exit
 
 This is the current exercise for `Gate 3: First Class, Lifetime, and Basic RAII` in `Phase 0: C++ Foundations`.
@@ -20,9 +20,9 @@ Write a program in `workspace/main.cpp` that does all of the following:
 - define a class named `ScopeMarker`
 - give the class one `char` member that stores a tag for the object
 - add a small public member function named `tag()` that returns that stored tag
-- add a constructor that stores the tag and prints `construct: <tag>`
-- add a destructor that prints `destroy: <tag>`
-- define a helper function named `observe` that takes a `ScopeMarker&` and prints `observe: <tag>` by calling `tag()`
+- add a constructor that stores the tag and prints a clear construction line such as `construct: <tag>`
+- add a destructor that prints a clear destruction line such as `destroy: <tag>`
+- define a helper function named `observe` that takes a `ScopeMarker&` and prints a clear observation line such as `observe: <tag>` by calling `tag()`
 - in `main`, create one `ScopeMarker` object with the tag `'A'`
 - call `observe` for that object
 - print `before inner block`
@@ -30,7 +30,7 @@ Write a program in `workspace/main.cpp` that does all of the following:
 - call `observe` for the inner object
 - print `leaving inner block`
 - after the block ends, print `after inner block`
-- make the overall output exactly:
+- make the overall output show this event sequence. The sample wording below is recommended and acceptable:
 
 ```text
 construct: A
@@ -44,7 +44,8 @@ after inner block
 destroy: A
 ```
 
-The `construct:` lines must come from the constructor, and the `destroy:` lines must come from the destructor.
+The construction lines must come from the constructor, and the destruction lines must come from the destructor.
+Minor wording differences are acceptable if the construction, observation, and destruction events remain clear and in the same order.
 
 ## Constraints
 - Use one source file only: `workspace/main.cpp`
@@ -73,8 +74,10 @@ g++ main.cpp -std=c++20 -Wall -Wextra -Wpedantic -o main
 ## Self-Check
 Use these as minimum checks before you ask for evaluation:
 
-### Check 1: Exact Output
-Expected output:
+### Check 1: Required Event Sequence
+Your wording may vary slightly, but the same construction, observation, and destruction events must stay clear in the same order.
+
+One acceptable output:
 
 ```text
 construct: A
@@ -95,12 +98,12 @@ Confirm all of the following in your code:
 - the class has a public `tag()` member function that `observe` uses
 - `observe` takes a `ScopeMarker&`
 - `main` creates one outer object and one inner-block object
-- the constructor and destructor are responsible for the `construct:` and `destroy:` lines
+- the constructor and destructor are responsible for the construction and destruction lines
 
 ### Check 3: Warnings
 Compile with the baseline command and confirm that no warnings are produced.
 
-You are not done yet if the output is right only because of print statements in `main`, or if you still cannot point to the exact line where each object's lifetime ends.
+You are not done yet if the output is right only because of print statements in `main`, if the event order is unclear, or if you still cannot point to the line where each object's lifetime ends.
 
 ## Be Ready To Explain
 Be ready to answer these in your own words:

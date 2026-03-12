@@ -21,7 +21,7 @@ Mark each item as `yes` or `no`.
 | Program built with zero warnings |  |
 | Program read two integers correctly |  |
 | Program printed the correct sum |  |
-| Output format matched the task requirements |  |
+| Program output clearly reported the required sum |  |
 | Learner explained `g++`, `main.cpp`, and `-o main` in their own words |  |
 | Learner could distinguish compile time from run time |  |
 | Learner could use at least one compiler message to correct a mistake |  |
@@ -74,10 +74,11 @@ For repetition in `Gate 0: Compile, Run, and Basic I/O`, prefer:
 - Prefer concrete notes over general praise.
 - Verify each pass requirement against the relevant evidence source instead of inferring `pass` from runtime output alone.
 - Use compile command, compiler output, runtime output, and learner explanation together for this gate.
+- Accept minor capitalization or equivalent result labels when the computed sum and I/O flow are clear.
 - If the submission artifacts do not already show a compiler diagnostic, ask the learner to explain a simple compiler message or warning as a short follow-up.
 - If the learner passes mechanically but cannot explain the compile-and-run flow, the result should remain `not pass`.
 - If the weakest dimension is `Compilation and warnings`, require a rebuild with the baseline command plus a short explanation of each flag used.
-- If the weakest dimension is `Correctness against requirements`, require rerunning at least two task test cases and correcting the output shape.
+- If the weakest dimension is `Correctness against requirements`, require rerunning at least two task test cases and correcting the reported sum or unclear output shape.
 - If the weakest dimension is `Conceptual understanding and explanation`, require rewritten answers to the relevant check questions in the learner's own words.
 - If the weakest dimension is `Debugging/process`, require the learner to point to the failing command or line and explain what the feedback means.
 - If the weakest dimension is `Code hygiene and readability`, require a focused cleanup pass and a short justification of the changes.

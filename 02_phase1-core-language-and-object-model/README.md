@@ -33,28 +33,34 @@ Phase 1 is planned as four micro-gates followed by one integration gate.
 | `gate3-special-members-and-dynamic-object-model` | Copy control, `this`, first-pass inheritance, virtual dispatch, operator overloading, and functors |
 | `gate4-phase1-integration-project` | Phase-ending integration gate that combines numeric safety, small data modeling, function surface, and first-pass object-model reasoning in one bounded project |
 
-## How To Use This Phase
-Use this README as the phase baseline while the full gate lineup is still being generated.
-When a gate folder already exists, enter through that gate's `README.md`.
-When a later gate folder has not been generated yet, use the planning record and curated packets listed below as the current fallback baseline.
-Phase 1 uses the same shared learner/agent loop described in [../README.md](../README.md).
+## Current Status
+Phase 1 is currently planned rather than active in the default learner path.
+Use this README to review the intended phase arc and current scope.
+Do not treat this phase as the current learner starting point.
 
-Working rule for Phase 1:
-1. Start with the current gate's `README.md`.
+## How To Use This Phase
+Use this README as the planning overview for the phase.
+If you are reviewing the current draft gate surface, inspect [gate0-numeric-types-and-safety/README.md](./gate0-numeric-types-and-safety/README.md).
+If a later gate folder has not been generated yet, use the planning and resource files below to shape it.
+
+Working rules for Phase 1 design:
+1. Keep the phase bounded to the concepts listed above.
 2. Use the curated packets in `R-001`, `R-003`, and `R-006` instead of broad site exploration.
-3. Treat scope control as part of the work, not as optional polish.
-4. Use the integration gate to combine earlier phase concepts, not to introduce later-phase topics.
+3. Use the integration gate to combine earlier phase concepts rather than introduce later-phase topics.
 
 `Gate 4` should stay larger than the earlier gates but still bounded enough to finish in a few hours across several sessions.
 
-## Where To Start
-Start with [gate0-numeric-types-and-safety/README.md](./gate0-numeric-types-and-safety/README.md).
-
+## Planning Sources
 If you are planning a later gate that has not been generated yet, use:
 - `00_system/authoring/COURSE_PLAN.md`
 - `00_system/authoring/source_integration/records/mappings/M-001-modern-cpp-programming-course-plan.yaml`
-- `00_system/resources/resource_cards/R-001.md`
-- `00_system/resources/resource_cards/R-003.md`
-- `00_system/resources/resource_cards/R-006.md`
+- `00_system/resources/resource_cards/02_phase1-core-language-and-object-model/R-001.md`
+- `00_system/resources/resource_cards/02_phase1-core-language-and-object-model/R-003.md`
+- `00_system/resources/resource_cards/02_phase1-core-language-and-object-model/R-006.md`
 
 as the current source of truth for the Phase 1 arc.
+
+## Where To Start
+For the current live learner path, use [../01_phase0-cpp-foundations/README.md](../01_phase0-cpp-foundations/README.md).
+
+For Phase 1 development or review, start with [gate0-numeric-types-and-safety/README.md](./gate0-numeric-types-and-safety/README.md).

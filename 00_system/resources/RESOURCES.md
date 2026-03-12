@@ -16,19 +16,20 @@ Only resources listed here may be named in recommendations and hints.
 - Concept/area
 - When to use it
 - Source (URL or reference to `SOURCES.md`)
-- Packet (optional local reading card)
+- Packet index (optional local reading-card index)
 - Status
 
 ## Curation Note (v0)
 - Early `Phase 0: C++ Foundations` currently assumes `GCC via MSYS2 UCRT64 on Windows` as the practical baseline.
 - `R-001 LearnCpp` is the preferred primary reading source whenever it adequately covers the planned concept at a learner-safe level.
 - MSVC- and WSL-specific candidates remain in `SOURCES.md` but are not curated here yet.
-- Exact reading packets for specific curated resources can live in `resource_cards/`.
-- If a resource has a local reading card, prefer that card for learner-facing reading guidance instead of a broad homepage or whole manual.
+- Exact reading packets for specific curated resources live in phase folders under `resource_cards/`.
+- The top-level `resource_cards/R-###.md` files are stable indexes that point to phase-local cards.
+- If a resource has a local reading card, prefer the phase-local card for learner-facing reading guidance instead of a broad homepage or whole manual.
 - Exact external links used in learner-facing packets must be content-verified before use and updated if the target page changes.
 
 ## Resources
-| ID    | Title                                                                     | Type                            | Level                 | Concept/area                                                                              | When to use it                                                                                           | Source                                                                                            | Packet                              | Status         |
+| ID    | Title                                                                     | Type                            | Level                 | Concept/area                                                                              | When to use it                                                                                           | Source                                                                                            | Packet index                        | Status         |
 | ----- | ------------------------------------------------------------------------- | ------------------------------- | --------------------- | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ----------------------------------- | -------------- |
 | R-001 | LearnCpp.com - "Learn C++" tutorials                                      | Tutorial site                   | Beginner              | Primary learner-facing reading for early phases: `Phase 0: C++ Foundations` plus most of `Phase 1: Core Language and Object Model`, including numerics, aggregates, function-surface basics, copy control, and first-pass object-model work | Use as the default learner reading path whenever a planned concept is adequately covered; assign exact lessons through the resource card rather than sending the learner to the whole site | S-002 / https://www.learncpp.com/                                                                 | [R-001](./resource_cards/R-001.md) | active         |
 | R-002 | Using the GNU Compiler Collection (GCC) - online manual                   | Official documentation / manual | Intermediate          | GCC compile model and flags on the current baseline                                       | Use when the learner needs exact meaning of `g++` flags, warning options, or standard-selection behavior | S-007 / https://gcc.gnu.org/onlinedocs/gcc/                                                       | [R-002](./resource_cards/R-002.md) | reference-only |

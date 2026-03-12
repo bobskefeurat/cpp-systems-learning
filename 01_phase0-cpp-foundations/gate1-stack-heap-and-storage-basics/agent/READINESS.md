@@ -20,19 +20,19 @@ The readiness check must cover the core concepts for `Gate 1: Stack, Heap, and S
 
 ### Question 1
 Explain, in your own words:
-- what a local variable is in this gate
+- what a local variable is
 - what happens when a block ends
 - why a variable from an inner block can stop existing before `main` ends
 
 ### Question 2
 Explain, in your own words:
-- what the global integer represents in this gate
+- what a global integer represents at a simple level
 - what `new int{30}` creates at a high level
-- what `delete` is doing in this gate
+- what `delete` does for that dynamic object
 
 ### Question 3
 Explain, in your own words:
-- which objects in this gate are automatic, static, and dynamic
+- which kinds of objects can have automatic, static, and dynamic storage duration in a small program
 - why the local pointer variable is not the same object as the dynamic integer
 - why "stack vs heap" is only shorthand and not the whole explanation
 

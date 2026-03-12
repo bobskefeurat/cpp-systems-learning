@@ -20,7 +20,7 @@ The readiness check must cover the core concepts for `Gate 0: Compile, Run, and 
 
 ### Question 1
 Explain, in your own words:
-- what `g++` does in this gate
+- what `g++` does at a high level
 - what `main.cpp` is
 - what `-o main` does
 
@@ -28,7 +28,7 @@ Explain, in your own words:
 Explain, in your own words:
 - what `std::cout` is used for
 - what `std::cin` is used for
-- how they relate to this task
+- how input reaches a program and output leaves it
 
 ### Question 3
 Explain, in your own words:

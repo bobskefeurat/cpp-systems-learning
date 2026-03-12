@@ -57,8 +57,6 @@ Working rule:
 4. Work in `workspace/`.
 5. Ask for evaluation when you have the required evidence.
 
-After a full `pass`, the evaluated workspace snapshot may be archived in the gate's `solution/` directory.
-
 ## Where To Start
 Start with [{{gate-folder}}/README.md](./{{gate-folder}}/README.md).
 

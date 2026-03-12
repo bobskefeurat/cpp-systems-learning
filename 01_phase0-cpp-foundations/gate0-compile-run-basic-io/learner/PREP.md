@@ -15,7 +15,7 @@ Before you start the task, make sure you can explain these ideas in simple words
 2. Basic standard I/O
    - what `std::cout` is used for
    - what `std::cin` is used for
-   - how input and output relate to this task
+   - how input reaches a program and output leaves it
 
 3. Warnings and compile time vs run time
    - what a compiler warning is
@@ -25,9 +25,9 @@ Before you start the task, make sure you can explain these ideas in simple words
 ## Read This
 Read in this order:
 
-- Start with [R-001 Card](../../../00_system/resources/resource_cards/R-001.md).
+- Start with [R-001 Card](../../../00_system/resources/resource_cards/01_phase0-cpp-foundations/R-001.md).
   Use the `Gate 0` packet in that card as your main reading path.
-- Use [R-002 Card](../../../00_system/resources/resource_cards/R-002.md) only if part of the compile command is still unclear.
+- Use [R-002 Card](../../../00_system/resources/resource_cards/01_phase0-cpp-foundations/R-002.md) only if part of the compile command is still unclear.
 - If the agent later sends you to another curated resource, follow that exact reading assignment.
 
 ## Stop When
@@ -36,7 +36,7 @@ Move to the readiness check when you can explain:
 - what the compile command does at a basic level
 - how input reaches the program
 - how output leaves the program
-- why warnings are part of the task
+- why warnings are part of normal work
 
 ## Next Step
 Complete the readiness dialogue with the agent.
