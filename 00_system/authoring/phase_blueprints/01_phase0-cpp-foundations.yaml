@@ -1,0 +1,66 @@
+schema_version: v1
+record_kind: phase_blueprint
+blueprint_id: PB-001
+phase_id: 01_phase0-cpp-foundations
+title: Phase 0 C++ Foundations
+status: bootstrap
+source_mapping_refs:
+  - M-001:phase-01
+  - 01_phase0-cpp-foundations
+gate_cluster_plan:
+  - gate_cluster_id: gate0
+    title: Compile, Run, and Basic I/O
+    gate_kind: micro
+    planned_gate_folder: gate0-compile-run-basic-io
+  - gate_cluster_id: gate1
+    title: Stack, Heap, and Storage Basics
+    gate_kind: micro
+    planned_gate_folder: gate1-stack-heap-and-storage-basics
+  - gate_cluster_id: gate2
+    title: Values, References, and Parameter Passing
+    gate_kind: micro
+    planned_gate_folder: gate2-values-references-and-parameter-passing
+  - gate_cluster_id: gate3
+    title: First Class, Lifetime, and Basic RAII
+    gate_kind: micro
+    planned_gate_folder: gate3-first-class-lifetime-and-basic-raii
+  - gate_cluster_id: gate4
+    title: Phase 0 Integration Project
+    gate_kind: integration
+    planned_gate_folder: gate4-phase0-integration-project
+concept_assignments:
+  - course_concept_id: KC-P0-COMPILE-RUN-DISCIPLINE
+    assignment_status: primary-gate
+    gate_cluster_id: gate0
+    reading_resource_ids:
+      - R-001
+      - R-002
+    rationale: Entry workflow concept for the implemented learner-facing phase.
+  - course_concept_id: KC-P0-STORAGE-AND-ADDRESS-INTUITION
+    assignment_status: primary-gate
+    gate_cluster_id: gate1
+    reading_resource_ids:
+      - R-001
+      - R-003
+    rationale: Storage reasoning is the main concept for the current memory-model gate.
+  - course_concept_id: KC-P0-VALUE-AND-EXPRESSION-REASONING
+    assignment_status: primary-gate
+    gate_cluster_id: gate2
+    reading_resource_ids:
+      - R-001
+    rationale: The implemented phase carries value and expression reasoning into the values-and-parameters gate instead of preserving the exact M-001 split.
+  - course_concept_id: KC-P0-PARAMETER-PASSING-AND-ALIASES
+    assignment_status: primary-gate
+    gate_cluster_id: gate2
+    reading_resource_ids:
+      - R-001
+      - R-004
+    rationale: Parameter passing and aliasing are core pass requirements in the current gate 2 implementation.
+  - course_concept_id: KC-P0-LIFETIME-AND-DETERMINISTIC-CLEANUP
+    assignment_status: primary-gate
+    gate_cluster_id: gate3
+    reading_resource_ids:
+      - R-001
+      - R-003
+    rationale: Lifetime and cleanup are the main course concepts for the current class-and-RAII gate.
+notes: Phase 0 uses the implemented learner-facing gate surface as the owning structure. It is intentionally narrower and more merged than the raw M-001 cluster inventory.

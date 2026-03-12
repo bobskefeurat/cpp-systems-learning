@@ -19,7 +19,7 @@ It exists so that status does not need to be inferred from several README files.
 | Repo mode system | active | `AGENTS.md`, `00_system/MODES.md`, `00_system/TASK_ROUTING.md` | Required startup path for every new chat |
 | Phase 0: C++ Foundations | active | `01_phase0-cpp-foundations/README.md` | Current live learner path |
 | Phase 1: Core Language and Object Model | planned | `02_phase1-core-language-and-object-model/README.md` | Planned next phase; rollout is not active yet |
-| Phase 1 Gate 0: Numeric Types and Safety | draft | `02_phase1-core-language-and-object-model/gate0-numeric-types-and-safety/README.md` | Gate scaffold exists for development and review, but it is not part of the active default learner path |
+| Phase 1 Gate 0: Numeric Types and Safety | planned | `02_phase1-core-language-and-object-model/gate0-numeric-types-and-safety/README.md` | Generated first gate for the next phase; ready for rollout review but not part of the active default learner path |
 | `00_system/foundation/` runtime contract | active | `00_system/foundation/README.md` | Governs learner-facing behavior in `Utbildningsläge` |
 | `00_system/authoring/` workflow and templates | active | `00_system/authoring/README.md` | Governs development-side structure, validation, and generation |
 | `00_system/research/` reports | active as background only | target research file | Informative material, not runtime authority |

@@ -1,0 +1,62 @@
+schema_version: v1
+record_kind: phase_blueprint
+blueprint_id: PB-008
+phase_id: 08_phase7-performance-and-optimization
+title: Phase 7 Performance and Optimization
+status: bootstrap
+source_mapping_refs:
+  - M-001:phase-08
+  - M-001:gc701
+  - M-001:gc702
+  - M-001:gc703
+gate_cluster_plan:
+  - gate_cluster_id: gc701
+    title: Performance Model and Measurement
+    gate_kind: micro
+    planned_gate_folder: gate0-performance-model-and-measurement
+  - gate_cluster_id: gc702
+    title: Cache Locality and Data Layout
+    gate_kind: micro
+    planned_gate_folder: gate1-cache-locality-and-data-layout
+  - gate_cluster_id: gc703
+    title: Profiling, Tuning, and Throughput
+    gate_kind: integration
+    planned_gate_folder: gate2-profiling-tuning-and-throughput
+concept_assignments:
+  - course_concept_id: KC-P7-COST-MODEL-COMPLEXITY-AND-MEASUREMENT
+    assignment_status: primary-gate
+    gate_cluster_id: gc701
+    reading_resource_ids:
+      - R-003
+    rationale: Measurement-first reasoning is the mandatory entry point for the optimization phase.
+  - course_concept_id: KC-P7-HARDWARE-AWARE-PERFORMANCE-EFFECTS
+    assignment_status: primary-gate
+    gate_cluster_id: gc701
+    reading_resource_ids:
+      - R-003
+    rationale: Hardware-aware cost effects belong with the same measurement gate.
+  - course_concept_id: KC-P7-CACHE-LOCALITY-AND-DATA-LAYOUT
+    assignment_status: primary-gate
+    gate_cluster_id: gc702
+    reading_resource_ids:
+      - R-003
+    rationale: Locality and data layout deserve a focused micro-gate before tuning integration.
+  - course_concept_id: KC-P7-VECTORIZATION-AND-LOW-LEVEL-OPTIMIZATION-SURFACE
+    assignment_status: integration-gate
+    gate_cluster_id: gc703
+    reading_resource_ids:
+      - R-003
+    rationale: Low-level optimization techniques should appear only in the integration gate.
+  - course_concept_id: KC-P7-PROFILING-AND-OPTIMIZATION-WORKFLOW
+    assignment_status: integration-gate
+    gate_cluster_id: gc703
+    reading_resource_ids:
+      - R-003
+    rationale: Profiling is the workflow anchor for the late integration gate.
+  - course_concept_id: KC-P7-PARALLEL-AND-THROUGHPUT-ORIENTED-OPTIMIZATION
+    assignment_status: integration-gate
+    gate_cluster_id: gc703
+    reading_resource_ids:
+      - R-003
+    rationale: Throughput-oriented optimization is kept explicit and late because it overlaps with concurrency and systems cost.
+notes: Bootstrap phase blueprint for performance work. It keeps the entry surface measurement-first and pushes more dangerous optimization topics into the integration gate.

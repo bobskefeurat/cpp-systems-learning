@@ -1,0 +1,73 @@
+schema_version: v1
+record_kind: phase_blueprint
+blueprint_id: PB-004
+phase_id: 04_phase3-translation-units-and-binary-boundaries
+title: Phase 3 Translation Units, Build Structure, and Binary Boundaries
+status: bootstrap
+source_mapping_refs:
+  - M-001:phase-04
+  - M-001:gc301
+  - M-001:gc302
+  - M-001:gc303
+  - M-001:gc304
+gate_cluster_plan:
+  - gate_cluster_id: gc301
+    title: Storage Duration and Initialization Order
+    gate_kind: micro
+    planned_gate_folder: gate0-storage-duration-and-initialization-order
+  - gate_cluster_id: gc302
+    title: Linkage and the One Definition Rule
+    gate_kind: micro
+    planned_gate_folder: gate1-linkage-and-odr
+  - gate_cluster_id: gc303
+    title: Headers, Modules, and File Interfaces
+    gate_kind: micro
+    planned_gate_folder: gate2-headers-modules-and-file-interfaces
+  - gate_cluster_id: gc304
+    title: Libraries, Linking, and ABI Surface
+    gate_kind: integration
+    planned_gate_folder: gate3-libraries-linking-and-abi-surface
+concept_assignments:
+  - course_concept_id: KC-P3-STORAGE-DURATION-AND-INITIALIZATION-ORDER
+    assignment_status: primary-gate
+    gate_cluster_id: gc301
+    reading_resource_ids:
+      - R-003
+    rationale: Strong debugging-oriented entry concept for the translation-unit phase.
+  - course_concept_id: KC-P3-LINKAGE-AND-TRANSLATION-UNIT-BOUNDARIES
+    assignment_status: primary-gate
+    gate_cluster_id: gc302
+    reading_resource_ids:
+      - R-003
+    rationale: Linkage is the first multi-file boundary concept the phase must stabilize.
+  - course_concept_id: KC-P3-ONE-DEFINITION-RULE
+    assignment_status: primary-gate
+    gate_cluster_id: gc302
+    reading_resource_ids:
+      - R-003
+    rationale: ODR reasoning belongs with linkage and whole-program consistency.
+  - course_concept_id: KC-P3-HEADERS-AND-INCLUDE-GUARDS
+    assignment_status: primary-gate
+    gate_cluster_id: gc303
+    reading_resource_ids:
+      - R-003
+    rationale: Header discipline must become stable before later binary-boundary work.
+  - course_concept_id: KC-P3-MODULES-AND-INTERFACE-PARTITIONING
+    assignment_status: primary-gate
+    gate_cluster_id: gc303
+    reading_resource_ids:
+      - R-003
+    rationale: Modules remain explicit but secondary to the header model in the same gate.
+  - course_concept_id: KC-P3-LIBRARIES-AND-LINKING-MODEL
+    assignment_status: integration-gate
+    gate_cluster_id: gc304
+    reading_resource_ids:
+      - R-003
+    rationale: Library and linking boundaries should land once file and linkage basics are already visible.
+  - course_concept_id: KC-P3-NAME-MANGLING-AND-ABI-SURFACE
+    assignment_status: integration-gate
+    gate_cluster_id: gc304
+    reading_resource_ids:
+      - R-003
+    rationale: ABI reasoning is deliberately kept at integration scope instead of the earlier micro gates.
+notes: Bootstrap phase blueprint for the first explicitly multi-file and binary-boundary phase. Reading coverage is still incomplete and should block learner-facing rollout until companion packets exist.

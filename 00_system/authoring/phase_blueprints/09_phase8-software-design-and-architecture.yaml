@@ -1,0 +1,46 @@
+schema_version: v1
+record_kind: phase_blueprint
+blueprint_id: PB-009
+phase_id: 09_phase8-software-design-and-architecture
+title: Phase 8 Software Design and Architecture
+status: bootstrap
+source_mapping_refs:
+  - M-001:phase-09
+  - M-001:gc801
+  - M-001:gc802
+  - M-001:gc803
+gate_cluster_plan:
+  - gate_cluster_id: gc801
+    title: Decomposition and Interface Boundaries
+    gate_kind: micro
+    planned_gate_folder: gate0-decomposition-and-interface-boundaries
+  - gate_cluster_id: gc802
+    title: Architectural Tradeoffs and Pattern Use
+    gate_kind: micro
+    planned_gate_folder: gate1-architectural-tradeoffs-and-pattern-use
+  - gate_cluster_id: gc803
+    title: Architectural Evolution and Design Integration
+    gate_kind: integration
+    planned_gate_folder: gate2-architectural-evolution-and-design-integration
+concept_assignments:
+  - course_concept_id: KC-P8-DECOMPOSITION-AND-INTERFACE-BOUNDARIES
+    assignment_status: primary-gate
+    gate_cluster_id: gc801
+    reading_resource_ids: []
+    rationale: Decomposition and boundary-setting are the entry concepts for the architecture phase.
+  - course_concept_id: KC-P8-COUPLING-COHESION-AND-ARCHITECTURAL-TRADEOFFS
+    assignment_status: primary-gate
+    gate_cluster_id: gc802
+    reading_resource_ids: []
+    rationale: Coupling and cohesion language should stabilize before broader design integration.
+  - course_concept_id: KC-P8-DESIGN-PATTERNS-AND-REUSABLE-DESIGN-MOVES
+    assignment_status: primary-gate
+    gate_cluster_id: gc802
+    reading_resource_ids: []
+    rationale: Pattern work belongs with tradeoff analysis, not in isolation.
+  - course_concept_id: KC-P8-ANTI-PATTERNS-AND-ARCHITECTURAL-EVOLUTION
+    assignment_status: integration-gate
+    gate_cluster_id: gc803
+    reading_resource_ids: []
+    rationale: Evolution and anti-pattern reasoning should appear only with larger architectural critique context.
+notes: Bootstrap phase blueprint for a later artifact-dependent phase. Reading coverage is intentionally left empty because this phase likely needs repo-authored artifacts and critique packets rather than generic link-first reading.

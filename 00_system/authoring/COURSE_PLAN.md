@@ -12,7 +12,9 @@ It exists so the repo can review and ratify:
 ## Current Baseline
 - Implemented today: `01_phase0-cpp-foundations`
 - Planning backbone: `S-001-modern-cpp-programming.yaml` and `M-001-modern-cpp-programming-course-plan.yaml`
-- Scope of this file: phase planning, not final gate inventory
+- Canonical concept inventory: `course_concepts/records/K-001-cpp-systems-learning.yaml`
+- Phase-local coverage allocation: `phase_blueprints/`
+- Scope of this file: phase planning, not canonical concept inventory or final gate inventory
 - Current Phase 0 implementation is narrower than the full source-backed phase mapping and should not be forced into a 1:1 gate count
 - `Modern-CPP-Programming` is currently an authoring backbone, not the default learner reading spine
 - `LearnCpp` is the preferred primary reading source whenever it covers the planned concept at a learner-safe level
@@ -58,7 +60,10 @@ This table states how the current plan expects `LearnCpp` and companion sources 
 
 ## Program-Level Decisions
 - Treat `M-001` as the current course-planning baseline for future phases.
+- Treat `K-001-cpp-systems-learning.yaml` as the canonical repo-owned concept inventory for implemented work and the current planning frontier.
+- Require a phase blueprint before a new phase is treated as generation-ready.
 - Generate future phase and gate work from mapped `unit_id` and `concept_id` records, not from raw links.
+- Allocate mapped concepts into explicit per-phase coverage decisions before gate generation begins.
 - Prefer `LearnCpp` as the first learner-facing reading source whenever it adequately covers a planned concept.
 - If planned concepts are not adequately covered by `LearnCpp`, find and curate additional sources before the phase or gate becomes learner-facing.
 - Generate learner-facing tasks from the concepts supported by curated reading coverage, not just from source-backbone topic presence.
@@ -121,7 +126,7 @@ Recommended deferrals and guardrails:
 4. Keep inheritance, virtual dispatch, and operator-overloading tasks at first-pass scope.
 
 ## Next Planning Checkpoint
-Before new phase generation starts, review `M-001` against this file and lock:
+Before new phase generation starts, review `M-001`, the course concept map, and the relevant phase blueprint against this file and lock:
 - whether `02_phase1-core-language-and-object-model` is the next implemented phase
 - whether the current Phase 1 scope controls are accepted as the learner-facing baseline
 - whether the current Phase 0 implementation needs refinement before expanding the course

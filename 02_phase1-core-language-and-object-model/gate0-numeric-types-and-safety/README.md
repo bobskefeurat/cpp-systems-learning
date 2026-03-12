@@ -4,28 +4,24 @@
 `Gate 0: Numeric Types and Safety` is the first checkpoint in `Phase 1: Core Language and Object Model`.
 
 This gate builds your ability to:
-- reason about mixed numeric types in a small program
-- use brace initialization as a safer default against narrowing
-- explain why unsigned arithmetic and floating-point comparison can surprise you
+- reason about mixed arithmetic, promotions, and unsigned wrap behavior in one bounded program
+- use explicit numeric types and brace initialization as local safety guardrails
+- explain why floating-point comparison needs a strategy instead of blind equality
 
-This gate is not about advanced math or optimization.
-It is about predictable numeric behavior and safer numeric defaults.
-
-## Status
-This gate is currently `draft`.
-It exists for development and review and is not part of the active default learner path.
+This gate is not about bit tricks, numeric libraries, or performance tuning.
+It is about predictable numeric behavior and first-pass safety decisions.
 
 ## Learner Flow
-This flow is for draft review only.
-If you are reviewing this draft gate, start with [learner/PREP.md](./learner/PREP.md).
+Start with [learner/PREP.md](./learner/PREP.md).
 
 Then:
-1. inspect the readiness and task flow
+1. complete the readiness dialogue with the agent
 2. work on [learner/TASK.md](./learner/TASK.md)
 3. write and run your code in `workspace/`
+4. ask the agent to evaluate your result
 
 ## Current Task
-Current task: `Numeric Safety Snapshot`
+Current task: `Numeric Safety Check`
 
 Use [learner/TASK.md](./learner/TASK.md) for the exact prompt, constraints, self-check, and evaluation evidence.
 

@@ -37,10 +37,11 @@ Phase 1 is planned as four micro-gates followed by one integration gate.
 Phase 1 is currently planned rather than active in the default learner path.
 Use this README to review the intended phase arc and current scope.
 Do not treat this phase as the current learner starting point.
+The first gate has now been generated and can be used as the concrete review surface for the phase baseline.
 
 ## How To Use This Phase
 Use this README as the planning overview for the phase.
-If you are reviewing the current draft gate surface, inspect [gate0-numeric-types-and-safety/README.md](./gate0-numeric-types-and-safety/README.md).
+If you are reviewing the current generated gate surface, inspect [gate0-numeric-types-and-safety/README.md](./gate0-numeric-types-and-safety/README.md).
 If a later gate folder has not been generated yet, use the planning and resource files below to shape it.
 
 Working rules for Phase 1 design:
@@ -63,4 +64,4 @@ as the current source of truth for the Phase 1 arc.
 ## Where To Start
 For the current live learner path, use [../01_phase0-cpp-foundations/README.md](../01_phase0-cpp-foundations/README.md).
 
-For Phase 1 development or review, start with [gate0-numeric-types-and-safety/README.md](./gate0-numeric-types-and-safety/README.md).
+For Phase 1 development or rollout review, start with [gate0-numeric-types-and-safety/README.md](./gate0-numeric-types-and-safety/README.md).

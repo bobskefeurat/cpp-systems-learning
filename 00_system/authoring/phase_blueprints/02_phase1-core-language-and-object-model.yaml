@@ -1,0 +1,150 @@
+schema_version: v1
+record_kind: phase_blueprint
+blueprint_id: PB-002
+phase_id: 02_phase1-core-language-and-object-model
+title: Phase 1 Core Language and Object Model
+status: bootstrap
+source_mapping_refs:
+  - M-001:phase-02
+  - M-001:gc101
+  - M-001:gc102
+  - M-001:gc103
+  - M-001:gc104
+  - M-001:gc105
+gate_cluster_plan:
+  - gate_cluster_id: gc101
+    title: Numeric Types and Safety
+    gate_kind: micro
+    planned_gate_folder: gate0-numeric-types-and-safety
+  - gate_cluster_id: gc102
+    title: Aggregates and Language Organization
+    gate_kind: micro
+    planned_gate_folder: gate1-aggregates-and-language-organization
+  - gate_cluster_id: gc103
+    title: Function Surface and Callables
+    gate_kind: micro
+    planned_gate_folder: gate2-function-surface-and-callables
+  - gate_cluster_id: gc104
+    title: Special Members and Dynamic Object Model
+    gate_kind: micro
+    planned_gate_folder: gate3-special-members-and-dynamic-object-model
+  - gate_cluster_id: gc105
+    title: Phase 1 Integration
+    gate_kind: integration
+    planned_gate_folder: gate4-phase1-integration-project
+concept_assignments:
+  - course_concept_id: KC-P1-NUM-SIGNEDNESS-RANGE
+    assignment_status: primary-gate
+    gate_cluster_id: gc101
+    reading_resource_ids:
+      - R-001
+      - R-003
+    rationale: First numeric safety gate should make signed and unsigned reasoning explicit.
+  - course_concept_id: KC-P1-NUM-PROMOTIONS-CONVERSIONS
+    assignment_status: primary-gate
+    gate_cluster_id: gc101
+    reading_resource_ids:
+      - R-001
+      - R-003
+    rationale: Mixed arithmetic and small-integer promotions belong in the first numeric task.
+  - course_concept_id: KC-P1-NUM-BIT-REPRESENTATION
+    assignment_status: deferred-within-phase
+    gate_cluster_id: gc105
+    reading_resource_ids:
+      - R-003
+    rationale: Preserve explicitly but keep bit-level operator pressure out of the first numeric micro-gate.
+  - course_concept_id: KC-P1-NUM-OVERFLOW-WRAP
+    assignment_status: primary-gate
+    gate_cluster_id: gc101
+    reading_resource_ids:
+      - R-001
+      - R-003
+    rationale: Numeric safety is not complete without signed-overflow versus unsigned-wrap reasoning.
+  - course_concept_id: KC-P1-NUM-FLOAT-REPRESENTATION
+    assignment_status: primary-gate
+    gate_cluster_id: gc101
+    reading_resource_ids:
+      - R-001
+      - R-003
+    rationale: First-pass floating representation limits belong with numeric safety.
+  - course_concept_id: KC-P1-NUM-LITERALS-ROUNDING
+    assignment_status: primary-gate
+    gate_cluster_id: gc101
+    reading_resource_ids:
+      - R-001
+      - R-003
+    rationale: Precision and rounding should be introduced as part of bounded numeric judgment.
+  - course_concept_id: KC-P1-NUM-FLOAT-COMPARISON
+    assignment_status: primary-gate
+    gate_cluster_id: gc101
+    reading_resource_ids:
+      - R-001
+      - R-003
+    rationale: Approximate comparison is a direct learner-facing safety habit.
+  - course_concept_id: KC-P1-DECLARATION-NAMING-SURFACE
+    assignment_status: supporting-reading
+    gate_cluster_id: gc102
+    reading_resource_ids:
+      - R-001
+    rationale: Supporting concept for declarations and organization, not a standalone pass requirement.
+  - course_concept_id: KC-P1-ENUM-STRUCT-AGGREGATE-MODELING
+    assignment_status: primary-gate
+    gate_cluster_id: gc102
+    reading_resource_ids:
+      - R-001
+    rationale: Main modeling concept for the structured-data micro-gate.
+  - course_concept_id: KC-P1-NAMESPACE-ORGANIZATION-AND-ATTRIBUTES
+    assignment_status: primary-gate
+    gate_cluster_id: gc102
+    reading_resource_ids:
+      - R-001
+    rationale: Organization belongs in the same gate, while attributes stay lightweight.
+  - course_concept_id: KC-P1-FUNCTION-SURFACE-TRADEOFFS
+    assignment_status: primary-gate
+    gate_cluster_id: gc103
+    reading_resource_ids:
+      - R-001
+      - R-006
+    rationale: This is the core feature-judgment concept for the callable-surface gate.
+  - course_concept_id: KC-P1-LAMBDA-BASICS
+    assignment_status: primary-gate
+    gate_cluster_id: gc103
+    reading_resource_ids:
+      - R-001
+      - R-006
+    rationale: Lambdas are in scope, but only at the dedicated bounded supplement level.
+  - course_concept_id: KC-P1-PREPROCESSOR-MINIMUM
+    assignment_status: supporting-reading
+    gate_cluster_id: gc103
+    reading_resource_ids:
+      - R-001
+    rationale: Preserve the minimum surface without turning macro programming into a normal Phase 1 task.
+  - course_concept_id: KC-P1-COPY-CONTROL-AND-SPECIAL-MEMBERS
+    assignment_status: primary-gate
+    gate_cluster_id: gc104
+    reading_resource_ids:
+      - R-001
+      - R-003
+    rationale: Central object-model concept for the bounded class-design gate.
+  - course_concept_id: KC-P1-THIS-AND-MEMBER-DESIGN-SURFACE
+    assignment_status: primary-gate
+    gate_cluster_id: gc104
+    reading_resource_ids:
+      - R-001
+      - R-003
+    rationale: Member-surface reasoning belongs directly with first-pass class design.
+  - course_concept_id: KC-P1-INHERITANCE-AND-FIRST-PASS-DISPATCH
+    assignment_status: primary-gate
+    gate_cluster_id: gc104
+    reading_resource_ids:
+      - R-001
+      - R-003
+    rationale: Phase 1 should introduce first-pass inheritance and dispatch before integration.
+  - course_concept_id: KC-P1-OPERATOR-OVERLOADING-JUDGMENT
+    assignment_status: primary-gate
+    gate_cluster_id: gc104
+    reading_resource_ids:
+      - R-001
+      - R-003
+    rationale: Keep this restrained, but make the preservation decision explicit inside the object-model gate.
+notes: Phase 1 blueprint seeded from M-001 and intended to prevent silent loss between source mapping and generated gates. KC-P1-NUM-BIT-REPRESENTATION is the explicit example of an in-phase defer that still must be caught later.

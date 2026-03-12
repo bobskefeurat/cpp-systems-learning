@@ -1,0 +1,103 @@
+schema_version: v1
+record_kind: phase_blueprint
+blueprint_id: PB-005
+phase_id: 05_phase4-code-quality-debugging-and-tooling
+title: Phase 4 Code Quality, Debugging, and Tooling
+status: bootstrap
+source_mapping_refs:
+  - M-001:phase-05
+  - M-001:gc401
+  - M-001:gc402
+  - M-001:gc403
+  - M-001:gc404
+gate_cluster_plan:
+  - gate_cluster_id: gc401
+    title: Project Organization and Style Discipline
+    gate_kind: micro
+    planned_gate_folder: gate0-project-organization-and-style-discipline
+  - gate_cluster_id: gc402
+    title: Documentation and Maintainability Review
+    gate_kind: micro
+    planned_gate_folder: gate1-documentation-and-maintainability-review
+  - gate_cluster_id: gc403
+    title: Debugging Workflow and Assertions
+    gate_kind: micro
+    planned_gate_folder: gate2-debugging-workflow-and-assertions
+  - gate_cluster_id: gc404
+    title: Testing, Analysis, and Tooling Integration
+    gate_kind: integration
+    planned_gate_folder: gate3-testing-analysis-and-tooling-integration
+concept_assignments:
+  - course_concept_id: KC-P4-PROJECT-ORGANIZATION-AND-INCLUDE-DISCIPLINE
+    assignment_status: primary-gate
+    gate_cluster_id: gc401
+    reading_resource_ids:
+      - R-003
+    rationale: Project structure is a core entry concept for the engineering-discipline phase.
+  - course_concept_id: KC-P4-STYLE-CONVENTIONS-FOR-CORE-LANGUAGE-SURFACE
+    assignment_status: primary-gate
+    gate_cluster_id: gc401
+    reading_resource_ids:
+      - R-003
+    rationale: Style rules should appear with concrete organization and review pressure.
+  - course_concept_id: KC-P4-STRUCT-CLASS-AND-INITIALIZATION-CONVENTIONS
+    assignment_status: primary-gate
+    gate_cluster_id: gc401
+    reading_resource_ids:
+      - R-003
+    rationale: Type and initialization conventions belong in the same structural review gate.
+  - course_concept_id: KC-P4-DEDUCTION-CONTROL-FLOW-AND-NAMESPACE-DISCIPLINE
+    assignment_status: primary-gate
+    gate_cluster_id: gc401
+    reading_resource_ids:
+      - R-003
+    rationale: Keep readability disciplines together in the refactor-heavy entry gate.
+  - course_concept_id: KC-P4-MAINTAINABILITY-NAMING-FORMATTING-PORTABILITY
+    assignment_status: primary-gate
+    gate_cluster_id: gc401
+    reading_resource_ids:
+      - R-003
+    rationale: Shared maintainability language should stabilize before documentation or tooling integration.
+  - course_concept_id: KC-P4-DOCUMENTATION-AND-COMPREHENSION-SUPPORT
+    assignment_status: primary-gate
+    gate_cluster_id: gc402
+    reading_resource_ids:
+      - R-003
+    rationale: Documentation and comprehension support are the distinct focus of the maintainability review gate.
+  - course_concept_id: KC-P4-DEFECT-FRAMING-ASSERTIONS-AND-INTERACTIVE-DEBUGGING
+    assignment_status: primary-gate
+    gate_cluster_id: gc403
+    reading_resource_ids:
+      - R-003
+    rationale: Debugging workflow should be visible before broader quality-tool integration.
+  - course_concept_id: KC-P4-SANITIZERS-HARDENING-AND-MEMORY-DEBUG-WORKFLOW
+    assignment_status: integration-gate
+    gate_cluster_id: gc404
+    reading_resource_ids:
+      - R-003
+    rationale: Memory-debug workflow belongs when testing and tooling can appear together.
+  - course_concept_id: KC-P4-WARNINGS-STATIC-ANALYSIS-TESTING-AND-QUALITY-GATES
+    assignment_status: integration-gate
+    gate_cluster_id: gc404
+    reading_resource_ids:
+      - R-003
+    rationale: Quality gates are an integration concern, not an isolated micro-gate concept.
+  - course_concept_id: KC-P4-CMAKE-AND-CTEST-WORKFLOW
+    assignment_status: integration-gate
+    gate_cluster_id: gc404
+    reading_resource_ids:
+      - R-003
+    rationale: Build and test orchestration belong in the same tooling-integration surface.
+  - course_concept_id: KC-P4-DOCUMENTATION-TOOLING-AND-ONLINE-WORKFLOWS
+    assignment_status: integration-gate
+    gate_cluster_id: gc404
+    reading_resource_ids:
+      - R-003
+    rationale: Tool-backed documentation should appear only once the maintainability model is already stable.
+  - course_concept_id: KC-P4-OFFLINE-TOOLING-AND-LOCAL-WORKFLOWS
+    assignment_status: integration-gate
+    gate_cluster_id: gc404
+    reading_resource_ids:
+      - R-003
+    rationale: Local workflow support belongs with the larger tooling integration gate.
+notes: Bootstrap phase blueprint for engineering-process work. Most learner-facing reading support is still missing, so this blueprint acts primarily as a preservation and planning reference.

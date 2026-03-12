@@ -1,0 +1,79 @@
+schema_version: v1
+record_kind: phase_blueprint
+blueprint_id: PB-003
+phase_id: 03_phase2-generic-programming
+title: Phase 2 Generic Programming and Compile-Time Reasoning
+status: bootstrap
+source_mapping_refs:
+  - M-001:phase-03
+  - M-001:gc201
+  - M-001:gc202
+  - M-001:gc203
+  - M-001:gc204
+gate_cluster_plan:
+  - gate_cluster_id: gc201
+    title: Function Templates and Instantiation
+    gate_kind: micro
+    planned_gate_folder: gate0-function-templates-and-instantiation
+  - gate_cluster_id: gc202
+    title: Compile-Time Utilities and Constraints
+    gate_kind: micro
+    planned_gate_folder: gate1-compile-time-utilities-and-constraints
+  - gate_cluster_id: gc203
+    title: Generic Classes and Advanced Template Surface
+    gate_kind: micro
+    planned_gate_folder: gate2-generic-classes-and-advanced-template-surface
+  - gate_cluster_id: gc204
+    title: Generic Programming Integration
+    gate_kind: integration
+    planned_gate_folder: gate3-generic-programming-integration
+concept_assignments:
+  - course_concept_id: KC-P2-FUNCTION-TEMPLATES-AND-INSTANTIATION
+    assignment_status: primary-gate
+    gate_cluster_id: gc201
+    reading_resource_ids:
+      - R-003
+    rationale: Entry concept for the generic-programming phase.
+  - course_concept_id: KC-P2-TEMPLATE-PARAMETER-FORMS
+    assignment_status: primary-gate
+    gate_cluster_id: gc201
+    reading_resource_ids:
+      - R-003
+    rationale: Template parameter forms belong with first-pass function template reasoning.
+  - course_concept_id: KC-P2-COMPILE-TIME-UTILITY-TOOLS
+    assignment_status: primary-gate
+    gate_cluster_id: gc202
+    reading_resource_ids:
+      - R-003
+    rationale: Compile-time utility surface should be introduced before heavier template constraints.
+  - course_concept_id: KC-P2-TYPE-TRAITS-AND-TYPE-MANIPULATION
+    assignment_status: primary-gate
+    gate_cluster_id: gc202
+    reading_resource_ids:
+      - R-003
+    rationale: Type-trait reasoning is part of the bounded compile-time utilities gate.
+  - course_concept_id: KC-P2-CONCEPTS-AND-REQUIRES-CONSTRAINTS
+    assignment_status: primary-gate
+    gate_cluster_id: gc202
+    reading_resource_ids:
+      - R-003
+    rationale: Explicit constraints belong in the same gate as compile-time checks.
+  - course_concept_id: KC-P2-CLASS-TEMPLATES-AND-CTAD
+    assignment_status: primary-gate
+    gate_cluster_id: gc203
+    reading_resource_ids:
+      - R-003
+    rationale: Class-template reasoning is the core of the later generic-class gate.
+  - course_concept_id: KC-P2-DEPENDENT-NAMES-AND-SFINAE-SURFACE
+    assignment_status: primary-gate
+    gate_cluster_id: gc203
+    reading_resource_ids:
+      - R-003
+    rationale: Preserve advanced template failure surfaces explicitly inside the advanced template gate.
+  - course_concept_id: KC-P2-VARIADIC-TEMPLATES-AND-FOLD-EXPRESSIONS
+    assignment_status: primary-gate
+    gate_cluster_id: gc203
+    reading_resource_ids:
+      - R-003
+    rationale: Variadic reasoning belongs with the advanced template surface, not the phase entry gate.
+notes: Bootstrap phase blueprint that follows M-001 directly. The integration gate currently combines earlier generic concepts rather than owning unique concept coverage.

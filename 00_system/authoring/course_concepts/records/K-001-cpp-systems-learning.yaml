@@ -1,0 +1,1543 @@
+schema_version: v1
+record_kind: course_concept_map
+concept_map_id: K-001
+target_program: cpp-systems-learning
+status: bootstrap
+phase_order:
+  - 01_phase0-cpp-foundations
+  - 02_phase1-core-language-and-object-model
+  - 03_phase2-generic-programming
+  - 04_phase3-translation-units-and-binary-boundaries
+  - 05_phase4-code-quality-debugging-and-tooling
+  - 06_phase5-standard-library-data-and-algorithms
+  - 07_phase6-advanced-semantics-ownership-and-concurrency
+  - 08_phase7-performance-and-optimization
+  - 09_phase8-software-design-and-architecture
+  - 10_phase9-binary-and-build-engineering
+notes: Bootstrap canonical concept map with explicit coverage across the implemented phase and the full mapped course plan. Phase 0 remains more merged at the canonical level than later phases and should be refined only when that improves clarity instead of duplicating source structure mechanically.
+concepts:
+  - course_concept_id: KC-P0-COMPILE-RUN-DISCIPLINE
+    label: Compile-run discipline and terminal workflow
+    summary: Build, run, and inspect small C++ programs from the terminal with a stable baseline command.
+    category_tags:
+      - foundations
+      - workflow
+    origin_refs:
+      - 01_phase0-cpp-foundations
+    prerequisite_course_concept_ids: []
+    first_expected_phase_id: 01_phase0-cpp-foundations
+    mastery_role: intro-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Implemented in Phase 0 gate work and treated as a baseline prerequisite for later phases.
+  - course_concept_id: KC-P0-VALUE-AND-EXPRESSION-REASONING
+    label: Value and expression reasoning
+    summary: Track values through expressions, assignments, and simple control flow without losing type awareness.
+    category_tags:
+      - foundations
+      - values
+      - expressions
+    origin_refs:
+      - 01_phase0-cpp-foundations
+    prerequisite_course_concept_ids:
+      - KC-P0-COMPILE-RUN-DISCIPLINE
+    first_expected_phase_id: 01_phase0-cpp-foundations
+    mastery_role: intro-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Stable prerequisite for numeric reasoning in Phase 1.
+  - course_concept_id: KC-P0-STORAGE-AND-ADDRESS-INTUITION
+    label: Storage and address intuition
+    summary: Distinguish stack, heap, object storage, and basic address reasoning at a first-pass level.
+    category_tags:
+      - foundations
+      - storage
+      - memory
+    origin_refs:
+      - 01_phase0-cpp-foundations
+    prerequisite_course_concept_ids:
+      - KC-P0-VALUE-AND-EXPRESSION-REASONING
+    first_expected_phase_id: 01_phase0-cpp-foundations
+    mastery_role: intro-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Used as part of the baseline object and lifetime model before Phase 1.
+  - course_concept_id: KC-P0-PARAMETER-PASSING-AND-ALIASES
+    label: Parameter passing and aliasing basics
+    summary: Reason about values, references, copies, and side effects across function boundaries.
+    category_tags:
+      - foundations
+      - functions
+      - references
+    origin_refs:
+      - 01_phase0-cpp-foundations
+    prerequisite_course_concept_ids:
+      - KC-P0-VALUE-AND-EXPRESSION-REASONING
+    first_expected_phase_id: 01_phase0-cpp-foundations
+    mastery_role: intro-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Required before Phase 1 function-surface work.
+  - course_concept_id: KC-P0-LIFETIME-AND-DETERMINISTIC-CLEANUP
+    label: Lifetime and deterministic cleanup
+    summary: Explain object lifetime boundaries and first-pass deterministic cleanup behavior.
+    category_tags:
+      - foundations
+      - lifetime
+      - raii
+    origin_refs:
+      - 01_phase0-cpp-foundations
+    prerequisite_course_concept_ids:
+      - KC-P0-STORAGE-AND-ADDRESS-INTUITION
+    first_expected_phase_id: 01_phase0-cpp-foundations
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Baseline prerequisite for copy control and object-model work in Phase 1.
+  - course_concept_id: KC-P1-NUM-SIGNEDNESS-RANGE
+    label: Signedness and integer range reasoning
+    summary: Explain what signed and unsigned integers represent and why unsigned is not automatically the safer default.
+    category_tags:
+      - phase1
+      - numerics
+      - signedness
+    origin_refs:
+      - S-001:c0401
+      - M-001:gc101
+    prerequisite_course_concept_ids:
+      - KC-P0-VALUE-AND-EXPRESSION-REASONING
+    first_expected_phase_id: 02_phase1-core-language-and-object-model
+    mastery_role: intro-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: First numeric safety concept in Phase 1.
+  - course_concept_id: KC-P1-NUM-PROMOTIONS-CONVERSIONS
+    label: Promotions and arithmetic conversions
+    summary: Explain why mixed-type and small-integer expressions do not necessarily stay in their apparent source types.
+    category_tags:
+      - phase1
+      - numerics
+      - conversions
+    origin_refs:
+      - S-001:c0402
+      - M-001:gc101
+    prerequisite_course_concept_ids:
+      - KC-P0-VALUE-AND-EXPRESSION-REASONING
+      - KC-P1-NUM-SIGNEDNESS-RANGE
+    first_expected_phase_id: 02_phase1-core-language-and-object-model
+    mastery_role: intro-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Includes first-pass mixed arithmetic reasoning and small-integer promotion awareness.
+  - course_concept_id: KC-P1-NUM-BIT-REPRESENTATION
+    label: Bit representation and bit-level numeric reasoning
+    summary: Connect integer representation, bytes, and bit-level thinking to numeric behavior without forcing early low-level operator-heavy tasks.
+    category_tags:
+      - phase1
+      - numerics
+      - bits
+    origin_refs:
+      - S-001:c0403
+      - M-001:gc101
+      - M-001:gc105
+    prerequisite_course_concept_ids:
+      - KC-P1-NUM-SIGNEDNESS-RANGE
+    first_expected_phase_id: 02_phase1-core-language-and-object-model
+    mastery_role: integration-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: false
+    requires_evaluation_evidence: true
+    notes: Must be preserved explicitly even if the first numeric micro-gate keeps bitwise operators out of scope.
+  - course_concept_id: KC-P1-NUM-OVERFLOW-WRAP
+    label: Overflow, wrap, and bounded numeric reasoning
+    summary: Distinguish signed overflow from unsigned wrap and reason about surprising non-negative results correctly.
+    category_tags:
+      - phase1
+      - numerics
+      - overflow
+    origin_refs:
+      - S-001:c0404
+      - M-001:gc101
+    prerequisite_course_concept_ids:
+      - KC-P1-NUM-SIGNEDNESS-RANGE
+      - KC-P1-NUM-PROMOTIONS-CONVERSIONS
+    first_expected_phase_id: 02_phase1-core-language-and-object-model
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Numeric-safety requirement, not just a terminology note.
+  - course_concept_id: KC-P1-NUM-FLOAT-REPRESENTATION
+    label: Floating-point representation limits
+    summary: Explain why decimal-looking values may not be stored exactly in binary floating-point.
+    category_tags:
+      - phase1
+      - numerics
+      - floating-point
+    origin_refs:
+      - S-001:c0501
+      - M-001:gc101
+    prerequisite_course_concept_ids:
+      - KC-P0-VALUE-AND-EXPRESSION-REASONING
+    first_expected_phase_id: 02_phase1-core-language-and-object-model
+    mastery_role: intro-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Supports approximate-comparison reasoning and numeric reporting.
+  - course_concept_id: KC-P1-NUM-LITERALS-ROUNDING
+    label: Numeric literals, precision, and rounding surface
+    summary: Build first-pass judgment about literals, visible precision, and why printed digits do not automatically equal true precision.
+    category_tags:
+      - phase1
+      - numerics
+      - precision
+    origin_refs:
+      - S-001:c0502
+      - M-001:gc101
+    prerequisite_course_concept_ids:
+      - KC-P1-NUM-FLOAT-REPRESENTATION
+    first_expected_phase_id: 02_phase1-core-language-and-object-model
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Phase 1 should keep this at a first-pass level instead of dragging in formatting edge cases.
+  - course_concept_id: KC-P1-NUM-FLOAT-COMPARISON
+    label: Approximate comparison strategy for floating-point values
+    summary: Use exact equality sparingly and explain when a tolerance-based comparison is more appropriate.
+    category_tags:
+      - phase1
+      - numerics
+      - floating-point
+      - comparisons
+    origin_refs:
+      - S-001:c0503
+      - M-001:gc101
+    prerequisite_course_concept_ids:
+      - KC-P1-NUM-FLOAT-REPRESENTATION
+      - KC-P1-NUM-LITERALS-ROUNDING
+    first_expected_phase_id: 02_phase1-core-language-and-object-model
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: First-pass numeric-comparison discipline for Phase 1.
+  - course_concept_id: KC-P1-DECLARATION-NAMING-SURFACE
+    label: Declaration surface and naming boundaries
+    summary: Understand identifiers, keywords, and declaration vocabulary well enough to read and organize small structured programs.
+    category_tags:
+      - phase1
+      - organization
+      - syntax
+    origin_refs:
+      - S-001:c0301
+      - M-001:gc102
+    prerequisite_course_concept_ids:
+      - KC-P0-VALUE-AND-EXPRESSION-REASONING
+    first_expected_phase_id: 02_phase1-core-language-and-object-model
+    mastery_role: support-only
+    requires_reading_coverage: true
+    requires_task_coverage: false
+    requires_readiness_coverage: false
+    requires_evaluation_evidence: false
+    notes: Supporting background for aggregates and namespaces, not a standalone pass target.
+  - course_concept_id: KC-P1-ENUM-STRUCT-AGGREGATE-MODELING
+    label: Enums, structs, and basic aggregate modeling
+    summary: Use small aggregates and enums to represent bounded data clearly without prematurely introducing heavier class design.
+    category_tags:
+      - phase1
+      - aggregates
+      - modeling
+    origin_refs:
+      - S-001:c0602
+      - M-001:gc102
+    prerequisite_course_concept_ids:
+      - KC-P0-VALUE-AND-EXPRESSION-REASONING
+    first_expected_phase_id: 02_phase1-core-language-and-object-model
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Main concept for the structured-data micro-gate.
+  - course_concept_id: KC-P1-NAMESPACE-ORGANIZATION-AND-ATTRIBUTES
+    label: Namespace-based organization and attribute awareness
+    summary: Use namespaces for first-pass organization and recognize that attributes exist without turning them into a heavy early topic.
+    category_tags:
+      - phase1
+      - organization
+      - namespaces
+    origin_refs:
+      - S-001:c0604
+      - M-001:gc102
+    prerequisite_course_concept_ids:
+      - KC-P1-DECLARATION-NAMING-SURFACE
+    first_expected_phase_id: 02_phase1-core-language-and-object-model
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Keep attributes awareness-level in Phase 1; do not overbuild around them.
+  - course_concept_id: KC-P1-FUNCTION-SURFACE-TRADEOFFS
+    label: Function surface tradeoffs
+    summary: Use overloading, default arguments, inline functions, and recursion with first-pass judgment about when they help or harm clarity.
+    category_tags:
+      - phase1
+      - functions
+      - callables
+    origin_refs:
+      - S-001:c0802
+      - M-001:gc103
+    prerequisite_course_concept_ids:
+      - KC-P0-PARAMETER-PASSING-AND-ALIASES
+    first_expected_phase_id: 02_phase1-core-language-and-object-model
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Keep tasks bounded and avoid turning feature count into design quality.
+  - course_concept_id: KC-P1-LAMBDA-BASICS
+    label: Lambda syntax and local callable basics
+    summary: Introduce lambdas as small local callable tools without pulling in unrelated STL or advanced capture complexity.
+    category_tags:
+      - phase1
+      - functions
+      - lambdas
+    origin_refs:
+      - S-001:c0803
+      - M-001:gc103
+    prerequisite_course_concept_ids:
+      - KC-P1-FUNCTION-SURFACE-TRADEOFFS
+    first_expected_phase_id: 02_phase1-core-language-and-object-model
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Must stay at the dedicated supplement level in Phase 1.
+  - course_concept_id: KC-P1-PREPROCESSOR-MINIMUM
+    label: Preprocessor minimum and boundary awareness
+    summary: Keep only the minimum useful surface in scope, such as include-related boundaries and why macro programming is not a free substitute for typed features.
+    category_tags:
+      - phase1
+      - build-surface
+      - preprocessor
+    origin_refs:
+      - S-001:c0804
+      - M-001:gc103
+    prerequisite_course_concept_ids:
+      - KC-P1-DECLARATION-NAMING-SURFACE
+    first_expected_phase_id: 02_phase1-core-language-and-object-model
+    mastery_role: support-only
+    requires_reading_coverage: true
+    requires_task_coverage: false
+    requires_readiness_coverage: false
+    requires_evaluation_evidence: false
+    notes: Explicitly preserved without making macro programming a normal Phase 1 task requirement.
+  - course_concept_id: KC-P1-COPY-CONTROL-AND-SPECIAL-MEMBERS
+    label: Copy control and special members
+    summary: Reason about copying, special members, and how object lifetime responsibilities affect class design.
+    category_tags:
+      - phase1
+      - classes
+      - copy-control
+    origin_refs:
+      - S-001:c0903
+      - M-001:gc104
+    prerequisite_course_concept_ids:
+      - KC-P0-LIFETIME-AND-DETERMINISTIC-CLEANUP
+    first_expected_phase_id: 02_phase1-core-language-and-object-model
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Keep learner-facing tasks inside Rule-of-Zero and value-semantics territory.
+  - course_concept_id: KC-P1-THIS-AND-MEMBER-DESIGN-SURFACE
+    label: this and first-pass member design surface
+    summary: Explain what `this` represents and how member functions shape class design boundaries.
+    category_tags:
+      - phase1
+      - classes
+      - members
+    origin_refs:
+      - S-001:c0904
+      - M-001:gc104
+    prerequisite_course_concept_ids:
+      - KC-P0-PARAMETER-PASSING-AND-ALIASES
+    first_expected_phase_id: 02_phase1-core-language-and-object-model
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Supporting concept for class design work, not just syntax trivia.
+  - course_concept_id: KC-P1-INHERITANCE-AND-FIRST-PASS-DISPATCH
+    label: Inheritance and first-pass dynamic dispatch
+    summary: Explain what inheritance changes, what virtual dispatch changes, and why they should stay bounded in early object-model work.
+    category_tags:
+      - phase1
+      - classes
+      - inheritance
+    origin_refs:
+      - S-001:c1001
+      - M-001:gc104
+    prerequisite_course_concept_ids:
+      - KC-P1-COPY-CONTROL-AND-SPECIAL-MEMBERS
+      - KC-P1-THIS-AND-MEMBER-DESIGN-SURFACE
+    first_expected_phase_id: 02_phase1-core-language-and-object-model
+    mastery_role: integration-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Keep Phase 1 work at first-pass scope and avoid object-layout or RTTI drift.
+  - course_concept_id: KC-P1-OPERATOR-OVERLOADING-JUDGMENT
+    label: Operator overloading and callable object judgment
+    summary: Build first-pass judgment about when operator overloading helps and when it adds semantic cost too early.
+    category_tags:
+      - phase1
+      - classes
+      - operators
+    origin_refs:
+      - S-001:c1002
+      - M-001:gc104
+    prerequisite_course_concept_ids:
+      - KC-P1-COPY-CONTROL-AND-SPECIAL-MEMBERS
+      - KC-P1-FUNCTION-SURFACE-TRADEOFFS
+    first_expected_phase_id: 02_phase1-core-language-and-object-model
+    mastery_role: integration-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: false
+    requires_evaluation_evidence: true
+    notes: Preserve explicitly so it cannot disappear behind a narrowed object-model gate.
+  - course_concept_id: KC-EX-HISTORICAL-CONTEXT
+    label: Historical context for C and C++
+    summary: Keep language-history context as optional orientation material rather than a generated course requirement.
+    category_tags:
+      - excluded
+      - orientation
+    origin_refs:
+      - S-001:c0101
+    prerequisite_course_concept_ids: []
+    first_expected_phase_id: 01_phase0-cpp-foundations
+    mastery_role: excluded
+    requires_reading_coverage: false
+    requires_task_coverage: false
+    requires_readiness_coverage: false
+    requires_evaluation_evidence: false
+    notes: Optional course-framing only; do not generate learner-facing gates from this concept.
+  - course_concept_id: KC-EX-CPP-APPLICATION-DOMAINS
+    label: C++ application domains and relevance
+    summary: Keep domain-overview material as orientation context instead of a required course concept.
+    category_tags:
+      - excluded
+      - orientation
+    origin_refs:
+      - S-001:c0102
+    prerequisite_course_concept_ids: []
+    first_expected_phase_id: 01_phase0-cpp-foundations
+    mastery_role: excluded
+    requires_reading_coverage: false
+    requires_task_coverage: false
+    requires_readiness_coverage: false
+    requires_evaluation_evidence: false
+    notes: Useful only as optional framing and motivation.
+  - course_concept_id: KC-EX-ZERO-OVERHEAD-PHILOSOPHY
+    label: Zero-overhead and control-oriented language philosophy
+    summary: Preserve the design-philosophy reference without turning it into a gate requirement.
+    category_tags:
+      - excluded
+      - orientation
+    origin_refs:
+      - S-001:c0103
+    prerequisite_course_concept_ids: []
+    first_expected_phase_id: 01_phase0-cpp-foundations
+    mastery_role: excluded
+    requires_reading_coverage: false
+    requires_task_coverage: false
+    requires_readiness_coverage: false
+    requires_evaluation_evidence: false
+    notes: Optional philosophy context only.
+  - course_concept_id: KC-EX-LANGUAGE-TRADEOFF-AWARENESS
+    label: Language weaknesses and tradeoff awareness
+    summary: Keep broad tradeoff awareness as reference context rather than a standalone learner-facing objective.
+    category_tags:
+      - excluded
+      - orientation
+    origin_refs:
+      - S-001:c0104
+    prerequisite_course_concept_ids: []
+    first_expected_phase_id: 01_phase0-cpp-foundations
+    mastery_role: excluded
+    requires_reading_coverage: false
+    requires_task_coverage: false
+    requires_readiness_coverage: false
+    requires_evaluation_evidence: false
+    notes: Re-enters later through concrete engineering tradeoff gates instead of raw orientation text.
+  - course_concept_id: KC-EX-COURSE-SCOPE-POSITIONING
+    label: Course scope and intended learner positioning
+    summary: Keep source-specific positioning material outside automatic concept coverage requirements.
+    category_tags:
+      - excluded
+      - orientation
+    origin_refs:
+      - S-001:c0105
+    prerequisite_course_concept_ids: []
+    first_expected_phase_id: 01_phase0-cpp-foundations
+    mastery_role: excluded
+    requires_reading_coverage: false
+    requires_task_coverage: false
+    requires_readiness_coverage: false
+    requires_evaluation_evidence: false
+    notes: Repo-owned onboarding should carry this responsibility instead.
+  - course_concept_id: KC-EX-CURATED-LEARNING-PATH
+    label: Curated learning path and exercise sourcing
+    summary: Keep upstream exercise-routing advice out of the canonical learner-facing concept inventory.
+    category_tags:
+      - excluded
+      - orientation
+    origin_refs:
+      - S-001:c0201
+    prerequisite_course_concept_ids: []
+    first_expected_phase_id: 01_phase0-cpp-foundations
+    mastery_role: excluded
+    requires_reading_coverage: false
+    requires_task_coverage: false
+    requires_readiness_coverage: false
+    requires_evaluation_evidence: false
+    notes: The repo's own structure and task system replaces this role.
+  - course_concept_id: KC-EX-CASTS-SIZE-AND-ALIGNMENT
+    label: Casts, size, and alignment facts
+    summary: Preserve this as explicitly out of scope for the current course path instead of letting it disappear silently.
+    category_tags:
+      - excluded
+      - out-of-scope
+    origin_refs:
+      - S-001:c0704
+    prerequisite_course_concept_ids:
+      - KC-P0-STORAGE-AND-ADDRESS-INTUITION
+      - KC-P0-VALUE-AND-EXPRESSION-REASONING
+    first_expected_phase_id: 01_phase0-cpp-foundations
+    mastery_role: excluded
+    requires_reading_coverage: false
+    requires_task_coverage: false
+    requires_readiness_coverage: false
+    requires_evaluation_evidence: false
+    notes: Keep excluded unless a later explicit systems phase needs part of it.
+  - course_concept_id: KC-EX-RTTI-AND-HIERARCHY-CONVERSIONS
+    label: RTTI and hierarchy conversions
+    summary: Keep RTTI-related hierarchy mechanics out of the default course path unless a later explicit extension adopts them.
+    category_tags:
+      - excluded
+      - out-of-scope
+    origin_refs:
+      - S-001:c1003
+    prerequisite_course_concept_ids:
+      - KC-P1-INHERITANCE-AND-FIRST-PASS-DISPATCH
+    first_expected_phase_id: 02_phase1-core-language-and-object-model
+    mastery_role: excluded
+    requires_reading_coverage: false
+    requires_task_coverage: false
+    requires_readiness_coverage: false
+    requires_evaluation_evidence: false
+    notes: Explicitly excluded so later object-model work does not accidentally pull it in.
+  - course_concept_id: KC-EX-OBJECT-LAYOUT-AND-MULTIPLE-INHERITANCE
+    label: Object layout and multiple inheritance
+    summary: Preserve this advanced object-model surface as excluded rather than leaving it implicit.
+    category_tags:
+      - excluded
+      - out-of-scope
+    origin_refs:
+      - S-001:c1004
+    prerequisite_course_concept_ids:
+      - KC-P1-INHERITANCE-AND-FIRST-PASS-DISPATCH
+    first_expected_phase_id: 02_phase1-core-language-and-object-model
+    mastery_role: excluded
+    requires_reading_coverage: false
+    requires_task_coverage: false
+    requires_readiness_coverage: false
+    requires_evaluation_evidence: false
+    notes: Keep excluded from automatic generation unless the course direction changes materially.
+  - course_concept_id: KC-P2-FUNCTION-TEMPLATES-AND-INSTANTIATION
+    label: Function templates and instantiation
+    summary: Generalize ordinary functions with template parameters and reason about when template instantiation creates the concrete callable surface.
+    category_tags:
+      - phase2
+      - generics
+    origin_refs:
+      - S-001:c1101
+      - M-001:gc201
+    prerequisite_course_concept_ids:
+      - KC-P0-PARAMETER-PASSING-AND-ALIASES
+      - KC-P0-VALUE-AND-EXPRESSION-REASONING
+    first_expected_phase_id: 03_phase2-generic-programming
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Entry concept for the generic-programming phase.
+  - course_concept_id: KC-P2-TEMPLATE-PARAMETER-FORMS
+    label: Template variables and template parameter forms
+    summary: Distinguish the major parameter forms that shape how a template interface generalizes code.
+    category_tags:
+      - phase2
+      - generics
+    origin_refs:
+      - S-001:c1102
+      - M-001:gc201
+    prerequisite_course_concept_ids:
+      - KC-P2-FUNCTION-TEMPLATES-AND-INSTANTIATION
+    first_expected_phase_id: 03_phase2-generic-programming
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Keep this coupled to concrete template reasoning instead of abstract syntax recitation.
+  - course_concept_id: KC-P2-COMPILE-TIME-UTILITY-TOOLS
+    label: static_assert, decltype, and compile-time utility surface
+    summary: Use small compile-time utility tools to make generic code constraints and intent clearer.
+    category_tags:
+      - phase2
+      - generics
+    origin_refs:
+      - S-001:c1103
+      - M-001:gc202
+    prerequisite_course_concept_ids:
+      - KC-P2-FUNCTION-TEMPLATES-AND-INSTANTIATION
+    first_expected_phase_id: 03_phase2-generic-programming
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Phase 2 should introduce compile-time checks before heavier template failure modes.
+  - course_concept_id: KC-P2-TYPE-TRAITS-AND-TYPE-MANIPULATION
+    label: Type traits and type manipulation
+    summary: Use type traits and simple type manipulation to express properties of generic code at compile time.
+    category_tags:
+      - phase2
+      - generics
+    origin_refs:
+      - S-001:c1104
+      - M-001:gc202
+    prerequisite_course_concept_ids:
+      - KC-P2-COMPILE-TIME-UTILITY-TOOLS
+    first_expected_phase_id: 03_phase2-generic-programming
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Keep this bounded to readability and constraint reasoning, not template cleverness.
+  - course_concept_id: KC-P2-CLASS-TEMPLATES-AND-CTAD
+    label: Class templates and CTAD
+    summary: Move generic reasoning from function interfaces into class templates and deduction of class template arguments.
+    category_tags:
+      - phase2
+      - generics
+    origin_refs:
+      - S-001:c1201
+      - M-001:gc203
+    prerequisite_course_concept_ids:
+      - KC-P2-FUNCTION-TEMPLATES-AND-INSTANTIATION
+      - KC-P0-LIFETIME-AND-DETERMINISTIC-CLEANUP
+    first_expected_phase_id: 03_phase2-generic-programming
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: First class-template concept for the generic class-design gate.
+  - course_concept_id: KC-P2-DEPENDENT-NAMES-AND-SFINAE-SURFACE
+    label: Dependent names, SFINAE, and meta-programming surface
+    summary: Recognize the failure modes and readability costs that appear once templates become more dependent and indirect.
+    category_tags:
+      - phase2
+      - generics
+    origin_refs:
+      - S-001:c1202
+      - M-001:gc203
+    prerequisite_course_concept_ids:
+      - KC-P2-COMPILE-TIME-UTILITY-TOOLS
+      - KC-P2-CLASS-TEMPLATES-AND-CTAD
+    first_expected_phase_id: 03_phase2-generic-programming
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Preserve explicitly so advanced template failure modes are not introduced accidentally.
+  - course_concept_id: KC-P2-VARIADIC-TEMPLATES-AND-FOLD-EXPRESSIONS
+    label: Variadic templates and fold expressions
+    summary: Use variadic template structure and fold expressions to generalize bounded patterns across parameter packs.
+    category_tags:
+      - phase2
+      - generics
+    origin_refs:
+      - S-001:c1203
+      - M-001:gc203
+    prerequisite_course_concept_ids:
+      - KC-P2-CLASS-TEMPLATES-AND-CTAD
+    first_expected_phase_id: 03_phase2-generic-programming
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Keep this in bounded generic-design tasks instead of unconstrained meta-programming.
+  - course_concept_id: KC-P2-CONCEPTS-AND-REQUIRES-CONSTRAINTS
+    label: C++20 concepts and requires-based constraints
+    summary: Use explicit concepts and requires clauses to make generic code contracts visible and explainable.
+    category_tags:
+      - phase2
+      - generics
+    origin_refs:
+      - S-001:c1204
+      - M-001:gc202
+    prerequisite_course_concept_ids:
+      - KC-P2-TYPE-TRAITS-AND-TYPE-MANIPULATION
+      - KC-P2-CLASS-TEMPLATES-AND-CTAD
+    first_expected_phase_id: 03_phase2-generic-programming
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Prefer this explicit constraint model before exposing more obscure template failure strategies.
+  - course_concept_id: KC-P3-STORAGE-DURATION-AND-INITIALIZATION-ORDER
+    label: Storage duration, static initialization, and constinit surface
+    summary: Reason about storage duration and initialization ordering once programs cross file and lifetime boundaries.
+    category_tags:
+      - phase3
+      - build-model
+    origin_refs:
+      - S-001:c1301
+      - M-001:gc301
+    prerequisite_course_concept_ids:
+      - KC-P0-STORAGE-AND-ADDRESS-INTUITION
+      - KC-P0-VALUE-AND-EXPRESSION-REASONING
+    first_expected_phase_id: 04_phase3-translation-units-and-binary-boundaries
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Strong debugging-oriented entry concept for the translation-unit phase.
+  - course_concept_id: KC-P3-LINKAGE-AND-TRANSLATION-UNIT-BOUNDARIES
+    label: Linkage and translation-unit boundaries
+    summary: Explain how names, declarations, and definitions cross file boundaries in a multi-translation-unit program.
+    category_tags:
+      - phase3
+      - build-model
+    origin_refs:
+      - S-001:c1302
+      - M-001:gc302
+    prerequisite_course_concept_ids:
+      - KC-P0-VALUE-AND-EXPRESSION-REASONING
+    first_expected_phase_id: 04_phase3-translation-units-and-binary-boundaries
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Central concept for later build-structure reasoning.
+  - course_concept_id: KC-P3-ONE-DEFINITION-RULE
+    label: One Definition Rule and file-level consistency
+    summary: Reason about whole-program consistency and why mismatched or duplicated definitions break multi-file correctness.
+    category_tags:
+      - phase3
+      - build-model
+    origin_refs:
+      - S-001:c1303
+      - M-001:gc302
+    prerequisite_course_concept_ids:
+      - KC-P3-LINKAGE-AND-TRANSLATION-UNIT-BOUNDARIES
+      - KC-P2-FUNCTION-TEMPLATES-AND-INSTANTIATION
+    first_expected_phase_id: 04_phase3-translation-units-and-binary-boundaries
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Must stay explicit because it drives both correctness and build behavior.
+  - course_concept_id: KC-P3-HEADERS-AND-INCLUDE-GUARDS
+    label: Headers, include guards, and file inclusion model
+    summary: Use header boundaries and inclusion discipline to make file interfaces predictable.
+    category_tags:
+      - phase3
+      - build-model
+    origin_refs:
+      - S-001:c1401
+      - M-001:gc303
+    prerequisite_course_concept_ids:
+      - KC-P3-LINKAGE-AND-TRANSLATION-UNIT-BOUNDARIES
+    first_expected_phase_id: 04_phase3-translation-units-and-binary-boundaries
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Header discipline should be stable before modules or library boundaries appear.
+  - course_concept_id: KC-P3-MODULES-AND-INTERFACE-PARTITIONING
+    label: Modules and interface partitioning
+    summary: Explain how modules alter file-interface structure after the header-based model is already solid.
+    category_tags:
+      - phase3
+      - build-model
+    origin_refs:
+      - S-001:c1402
+      - M-001:gc303
+    prerequisite_course_concept_ids:
+      - KC-P3-HEADERS-AND-INCLUDE-GUARDS
+    first_expected_phase_id: 04_phase3-translation-units-and-binary-boundaries
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Preserve modules explicitly without letting them replace the core header model too early.
+  - course_concept_id: KC-P3-LIBRARIES-AND-LINKING-MODEL
+    label: Static and dynamic libraries plus linking model
+    summary: Treat library boundaries and linking choices as explicit design and artifact decisions, not just build-tool details.
+    category_tags:
+      - phase3
+      - build-model
+    origin_refs:
+      - S-001:c1403
+      - M-001:gc304
+    prerequisite_course_concept_ids:
+      - KC-P3-LINKAGE-AND-TRANSLATION-UNIT-BOUNDARIES
+      - KC-P3-ONE-DEFINITION-RULE
+    first_expected_phase_id: 04_phase3-translation-units-and-binary-boundaries
+    mastery_role: integration-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Integration-level concept that becomes visible only once file and linkage basics are already stable.
+  - course_concept_id: KC-P3-NAME-MANGLING-AND-ABI-SURFACE
+    label: Name mangling and ABI surface
+    summary: Explain why source compatibility and binary compatibility diverge once code crosses a binary interface.
+    category_tags:
+      - phase3
+      - binary-boundaries
+    origin_refs:
+      - S-001:c1404
+      - M-001:gc304
+    prerequisite_course_concept_ids:
+      - KC-P3-LIBRARIES-AND-LINKING-MODEL
+    first_expected_phase_id: 04_phase3-translation-units-and-binary-boundaries
+    mastery_role: integration-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Keep at integration scope so ABI reasoning stays anchored in concrete library boundaries.
+  - course_concept_id: KC-P4-PROJECT-ORGANIZATION-AND-INCLUDE-DISCIPLINE
+    label: Project organization and include discipline
+    summary: Structure files and include relationships so larger codebases remain readable and buildable.
+    category_tags:
+      - phase4
+      - code-quality
+    origin_refs:
+      - S-001:c1501
+      - M-001:gc401
+    prerequisite_course_concept_ids:
+      - KC-P3-HEADERS-AND-INCLUDE-GUARDS
+    first_expected_phase_id: 05_phase4-code-quality-debugging-and-tooling
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Entry concept for engineering-discipline work on larger code artifacts.
+  - course_concept_id: KC-P4-STYLE-CONVENTIONS-FOR-CORE-LANGUAGE-SURFACE
+    label: Style conventions for macros, variables, arithmetic, and functions
+    summary: Use style rules where they encode real readability and maintenance constraints instead of mere taste.
+    category_tags:
+      - phase4
+      - code-quality
+    origin_refs:
+      - S-001:c1502
+      - M-001:gc401
+    prerequisite_course_concept_ids:
+      - KC-P0-VALUE-AND-EXPRESSION-REASONING
+      - KC-P0-PARAMETER-PASSING-AND-ALIASES
+    first_expected_phase_id: 05_phase4-code-quality-debugging-and-tooling
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Style should stay tied to concrete maintenance costs.
+  - course_concept_id: KC-P4-STRUCT-CLASS-AND-INITIALIZATION-CONVENTIONS
+    label: Struct, class, and initialization conventions
+    summary: Apply conventions around class-like types and initialization so code remains predictable at review time.
+    category_tags:
+      - phase4
+      - code-quality
+    origin_refs:
+      - S-001:c1503
+      - M-001:gc401
+    prerequisite_course_concept_ids:
+      - KC-P0-LIFETIME-AND-DETERMINISTIC-CLEANUP
+    first_expected_phase_id: 05_phase4-code-quality-debugging-and-tooling
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Class conventions should remain connected to construction and lifetime behavior.
+  - course_concept_id: KC-P4-DEDUCTION-CONTROL-FLOW-AND-NAMESPACE-DISCIPLINE
+    label: Deduction, control flow, and namespace discipline
+    summary: Keep deduction, control flow, and namespace choices readable and intention-revealing in maintenance-heavy code.
+    category_tags:
+      - phase4
+      - code-quality
+    origin_refs:
+      - S-001:c1601
+      - M-001:gc401
+    prerequisite_course_concept_ids:
+      - KC-P0-VALUE-AND-EXPRESSION-REASONING
+    first_expected_phase_id: 05_phase4-code-quality-debugging-and-tooling
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Preserve this as engineering discipline, not as scattered style trivia.
+  - course_concept_id: KC-P4-MAINTAINABILITY-NAMING-FORMATTING-PORTABILITY
+    label: Maintainability, naming, formatting, and portability
+    summary: Use naming, formatting, and portability judgment to reduce future debugging and maintenance cost.
+    category_tags:
+      - phase4
+      - code-quality
+    origin_refs:
+      - S-001:c1602
+      - M-001:gc401
+    prerequisite_course_concept_ids:
+      - KC-P4-PROJECT-ORGANIZATION-AND-INCLUDE-DISCIPLINE
+    first_expected_phase_id: 05_phase4-code-quality-debugging-and-tooling
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Shared bridge concept between refactor quality and documentation work.
+  - course_concept_id: KC-P4-DOCUMENTATION-AND-COMPREHENSION-SUPPORT
+    label: Documentation and comprehension support
+    summary: Use comments and documentation artifacts to support understanding without masking design flaws.
+    category_tags:
+      - phase4
+      - code-quality
+    origin_refs:
+      - S-001:c1603
+      - M-001:gc402
+    prerequisite_course_concept_ids:
+      - KC-P4-MAINTAINABILITY-NAMING-FORMATTING-PORTABILITY
+    first_expected_phase_id: 05_phase4-code-quality-debugging-and-tooling
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Documentation work should be grounded in real code-review context.
+  - course_concept_id: KC-P4-DEFECT-FRAMING-ASSERTIONS-AND-INTERACTIVE-DEBUGGING
+    label: Defect framing, assertions, and interactive debugging
+    summary: Frame bugs before editing and use assertions and interactive debugging to make assumptions visible.
+    category_tags:
+      - phase4
+      - debugging
+    origin_refs:
+      - S-001:c1701
+      - M-001:gc403
+    prerequisite_course_concept_ids:
+      - KC-P0-COMPILE-RUN-DISCIPLINE
+    first_expected_phase_id: 05_phase4-code-quality-debugging-and-tooling
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Core debugging workflow concept before broader tooling integration.
+  - course_concept_id: KC-P4-SANITIZERS-HARDENING-AND-MEMORY-DEBUG-WORKFLOW
+    label: Sanitizers, hardening, and memory-debug workflow
+    summary: Use runtime analysis and hardening tools to catch memory and correctness defects systematically.
+    category_tags:
+      - phase4
+      - debugging
+    origin_refs:
+      - S-001:c1702
+      - M-001:gc404
+    prerequisite_course_concept_ids:
+      - KC-P0-LIFETIME-AND-DETERMINISTIC-CLEANUP
+      - KC-P3-LINKAGE-AND-TRANSLATION-UNIT-BOUNDARIES
+    first_expected_phase_id: 05_phase4-code-quality-debugging-and-tooling
+    mastery_role: integration-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Integration-level tooling concept that depends on stable project structure and lifetime reasoning.
+  - course_concept_id: KC-P4-WARNINGS-STATIC-ANALYSIS-TESTING-AND-QUALITY-GATES
+    label: Warnings, static analysis, testing, and code quality metrics
+    summary: Treat warnings, tests, and analysis tools as engineering gates instead of optional polish.
+    category_tags:
+      - phase4
+      - debugging
+    origin_refs:
+      - S-001:c1703
+      - M-001:gc404
+    prerequisite_course_concept_ids:
+      - KC-P4-DEFECT-FRAMING-ASSERTIONS-AND-INTERACTIVE-DEBUGGING
+    first_expected_phase_id: 05_phase4-code-quality-debugging-and-tooling
+    mastery_role: integration-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Preserve as part of the whole engineering-process integration surface.
+  - course_concept_id: KC-P4-CMAKE-AND-CTEST-WORKFLOW
+    label: CMake and ctest workflow
+    summary: Use repeatable build and test orchestration so local quality checks become part of the normal workflow.
+    category_tags:
+      - phase4
+      - tooling
+    origin_refs:
+      - S-001:c1801
+      - M-001:gc404
+    prerequisite_course_concept_ids:
+      - KC-P3-LINKAGE-AND-TRANSLATION-UNIT-BOUNDARIES
+      - KC-P3-HEADERS-AND-INCLUDE-GUARDS
+    first_expected_phase_id: 05_phase4-code-quality-debugging-and-tooling
+    mastery_role: integration-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Toolchain workflow concept for integration gates, not a detached configuration exercise.
+  - course_concept_id: KC-P4-DOCUMENTATION-TOOLING-AND-ONLINE-WORKFLOWS
+    label: Documentation tooling and online workflow support
+    summary: Use documentation tooling and hosted workflows where they strengthen maintainability and reviewability.
+    category_tags:
+      - phase4
+      - tooling
+    origin_refs:
+      - S-001:c1802
+      - M-001:gc404
+    prerequisite_course_concept_ids:
+      - KC-P4-DOCUMENTATION-AND-COMPREHENSION-SUPPORT
+    first_expected_phase_id: 05_phase4-code-quality-debugging-and-tooling
+    mastery_role: integration-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Keep this tied to concrete documentation or review pipelines.
+  - course_concept_id: KC-P4-OFFLINE-TOOLING-AND-LOCAL-WORKFLOWS
+    label: Offline tooling and workflow support
+    summary: Build stable local workflows that support repeatable development even without cloud or hosted tooling.
+    category_tags:
+      - phase4
+      - tooling
+    origin_refs:
+      - S-001:c1803
+      - M-001:gc404
+    prerequisite_course_concept_ids:
+      - KC-P4-CMAKE-AND-CTEST-WORKFLOW
+    first_expected_phase_id: 05_phase4-code-quality-debugging-and-tooling
+    mastery_role: integration-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Explicitly preserve the offline workflow surface instead of assuming hosted tools are always available.
+  - course_concept_id: KC-P5-STRINGS-FILESYSTEM-AND-TEXT-UTILITIES
+    label: Strings, filesystem, and text utility surface
+    summary: Use practical standard-library utilities for text, paths, and simple command-line style tasks.
+    category_tags:
+      - phase5
+      - stdlib
+    origin_refs:
+      - S-001:c1901
+      - M-001:gc501
+    prerequisite_course_concept_ids:
+      - KC-P0-PARAMETER-PASSING-AND-ALIASES
+    first_expected_phase_id: 06_phase5-standard-library-data-and-algorithms
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Practical entry point into a constrained standard-library surface.
+  - course_concept_id: KC-P5-UTILITY-TYPES-AND-CALLABLE-WRAPPERS
+    label: Tuples, optionals, variants, and callable utility types
+    summary: Model richer data and callable surfaces with standard utility abstractions when they genuinely clarify the design.
+    category_tags:
+      - phase5
+      - stdlib
+    origin_refs:
+      - S-001:c1902
+      - M-001:gc502
+    prerequisite_course_concept_ids:
+      - KC-P0-PARAMETER-PASSING-AND-ALIASES
+      - KC-P0-LIFETIME-AND-DETERMINISTIC-CLEANUP
+    first_expected_phase_id: 06_phase5-standard-library-data-and-algorithms
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Keep this design-oriented and bounded before broader container work.
+  - course_concept_id: KC-P5-CHRONO-RANDOM-AND-NUMERIC-UTILITIES
+    label: Chrono, random, and numeric support utilities
+    summary: Use time, randomness, and numeric utility support where it makes small tools and measurements more expressive.
+    category_tags:
+      - phase5
+      - stdlib
+    origin_refs:
+      - S-001:c1903
+      - M-001:gc501
+    prerequisite_course_concept_ids:
+      - KC-P1-NUM-SIGNEDNESS-RANGE
+      - KC-P1-NUM-FLOAT-REPRESENTATION
+    first_expected_phase_id: 06_phase5-standard-library-data-and-algorithms
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Treat these utilities as bounded helpers, not as a grab bag of unrelated APIs.
+  - course_concept_id: KC-P5-SEQUENCE-CONTAINERS-AND-ADAPTORS
+    label: Sequence containers and adaptors
+    summary: Choose sequence-style data structures based on usage patterns and cost models instead of habit.
+    category_tags:
+      - phase5
+      - stdlib
+    origin_refs:
+      - S-001:c2001
+      - M-001:gc503
+    prerequisite_course_concept_ids:
+      - KC-P5-UTILITY-TYPES-AND-CALLABLE-WRAPPERS
+    first_expected_phase_id: 06_phase5-standard-library-data-and-algorithms
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Core data-structure choice concept for the phase.
+  - course_concept_id: KC-P5-ASSOCIATIVE-CONTAINERS-AND-HASHING-TRADEOFFS
+    label: Associative containers and hashing tradeoffs
+    summary: Compare ordered and hashed lookup structures based on access patterns, invariants, and cost tradeoffs.
+    category_tags:
+      - phase5
+      - stdlib
+    origin_refs:
+      - S-001:c2002
+      - M-001:gc503
+    prerequisite_course_concept_ids:
+      - KC-P5-SEQUENCE-CONTAINERS-AND-ADAPTORS
+    first_expected_phase_id: 06_phase5-standard-library-data-and-algorithms
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Preserve explicit container-tradeoff language before algorithm integration.
+  - course_concept_id: KC-P5-ITERATORS-RANGES-AND-STANDARD-ALGORITHMS
+    label: Iterators, ranges, and standard algorithms
+    summary: Use iterator and algorithm interfaces to separate traversal intent from container details.
+    category_tags:
+      - phase5
+      - stdlib
+    origin_refs:
+      - S-001:c2003
+      - M-001:gc504
+    prerequisite_course_concept_ids:
+      - KC-P2-FUNCTION-TEMPLATES-AND-INSTANTIATION
+      - KC-P5-SEQUENCE-CONTAINERS-AND-ADAPTORS
+    first_expected_phase_id: 06_phase5-standard-library-data-and-algorithms
+    mastery_role: integration-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Integration-level abstraction concept that depends on earlier container and generic reasoning.
+  - course_concept_id: KC-P6-ADVANCED-OBJECT-LIFETIME-AND-REFERENCE-SEMANTICS
+    label: Advanced object model, lifetime, and reference semantics
+    summary: Refine earlier lifetime and reference models once more complex object semantics enter the picture.
+    category_tags:
+      - phase6
+      - semantics
+    origin_refs:
+      - S-001:c2101
+      - M-001:gc601
+    prerequisite_course_concept_ids:
+      - KC-P0-LIFETIME-AND-DETERMINISTIC-CLEANUP
+      - KC-P3-STORAGE-DURATION-AND-INITIALIZATION-ORDER
+    first_expected_phase_id: 07_phase6-advanced-semantics-ownership-and-concurrency
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Entry concept for the advanced semantics phase.
+  - course_concept_id: KC-P6-ALLOCATION-MOVE-SEMANTICS-AND-OWNERSHIP-COSTS
+    label: Allocation mechanics, move semantics, and object optimization
+    summary: Reason about allocation and move behavior as explicit ownership and performance costs.
+    category_tags:
+      - phase6
+      - semantics
+    origin_refs:
+      - S-001:c2102
+      - M-001:gc601
+    prerequisite_course_concept_ids:
+      - KC-P1-COPY-CONTROL-AND-SPECIAL-MEMBERS
+      - KC-P6-ADVANCED-OBJECT-LIFETIME-AND-REFERENCE-SEMANTICS
+    first_expected_phase_id: 07_phase6-advanced-semantics-ownership-and-concurrency
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Makes ownership cost and move behavior explicit before smart-pointer or concurrency work.
+  - course_concept_id: KC-P6-EXCEPTIONS-OVERLOAD-EDGE-CASES-AND-UNDEFINED-BEHAVIOR
+    label: Exceptions, overload edge cases, and undefined behavior
+    summary: Treat UB and exception-heavy edge cases as design and robustness concerns, not just debugging surprises.
+    category_tags:
+      - phase6
+      - robustness
+    origin_refs:
+      - S-001:c2103
+      - M-001:gc602
+    prerequisite_course_concept_ids:
+      - KC-P6-ADVANCED-OBJECT-LIFETIME-AND-REFERENCE-SEMANTICS
+      - KC-P6-ALLOCATION-MOVE-SEMANTICS-AND-OWNERSHIP-COSTS
+    first_expected_phase_id: 07_phase6-advanced-semantics-ownership-and-concurrency
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Correctness gate before ownership-control and concurrency integration.
+  - course_concept_id: KC-P6-SMART-POINTERS-AND-ALLOCATOR-AWARE-OWNERSHIP
+    label: Smart pointers and allocator-aware ownership control
+    summary: Use smart pointers and allocator-aware ownership tools without losing explicit ownership reasoning.
+    category_tags:
+      - phase6
+      - ownership
+    origin_refs:
+      - S-001:c2201
+      - M-001:gc603
+    prerequisite_course_concept_ids:
+      - KC-P6-ALLOCATION-MOVE-SEMANTICS-AND-OWNERSHIP-COSTS
+    first_expected_phase_id: 07_phase6-advanced-semantics-ownership-and-concurrency
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Ownership-control gate between advanced semantics and concurrency.
+  - course_concept_id: KC-P6-ATOMICS-MEMORY-ORDERING-AND-MULTITHREADING-SURFACE
+    label: Atomics, memory ordering, and multithreading surface
+    summary: Preserve concurrent memory-interaction concepts explicitly so they are introduced only in a bounded integration setting.
+    category_tags:
+      - phase6
+      - concurrency
+    origin_refs:
+      - S-001:c2202
+      - M-001:gc604
+    prerequisite_course_concept_ids:
+      - KC-P4-SANITIZERS-HARDENING-AND-MEMORY-DEBUG-WORKFLOW
+      - KC-P6-EXCEPTIONS-OVERLOAD-EDGE-CASES-AND-UNDEFINED-BEHAVIOR
+    first_expected_phase_id: 07_phase6-advanced-semantics-ownership-and-concurrency
+    mastery_role: integration-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Keep concurrency introduction explicit and tightly bounded.
+  - course_concept_id: KC-P7-COST-MODEL-COMPLEXITY-AND-MEASUREMENT
+    label: Cost model, complexity, and performance measurement
+    summary: Start optimization work from measurement and cost models instead of folklore or intuition alone.
+    category_tags:
+      - phase7
+      - performance
+    origin_refs:
+      - S-001:c2301
+      - M-001:gc701
+    prerequisite_course_concept_ids:
+      - KC-P5-CHRONO-RANDOM-AND-NUMERIC-UTILITIES
+      - KC-P5-ITERATORS-RANGES-AND-STANDARD-ALGORITHMS
+    first_expected_phase_id: 08_phase7-performance-and-optimization
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Mandatory foundation for any later optimization work in the course.
+  - course_concept_id: KC-P7-HARDWARE-AWARE-PERFORMANCE-EFFECTS
+    label: Hardware-aware performance effects
+    summary: Connect branch behavior, cache effects, and other hardware realities to observed runtime cost.
+    category_tags:
+      - phase7
+      - performance
+    origin_refs:
+      - S-001:c2302
+      - M-001:gc701
+    prerequisite_course_concept_ids:
+      - KC-P7-COST-MODEL-COMPLEXITY-AND-MEASUREMENT
+    first_expected_phase_id: 08_phase7-performance-and-optimization
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Hardware reasoning should stay subordinate to measurement evidence.
+  - course_concept_id: KC-P7-CACHE-LOCALITY-AND-DATA-LAYOUT
+    label: Cache locality and data-layout choices
+    summary: Evaluate data layout and locality decisions based on measured memory traffic and access patterns.
+    category_tags:
+      - phase7
+      - performance
+    origin_refs:
+      - S-001:c2401
+      - M-001:gc702
+    prerequisite_course_concept_ids:
+      - KC-P7-HARDWARE-AWARE-PERFORMANCE-EFFECTS
+      - KC-P5-SEQUENCE-CONTAINERS-AND-ADAPTORS
+    first_expected_phase_id: 08_phase7-performance-and-optimization
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Strong measurement-backed systems concept for the phase.
+  - course_concept_id: KC-P7-VECTORIZATION-AND-LOW-LEVEL-OPTIMIZATION-SURFACE
+    label: Vectorization and low-level optimization surface
+    summary: Keep low-level optimization techniques explicit so they appear only after measurement and locality reasoning are already stable.
+    category_tags:
+      - phase7
+      - performance
+    origin_refs:
+      - S-001:c2402
+      - M-001:gc703
+    prerequisite_course_concept_ids:
+      - KC-P7-CACHE-LOCALITY-AND-DATA-LAYOUT
+    first_expected_phase_id: 08_phase7-performance-and-optimization
+    mastery_role: integration-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Integration-level optimization topic; do not let it become trick-driven earlier in the phase.
+  - course_concept_id: KC-P7-PROFILING-AND-OPTIMIZATION-WORKFLOW
+    label: Profiling and optimization workflow
+    summary: Use profiling to drive optimization decisions and to justify whether a tuning effort is worthwhile.
+    category_tags:
+      - phase7
+      - performance
+    origin_refs:
+      - S-001:c2501
+      - M-001:gc703
+    prerequisite_course_concept_ids:
+      - KC-P7-COST-MODEL-COMPLEXITY-AND-MEASUREMENT
+    first_expected_phase_id: 08_phase7-performance-and-optimization
+    mastery_role: integration-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Workflow anchor for late-phase optimization tasks.
+  - course_concept_id: KC-P7-PARALLEL-AND-THROUGHPUT-ORIENTED-OPTIMIZATION
+    label: Parallel and throughput-oriented optimization
+    summary: Treat throughput-oriented optimization as a measured design decision with concurrency and systems costs.
+    category_tags:
+      - phase7
+      - performance
+    origin_refs:
+      - S-001:c2502
+      - M-001:gc703
+    prerequisite_course_concept_ids:
+      - KC-P6-ATOMICS-MEMORY-ORDERING-AND-MULTITHREADING-SURFACE
+      - KC-P7-VECTORIZATION-AND-LOW-LEVEL-OPTIMIZATION-SURFACE
+    first_expected_phase_id: 08_phase7-performance-and-optimization
+    mastery_role: integration-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Preserve the concurrency-performance overlap explicitly so it cannot drift in early.
+  - course_concept_id: KC-P8-DECOMPOSITION-AND-INTERFACE-BOUNDARIES
+    label: Responsibility-driven decomposition and interfaces
+    summary: Split systems into components with explicit interface boundaries and responsibility ownership.
+    category_tags:
+      - phase8
+      - architecture
+    origin_refs:
+      - S-001:c2601
+      - M-001:gc801
+    prerequisite_course_concept_ids:
+      - KC-P0-LIFETIME-AND-DETERMINISTIC-CLEANUP
+      - KC-P4-PROJECT-ORGANIZATION-AND-INCLUDE-DISCIPLINE
+    first_expected_phase_id: 09_phase8-software-design-and-architecture
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Entry concept for later architectural critique work.
+  - course_concept_id: KC-P8-COUPLING-COHESION-AND-ARCHITECTURAL-TRADEOFFS
+    label: Coupling, cohesion, and architectural tradeoffs
+    summary: Use coupling and cohesion language to justify architectural choices and refactor directions.
+    category_tags:
+      - phase8
+      - architecture
+    origin_refs:
+      - S-001:c2602
+      - M-001:gc802
+    prerequisite_course_concept_ids:
+      - KC-P8-DECOMPOSITION-AND-INTERFACE-BOUNDARIES
+    first_expected_phase_id: 09_phase8-software-design-and-architecture
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Architecture tradeoff vocabulary should stay tied to concrete artifacts.
+  - course_concept_id: KC-P8-DESIGN-PATTERNS-AND-REUSABLE-DESIGN-MOVES
+    label: Design patterns and reusable design moves
+    summary: Use patterns as context-sensitive design moves rather than as recitation targets.
+    category_tags:
+      - phase8
+      - architecture
+    origin_refs:
+      - S-001:c2701
+      - M-001:gc802
+    prerequisite_course_concept_ids:
+      - KC-P8-COUPLING-COHESION-AND-ARCHITECTURAL-TRADEOFFS
+    first_expected_phase_id: 09_phase8-software-design-and-architecture
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Preserve pattern work as tradeoff analysis, not taxonomy memorization.
+  - course_concept_id: KC-P8-ANTI-PATTERNS-AND-ARCHITECTURAL-EVOLUTION
+    label: Anti-patterns and architectural evolution
+    summary: Recognize architectural decay and reason about how systems should evolve over time instead of only cleaning local code.
+    category_tags:
+      - phase8
+      - architecture
+    origin_refs:
+      - S-001:c2702
+      - M-001:gc803
+    prerequisite_course_concept_ids:
+      - KC-P8-DESIGN-PATTERNS-AND-REUSABLE-DESIGN-MOVES
+    first_expected_phase_id: 09_phase8-software-design-and-architecture
+    mastery_role: integration-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Integration-level architecture concept that should appear with real system evolution context.
+  - course_concept_id: KC-P9-BINARY-SIZE-CAUSES-AND-INSPECTION
+    label: Binary size causes and inspection workflow
+    summary: Inspect artifacts to identify why binaries grow before attempting any reduction work.
+    category_tags:
+      - phase9
+      - artifact-engineering
+    origin_refs:
+      - S-001:c2801
+      - M-001:gc901
+    prerequisite_course_concept_ids:
+      - KC-P3-LIBRARIES-AND-LINKING-MODEL
+      - KC-P7-PROFILING-AND-OPTIMIZATION-WORKFLOW
+    first_expected_phase_id: 10_phase9-binary-and-build-engineering
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Artifact-size work starts from inspection, not random flag tweaking.
+  - course_concept_id: KC-P9-BINARY-SIZE-REDUCTION-TRADEOFFS
+    label: Binary size reduction tradeoffs
+    summary: Weigh size-reduction options against debugging cost, maintainability, and other engineering constraints.
+    category_tags:
+      - phase9
+      - artifact-engineering
+    origin_refs:
+      - S-001:c2802
+      - M-001:gc901
+    prerequisite_course_concept_ids:
+      - KC-P9-BINARY-SIZE-CAUSES-AND-INSPECTION
+    first_expected_phase_id: 10_phase9-binary-and-build-engineering
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Reduction should stay tied to measured artifact causes and costs.
+  - course_concept_id: KC-P9-BUILD-TIME-CAUSES-AND-INSPECTION
+    label: Build-time causes and inspection
+    summary: Inspect build structure to explain compile and link latency before changing organization or tooling.
+    category_tags:
+      - phase9
+      - artifact-engineering
+    origin_refs:
+      - S-001:c2901
+      - M-001:gc902
+    prerequisite_course_concept_ids:
+      - KC-P3-LINKAGE-AND-TRANSLATION-UNIT-BOUNDARIES
+      - KC-P2-FUNCTION-TEMPLATES-AND-INSTANTIATION
+    first_expected_phase_id: 10_phase9-binary-and-build-engineering
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Build-time engineering needs explicit causality before optimization.
+  - course_concept_id: KC-P9-BUILD-TIME-REDUCTION-TRADEOFFS
+    label: Build-time reduction strategies and tradeoffs
+    summary: Reduce build latency with explicit awareness of code-organization and maintenance tradeoffs.
+    category_tags:
+      - phase9
+      - artifact-engineering
+    origin_refs:
+      - S-001:c2902
+      - M-001:gc902
+    prerequisite_course_concept_ids:
+      - KC-P9-BUILD-TIME-CAUSES-AND-INSPECTION
+    first_expected_phase_id: 10_phase9-binary-and-build-engineering
+    mastery_role: practice-required
+    requires_reading_coverage: true
+    requires_task_coverage: true
+    requires_readiness_coverage: true
+    requires_evaluation_evidence: true
+    notes: Late-course artifact engineering concept that should stay evidence-based.

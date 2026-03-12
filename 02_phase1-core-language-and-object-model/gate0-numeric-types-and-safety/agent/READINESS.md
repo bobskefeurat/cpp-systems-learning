@@ -11,9 +11,9 @@ It only answers one question:
 ## Core Concepts Covered
 The readiness check must cover the core concepts for `Gate 0: Numeric Types and Safety` defined in [../learner/PREP.md](../learner/PREP.md):
 
-1. Signed and unsigned behavior
-2. Narrowing and arithmetic conversions
-3. Floating-point precision and comparison
+1. Signedness, ranges, and safe defaults
+2. Promotions, conversions, and brace initialization
+3. Floating-point precision and comparison strategy
 
 ## Standard Question Set
 `Gate 0: Numeric Types and Safety` uses 3 readiness questions because the task depends on 3 core concepts.
@@ -26,9 +26,9 @@ Explain, in your own words:
 
 ### Question 2
 Explain, in your own words:
-- what narrowing means in this phase
+- why `boxCount * boxWeight` produces a floating-point result
+- why a small integer arithmetic expression should not be assumed to stay in the small type
 - why brace initialization is a safer default in this gate
-- why `itemCount * itemWeight` produces a `double`
 
 ### Question 3
 Explain, in your own words:
@@ -65,22 +65,22 @@ Status: Not ready yet.
 Q1: Sufficient / Not sufficient.
 - Name exactly what is missing about signed versus unsigned reasoning or unsigned underflow behavior.
 - If needed, point to:
-  - `R-001` step 1
-  - `R-001` step 2
+  - `R-001` Gate 0 step 1
+  - `R-001` Gate 0 step 2
 
 Q2: Sufficient / Not sufficient.
-- Name exactly what is missing about narrowing, brace initialization, or mixed arithmetic conversions.
+- Name exactly what is missing about promotions, brace initialization, or mixed arithmetic conversions.
 - If needed, point to:
-  - `R-001` step 4
-  - `R-001` step 5
-  - `R-003` step 1 only if exact conversion wording is still unclear
-  - `R-003` step 2 only if implicit-conversion wording is still unclear
+  - `R-001` Gate 0 step 4
+  - `R-001` Gate 0 step 5
+  - `R-003` Gate 0 step 1 only if exact conversion wording is still unclear
+  - `R-003` Gate 0 step 2 only if implicit-conversion wording is still unclear
 
 Q3: Sufficient / Not sufficient.
 - Name exactly what is missing about floating-point precision or comparison.
 - If needed, point to:
-  - `R-001` step 3
-  - `R-001` step 6
+  - `R-001` Gate 0 step 3
+  - `R-001` Gate 0 step 6
 
 Then:
 - ask the learner to answer again in their own words

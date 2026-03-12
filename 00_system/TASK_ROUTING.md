@@ -43,8 +43,9 @@ Skip `STATUS.md` when the task is local and self-contained, such as editing one 
 | --- | --- | --- | --- |
 | General repo orientation | `README.md`, `00_system/README.md` | `00_system/STATUS.md` | deep `foundation/` |
 | Current program scope or roadmap | `00_system/STATUS.md`, relevant phase `README.md` | `00_system/authoring/COURSE_PLAN.md` | gate internals |
-| Create or revise a phase | `00_system/authoring/README.md`, `00_system/authoring/GATE_STRUCTURE.md`, relevant phase `README.md` | `00_system/authoring/templates/`, `00_system/authoring/COURSE_PLAN.md` | `foundation/` |
-| Create or revise a gate | relevant phase `README.md`, relevant gate `README.md`, `00_system/authoring/GATE_STRUCTURE.md` | `00_system/authoring/templates/`, `00_system/authoring/GATE_VALIDATION.md` | unrelated phases |
+| Create or revise a phase | `00_system/authoring/README.md`, `00_system/authoring/PHASE_GENERATION.md`, relevant phase `README.md` | `00_system/authoring/phase_blueprints/README.md`, relevant phase blueprint, `00_system/authoring/course_concepts/README.md`, `00_system/authoring/COURSE_PLAN.md`, `00_system/authoring/TASK_DESIGN.md`, `00_system/authoring/templates/` | `foundation/` |
+| Validate a phase | relevant phase `README.md`, relevant phase blueprint, `00_system/authoring/PHASE_VALIDATION.md` | generated gate files, `00_system/authoring/GATE_VALIDATION.md`, `00_system/authoring/validate-structure.ps1` | broad source integration |
+| Create or revise a gate | relevant phase `README.md`, relevant gate `README.md`, `00_system/authoring/GATE_STRUCTURE.md` | relevant phase blueprint, `00_system/authoring/TASK_DESIGN.md`, `00_system/authoring/templates/`, `00_system/authoring/GATE_VALIDATION.md` | unrelated phases |
 | Validate a gate | relevant gate files, `00_system/authoring/GATE_VALIDATION.md` | `00_system/authoring/validate-structure.ps1` | broad course planning docs |
 | Change learner-facing runtime behavior | `00_system/foundation/README.md`, relevant foundation files, affected phase or gate files | `00_system/foundation/AI_INTERACTION_PROTOCOLS.md`, `RUBRIC.md` | `authoring/` unless structure changes too |
 | Resource curation or reading-policy work | `00_system/resources/RESOURCES.md`, `00_system/resources/RESOURCE_MAP.md` | specific `resource_cards/`, relevant gate `PREP.md` files | `research/` unless source review is needed |

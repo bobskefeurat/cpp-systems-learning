@@ -1,0 +1,67 @@
+schema_version: v1
+record_kind: phase_blueprint
+blueprint_id: PB-006
+phase_id: 06_phase5-standard-library-data-and-algorithms
+title: Phase 5 Standard Library, Data, and Algorithms
+status: bootstrap
+source_mapping_refs:
+  - M-001:phase-06
+  - M-001:gc501
+  - M-001:gc502
+  - M-001:gc503
+  - M-001:gc504
+gate_cluster_plan:
+  - gate_cluster_id: gc501
+    title: Practical Text, File, and Utility Work
+    gate_kind: micro
+    planned_gate_folder: gate0-practical-text-file-and-utility-work
+  - gate_cluster_id: gc502
+    title: Modeling with Utility Types
+    gate_kind: micro
+    planned_gate_folder: gate1-modeling-with-utility-types
+  - gate_cluster_id: gc503
+    title: Container Choice and Data-Structure Tradeoffs
+    gate_kind: micro
+    planned_gate_folder: gate2-container-choice-and-data-structure-tradeoffs
+  - gate_cluster_id: gc504
+    title: Iterators, Algorithms, and STL Integration
+    gate_kind: integration
+    planned_gate_folder: gate3-iterators-algorithms-and-stl-integration
+concept_assignments:
+  - course_concept_id: KC-P5-STRINGS-FILESYSTEM-AND-TEXT-UTILITIES
+    assignment_status: primary-gate
+    gate_cluster_id: gc501
+    reading_resource_ids:
+      - R-003
+    rationale: Practical utilities are the safest entry point into the standard-library phase.
+  - course_concept_id: KC-P5-CHRONO-RANDOM-AND-NUMERIC-UTILITIES
+    assignment_status: primary-gate
+    gate_cluster_id: gc501
+    reading_resource_ids:
+      - R-003
+    rationale: Time and numeric utility work fit the same bounded, observable gate.
+  - course_concept_id: KC-P5-UTILITY-TYPES-AND-CALLABLE-WRAPPERS
+    assignment_status: primary-gate
+    gate_cluster_id: gc502
+    reading_resource_ids:
+      - R-003
+    rationale: Utility-type modeling is a distinct representation gate before container tradeoffs.
+  - course_concept_id: KC-P5-SEQUENCE-CONTAINERS-AND-ADAPTORS
+    assignment_status: primary-gate
+    gate_cluster_id: gc503
+    reading_resource_ids:
+      - R-003
+    rationale: Sequence containers belong in the core data-structure tradeoff gate.
+  - course_concept_id: KC-P5-ASSOCIATIVE-CONTAINERS-AND-HASHING-TRADEOFFS
+    assignment_status: primary-gate
+    gate_cluster_id: gc503
+    reading_resource_ids:
+      - R-003
+    rationale: Associative lookup tradeoffs are the second half of the container-choice gate.
+  - course_concept_id: KC-P5-ITERATORS-RANGES-AND-STANDARD-ALGORITHMS
+    assignment_status: integration-gate
+    gate_cluster_id: gc504
+    reading_resource_ids:
+      - R-003
+    rationale: Algorithm integration should appear only once the data-representation decisions are already visible.
+notes: Bootstrap phase blueprint for the standard-library phase. Curated learner-facing packets still need to be authored before this phase can move beyond planning.

@@ -1,0 +1,50 @@
+schema_version: v1
+record_kind: phase_blueprint
+blueprint_id: PB-010
+phase_id: 10_phase9-binary-and-build-engineering
+title: Phase 9 Binary and Build Engineering
+status: bootstrap
+source_mapping_refs:
+  - M-001:phase-10
+  - M-001:gc901
+  - M-001:gc902
+  - M-001:gc903
+gate_cluster_plan:
+  - gate_cluster_id: gc901
+    title: Binary Size Analysis and Reduction
+    gate_kind: micro
+    planned_gate_folder: gate0-binary-size-analysis-and-reduction
+  - gate_cluster_id: gc902
+    title: Build Time Analysis and Reduction
+    gate_kind: micro
+    planned_gate_folder: gate1-build-time-analysis-and-reduction
+  - gate_cluster_id: gc903
+    title: Artifact Engineering Integration
+    gate_kind: integration
+    planned_gate_folder: gate2-artifact-engineering-integration
+concept_assignments:
+  - course_concept_id: KC-P9-BINARY-SIZE-CAUSES-AND-INSPECTION
+    assignment_status: primary-gate
+    gate_cluster_id: gc901
+    reading_resource_ids:
+      - R-003
+    rationale: Artifact-size work should start from inspection before reduction.
+  - course_concept_id: KC-P9-BINARY-SIZE-REDUCTION-TRADEOFFS
+    assignment_status: primary-gate
+    gate_cluster_id: gc901
+    reading_resource_ids:
+      - R-003
+    rationale: Size reduction tradeoffs belong directly with binary inspection and attribution.
+  - course_concept_id: KC-P9-BUILD-TIME-CAUSES-AND-INSPECTION
+    assignment_status: primary-gate
+    gate_cluster_id: gc902
+    reading_resource_ids:
+      - R-003
+    rationale: Build-time engineering should begin with structural cause analysis.
+  - course_concept_id: KC-P9-BUILD-TIME-REDUCTION-TRADEOFFS
+    assignment_status: primary-gate
+    gate_cluster_id: gc902
+    reading_resource_ids:
+      - R-003
+    rationale: Reduction strategies belong in the same gate as build-time attribution.
+notes: Bootstrap phase blueprint for the final artifact-engineering phase. The integration gate combines earlier artifact concepts rather than adding unique concept ownership in the current model.

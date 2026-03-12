@@ -30,11 +30,20 @@ Run these checks in order.
    - Confirm that pass / not pass logic lives in `agent/SPEC.md`.
    - Confirm that the evaluation checklist in `agent/EVALUATION.md` actually checks the pass requirements from `agent/SPEC.md`.
 
-3. Hidden prerequisite check
+3. Task-design check
+   - Confirm that the task is a real bounded exercise or problem, not a fill-in-the-blank answer key.
+   - Confirm that the learner must make at least one meaningful decision, such as:
+     - choosing types, structure, or decomposition inside a bounded surface
+     - debugging or repairing a broken artifact
+     - explaining and justifying a tradeoff
+   - Confirm that the task does not hand over the exact declaration list, final expression list, or complete code path unless that exact syntax is itself the concept being tested.
+   - Confirm that any fixed requirements are clearly separated from allowed freedom.
+
+4. Hidden prerequisite check
    - Confirm that `learner/PREP.md` and `agent/READINESS.md` prepare the learner for the concepts the task actually depends on.
    - If the task requires a concept, mechanism, or vocabulary that is not prepared or checked before task start, the gate is not ready.
 
-4. Evidence-source check
+5. Evidence-source check
    - For each pass requirement in `agent/SPEC.md`, identify how it can be verified:
      - code
      - compile command
@@ -45,13 +54,13 @@ Run these checks in order.
    - If a pass requirement cannot be verified from any reasonable evidence source, the gate must be revised.
    - Matching runtime output alone is not enough when the gate also requires a specific mechanism, code shape, invariant, or explanation.
 
-5. Happy-path simulation
+6. Happy-path simulation
    - Create a temporary correct solution.
    - Compile it with the gate's baseline command and required warnings.
    - Run the required checks or sample runs from `learner/TASK.md`.
    - Confirm that the gate can actually be passed as written.
 
-6. Not-pass simulation
+7. Not-pass simulation
    - Create at least one temporary plausible failure case.
    - Prefer a failure that still looks superficially correct, such as:
      - correct output with wrong mechanism
@@ -59,7 +68,7 @@ Run these checks in order.
      - correct behavior on one test but not the required set
    - Confirm that `agent/SPEC.md` and `agent/EVALUATION.md` would still produce `not pass` for that case.
 
-7. Residual-risk note
+8. Residual-risk note
    - If the gate still depends on code inspection or explanation for a concept that is not directly visible in output, record that as residual risk unless it is a blocking problem.
    - Residual risk is acceptable when:
      - the requirement is explicitly documented
@@ -70,11 +79,12 @@ Run these checks in order.
 During validation, the reviewer should be able to answer all of these:
 
 1. Can a learner see what the task is and where to start?
-2. Can a learner become ready without hidden prerequisites?
-3. Can the agent tell what evidence matters for `pass`?
-4. Can a correct solution pass cleanly under the stated compile/run rules?
-5. Can a superficially plausible but incorrect solution be caught reliably?
-6. Does the remediation path target the smallest missing piece instead of giving vague repetition advice?
+2. Is the task a real exercise/problem instead of a transcription task?
+3. Can a learner become ready without hidden prerequisites?
+4. Can the agent tell what evidence matters for `pass`?
+5. Can a correct solution pass cleanly under the stated compile/run rules?
+6. Can a superficially plausible but incorrect solution be caught reliably?
+7. Does the remediation path target the smallest missing piece instead of giving vague repetition advice?
 
 ## Special Rules for Integration Gates (v0)
 For a phase-ending integration gate, also confirm all of the following:
@@ -90,6 +100,7 @@ For a phase-ending integration gate, also confirm all of the following:
 When reporting a validation run, include at minimum:
 - structure: pass / fail
 - document coherence: pass / fail
+- task design: pass / fail
 - hidden prerequisites: pass / fail
 - evidence-source check: pass / fail
 - happy-path simulation: pass / fail
@@ -101,3 +112,4 @@ When reporting a validation run, include at minimum:
 - Temporary simulation files should be removed after validation.
 - Validation is part of gate generation, not a separate optional polish step.
 - If the gate changes materially, rerun the relevant validation steps instead of assuming earlier results still hold.
+- Gate validation does not replace `PHASE_VALIDATION.md` when a whole phase is being generated or revised.

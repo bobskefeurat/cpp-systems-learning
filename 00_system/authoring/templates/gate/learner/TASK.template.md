@@ -1,7 +1,7 @@
 # Task: {{Task Title}}
 
 ## Goal
-Write a {{small / focused}} C++ program that:
+Solve a {{small / focused}} C++ problem that:
 - {{goal 1}}
 - {{goal 2}}
 - {{goal 3}}
@@ -15,25 +15,30 @@ Complete these first:
 - the readiness dialogue with the agent
 
 ## Task
-Write a program in `{{workspace path}}` that {{task prompt}}.
+Work in `{{workspace path}}` and {{task prompt}}.
+
+Use these facts, conditions, or starting observations:
+- {{fact / condition 1}}
+- {{fact / condition 2}}
+- {{fact / condition 3}}
+- {{fact / condition 4}}
+
+Your finished program or artifact should make these required observations visible:
 
 ```text
-{{required output shape}}
+{{required observations}}
 ```
 
-Example:
+## Fixed Requirements
+- {{fixed requirement 1}}
+- {{fixed requirement 2}}
+- {{fixed requirement 3}}
+- {{fixed requirement 4}}
 
-Input:
-
-```text
-{{example input}}
-```
-
-Output:
-
-```text
-{{example output}}
-```
+## Allowed Freedom
+- {{allowed freedom 1}}
+- {{allowed freedom 2}}
+- {{allowed freedom 3}}
 
 ## Constraints
 - Use {{allowed file scope}}
@@ -58,31 +63,22 @@ Run these commands from inside `workspace/`:
 ## Self-Check
 Use these as minimum checks before you ask for evaluation:
 
-### Test 1
-Input:
+### Check 1: Required Observations
+Sample successful output or artifact observations:
 
 ```text
-{{input}}
+{{required observations}}
 ```
 
-Expected output:
+### Check 2: Required Mechanisms
+Confirm all of the following in your code or artifact:
+- {{mechanism check 1}}
+- {{mechanism check 2}}
+- {{mechanism check 3}}
+- {{mechanism check 4}}
 
-```text
-{{expected output}}
-```
-
-### Test 2
-Input:
-
-```text
-{{input}}
-```
-
-Expected output:
-
-```text
-{{expected output}}
-```
+### Check 3: Build And Warnings
+Compile with the baseline command and confirm that {{build expectation}}.
 
 You are not done yet if {{failure condition}}.
 

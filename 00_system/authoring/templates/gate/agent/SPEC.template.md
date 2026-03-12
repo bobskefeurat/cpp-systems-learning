@@ -48,7 +48,7 @@ The learner passes `Gate {{N}}: {{Display Name}}` if they can show all of the fo
 - {{not pass condition 3}}
 
 ## Suggested Task Shape
-The task should stay {{scope guidance}}.
+The task should stay {{scope guidance}} and remain a real bounded exercise or problem.
 
 Current task files:
 - preparation: `../learner/PREP.md`
@@ -57,6 +57,9 @@ Current task files:
 - evaluation sheet: `./EVALUATION.md`
 
 A valid task for `Gate {{N}}: {{Display Name}}` should require the learner to:
+- solve a bounded problem instead of transcribing a declaration list or code path
+- make at least one meaningful decision about types, structure, decomposition, or diagnosis inside the stated constraints
+- separate fixed requirements from allowed freedom while still making pass evidence visible
 - {{task shape item 1}}
 - {{task shape item 2}}
 - {{task shape item 3}}
@@ -65,6 +68,11 @@ The task should not require:
 - {{disallowed item 1}}
 - {{disallowed item 2}}
 - {{disallowed item 3}}
+
+The task should also not hand over:
+- the exact declaration list unless that exact syntax is itself the concept
+- the final expression list for the whole solution
+- a starter artifact that already determines the whole solution path
 
 ## Diagnostic Focus for the Rubric
 Relevant rubric dimensions for this gate:

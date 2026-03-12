@@ -9,11 +9,14 @@ Define how external curriculum sources become normalized authoring data before t
 - Phase, gate, and task generators should use normalized records, not raw external links, as their primary input.
 
 ## Authority Model
-This layer separates three different authorities that should not be collapsed into one source.
+This layer separates four different authorities that should not be collapsed into one source.
 
 - Coverage authority
   Determines what the course is expected to cover.
   Example: a broad curriculum backbone such as `Modern-CPP-Programming`.
+- Course-concept authority
+  Determines which concepts the repo explicitly tracks and refuses to lose.
+  This belongs in `../course_concepts/`, not in raw source mappings.
 - Reading authority
   Determines what learner-facing reading can legitimately prepare a concept.
   This must come from curated resources in `../resources/RESOURCES.md`, not directly from raw source-integration records.
@@ -25,8 +28,10 @@ This layer separates three different authorities that should not be collapsed in
 
 Working rule:
 - curriculum backbone decides `what belongs in the course`
+- course concept map decides `what the repo explicitly preserves`
 - curated reading decides `what can be required learner-facing`
-- gates and tasks operationalize only the overlap between those two
+- phase blueprints decide `where a preserved concept lands in the course`
+- gates and tasks operationalize only the overlap between mapped scope and curated reading
 
 ## What This Layer Is For
 - extracting stable structure from external curriculum sources
@@ -58,12 +63,14 @@ Mapping should describe how this repo wants to use the source.
 1. Register the source candidate in `../resources/SOURCES.md`.
 2. Create a `source_extraction` record from the source.
 3. Create a `pedagogical_mapping` record for this repo.
-4. Review gaps, exclusions, and companion-source needs.
-5. Check whether planned concepts already have curated learner-facing reading in `../resources/RESOURCES.md`.
-6. Prefer existing curated reading sources for learner-facing rollout, and add companion sources only where the current reading layer is insufficient.
-7. Promote only the learner-safe parts of any source into `../resources/RESOURCES.md` when learner-facing use is actually desired.
-8. Use the mapping record as the curriculum baseline input for phase, gate, and task generation.
-9. Refresh the extraction record when the upstream source changes materially.
+4. Canonicalize accepted mapped concepts into `../course_concepts/`.
+5. Create or update the affected phase blueprint in `../phase_blueprints/`.
+6. Review gaps, exclusions, and companion-source needs.
+7. Check whether planned concepts already have curated learner-facing reading in `../resources/RESOURCES.md`.
+8. Prefer existing curated reading sources for learner-facing rollout, and add companion sources only where the current reading layer is insufficient.
+9. Promote only the learner-safe parts of any source into `../resources/RESOURCES.md` when learner-facing use is actually desired.
+10. Use the phase blueprint as the immediate coverage input for phase, gate, and task generation.
+11. Refresh the extraction record when the upstream source changes materially.
 
 ## Generator Use Rules
 - Generators must prefer mapped concept IDs and gate clusters over free interpretation of the original source.
@@ -87,10 +94,18 @@ Mapping should describe how this repo wants to use the source.
 ## Relationship To Other System Areas
 - `../resources/`
   Learner-facing curation and reference policy.
+- `../course_concepts/`
+  Canonical course concept inventory after source concepts have been normalized and accepted.
+- `../phase_blueprints/`
+  Phase-local concept allocation and explicit coverage decisions before gate generation.
 - `../authoring/GATE_STRUCTURE.md`
   Phase and gate structure after source data has been mapped.
+- `../authoring/PHASE_GENERATION.md`
+  Whole-phase generation workflow that consumes phase blueprints.
 - `../authoring/GATE_VALIDATION.md`
   Validation process for the gates created from the mapped source data.
+- `../authoring/PHASE_VALIDATION.md`
+  Validation process for concept coverage across a generated phase.
 
 Load this folder only when:
 - integrating a new external curriculum source

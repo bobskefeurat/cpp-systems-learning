@@ -17,6 +17,7 @@ When generating new content with AI:
 - replace every placeholder before considering the file complete
 - keep learner files learner-facing and agent files agent-facing
 - avoid creating a second source of truth for task requirements, evidence, or pass criteria
+- use `TASK_DESIGN.md` when writing or materially revising `learner/TASK.md`
 - run `.\00_system\authoring\validate-structure.ps1` before considering the generated content structurally complete
 - use `GATE_VALIDATION.md` for the broader quality-check process after the structure script passes
 
@@ -197,6 +198,8 @@ Purpose:
 
 Should contain:
 - the task prompt
+- a real bounded problem, not just a transcription target
+- what is fixed versus what the learner is still expected to decide
 - file/workspace constraints
 - build/run constraints when they are part of the task requirements
 - test cases
@@ -208,16 +211,20 @@ Standard section order:
 2. `## Goal`
 3. `## Before You Start`
 4. `## Task`
-5. `## Constraints`
-6. `## Build And Run` (when applicable)
-7. `## Self-Check`
-8. `## Be Ready To Explain`
-9. `## Bring To Evaluation` (when needed)
+5. `## Fixed Requirements` (recommended for new or materially revised gates)
+6. `## Allowed Freedom` (recommended for new or materially revised gates)
+7. `## Constraints`
+8. `## Build And Run` (when applicable)
+9. `## Self-Check`
+10. `## Be Ready To Explain`
+11. `## Bring To Evaluation` (when needed)
 
 Should not contain:
 - long preparation material
 - broad concept teaching that belongs in `PREP.md`
 - agent-facing evaluation logic
+- a full declaration list, final expression list, or answer-shaped code path unless that exact syntax is itself the concept being taught
+- a task shape where the learner can pass mainly by copying the provided declarations, expressions, or final report logic with no meaningful decision of their own
 
 ### `agent/`
 Purpose:

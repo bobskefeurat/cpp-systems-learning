@@ -1,0 +1,61 @@
+schema_version: v1
+record_kind: phase_blueprint
+blueprint_id: PB-007
+phase_id: 07_phase6-advanced-semantics-ownership-and-concurrency
+title: Phase 6 Advanced Semantics, Ownership, and Concurrency
+status: bootstrap
+source_mapping_refs:
+  - M-001:phase-07
+  - M-001:gc601
+  - M-001:gc602
+  - M-001:gc603
+  - M-001:gc604
+gate_cluster_plan:
+  - gate_cluster_id: gc601
+    title: Advanced Lifetime and Move Semantics
+    gate_kind: micro
+    planned_gate_folder: gate0-advanced-lifetime-and-move-semantics
+  - gate_cluster_id: gc602
+    title: Robustness, Exceptions, and Undefined Behavior
+    gate_kind: micro
+    planned_gate_folder: gate1-robustness-exceptions-and-undefined-behavior
+  - gate_cluster_id: gc603
+    title: Smart Pointers and Ownership Control
+    gate_kind: micro
+    planned_gate_folder: gate2-smart-pointers-and-ownership-control
+  - gate_cluster_id: gc604
+    title: Concurrency and Ownership Integration
+    gate_kind: integration
+    planned_gate_folder: gate3-concurrency-and-ownership-integration
+concept_assignments:
+  - course_concept_id: KC-P6-ADVANCED-OBJECT-LIFETIME-AND-REFERENCE-SEMANTICS
+    assignment_status: primary-gate
+    gate_cluster_id: gc601
+    reading_resource_ids:
+      - R-003
+    rationale: Entry concept for the phase's heavier lifetime model.
+  - course_concept_id: KC-P6-ALLOCATION-MOVE-SEMANTICS-AND-OWNERSHIP-COSTS
+    assignment_status: primary-gate
+    gate_cluster_id: gc601
+    reading_resource_ids:
+      - R-003
+    rationale: Move and allocation reasoning belong directly with advanced lifetime semantics.
+  - course_concept_id: KC-P6-EXCEPTIONS-OVERLOAD-EDGE-CASES-AND-UNDEFINED-BEHAVIOR
+    assignment_status: primary-gate
+    gate_cluster_id: gc602
+    reading_resource_ids:
+      - R-003
+    rationale: Robustness and UB reasoning deserve their own focused gate before ownership integration.
+  - course_concept_id: KC-P6-SMART-POINTERS-AND-ALLOCATOR-AWARE-OWNERSHIP
+    assignment_status: primary-gate
+    gate_cluster_id: gc603
+    reading_resource_ids:
+      - R-003
+    rationale: Smart-pointer and ownership-control work should be explicit before concurrency appears.
+  - course_concept_id: KC-P6-ATOMICS-MEMORY-ORDERING-AND-MULTITHREADING-SURFACE
+    assignment_status: integration-gate
+    gate_cluster_id: gc604
+    reading_resource_ids:
+      - R-003
+    rationale: Concurrency surface is intentionally kept as an integration-level concept in the bootstrap model.
+notes: Bootstrap phase blueprint for one of the riskiest later phases. The integration gate must stay tightly bounded so concurrency does not sprawl into the whole phase.
